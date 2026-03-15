@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>색상 혼합기 무료 온라인 — 두 색상 비율 혼합 | 컬러킷</title>
+  <meta name="description" content="두 색상을 원하는 비율로 혼합한 결과 색상을 확인하세요. HEX/RGB 코드 즉시 복사. 무료 온라인 색상 혼합기.">
+  <link rel="canonical" href="https://colorkit.wooahouse.com/color-mixer.html">
+  <meta property="og:title" content="색상 혼합기 | 컬러킷">
+  <meta property="og:description" content="두 색상을 비율로 혼합. 혼합 결과 색상 HEX/RGB 즉시 확인.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://colorkit.wooahouse.com/color-mixer.html">
+  <meta property="og:locale" content="ko_KR">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6464921081676309" crossorigin="anonymous"></script>
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#8B5CF6">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="컬러킷">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .mixer-colors-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-bottom: 24px;
+    }
+    @media (max-width: 520px) { .mixer-colors-row { grid-template-columns: 1fr; } }
+    .mixer-color-block label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text-light);
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      margin-bottom: 8px;
+    }
+    .mixer-color-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .mixer-color-row input[type="text"] {
+      flex: 1;
+      padding: 9px 12px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      font-size: 0.9rem;
+      font-family: 'Courier New', monospace;
+      background: #F9FAFB;
+      outline: none;
+      transition: border-color 0.15s;
+    }
+    .mixer-color-row input[type="text"]:focus { border-color: var(--primary); background: white; }
+    .color-swatch-big {
+      width: 100%;
+      height: 70px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+      transition: background 0.25s;
+      margin-top: 10px;
+    }
+    .result-swatch {
+      width: 100%;
+      height: 140px;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      transition: background 0.25s;
+      margin-bottom: 16px;
+    }
+    .steps-row {
+      display: flex;
+      gap: 8px;
+      margin-top: 16px;
+    }
+    .step-item {
+      flex: 1;
+      text-align: center;
+    }
+    .step-swatch {
+      width: 100%;
+      height: 48px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+      transition: background 0.25s;
+      margin-bottom: 4px;
+    }
+    .step-label {
+      font-size: 0.72rem;
+      color: var(--text-light);
+      font-family: 'Courier New', monospace;
+    }
+    .ratio-section {
+      margin-bottom: 20px;
+    }
+    .ratio-section label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text-light);
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      margin-bottom: 10px;
+    }
+    .result-codes {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 4px;
+    }
+    @media (max-width: 520px) { .result-codes { grid-template-columns: 1fr; } }
+    .result-code-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: #F9FAFB;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 10px 12px;
+    }
+    .result-code-lbl {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--text-light);
+      text-transform: uppercase;
+      min-width: 36px;
+    }
+    .result-code-val {
+      flex: 1;
+      font-family: 'Courier New', monospace;
+      font-size: 0.88rem;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">컬러킷 <span>| ColorKit</span></a>
+    <nav>
+      <a href="color-converter.html">변환</a>
+      <a href="gradient-generator.html">생성</a>
+      <a href="contrast-checker.html">분석</a>
+      <a href="box-shadow.html">CSS 도구</a>
+      <a href="color-picker.html">색상 추출</a>
+    </nav>
+  </div>
+</header>
+
+<div class="our-sites-bar">
+  <span class="our-sites-label">Linker Services</span>
+  <div class="our-sites-links">
+    <a href="https://linker.wooahouse.com/" target="_blank" rel="noopener">🔗 Linker</a>
+    <a href="https://pdfkit.wooahouse.com/" target="_blank" rel="noopener">📄 PDFKit</a>
+    <a href="https://imagekit.wooahouse.com/" target="_blank" rel="noopener">🖼️ ImageKit</a>
+    <a href="https://colorkit.wooahouse.com/" target="_blank" rel="noopener" class="active">🎨 ColorKit</a>
+    <a href="https://textkit.wooahouse.com/" target="_blank" rel="noopener">📝 TextKit</a>
+    <a href="https://qrkit.wooahouse.com/" target="_blank" rel="noopener">📱 QRKit</a>
+    <a href="https://chromekit.wooahouse.com/" target="_blank" rel="noopener">🧩 ChromeKit</a>
+    <a href="https://fontkit.wooahouse.com/" target="_blank" rel="noopener">🔤 FontKit</a>
+    <a href="https://mactools.wooahouse.com/" target="_blank" rel="noopener">🍎 MacTools</a>
+    <a href="https://pctools.wooahouse.com/" target="_blank" rel="noopener">🖥️ PCTools</a>
+    <a href="https://vskit.wooahouse.com/" target="_blank" rel="noopener">💻 VSKit</a>
+  </div>
+</div>
+
+<div class="tool-page">
+  <div class="breadcrumb">
+    <a href="index.html">컬러킷</a>
+    <span>›</span>
+    <span>색상 혼합기</span>
+  </div>
+
+  <div class="tool-header">
+    <span class="tool-header-icon">🧪</span>
+    <h1>색상 혼합기</h1>
+    <p>두 색상을 원하는 비율로 혼합한 결과를 확인하세요</p>
+  </div>
+
+  <div class="panel">
+    <div class="mixer-colors-row">
+      <div class="mixer-color-block">
+        <label>색상 A</label>
+        <div class="mixer-color-row">
+          <input type="color" id="colorA" value="#8B5CF6">
+          <input type="text" id="hexA" value="#8B5CF6" maxlength="7" placeholder="#RRGGBB">
+        </div>
+        <div id="swatchA" class="color-swatch-big" style="background:#8B5CF6;"></div>
+      </div>
+      <div class="mixer-color-block">
+        <label>색상 B</label>
+        <div class="mixer-color-row">
+          <input type="color" id="colorB" value="#EC4899">
+          <input type="text" id="hexB" value="#EC4899" maxlength="7" placeholder="#RRGGBB">
+        </div>
+        <div id="swatchB" class="color-swatch-big" style="background:#EC4899;"></div>
+      </div>
+    </div>
+
+    <div class="ratio-section">
+      <label>색상 A 비율: <span id="ratioLabel">50%</span></label>
+      <div class="range-wrap">
+        <input type="range" id="ratioSlider" min="0" max="100" value="50">
+      </div>
+    </div>
+  </div>
+
+  <div class="panel" style="margin-top:0;">
+    <div class="panel-title">혼합 결과</div>
+    <div id="resultSwatch" class="result-swatch" style="background:#BA59C7;"></div>
+    <div class="result-codes">
+      <div class="result-code-item">
+        <span class="result-code-lbl">HEX</span>
+        <span class="result-code-val" id="resultHex">#BA59C7</span>
+        <button class="btn-copy" onclick="copyResult('resultHex')">복사</button>
+      </div>
+      <div class="result-code-item">
+        <span class="result-code-lbl">RGB</span>
+        <span class="result-code-val" id="resultRgb">rgb(186, 89, 199)</span>
+        <button class="btn-copy" onclick="copyResult('resultRgb')">복사</button>
+      </div>
+    </div>
+
+    <div class="steps-row" style="margin-top:20px;">
+      <div class="step-item">
+        <div class="step-swatch" id="step0"></div>
+        <div class="step-label">0%</div>
+      </div>
+      <div class="step-item">
+        <div class="step-swatch" id="step25"></div>
+        <div class="step-label">25%</div>
+      </div>
+      <div class="step-item">
+        <div class="step-swatch" id="step50"></div>
+        <div class="step-label">50%</div>
+      </div>
+      <div class="step-item">
+        <div class="step-swatch" id="step75"></div>
+        <div class="step-label">75%</div>
+      </div>
+      <div class="step-item">
+        <div class="step-swatch" id="step100"></div>
+        <div class="step-label">100%</div>
+      </div>
+    </div>
+    <div style="font-size:0.75rem;color:var(--text-light);text-align:center;margin-top:6px;">← 색상 A 100% &nbsp;&nbsp; 색상 B 100% →</div>
+  </div>
+
+  <div class="cross-link-tip">
+    💡 혼합된 색상의 접근성을 확인하려면 <a href="contrast-checker.html">색상 대비 검사기</a>를 사용해 보세요.
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-bottom">
+      <p>© 2026 컬러킷. 모든 권리 보유.</p>
+      <div class="footer-bottom-links">
+        <a href="privacy.html">개인정보처리방침</a>
+        <a href="about.html">소개</a>
+        <a href="index.html">전체 도구</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+function hexToRGB(hex) {
+  hex = hex.replace(/^#/, '');
+  if (hex.length === 3) hex = hex.split('').map(c => c + c).join('');
+  if (hex.length !== 6) return null;
+  const r = parseInt(hex.slice(0, 2), 16);
+  const g = parseInt(hex.slice(2, 4), 16);
+  const b = parseInt(hex.slice(4, 6), 16);
+  if (isNaN(r) || isNaN(g) || isNaN(b)) return null;
+  return { r, g, b };
+}
+
+function rgbToHex(r, g, b) {
+  return '#' + [r, g, b].map(v => Math.round(v).toString(16).padStart(2, '0')).join('').toUpperCase();
+}
+
+function mixColors(hexA, hexB, ratioA) {
+  const ca = hexToRGB(hexA);
+  const cb = hexToRGB(hexB);
+  if (!ca || !cb) return null;
+  const t = ratioA / 100;
+  const r = ca.r * t + cb.r * (1 - t);
+  const g = ca.g * t + cb.g * (1 - t);
+  const b = ca.b * t + cb.b * (1 - t);
+  return { r: Math.round(r), g: Math.round(g), b: Math.round(b) };
+}
+
+function update() {
+  const hexA = document.getElementById('hexA').value.trim();
+  const hexB = document.getElementById('hexB').value.trim();
+  const ratio = parseInt(document.getElementById('ratioSlider').value);
+
+  const ca = hexToRGB(hexA);
+  const cb = hexToRGB(hexB);
+  if (ca) {
+    document.getElementById('swatchA').style.background = hexA;
+    document.getElementById('colorA').value = normalizeHex(hexA);
+  }
+  if (cb) {
+    document.getElementById('swatchB').style.background = hexB;
+    document.getElementById('colorB').value = normalizeHex(hexB);
+  }
+
+  document.getElementById('ratioLabel').textContent = ratio + '%';
+
+  const mixed = mixColors(hexA, hexB, ratio);
+  if (mixed) {
+    const hex = rgbToHex(mixed.r, mixed.g, mixed.b);
+    document.getElementById('resultSwatch').style.background = hex;
+    document.getElementById('resultHex').textContent = hex;
+    document.getElementById('resultRgb').textContent = `rgb(${mixed.r}, ${mixed.g}, ${mixed.b})`;
+  }
+
+  // Steps: 0%, 25%, 50%, 75%, 100% of A
+  [0, 25, 50, 75, 100].forEach((r, i) => {
+    const m = mixColors(hexA, hexB, r);
+    const ids = ['step0', 'step25', 'step50', 'step75', 'step100'];
+    if (m) document.getElementById(ids[i]).style.background = rgbToHex(m.r, m.g, m.b);
+  });
+}
+
+function normalizeHex(hex) {
+  hex = hex.replace(/^#/, '');
+  if (hex.length === 3) hex = hex.split('').map(c => c + c).join('');
+  return '#' + hex;
+}
+
+function copyResult(id) {
+  const text = document.getElementById(id).textContent;
+  navigator.clipboard.writeText(text).then(() => {
+    const item = document.getElementById(id).closest('.result-code-item');
+    const btn = item.querySelector('.btn-copy');
+    btn.textContent = '복사됨!';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = '복사'; btn.classList.remove('copied'); }, 1500);
+  });
+}
+
+document.getElementById('hexA').addEventListener('input', update);
+document.getElementById('hexB').addEventListener('input', update);
+document.getElementById('ratioSlider').addEventListener('input', update);
+document.getElementById('colorA').addEventListener('input', function() {
+  document.getElementById('hexA').value = this.value.toUpperCase();
+  update();
+});
+document.getElementById('colorB').addEventListener('input', function() {
+  document.getElementById('hexB').value = this.value.toUpperCase();
+  update();
+});
+
+update();
+</script>
+<script src="js/pwa-install.js"></script>
+</body>
+</html>

@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS 그라디언트 생성기 무료 온라인 | 컬러킷</title>
+  <meta name="description" content="CSS linear-gradient, radial-gradient 코드를 실시간으로 생성. 색상 정지점 추가/제거, 방향 선택, 미리보기 지원. 무료 온라인 그라디언트 생성기.">
+  <link rel="canonical" href="https://colorkit.wooahouse.com/gradient-generator.html">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6464921081676309" crossorigin="anonymous"></script>
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#8B5CF6">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="컬러킷">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .stop-row { display:flex; align-items:center; gap:10px; padding:10px 12px; background:#F9FAFB; border-radius:8px; margin-bottom:8px; }
+    .stop-row input[type="color"] { width:40px; height:32px; }
+    .stop-row input[type="range"] { flex:1; }
+    .stop-percent { min-width:38px; text-align:right; font-size:0.82rem; font-weight:600; color:var(--primary); }
+    .direction-btn { padding:6px 14px; border-radius:20px; border:1px solid var(--border); background:white; cursor:pointer; font-size:0.82rem; font-family:inherit; transition:all 0.15s; }
+    .direction-btn.active { background:var(--primary); color:white; border-color:var(--primary); }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">컬러킷 <span>| ColorKit</span></a>
+    <nav>
+      <a href="color-converter.html">변환</a>
+      <a href="gradient-generator.html">생성</a>
+      <a href="contrast-checker.html">분석</a>
+      <a href="box-shadow.html">CSS 도구</a>
+      <a href="color-picker.html">색상 추출</a>
+    </nav>
+  </div>
+</header>
+
+<div class="our-sites-bar">
+  <span class="our-sites-label">Linker Services</span>
+  <div class="our-sites-links">
+    <a href="https://linker.wooahouse.com/" target="_blank" rel="noopener">🔗 Linker</a>
+    <a href="https://pdfkit.wooahouse.com/" target="_blank" rel="noopener">📄 PDFKit</a>
+    <a href="https://imagekit.wooahouse.com/" target="_blank" rel="noopener">🖼️ ImageKit</a>
+    <a href="https://colorkit.wooahouse.com/" target="_blank" rel="noopener" class="active">🎨 ColorKit</a>
+    <a href="https://textkit.wooahouse.com/" target="_blank" rel="noopener">📝 TextKit</a>
+    <a href="https://qrkit.wooahouse.com/" target="_blank" rel="noopener">📱 QRKit</a>
+    <a href="https://chromekit.wooahouse.com/" target="_blank" rel="noopener">🧩 ChromeKit</a>
+    <a href="https://fontkit.wooahouse.com/" target="_blank" rel="noopener">🔤 FontKit</a>
+    <a href="https://mactools.wooahouse.com/" target="_blank" rel="noopener">🍎 MacTools</a>
+    <a href="https://pctools.wooahouse.com/" target="_blank" rel="noopener">🖥️ PCTools</a>
+    <a href="https://vskit.wooahouse.com/" target="_blank" rel="noopener">💻 VSKit</a>
+  </div>
+</div>
+
+<div class="tool-page" style="max-width:860px;">
+  <div class="breadcrumb">
+    <a href="index.html">컬러킷</a>
+    <span>›</span>
+    <span>그라디언트 생성기</span>
+  </div>
+
+  <div class="tool-header">
+    <span class="tool-header-icon">🌈</span>
+    <h1>그라디언트 생성기</h1>
+    <p>CSS 그라디언트 코드를 실시간으로 생성하고 미리보기</p>
+  </div>
+
+  <!-- Preview -->
+  <div class="panel">
+    <div id="gradientPreview" class="gradient-preview" style="height:160px;"></div>
+
+    <!-- Type & Direction -->
+    <div style="margin-bottom:16px;">
+      <div style="font-size:0.82rem;font-weight:600;color:var(--text-light);margin-bottom:8px;">유형</div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;">
+        <button class="direction-btn active" onclick="setType('linear',this)">Linear (선형)</button>
+        <button class="direction-btn" onclick="setType('radial',this)">Radial (방사형)</button>
+        <button class="direction-btn" onclick="setType('conic',this)">Conic (원추형)</button>
+      </div>
+    </div>
+
+    <div id="linearOptions">
+      <div style="font-size:0.82rem;font-weight:600;color:var(--text-light);margin-bottom:8px;">방향</div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px;" id="directionBtns">
+        <button class="direction-btn" onclick="setDir('to right',this)">→ 오른쪽</button>
+        <button class="direction-btn" onclick="setDir('to left',this)">← 왼쪽</button>
+        <button class="direction-btn active" onclick="setDir('135deg',this)">↘ 대각선</button>
+        <button class="direction-btn" onclick="setDir('to bottom',this)">↓ 아래</button>
+        <button class="direction-btn" onclick="setDir('to top',this)">↑ 위</button>
+        <button class="direction-btn" onclick="setDir('45deg',this)">↗ 반대각선</button>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:4px;">
+        <label style="font-size:0.82rem;color:var(--text-light);min-width:60px;">각도 직접:</label>
+        <div class="range-wrap" style="flex:1;">
+          <input type="range" id="angleSlider" min="0" max="360" value="135" oninput="setAngle(this.value)">
+          <span class="range-value" id="angleVal">135°</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Color Stops -->
+  <div class="panel" style="margin-top:0;">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;">
+      <div class="panel-title" style="margin-bottom:0;">색상 정지점</div>
+      <button class="btn-copy" onclick="addStop()">+ 색상 추가</button>
+    </div>
+    <div id="stopsContainer"></div>
+  </div>
+
+  <!-- CSS Code -->
+  <div class="panel" style="margin-top:0;">
+    <div class="panel-title">생성된 CSS 코드</div>
+    <div class="code-block">
+      <pre id="cssCode">background: linear-gradient(135deg, #8B5CF6 0%, #A78BFA 100%);</pre>
+      <button class="code-copy-btn" onclick="copyCSS()">복사</button>
+    </div>
+    <div style="margin-top:10px;font-size:0.82rem;color:var(--text-light);">
+      전체 속성 (background-image)도 함께 제공됩니다
+    </div>
+    <div class="code-block" style="margin-top:8px;">
+      <pre id="cssCodeFull">background-image: linear-gradient(135deg, #8B5CF6 0%, #A78BFA 100%);</pre>
+      <button class="code-copy-btn" onclick="copyCSSFull()">복사</button>
+    </div>
+  </div>
+
+  <div class="cross-link-tip">
+    💡 생성한 색상으로 팔레트를 만들어 보려면 <a href="palette-generator.html">팔레트 생성기</a>를 이용하세요.
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-bottom">
+      <p>© 2026 컬러킷. 모든 권리 보유.</p>
+      <div class="footer-bottom-links">
+        <a href="privacy.html">개인정보처리방침</a>
+        <a href="about.html">소개</a>
+        <a href="index.html">전체 도구</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+let gradType = 'linear';
+let gradDir = '135deg';
+let stops = [
+  { color: '#8B5CF6', pos: 0 },
+  { color: '#A78BFA', pos: 100 }
+];
+
+function setType(type, btn) {
+  gradType = type;
+  document.querySelectorAll('[onclick^="setType"]').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('linearOptions').style.display = type === 'linear' ? 'block' : 'none';
+  updateGradient();
+}
+
+function setDir(dir, btn) {
+  gradDir = dir;
+  document.querySelectorAll('[onclick^="setDir"]').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  if (!isNaN(parseInt(dir))) {
+    document.getElementById('angleSlider').value = parseInt(dir);
+    document.getElementById('angleVal').textContent = parseInt(dir) + '°';
+  }
+  updateGradient();
+}
+
+function setAngle(val) {
+  gradDir = val + 'deg';
+  document.getElementById('angleVal').textContent = val + '°';
+  document.querySelectorAll('[onclick^="setDir"]').forEach(b => b.classList.remove('active'));
+  updateGradient();
+}
+
+function addStop() {
+  stops.push({ color: '#' + Math.floor(Math.random()*0xFFFFFF).toString(16).padStart(6,'0').toUpperCase(), pos: 50 });
+  renderStops();
+  updateGradient();
+}
+
+function removeStop(idx) {
+  if (stops.length <= 2) return;
+  stops.splice(idx, 1);
+  renderStops();
+  updateGradient();
+}
+
+function renderStops() {
+  const container = document.getElementById('stopsContainer');
+  container.innerHTML = stops.map((s, i) => `
+    <div class="stop-row">
+      <input type="color" value="${s.color}" oninput="stops[${i}].color=this.value; updateGradient();">
+      <span style="font-size:0.82rem;color:var(--text-light);min-width:28px;">정지점 ${i+1}</span>
+      <input type="range" min="0" max="100" value="${s.pos}" oninput="stops[${i}].pos=parseInt(this.value); this.nextElementSibling.textContent=this.value+'%'; updateGradient();">
+      <span class="stop-percent">${s.pos}%</span>
+      ${stops.length > 2 ? `<button onclick="removeStop(${i})" style="background:none;border:none;cursor:pointer;color:#CBD5E0;font-size:1rem;padding:4px;" title="삭제">✕</button>` : ''}
+    </div>
+  `).join('');
+}
+
+function buildGradientCSS() {
+  const sortedStops = [...stops].sort((a,b) => a.pos - b.pos);
+  const stopsStr = sortedStops.map(s => `${s.color} ${s.pos}%`).join(', ');
+  if (gradType === 'linear') return `linear-gradient(${gradDir}, ${stopsStr})`;
+  if (gradType === 'radial') return `radial-gradient(circle, ${stopsStr})`;
+  return `conic-gradient(${stopsStr})`;
+}
+
+function updateGradient() {
+  const css = buildGradientCSS();
+  document.getElementById('gradientPreview').style.background = css;
+  document.getElementById('cssCode').textContent = `background: ${css};`;
+  document.getElementById('cssCodeFull').textContent = `background-image: ${css};`;
+}
+
+function copyCSS() {
+  const text = document.getElementById('cssCode').textContent;
+  navigator.clipboard.writeText(text).then(() => {
+    const btn = document.querySelector('#cssCode + .code-copy-btn') || document.querySelectorAll('.code-copy-btn')[0];
+    btn.textContent = '복사됨!'; btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = '복사'; btn.classList.remove('copied'); }, 1500);
+  });
+}
+
+function copyCSSFull() {
+  const text = document.getElementById('cssCodeFull').textContent;
+  navigator.clipboard.writeText(text).then(() => {
+    const btns = document.querySelectorAll('.code-copy-btn');
+    btns[1].textContent = '복사됨!'; btns[1].classList.add('copied');
+    setTimeout(() => { btns[1].textContent = '복사'; btns[1].classList.remove('copied'); }, 1500);
+  });
+}
+
+// Init
+renderStops();
+updateGradient();
+</script>
+<script src="js/pwa-install.js"></script>
+</body>
+</html>

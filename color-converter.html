@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HEX RGB HSL 색상 변환기 무료 온라인 | 컬러킷</title>
+  <meta name="description" content="HEX, RGB, HSL 세 가지 색상 코드를 상호 변환. 입력 즉시 실시간 변환. 무료 온라인 색상 변환기.">
+  <link rel="canonical" href="https://colorkit.wooahouse.com/color-converter.html">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6464921081676309" crossorigin="anonymous"></script>
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#8B5CF6">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="컬러킷">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">컬러킷 <span>| ColorKit</span></a>
+    <nav>
+      <a href="color-converter.html">변환</a>
+      <a href="gradient-generator.html">생성</a>
+      <a href="contrast-checker.html">분석</a>
+      <a href="box-shadow.html">CSS 도구</a>
+      <a href="color-picker.html">색상 추출</a>
+    </nav>
+  </div>
+</header>
+
+<div class="our-sites-bar">
+  <span class="our-sites-label">Linker Services</span>
+  <div class="our-sites-links">
+    <a href="https://linker.wooahouse.com/" target="_blank" rel="noopener">🔗 Linker</a>
+    <a href="https://pdfkit.wooahouse.com/" target="_blank" rel="noopener">📄 PDFKit</a>
+    <a href="https://imagekit.wooahouse.com/" target="_blank" rel="noopener">🖼️ ImageKit</a>
+    <a href="https://colorkit.wooahouse.com/" target="_blank" rel="noopener" class="active">🎨 ColorKit</a>
+    <a href="https://textkit.wooahouse.com/" target="_blank" rel="noopener">📝 TextKit</a>
+    <a href="https://qrkit.wooahouse.com/" target="_blank" rel="noopener">📱 QRKit</a>
+    <a href="https://chromekit.wooahouse.com/" target="_blank" rel="noopener">🧩 ChromeKit</a>
+    <a href="https://fontkit.wooahouse.com/" target="_blank" rel="noopener">🔤 FontKit</a>
+    <a href="https://mactools.wooahouse.com/" target="_blank" rel="noopener">🍎 MacTools</a>
+    <a href="https://pctools.wooahouse.com/" target="_blank" rel="noopener">🖥️ PCTools</a>
+    <a href="https://vskit.wooahouse.com/" target="_blank" rel="noopener">💻 VSKit</a>
+  </div>
+</div>
+
+<div class="tool-page">
+  <div class="breadcrumb">
+    <a href="index.html">컬러킷</a>
+    <span>›</span>
+    <span>HEX ↔ RGB ↔ HSL 변환</span>
+  </div>
+
+  <div class="tool-header">
+    <span class="tool-header-icon">🔄</span>
+    <h1>HEX ↔ RGB ↔ HSL 변환</h1>
+    <p>세 가지 색상 코드를 실시간으로 상호 변환합니다</p>
+  </div>
+
+  <div class="panel">
+    <!-- Color Preview -->
+    <div id="colorPreview" class="color-preview" style="background:#8B5CF6;"></div>
+
+    <!-- HEX Input -->
+    <div style="margin-bottom:20px;">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+        <label style="font-size:0.85rem;font-weight:700;color:var(--text-light);text-transform:uppercase;letter-spacing:0.5px;min-width:52px;">HEX</label>
+        <input type="color" id="colorPicker" value="#8B5CF6" style="margin-left:4px;">
+      </div>
+      <div class="input-group">
+        <label>HEX</label>
+        <input type="text" id="hexInput" value="#8B5CF6" placeholder="#RRGGBB" maxlength="7">
+        <button class="btn-copy" onclick="copyVal('hexInput')">복사</button>
+      </div>
+    </div>
+
+    <!-- RGB Input -->
+    <div style="margin-bottom:20px;">
+      <div class="input-group">
+        <label>RGB</label>
+        <input type="text" id="rgbInput" value="rgb(139, 92, 246)" placeholder="rgb(R, G, B)">
+        <button class="btn-copy" onclick="copyVal('rgbInput')">복사</button>
+      </div>
+      <div style="display:flex;gap:10px;margin-top:8px;">
+        <div style="flex:1;text-align:center;">
+          <label style="font-size:0.75rem;color:var(--text-light);">R</label>
+          <input type="number" id="rInput" min="0" max="255" value="139" style="width:100%;padding:6px;border:1px solid var(--border);border-radius:6px;text-align:center;font-size:0.9rem;background:#F9FAFB;outline:none;" oninput="updateFromRGB()">
+        </div>
+        <div style="flex:1;text-align:center;">
+          <label style="font-size:0.75rem;color:var(--text-light);">G</label>
+          <input type="number" id="gInput" min="0" max="255" value="92" style="width:100%;padding:6px;border:1px solid var(--border);border-radius:6px;text-align:center;font-size:0.9rem;background:#F9FAFB;outline:none;" oninput="updateFromRGB()">
+        </div>
+        <div style="flex:1;text-align:center;">
+          <label style="font-size:0.75rem;color:var(--text-light);">B</label>
+          <input type="number" id="bInput" min="0" max="255" value="246" style="width:100%;padding:6px;border:1px solid var(--border);border-radius:6px;text-align:center;font-size:0.9rem;background:#F9FAFB;outline:none;" oninput="updateFromRGB()">
+        </div>
+      </div>
+    </div>
+
+    <!-- HSL Input -->
+    <div>
+      <div class="input-group">
+        <label>HSL</label>
+        <input type="text" id="hslInput" value="hsl(263, 90%, 66%)" placeholder="hsl(H, S%, L%)">
+        <button class="btn-copy" onclick="copyVal('hslInput')">복사</button>
+      </div>
+      <div style="display:flex;gap:10px;margin-top:8px;">
+        <div style="flex:1;text-align:center;">
+          <label style="font-size:0.75rem;color:var(--text-light);">H (0-360)</label>
+          <input type="number" id="hInput" min="0" max="360" value="263" style="width:100%;padding:6px;border:1px solid var(--border);border-radius:6px;text-align:center;font-size:0.9rem;background:#F9FAFB;outline:none;" oninput="updateFromHSL()">
+        </div>
+        <div style="flex:1;text-align:center;">
+          <label style="font-size:0.75rem;color:var(--text-light);">S (0-100%)</label>
+          <input type="number" id="sInput" min="0" max="100" value="90" style="width:100%;padding:6px;border:1px solid var(--border);border-radius:6px;text-align:center;font-size:0.9rem;background:#F9FAFB;outline:none;" oninput="updateFromHSL()">
+        </div>
+        <div style="flex:1;text-align:center;">
+          <label style="font-size:0.75rem;color:var(--text-light);">L (0-100%)</label>
+          <input type="number" id="lInput" min="0" max="100" value="66" style="width:100%;padding:6px;border:1px solid var(--border);border-radius:6px;text-align:center;font-size:0.9rem;background:#F9FAFB;outline:none;" oninput="updateFromHSL()">
+        </div>
+      </div>
+    </div>
+
+    <div id="errorMsg" class="alert alert-error" style="display:none;"></div>
+  </div>
+
+  <!-- Info Panel -->
+  <div class="panel" style="margin-top:0;">
+    <div class="panel-title">색상 정보</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;">
+      <div style="background:#F9FAFB;padding:12px;border-radius:8px;text-align:center;">
+        <div style="font-size:0.75rem;color:var(--text-light);margin-bottom:4px;">HEX</div>
+        <div id="infoHex" style="font-family:'Courier New',monospace;font-weight:700;font-size:0.95rem;">#8B5CF6</div>
+      </div>
+      <div style="background:#F9FAFB;padding:12px;border-radius:8px;text-align:center;">
+        <div style="font-size:0.75rem;color:var(--text-light);margin-bottom:4px;">RGB</div>
+        <div id="infoRGB" style="font-family:'Courier New',monospace;font-weight:700;font-size:0.95rem;">139, 92, 246</div>
+      </div>
+      <div style="background:#F9FAFB;padding:12px;border-radius:8px;text-align:center;">
+        <div style="font-size:0.75rem;color:var(--text-light);margin-bottom:4px;">HSL</div>
+        <div id="infoHSL" style="font-family:'Courier New',monospace;font-weight:700;font-size:0.95rem;">263°, 90%, 66%</div>
+      </div>
+      <div style="background:#F9FAFB;padding:12px;border-radius:8px;text-align:center;">
+        <div style="font-size:0.75rem;color:var(--text-light);margin-bottom:4px;">밝기</div>
+        <div id="infoBrightness" style="font-weight:700;font-size:0.95rem;">어두움</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cross-link-tip">
+    💡 색상 코드를 모른다면 <a href="color-picker.html">색상 추출</a>로 이미지에서 직접 추출해 보세요.
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-bottom">
+      <p>© 2026 컬러킷. 모든 권리 보유.</p>
+      <div class="footer-bottom-links">
+        <a href="privacy.html">개인정보처리방침</a>
+        <a href="about.html">소개</a>
+        <a href="index.html">전체 도구</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ── Conversion helpers ──
+function hexToRGB(hex) {
+  hex = hex.replace(/^#/, '');
+  if (hex.length === 3) hex = hex.split('').map(c => c+c).join('');
+  if (hex.length !== 6) return null;
+  const r = parseInt(hex.slice(0,2),16);
+  const g = parseInt(hex.slice(2,4),16);
+  const b = parseInt(hex.slice(4,6),16);
+  if (isNaN(r)||isNaN(g)||isNaN(b)) return null;
+  return {r,g,b};
+}
+
+function rgbToHex(r,g,b) {
+  return '#' + [r,g,b].map(v => Math.round(v).toString(16).padStart(2,'0')).join('').toUpperCase();
+}
+
+function rgbToHSL(r,g,b) {
+  r/=255; g/=255; b/=255;
+  const max=Math.max(r,g,b), min=Math.min(r,g,b);
+  let h,s,l=(max+min)/2;
+  if(max===min){h=s=0;}
+  else{
+    const d=max-min;
+    s=l>0.5?d/(2-max-min):d/(max+min);
+    switch(max){
+      case r: h=((g-b)/d+(g<b?6:0))/6; break;
+      case g: h=((b-r)/d+2)/6; break;
+      case b: h=((r-g)/d+4)/6; break;
+    }
+  }
+  return {h:Math.round(h*360), s:Math.round(s*100), l:Math.round(l*100)};
+}
+
+function hslToRGB(h,s,l) {
+  s/=100; l/=100;
+  const a=s*Math.min(l,1-l);
+  function f(n){
+    const k=(n+h/30)%12;
+    return l-a*Math.max(-1,Math.min(k-3,9-k,1));
+  }
+  return {r:Math.round(f(0)*255), g:Math.round(f(8)*255), b:Math.round(f(4)*255)};
+}
+
+function getLuminance(r,g,b) {
+  const [rs,gs,bs]=[r,g,b].map(v=>{v/=255; return v<=0.03928?v/12.92:Math.pow((v+0.055)/1.055,2.4);});
+  return 0.2126*rs+0.7152*gs+0.0722*bs;
+}
+
+let updating = false;
+
+function updateAll(r,g,b) {
+  if(updating) return;
+  updating = true;
+  const hex = rgbToHex(r,g,b);
+  const hsl = rgbToHSL(r,g,b);
+
+  document.getElementById('hexInput').value = hex;
+  document.getElementById('rgbInput').value = `rgb(${r}, ${g}, ${b})`;
+  document.getElementById('hslInput').value = `hsl(${hsl.h}, ${hsl.s}%, ${hsl.l}%)`;
+  document.getElementById('rInput').value = r;
+  document.getElementById('gInput').value = g;
+  document.getElementById('bInput').value = b;
+  document.getElementById('hInput').value = hsl.h;
+  document.getElementById('sInput').value = hsl.s;
+  document.getElementById('lInput').value = hsl.l;
+  document.getElementById('colorPicker').value = hex;
+  document.getElementById('colorPreview').style.background = hex;
+
+  document.getElementById('infoHex').textContent = hex;
+  document.getElementById('infoRGB').textContent = `${r}, ${g}, ${b}`;
+  document.getElementById('infoHSL').textContent = `${hsl.h}°, ${hsl.s}%, ${hsl.l}%`;
+
+  const lum = getLuminance(r,g,b);
+  document.getElementById('infoBrightness').textContent = lum > 0.179 ? '밝음' : '어두움';
+
+  document.getElementById('errorMsg').style.display = 'none';
+  updating = false;
+}
+
+function updateFromHEX() {
+  const val = document.getElementById('hexInput').value.trim();
+  const rgb = hexToRGB(val);
+  if (!rgb) {
+    document.getElementById('errorMsg').textContent = '올바른 HEX 코드를 입력하세요 (예: #8B5CF6)';
+    document.getElementById('errorMsg').style.display = 'block';
+    return;
+  }
+  updateAll(rgb.r, rgb.g, rgb.b);
+}
+
+function updateFromRGB() {
+  const r = parseInt(document.getElementById('rInput').value)||0;
+  const g = parseInt(document.getElementById('gInput').value)||0;
+  const b = parseInt(document.getElementById('bInput').value)||0;
+  updateAll(
+    Math.max(0,Math.min(255,r)),
+    Math.max(0,Math.min(255,g)),
+    Math.max(0,Math.min(255,b))
+  );
+}
+
+function updateFromHSL() {
+  const h = parseInt(document.getElementById('hInput').value)||0;
+  const s = parseInt(document.getElementById('sInput').value)||0;
+  const l = parseInt(document.getElementById('lInput').value)||0;
+  const rgb = hslToRGB(
+    Math.max(0,Math.min(360,h)),
+    Math.max(0,Math.min(100,s)),
+    Math.max(0,Math.min(100,l))
+  );
+  updateAll(rgb.r, rgb.g, rgb.b);
+}
+
+function updateFromRGBText() {
+  const val = document.getElementById('rgbInput').value.trim();
+  const m = val.match(/rgb\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*\)/i);
+  if (!m) {
+    document.getElementById('errorMsg').textContent = '올바른 RGB 형식을 입력하세요 (예: rgb(139, 92, 246))';
+    document.getElementById('errorMsg').style.display = 'block';
+    return;
+  }
+  updateAll(parseInt(m[1]), parseInt(m[2]), parseInt(m[3]));
+}
+
+function updateFromHSLText() {
+  const val = document.getElementById('hslInput').value.trim();
+  const m = val.match(/hsl\(\s*(\d+)\s*,\s*(\d+)%?\s*,\s*(\d+)%?\s*\)/i);
+  if (!m) {
+    document.getElementById('errorMsg').textContent = '올바른 HSL 형식을 입력하세요 (예: hsl(263, 90%, 66%))';
+    document.getElementById('errorMsg').style.display = 'block';
+    return;
+  }
+  const rgb = hslToRGB(parseInt(m[1]), parseInt(m[2]), parseInt(m[3]));
+  updateAll(rgb.r, rgb.g, rgb.b);
+}
+
+function copyVal(id) {
+  const el = document.getElementById(id);
+  navigator.clipboard.writeText(el.value).then(() => {
+    const btns = el.parentElement.querySelectorAll('.btn-copy');
+    btns.forEach(btn => { btn.textContent = '복사됨!'; btn.classList.add('copied'); });
+    setTimeout(() => btns.forEach(btn => { btn.textContent = '복사'; btn.classList.remove('copied'); }), 1500);
+  });
+}
+
+// Event listeners
+document.getElementById('hexInput').addEventListener('input', updateFromHEX);
+document.getElementById('rgbInput').addEventListener('change', updateFromRGBText);
+document.getElementById('hslInput').addEventListener('change', updateFromHSLText);
+document.getElementById('colorPicker').addEventListener('input', function() {
+  document.getElementById('hexInput').value = this.value.toUpperCase();
+  updateFromHEX();
+});
+</script>
+<script src="js/pwa-install.js"></script>
+</body>
+</html>

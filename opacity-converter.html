@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>불투명도 변환기 무료 온라인 — HEX rgba 8자리 HEX 변환 | 컬러킷</title>
+  <meta name="description" content="HEX 색상에 투명도를 설정해 rgba(), 8자리 HEX (#RRGGBBAA), hsla() 코드를 즉시 얻으세요. 체커보드 배경 미리보기. 무료 온라인 불투명도 변환기.">
+  <link rel="canonical" href="https://colorkit.wooahouse.com/opacity-converter.html">
+  <meta property="og:title" content="불투명도 변환기 | 컬러킷">
+  <meta property="og:description" content="HEX에 투명도 추가 → rgba / 8자리 HEX / hsla 코드 즉시 변환.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://colorkit.wooahouse.com/opacity-converter.html">
+  <meta property="og:locale" content="ko_KR">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6464921081676309" crossorigin="anonymous"></script>
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#8B5CF6">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="컬러킷">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .opacity-preview {
+      width: 100%;
+      height: 100px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+      margin-bottom: 16px;
+      background-image:
+        linear-gradient(45deg, #ccc 25%, transparent 25%),
+        linear-gradient(-45deg, #ccc 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, #ccc 75%),
+        linear-gradient(-45deg, transparent 75%, #ccc 75%);
+      background-size: 16px 16px;
+      background-position: 0 0, 0 8px, 8px -8px, -8px 0px;
+      position: relative;
+    }
+    .opacity-preview-inner {
+      position: absolute;
+      inset: 0;
+      border-radius: calc(var(--radius-sm) - 1px);
+      transition: background 0.2s;
+    }
+    .code-result-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+      background: #F9FAFB;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 10px 14px;
+    }
+    .code-result-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--text-light);
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      min-width: 60px;
+    }
+    .code-result-val {
+      flex: 1;
+      font-family: 'Courier New', monospace;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text);
+      word-break: break-all;
+    }
+    .hex-input-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .hex-input-row input[type="text"] {
+      flex: 1;
+      padding: 10px 14px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      font-size: 0.95rem;
+      font-family: 'Courier New', monospace;
+      background: #F9FAFB;
+      outline: none;
+      transition: border-color 0.15s;
+    }
+    .hex-input-row input[type="text"]:focus { border-color: var(--primary); background: white; }
+    .opacity-slider-row {
+      margin-bottom: 20px;
+    }
+    .opacity-slider-row label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text-light);
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">컬러킷 <span>| ColorKit</span></a>
+    <nav>
+      <a href="color-converter.html">변환</a>
+      <a href="gradient-generator.html">생성</a>
+      <a href="contrast-checker.html">분석</a>
+      <a href="box-shadow.html">CSS 도구</a>
+      <a href="color-picker.html">색상 추출</a>
+    </nav>
+  </div>
+</header>
+
+<div class="our-sites-bar">
+  <span class="our-sites-label">Linker Services</span>
+  <div class="our-sites-links">
+    <a href="https://linker.wooahouse.com/" target="_blank" rel="noopener">🔗 Linker</a>
+    <a href="https://pdfkit.wooahouse.com/" target="_blank" rel="noopener">📄 PDFKit</a>
+    <a href="https://imagekit.wooahouse.com/" target="_blank" rel="noopener">🖼️ ImageKit</a>
+    <a href="https://colorkit.wooahouse.com/" target="_blank" rel="noopener" class="active">🎨 ColorKit</a>
+    <a href="https://textkit.wooahouse.com/" target="_blank" rel="noopener">📝 TextKit</a>
+    <a href="https://qrkit.wooahouse.com/" target="_blank" rel="noopener">📱 QRKit</a>
+    <a href="https://chromekit.wooahouse.com/" target="_blank" rel="noopener">🧩 ChromeKit</a>
+    <a href="https://fontkit.wooahouse.com/" target="_blank" rel="noopener">🔤 FontKit</a>
+    <a href="https://mactools.wooahouse.com/" target="_blank" rel="noopener">🍎 MacTools</a>
+    <a href="https://pctools.wooahouse.com/" target="_blank" rel="noopener">🖥️ PCTools</a>
+    <a href="https://vskit.wooahouse.com/" target="_blank" rel="noopener">💻 VSKit</a>
+  </div>
+</div>
+
+<div class="tool-page">
+  <div class="breadcrumb">
+    <a href="index.html">컬러킷</a>
+    <span>›</span>
+    <span>불투명도 변환기</span>
+  </div>
+
+  <div class="tool-header">
+    <span class="tool-header-icon">💧</span>
+    <h1>불투명도 변환기</h1>
+    <p>HEX 색상에 투명도를 추가해 rgba, 8자리 HEX, hsla 코드를 얻으세요</p>
+  </div>
+
+  <div class="panel">
+    <div class="hex-input-row">
+      <input type="color" id="colorPicker" value="#8B5CF6">
+      <input type="text" id="hexInput" value="#8B5CF6" maxlength="7" placeholder="#RRGGBB">
+    </div>
+
+    <div class="opacity-slider-row">
+      <label>불투명도 (Opacity): <span id="opacityLabel">80%</span></label>
+      <div class="range-wrap">
+        <input type="range" id="opacitySlider" min="0" max="100" value="80">
+      </div>
+    </div>
+
+    <div class="opacity-preview">
+      <div id="previewInner" class="opacity-preview-inner"></div>
+    </div>
+  </div>
+
+  <div class="panel" style="margin-top:0;">
+    <div class="panel-title">변환 결과</div>
+
+    <div class="code-result-row">
+      <span class="code-result-label">rgba()</span>
+      <span class="code-result-val" id="rgbaVal">rgba(139, 92, 246, 0.80)</span>
+      <button class="btn-copy" onclick="copyResult('rgbaVal')">복사</button>
+    </div>
+    <div class="code-result-row">
+      <span class="code-result-label">8자리 HEX</span>
+      <span class="code-result-val" id="hex8Val">#8B5CF6CC</span>
+      <button class="btn-copy" onclick="copyResult('hex8Val')">복사</button>
+    </div>
+    <div class="code-result-row">
+      <span class="code-result-label">hsla()</span>
+      <span class="code-result-val" id="hslaVal">hsla(263, 90%, 66%, 0.80)</span>
+      <button class="btn-copy" onclick="copyResult('hslaVal')">복사</button>
+    </div>
+  </div>
+
+  <div class="cross-link-tip">
+    💡 색상 코드를 모른다면 <a href="color-converter.html">색상 변환기</a>에서 HEX 코드를 확인하세요.
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-bottom">
+      <p>© 2026 컬러킷. 모든 권리 보유.</p>
+      <div class="footer-bottom-links">
+        <a href="privacy.html">개인정보처리방침</a>
+        <a href="about.html">소개</a>
+        <a href="index.html">전체 도구</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+function hexToRGB(hex) {
+  hex = hex.replace(/^#/, '');
+  if (hex.length === 3) hex = hex.split('').map(c => c + c).join('');
+  if (hex.length !== 6) return null;
+  const r = parseInt(hex.slice(0, 2), 16);
+  const g = parseInt(hex.slice(2, 4), 16);
+  const b = parseInt(hex.slice(4, 6), 16);
+  if (isNaN(r) || isNaN(g) || isNaN(b)) return null;
+  return { r, g, b };
+}
+
+function rgbToHSL(r, g, b) {
+  r /= 255; g /= 255; b /= 255;
+  const max = Math.max(r, g, b), min = Math.min(r, g, b);
+  let h, s, l = (max + min) / 2;
+  if (max === min) { h = s = 0; }
+  else {
+    const d = max - min;
+    s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+    switch (max) {
+      case r: h = ((g - b) / d + (g < b ? 6 : 0)) / 6; break;
+      case g: h = ((b - r) / d + 2) / 6; break;
+      case b: h = ((r - g) / d + 4) / 6; break;
+    }
+  }
+  return { h: Math.round(h * 360), s: Math.round(s * 100), l: Math.round(l * 100) };
+}
+
+function update() {
+  const hex = document.getElementById('hexInput').value.trim();
+  const opacity = parseInt(document.getElementById('opacitySlider').value);
+  const rgb = hexToRGB(hex);
+
+  document.getElementById('opacityLabel').textContent = opacity + '%';
+
+  if (!rgb) return;
+
+  const a = (opacity / 100).toFixed(2);
+  const hsl = rgbToHSL(rgb.r, rgb.g, rgb.b);
+  const alphaHex = Math.round(opacity / 100 * 255).toString(16).padStart(2, '0').toUpperCase();
+  const hex6 = hex.replace(/^#/, '').toUpperCase().padStart(6, '0');
+
+  document.getElementById('rgbaVal').textContent = `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, ${a})`;
+  document.getElementById('hex8Val').textContent = `#${hex6}${alphaHex}`;
+  document.getElementById('hslaVal').textContent = `hsla(${hsl.h}, ${hsl.s}%, ${hsl.l}%, ${a})`;
+
+  document.getElementById('previewInner').style.background = `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, ${a})`;
+
+  try { document.getElementById('colorPicker').value = '#' + hex6; } catch(e) {}
+}
+
+function copyResult(id) {
+  const text = document.getElementById(id).textContent;
+  navigator.clipboard.writeText(text).then(() => {
+    const row = document.getElementById(id).closest('.code-result-row');
+    const btn = row.querySelector('.btn-copy');
+    btn.textContent = '복사됨!';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = '복사'; btn.classList.remove('copied'); }, 1500);
+  });
+}
+
+document.getElementById('hexInput').addEventListener('input', update);
+document.getElementById('opacitySlider').addEventListener('input', update);
+document.getElementById('colorPicker').addEventListener('input', function() {
+  document.getElementById('hexInput').value = this.value.toUpperCase();
+  update();
+});
+
+update();
+</script>
+<script src="js/pwa-install.js"></script>
+</body>
+</html>

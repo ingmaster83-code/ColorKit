@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>이미지 색상 추출 — 픽셀 색상 피커 무료 | 컬러킷</title>
+  <meta name="description" content="이미지를 업로드하고 원하는 위치를 클릭해 색상을 추출하세요. HEX/RGB 코드 즉시 확인. 무료 온라인 이미지 색상 추출기.">
+  <link rel="canonical" href="https://colorkit.wooahouse.com/color-picker.html">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6464921081676309" crossorigin="anonymous"></script>
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#8B5CF6">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="컬러킷">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    #canvas-wrap { position:relative; display:inline-block; max-width:100%; }
+    #imgCanvas { max-width:100%; border-radius:10px; cursor:crosshair; border:1px solid var(--border); display:block; }
+    #crosshair {
+      position:absolute; pointer-events:none; display:none;
+      width:20px; height:20px; margin-left:-10px; margin-top:-10px;
+    }
+    #crosshair::before, #crosshair::after {
+      content:''; position:absolute; background:white; box-shadow:0 0 0 1px #000;
+    }
+    #crosshair::before { width:2px; height:100%; left:9px; top:0; }
+    #crosshair::after { height:2px; width:100%; top:9px; left:0; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">컬러킷 <span>| ColorKit</span></a>
+    <nav>
+      <a href="color-converter.html">변환</a>
+      <a href="gradient-generator.html">생성</a>
+      <a href="contrast-checker.html">분석</a>
+      <a href="box-shadow.html">CSS 도구</a>
+      <a href="color-picker.html">색상 추출</a>
+    </nav>
+  </div>
+</header>
+
+<div class="our-sites-bar">
+  <span class="our-sites-label">Linker Services</span>
+  <div class="our-sites-links">
+    <a href="https://linker.wooahouse.com/" target="_blank" rel="noopener">🔗 Linker</a>
+    <a href="https://pdfkit.wooahouse.com/" target="_blank" rel="noopener">📄 PDFKit</a>
+    <a href="https://imagekit.wooahouse.com/" target="_blank" rel="noopener">🖼️ ImageKit</a>
+    <a href="https://colorkit.wooahouse.com/" target="_blank" rel="noopener" class="active">🎨 ColorKit</a>
+    <a href="https://textkit.wooahouse.com/" target="_blank" rel="noopener">📝 TextKit</a>
+    <a href="https://qrkit.wooahouse.com/" target="_blank" rel="noopener">📱 QRKit</a>
+    <a href="https://chromekit.wooahouse.com/" target="_blank" rel="noopener">🧩 ChromeKit</a>
+    <a href="https://fontkit.wooahouse.com/" target="_blank" rel="noopener">🔤 FontKit</a>
+    <a href="https://mactools.wooahouse.com/" target="_blank" rel="noopener">🍎 MacTools</a>
+    <a href="https://pctools.wooahouse.com/" target="_blank" rel="noopener">🖥️ PCTools</a>
+    <a href="https://vskit.wooahouse.com/" target="_blank" rel="noopener">💻 VSKit</a>
+  </div>
+</div>
+
+<div class="tool-page">
+  <div class="breadcrumb">
+    <a href="index.html">컬러킷</a>
+    <span>›</span>
+    <span>색상 추출</span>
+  </div>
+
+  <div class="tool-header">
+    <span class="tool-header-icon">🖼️</span>
+    <h1>이미지 색상 추출</h1>
+    <p>이미지를 업로드하고 원하는 픽셀을 클릭해 색상을 추출하세요</p>
+  </div>
+
+  <!-- Upload Zone -->
+  <div class="drop-zone" id="dropZone" onclick="document.getElementById('fileInput').click()">
+    <input type="file" id="fileInput" accept="image/*" style="display:none;" onchange="loadImage(event)">
+    <span class="drop-zone-icon">🖼️</span>
+    <h3>이미지를 드래그하거나 클릭하여 업로드</h3>
+    <p>JPG, PNG, GIF, WebP, BMP 지원</p>
+    <button class="btn-select" onclick="event.stopPropagation();" style="pointer-events:none;">이미지 선택</button>
+  </div>
+
+  <!-- Canvas Area -->
+  <div id="canvasSection" style="display:none;margin-top:20px;">
+    <div class="panel">
+      <div class="panel-title">이미지 클릭으로 색상 추출</div>
+      <div style="text-align:center;overflow:auto;">
+        <div id="canvas-wrap">
+          <canvas id="imgCanvas"></canvas>
+          <div id="crosshair"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Current Color -->
+    <div class="panel" style="margin-top:0;">
+      <div class="panel-title">현재 선택 색상</div>
+      <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap;">
+        <div id="currentSwatch" style="width:80px;height:80px;border-radius:12px;border:1px solid var(--border);flex-shrink:0;background:#cccccc;"></div>
+        <div style="flex:1;">
+          <div class="input-group" style="margin-bottom:10px;">
+            <label>HEX</label>
+            <input type="text" id="currentHex" value="—" readonly style="background:#F9FAFB;">
+            <button class="btn-copy" onclick="copyText('currentHex')">복사</button>
+          </div>
+          <div class="input-group" style="margin-bottom:10px;">
+            <label>RGB</label>
+            <input type="text" id="currentRGB" value="—" readonly style="background:#F9FAFB;">
+            <button class="btn-copy" onclick="copyText('currentRGB')">복사</button>
+          </div>
+          <div class="input-group">
+            <label>HSL</label>
+            <input type="text" id="currentHSL" value="—" readonly style="background:#F9FAFB;">
+            <button class="btn-copy" onclick="copyText('currentHSL')">복사</button>
+          </div>
+        </div>
+      </div>
+      <div style="margin-top:12px;font-size:0.82rem;color:var(--text-light);">
+        📍 클릭 위치: <span id="clickPos">—</span>
+      </div>
+    </div>
+
+    <!-- Color History -->
+    <div class="panel" style="margin-top:0;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;">
+        <div class="panel-title" style="margin-bottom:0;">최근 추출 색상 (최대 10개)</div>
+        <button class="btn-copy" onclick="clearHistory()">초기화</button>
+      </div>
+      <div id="colorHistory" class="color-history">
+        <span style="color:var(--text-light);font-size:0.85rem;">이미지를 클릭하면 여기에 색상이 쌓입니다</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="cross-link-tip">
+    💡 추출한 색상을 다른 형식으로 변환하려면 <a href="color-converter.html">HEX ↔ RGB ↔ HSL 변환기</a>를 이용하세요.
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-bottom">
+      <p>© 2026 컬러킷. 모든 권리 보유.</p>
+      <div class="footer-bottom-links">
+        <a href="privacy.html">개인정보처리방침</a>
+        <a href="about.html">소개</a>
+        <a href="index.html">전체 도구</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const dropZone = document.getElementById('dropZone');
+const canvas = document.getElementById('imgCanvas');
+const ctx = canvas.getContext('2d');
+let colorHistory = [];
+
+dropZone.addEventListener('dragover', e => { e.preventDefault(); dropZone.classList.add('drag-over'); });
+dropZone.addEventListener('dragleave', () => dropZone.classList.remove('drag-over'));
+dropZone.addEventListener('drop', e => {
+  e.preventDefault(); dropZone.classList.remove('drag-over');
+  const file = e.dataTransfer.files[0];
+  if (file && file.type.startsWith('image/')) loadFile(file);
+});
+
+function loadImage(e) { if (e.target.files[0]) loadFile(e.target.files[0]); }
+
+function loadFile(file) {
+  const url = URL.createObjectURL(file);
+  const img = new Image();
+  img.onload = () => {
+    const maxW = Math.min(img.width, 700);
+    const scale = maxW / img.width;
+    canvas.width = img.width * scale;
+    canvas.height = img.height * scale;
+    ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+    URL.revokeObjectURL(url);
+    document.getElementById('canvasSection').style.display = 'block';
+    dropZone.style.display = 'none';
+  };
+  img.src = url;
+}
+
+canvas.addEventListener('click', function(e) {
+  const rect = canvas.getBoundingClientRect();
+  const scaleX = canvas.width / rect.width;
+  const scaleY = canvas.height / rect.height;
+  const x = Math.floor((e.clientX - rect.left) * scaleX);
+  const y = Math.floor((e.clientY - rect.top) * scaleY);
+  const px = ctx.getImageData(x, y, 1, 1).data;
+  const r = px[0], g = px[1], b = px[2];
+  const hex = '#' + [r,g,b].map(v => v.toString(16).padStart(2,'0').toUpperCase()).join('');
+  const hsl = rgbToHSL(r, g, b);
+
+  document.getElementById('currentSwatch').style.background = hex;
+  document.getElementById('currentHex').value = hex;
+  document.getElementById('currentRGB').value = `rgb(${r}, ${g}, ${b})`;
+  document.getElementById('currentHSL').value = `hsl(${hsl.h}, ${hsl.s}%, ${hsl.l}%)`;
+  document.getElementById('clickPos').textContent = `(${x}, ${y})`;
+
+  addHistory(hex, r, g, b);
+});
+
+canvas.addEventListener('mousemove', function(e) {
+  const ch = document.getElementById('crosshair');
+  const rect = canvas.getBoundingClientRect();
+  ch.style.display = 'block';
+  ch.style.left = (e.clientX - rect.left) + 'px';
+  ch.style.top = (e.clientY - rect.top) + 'px';
+});
+canvas.addEventListener('mouseleave', () => { document.getElementById('crosshair').style.display = 'none'; });
+
+function addHistory(hex, r, g, b) {
+  colorHistory.unshift({hex, r, g, b});
+  if (colorHistory.length > 10) colorHistory.pop();
+  renderHistory();
+}
+
+function renderHistory() {
+  const el = document.getElementById('colorHistory');
+  if (!colorHistory.length) {
+    el.innerHTML = '<span style="color:var(--text-light);font-size:0.85rem;">이미지를 클릭하면 여기에 색상이 쌓입니다</span>';
+    return;
+  }
+  el.innerHTML = colorHistory.map(c =>
+    `<div class="history-item" style="background:${c.hex};" title="${c.hex}" onclick="selectHistory('${c.hex}','${c.r}','${c.g}','${c.b}')"></div>`
+  ).join('');
+}
+
+function selectHistory(hex, r, g, b) {
+  const hsl = rgbToHSL(parseInt(r), parseInt(g), parseInt(b));
+  document.getElementById('currentSwatch').style.background = hex;
+  document.getElementById('currentHex').value = hex;
+  document.getElementById('currentRGB').value = `rgb(${r}, ${g}, ${b})`;
+  document.getElementById('currentHSL').value = `hsl(${hsl.h}, ${hsl.s}%, ${hsl.l}%)`;
+}
+
+function clearHistory() { colorHistory = []; renderHistory(); }
+
+function copyText(id) {
+  const val = document.getElementById(id).value;
+  if (val === '—') return;
+  navigator.clipboard.writeText(val).then(() => {
+    const btn = document.getElementById(id).parentElement.querySelector('.btn-copy');
+    btn.textContent = '복사됨!'; btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = '복사'; btn.classList.remove('copied'); }, 1500);
+  });
+}
+
+function rgbToHSL(r, g, b) {
+  r/=255; g/=255; b/=255;
+  const max=Math.max(r,g,b), min=Math.min(r,g,b);
+  let h,s,l=(max+min)/2;
+  if(max===min){h=s=0;}
+  else{
+    const d=max-min;
+    s=l>0.5?d/(2-max-min):d/(max+min);
+    switch(max){
+      case r: h=((g-b)/d+(g<b?6:0))/6; break;
+      case g: h=((b-r)/d+2)/6; break;
+      case b: h=((r-g)/d+4)/6; break;
+    }
+  }
+  return {h:Math.round(h*360), s:Math.round(s*100), l:Math.round(l*100)};
+}
+</script>
+<script src="js/pwa-install.js"></script>
+</body>
+</html>

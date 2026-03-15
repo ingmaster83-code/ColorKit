@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>색상 대비 검사기 WCAG 접근성 무료 온라인 | 컬러킷</title>
+  <meta name="description" content="전경색과 배경색의 WCAG 색상 대비율을 검사하세요. AA·AAA 기준 합격/불합격 표시. 무료 온라인 색상 대비 검사기.">
+  <link rel="canonical" href="https://colorkit.wooahouse.com/contrast-checker.html">
+  <meta property="og:title" content="색상 대비 검사기 WCAG | 컬러킷">
+  <meta property="og:description" content="WCAG 접근성 기준 색상 대비율 검사. AA/AAA 합격 여부 즉시 확인.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://colorkit.wooahouse.com/contrast-checker.html">
+  <meta property="og:locale" content="ko_KR">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6464921081676309" crossorigin="anonymous"></script>
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#8B5CF6">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="컬러킷">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .color-inputs-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      margin-bottom: 24px;
+    }
+    @media (max-width: 520px) { .color-inputs-row { grid-template-columns: 1fr; } }
+    .color-input-block label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text-light);
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      margin-bottom: 8px;
+    }
+    .color-input-row {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .color-input-row input[type="text"] {
+      flex: 1;
+      padding: 9px 12px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      font-size: 0.9rem;
+      font-family: 'Courier New', monospace;
+      background: #F9FAFB;
+      outline: none;
+      transition: border-color 0.15s;
+    }
+    .color-input-row input[type="text"]:focus { border-color: var(--primary); background: white; }
+    .ratio-display {
+      text-align: center;
+      padding: 24px 0;
+    }
+    .ratio-number {
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1;
+    }
+    .ratio-label {
+      font-size: 0.85rem;
+      color: var(--text-light);
+      margin-top: 6px;
+    }
+    .wcag-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-top: 20px;
+    }
+    @media (max-width: 520px) { .wcag-grid { grid-template-columns: 1fr; } }
+    .wcag-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 16px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+      background: #F9FAFB;
+    }
+    .wcag-item-label {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+    .wcag-item-desc {
+      font-size: 0.75rem;
+      color: var(--text-light);
+      margin-top: 2px;
+    }
+    .preview-box {
+      width: 100%;
+      padding: 32px 24px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+      transition: background 0.2s, color 0.2s;
+      margin-top: 8px;
+    }
+    .preview-box .preview-normal {
+      font-size: 1rem;
+      font-weight: 400;
+      margin-bottom: 8px;
+    }
+    .preview-box .preview-large {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .preview-box .preview-small {
+      font-size: 0.8rem;
+    }
+    .swap-btn {
+      display: block;
+      margin: 0 auto 16px;
+      background: var(--primary-light);
+      color: var(--primary);
+      border: none;
+      border-radius: var(--radius-sm);
+      padding: 8px 20px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: inherit;
+      transition: background 0.15s;
+    }
+    .swap-btn:hover { background: #DDD6FE; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">컬러킷 <span>| ColorKit</span></a>
+    <nav>
+      <a href="color-converter.html">변환</a>
+      <a href="gradient-generator.html">생성</a>
+      <a href="contrast-checker.html">분석</a>
+      <a href="box-shadow.html">CSS 도구</a>
+      <a href="color-picker.html">색상 추출</a>
+    </nav>
+  </div>
+</header>
+
+<div class="our-sites-bar">
+  <span class="our-sites-label">Linker Services</span>
+  <div class="our-sites-links">
+    <a href="https://linker.wooahouse.com/" target="_blank" rel="noopener">🔗 Linker</a>
+    <a href="https://pdfkit.wooahouse.com/" target="_blank" rel="noopener">📄 PDFKit</a>
+    <a href="https://imagekit.wooahouse.com/" target="_blank" rel="noopener">🖼️ ImageKit</a>
+    <a href="https://colorkit.wooahouse.com/" target="_blank" rel="noopener" class="active">🎨 ColorKit</a>
+    <a href="https://textkit.wooahouse.com/" target="_blank" rel="noopener">📝 TextKit</a>
+    <a href="https://qrkit.wooahouse.com/" target="_blank" rel="noopener">📱 QRKit</a>
+    <a href="https://chromekit.wooahouse.com/" target="_blank" rel="noopener">🧩 ChromeKit</a>
+    <a href="https://fontkit.wooahouse.com/" target="_blank" rel="noopener">🔤 FontKit</a>
+    <a href="https://mactools.wooahouse.com/" target="_blank" rel="noopener">🍎 MacTools</a>
+    <a href="https://pctools.wooahouse.com/" target="_blank" rel="noopener">🖥️ PCTools</a>
+    <a href="https://vskit.wooahouse.com/" target="_blank" rel="noopener">💻 VSKit</a>
+  </div>
+</div>
+
+<div class="tool-page">
+  <div class="breadcrumb">
+    <a href="index.html">컬러킷</a>
+    <span>›</span>
+    <span>색상 대비 검사기</span>
+  </div>
+
+  <div class="tool-header">
+    <span class="tool-header-icon">👁️</span>
+    <h1>색상 대비 검사기</h1>
+    <p>WCAG 접근성 기준에 따른 색상 대비율을 즉시 검사합니다</p>
+  </div>
+
+  <div class="panel">
+    <div class="color-inputs-row">
+      <div class="color-input-block">
+        <label>전경색 (텍스트)</label>
+        <div class="color-input-row">
+          <input type="color" id="fgPicker" value="#1A1A2E">
+          <input type="text" id="fgHex" value="#1A1A2E" maxlength="7" placeholder="#RRGGBB">
+        </div>
+      </div>
+      <div class="color-input-block">
+        <label>배경색</label>
+        <div class="color-input-row">
+          <input type="color" id="bgPicker" value="#FFFFFF">
+          <input type="text" id="bgHex" value="#FFFFFF" maxlength="7" placeholder="#RRGGBB">
+        </div>
+      </div>
+    </div>
+    <button class="swap-btn" onclick="swapColors()">⇄ 전경/배경 교체</button>
+
+    <div class="ratio-display">
+      <div class="ratio-number" id="ratioDisplay">18.09:1</div>
+      <div class="ratio-label">색상 대비율 (Contrast Ratio)</div>
+    </div>
+
+    <div class="wcag-grid">
+      <div class="wcag-item">
+        <div>
+          <div class="wcag-item-label">AA 일반 텍스트</div>
+          <div class="wcag-item-desc">최소 4.5:1 필요</div>
+        </div>
+        <span id="badge-aa-normal" class="wcag-badge wcag-pass">✓ 통과</span>
+      </div>
+      <div class="wcag-item">
+        <div>
+          <div class="wcag-item-label">AA 큰 텍스트</div>
+          <div class="wcag-item-desc">최소 3:1 필요 (18pt+)</div>
+        </div>
+        <span id="badge-aa-large" class="wcag-badge wcag-pass">✓ 통과</span>
+      </div>
+      <div class="wcag-item">
+        <div>
+          <div class="wcag-item-label">AAA 일반 텍스트</div>
+          <div class="wcag-item-desc">최소 7:1 필요</div>
+        </div>
+        <span id="badge-aaa-normal" class="wcag-badge wcag-pass">✓ 통과</span>
+      </div>
+      <div class="wcag-item">
+        <div>
+          <div class="wcag-item-label">AAA 큰 텍스트</div>
+          <div class="wcag-item-desc">최소 4.5:1 필요</div>
+        </div>
+        <span id="badge-aaa-large" class="wcag-badge wcag-pass">✓ 통과</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="panel" style="margin-top:0;">
+    <div class="panel-title">미리보기</div>
+    <div id="previewBox" class="preview-box" style="background:#FFFFFF; color:#1A1A2E;">
+      <div class="preview-large">큰 텍스트 미리보기 (18pt 이상)</div>
+      <div class="preview-normal">일반 텍스트 미리보기입니다. This is a normal text preview for contrast check.</div>
+      <div class="preview-small">작은 텍스트 미리보기. Small text preview for accessibility testing.</div>
+    </div>
+  </div>
+
+  <div class="cross-link-tip">
+    💡 색상 코드를 모른다면 <a href="color-converter.html">색상 변환기</a>에서 HEX 코드를 확인하세요.
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-bottom">
+      <p>© 2026 컬러킷. 모든 권리 보유.</p>
+      <div class="footer-bottom-links">
+        <a href="privacy.html">개인정보처리방침</a>
+        <a href="about.html">소개</a>
+        <a href="index.html">전체 도구</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+function hexToRGB(hex) {
+  hex = hex.replace(/^#/, '');
+  if (hex.length === 3) hex = hex.split('').map(c => c + c).join('');
+  if (hex.length !== 6) return null;
+  const r = parseInt(hex.slice(0, 2), 16);
+  const g = parseInt(hex.slice(2, 4), 16);
+  const b = parseInt(hex.slice(4, 6), 16);
+  if (isNaN(r) || isNaN(g) || isNaN(b)) return null;
+  return { r, g, b };
+}
+
+function getRelativeLuminance(r, g, b) {
+  const [rs, gs, bs] = [r, g, b].map(v => {
+    v /= 255;
+    return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4);
+  });
+  return 0.2126 * rs + 0.7152 * gs + 0.0722 * bs;
+}
+
+function getContrastRatio(hex1, hex2) {
+  const c1 = hexToRGB(hex1);
+  const c2 = hexToRGB(hex2);
+  if (!c1 || !c2) return null;
+  const l1 = getRelativeLuminance(c1.r, c1.g, c1.b);
+  const l2 = getRelativeLuminance(c2.r, c2.g, c2.b);
+  const lighter = Math.max(l1, l2);
+  const darker = Math.min(l1, l2);
+  return (lighter + 0.05) / (darker + 0.05);
+}
+
+function setBadge(id, pass) {
+  const el = document.getElementById(id);
+  if (pass) {
+    el.textContent = '✓ 통과';
+    el.className = 'wcag-badge wcag-pass';
+  } else {
+    el.textContent = '✗ 실패';
+    el.className = 'wcag-badge wcag-fail';
+  }
+}
+
+function update() {
+  const fg = document.getElementById('fgHex').value.trim();
+  const bg = document.getElementById('bgHex').value.trim();
+  const ratio = getContrastRatio(fg, bg);
+  if (ratio === null) return;
+
+  document.getElementById('ratioDisplay').textContent = ratio.toFixed(2) + ':1';
+  setBadge('badge-aa-normal', ratio >= 4.5);
+  setBadge('badge-aa-large', ratio >= 3);
+  setBadge('badge-aaa-normal', ratio >= 7);
+  setBadge('badge-aaa-large', ratio >= 4.5);
+
+  const fgRgb = hexToRGB(fg);
+  const bgRgb = hexToRGB(bg);
+  if (fgRgb && bgRgb) {
+    const preview = document.getElementById('previewBox');
+    preview.style.color = `rgb(${fgRgb.r},${fgRgb.g},${fgRgb.b})`;
+    preview.style.background = `rgb(${bgRgb.r},${bgRgb.g},${bgRgb.b})`;
+  }
+
+  // Sync pickers
+  const fgRgb2 = hexToRGB(fg);
+  const bgRgb2 = hexToRGB(bg);
+  if (fgRgb2) document.getElementById('fgPicker').value = normalizeHex(fg);
+  if (bgRgb2) document.getElementById('bgPicker').value = normalizeHex(bg);
+}
+
+function normalizeHex(hex) {
+  hex = hex.replace(/^#/, '');
+  if (hex.length === 3) hex = hex.split('').map(c => c + c).join('');
+  return '#' + hex;
+}
+
+function swapColors() {
+  const fg = document.getElementById('fgHex').value;
+  const bg = document.getElementById('bgHex').value;
+  document.getElementById('fgHex').value = bg;
+  document.getElementById('bgHex').value = fg;
+  document.getElementById('fgPicker').value = normalizeHex(bg);
+  document.getElementById('bgPicker').value = normalizeHex(fg);
+  update();
+}
+
+document.getElementById('fgHex').addEventListener('input', update);
+document.getElementById('bgHex').addEventListener('input', update);
+document.getElementById('fgPicker').addEventListener('input', function() {
+  document.getElementById('fgHex').value = this.value.toUpperCase();
+  update();
+});
+document.getElementById('bgPicker').addEventListener('input', function() {
+  document.getElementById('bgHex').value = this.value.toUpperCase();
+  update();
+});
+
+update();
+</script>
+<script src="js/pwa-install.js"></script>
+</body>
+</html>

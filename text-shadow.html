@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS 텍스트 그림자 생성기 무료 온라인 text-shadow | 컬러킷</title>
+  <meta name="description" content="슬라이더로 CSS text-shadow 코드를 즉시 생성하세요. H-offset, V-offset, Blur, 색상, 샘플 텍스트 설정. 미리보기와 코드 복사 기능. 무료 온라인 텍스트 그림자 생성기.">
+  <link rel="canonical" href="https://colorkit.wooahouse.com/text-shadow.html">
+  <meta property="og:title" content="CSS 텍스트 그림자 생성기 | 컬러킷">
+  <meta property="og:description" content="슬라이더로 CSS text-shadow 코드 즉시 생성. 미리보기 제공.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://colorkit.wooahouse.com/text-shadow.html">
+  <meta property="og:locale" content="ko_KR">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6464921081676309" crossorigin="anonymous"></script>
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#8B5CF6">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="컬러킷">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .slider-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+    .slider-row label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text);
+      min-width: 110px;
+    }
+    .slider-row input[type="range"] { flex: 1; }
+    .slider-val {
+      min-width: 48px;
+      text-align: right;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--primary);
+      font-family: 'Courier New', monospace;
+    }
+    .color-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .color-row label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text);
+      min-width: 110px;
+    }
+    .color-row input[type="text"] {
+      flex: 1;
+      padding: 8px 12px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      font-size: 0.9rem;
+      font-family: 'Courier New', monospace;
+      background: #F9FAFB;
+      outline: none;
+      transition: border-color 0.15s;
+    }
+    .color-row input[type="text"]:focus { border-color: var(--primary); background: white; }
+    .sample-text-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    .sample-text-row label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text);
+      min-width: 110px;
+    }
+    .sample-text-row input[type="text"] {
+      flex: 1;
+      padding: 9px 12px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      font-size: 0.9rem;
+      background: #F9FAFB;
+      outline: none;
+      font-family: inherit;
+      transition: border-color 0.15s;
+    }
+    .sample-text-row input[type="text"]:focus { border-color: var(--primary); background: white; }
+    .text-preview-area {
+      background: #F3F4F6;
+      border-radius: var(--radius-sm);
+      padding: 40px 24px;
+      text-align: center;
+      min-height: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 4px;
+    }
+    #previewText {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #1A1A2E;
+      transition: text-shadow 0.2s;
+      word-break: break-word;
+    }
+    .text-color-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .text-color-row label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text);
+      min-width: 110px;
+    }
+    @media (max-width: 520px) {
+      .slider-row { flex-wrap: wrap; }
+      .slider-row label, .color-row label, .sample-text-row label { min-width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">컬러킷 <span>| ColorKit</span></a>
+    <nav>
+      <a href="color-converter.html">변환</a>
+      <a href="gradient-generator.html">생성</a>
+      <a href="contrast-checker.html">분석</a>
+      <a href="box-shadow.html">CSS 도구</a>
+      <a href="color-picker.html">색상 추출</a>
+    </nav>
+  </div>
+</header>
+
+<div class="our-sites-bar">
+  <span class="our-sites-label">Linker Services</span>
+  <div class="our-sites-links">
+    <a href="https://linker.wooahouse.com/" target="_blank" rel="noopener">🔗 Linker</a>
+    <a href="https://pdfkit.wooahouse.com/" target="_blank" rel="noopener">📄 PDFKit</a>
+    <a href="https://imagekit.wooahouse.com/" target="_blank" rel="noopener">🖼️ ImageKit</a>
+    <a href="https://colorkit.wooahouse.com/" target="_blank" rel="noopener" class="active">🎨 ColorKit</a>
+    <a href="https://textkit.wooahouse.com/" target="_blank" rel="noopener">📝 TextKit</a>
+    <a href="https://qrkit.wooahouse.com/" target="_blank" rel="noopener">📱 QRKit</a>
+    <a href="https://chromekit.wooahouse.com/" target="_blank" rel="noopener">🧩 ChromeKit</a>
+    <a href="https://fontkit.wooahouse.com/" target="_blank" rel="noopener">🔤 FontKit</a>
+    <a href="https://mactools.wooahouse.com/" target="_blank" rel="noopener">🍎 MacTools</a>
+    <a href="https://pctools.wooahouse.com/" target="_blank" rel="noopener">🖥️ PCTools</a>
+    <a href="https://vskit.wooahouse.com/" target="_blank" rel="noopener">💻 VSKit</a>
+  </div>
+</div>
+
+<div class="tool-page">
+  <div class="breadcrumb">
+    <a href="index.html">컬러킷</a>
+    <span>›</span>
+    <span>텍스트 그림자 생성기</span>
+  </div>
+
+  <div class="tool-header">
+    <span class="tool-header-icon">🔤</span>
+    <h1>텍스트 그림자 생성기</h1>
+    <p>슬라이더로 CSS text-shadow 코드를 즉시 생성하세요</p>
+  </div>
+
+  <div class="panel">
+    <div class="sample-text-row">
+      <label>샘플 텍스트</label>
+      <input type="text" id="sampleText" value="컬러킷 ColorKit" placeholder="미리볼 텍스트 입력">
+    </div>
+    <div class="text-color-row">
+      <label>텍스트 색상</label>
+      <input type="color" id="textColorPicker" value="#1A1A2E">
+      <input type="text" id="textColorHex" value="#1A1A2E" maxlength="7" placeholder="#RRGGBB" style="flex:1;padding:8px 12px;border:1px solid var(--border);border-radius:var(--radius-sm);font-size:0.9rem;font-family:'Courier New',monospace;background:#F9FAFB;outline:none;">
+    </div>
+    <div class="slider-row">
+      <label>H-offset</label>
+      <input type="range" id="hOffset" min="-20" max="20" value="2">
+      <span class="slider-val" id="hOffsetVal">2px</span>
+    </div>
+    <div class="slider-row">
+      <label>V-offset</label>
+      <input type="range" id="vOffset" min="-20" max="20" value="2">
+      <span class="slider-val" id="vOffsetVal">2px</span>
+    </div>
+    <div class="slider-row">
+      <label>Blur</label>
+      <input type="range" id="blur" min="0" max="30" value="4">
+      <span class="slider-val" id="blurVal">4px</span>
+    </div>
+    <div class="color-row">
+      <label>그림자 색상</label>
+      <input type="color" id="shadowColorPicker" value="#000000">
+      <input type="text" id="shadowColorHex" value="#000000" maxlength="7" placeholder="#RRGGBB">
+    </div>
+    <div class="slider-row">
+      <label>투명도 (Alpha)</label>
+      <input type="range" id="shadowAlpha" min="0" max="100" value="40">
+      <span class="slider-val" id="shadowAlphaVal">40%</span>
+    </div>
+  </div>
+
+  <div class="panel" style="margin-top:0;">
+    <div class="panel-title">미리보기</div>
+    <div class="text-preview-area">
+      <div id="previewText">컬러킷 ColorKit</div>
+    </div>
+  </div>
+
+  <div class="panel" style="margin-top:0;">
+    <div class="panel-title">생성된 CSS 코드</div>
+    <div class="code-block">
+      <pre id="cssCode">text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);</pre>
+      <button class="code-copy-btn" onclick="copyCSS()">복사</button>
+    </div>
+  </div>
+
+  <div class="cross-link-tip">
+    💡 박스에 그림자를 적용하려면 <a href="box-shadow.html">박스 그림자 생성기</a>를 사용해 보세요.
+  </div>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-bottom">
+      <p>© 2026 컬러킷. 모든 권리 보유.</p>
+      <div class="footer-bottom-links">
+        <a href="privacy.html">개인정보처리방침</a>
+        <a href="about.html">소개</a>
+        <a href="index.html">전체 도구</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+function hexToRGB(hex) {
+  hex = hex.replace(/^#/, '');
+  if (hex.length === 3) hex = hex.split('').map(c => c + c).join('');
+  if (hex.length !== 6) return null;
+  return {
+    r: parseInt(hex.slice(0, 2), 16),
+    g: parseInt(hex.slice(2, 4), 16),
+    b: parseInt(hex.slice(4, 6), 16)
+  };
+}
+
+function update() {
+  const h = parseInt(document.getElementById('hOffset').value);
+  const v = parseInt(document.getElementById('vOffset').value);
+  const blur = parseInt(document.getElementById('blur').value);
+  const shadowHex = document.getElementById('shadowColorHex').value;
+  const alpha = parseInt(document.getElementById('shadowAlpha').value);
+  const sampleText = document.getElementById('sampleText').value || '컬러킷 ColorKit';
+  const textHex = document.getElementById('textColorHex').value;
+
+  document.getElementById('hOffsetVal').textContent = h + 'px';
+  document.getElementById('vOffsetVal').textContent = v + 'px';
+  document.getElementById('blurVal').textContent = blur + 'px';
+  document.getElementById('shadowAlphaVal').textContent = alpha + '%';
+
+  const rgb = hexToRGB(shadowHex) || { r: 0, g: 0, b: 0 };
+  const a = (alpha / 100).toFixed(2);
+  const shadow = `${h}px ${v}px ${blur}px rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, ${a})`;
+  const cssLine = `text-shadow: ${shadow};`;
+
+  const preview = document.getElementById('previewText');
+  preview.textContent = sampleText;
+  preview.style.textShadow = shadow;
+  const textRgb = hexToRGB(textHex);
+  if (textRgb) preview.style.color = `rgb(${textRgb.r},${textRgb.g},${textRgb.b})`;
+
+  document.getElementById('cssCode').textContent = cssLine;
+
+  try { document.getElementById('shadowColorPicker').value = shadowHex; } catch(e) {}
+  try { document.getElementById('textColorPicker').value = textHex; } catch(e) {}
+}
+
+function copyCSS() {
+  const text = document.getElementById('cssCode').textContent;
+  navigator.clipboard.writeText(text).then(() => {
+    const btn = document.querySelector('.code-copy-btn');
+    btn.textContent = '복사됨!';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = '복사'; btn.classList.remove('copied'); }, 1500);
+  });
+}
+
+['hOffset', 'vOffset', 'blur', 'shadowAlpha'].forEach(id => {
+  document.getElementById(id).addEventListener('input', update);
+});
+document.getElementById('shadowColorHex').addEventListener('input', update);
+document.getElementById('textColorHex').addEventListener('input', update);
+document.getElementById('sampleText').addEventListener('input', update);
+document.getElementById('shadowColorPicker').addEventListener('input', function() {
+  document.getElementById('shadowColorHex').value = this.value.toUpperCase();
+  update();
+});
+document.getElementById('textColorPicker').addEventListener('input', function() {
+  document.getElementById('textColorHex').value = this.value.toUpperCase();
+  update();
+});
+
+update();
+</script>
+<script src="js/pwa-install.js"></script>
+</body>
+</html>

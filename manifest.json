@@ -1,0 +1,18 @@
+{
+  "name": "컬러킷 - 무료 색상 도구",
+  "short_name": "ColorKit",
+  "description": "HEX·RGB·HSL 변환, 색상 추출, 그라디언트·팔레트 생성, WCAG 대비 검사, CSS 그림자 도구",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#8B5CF6",
+  "theme_color": "#8B5CF6",
+  "lang": "ko",
+  "icons": [
+    {
+      "src": "icons/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
