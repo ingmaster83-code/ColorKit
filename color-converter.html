@@ -13,6 +13,42 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="컬러킷">
   <link rel="stylesheet" href="css/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "색상 변환기 HEX RGB HSL",
+    "url": "https://colorkit.wooahouse.com/color-converter.html",
+    "applicationCategory": "UtilityApplication",
+    "operatingSystem": "Web",
+    "inLanguage": "ko",
+    "isAccessibleForFree": true,
+    "offers": {"@type": "Offer","price": "0","priceCurrency": "KRW"}
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "HEX, RGB, HSL이 뭔가요?",
+        "acceptedAnswer": {"@type": "Answer","text": "모두 색상을 표현하는 방식입니다. HEX는 웹에서 가장 많이 쓰이는 16진수 형식, RGB는 빨강/초록/파랑 혼합값, HSL은 색조/채도/밝기 기반 표현입니다."}
+      },
+      {
+        "@type": "Question",
+        "name": "실시간으로 변환되나요?",
+        "acceptedAnswer": {"@type": "Answer","text": "네, 어떤 형식에 값을 입력하면 즉시 다른 형식으로 변환되어 표시됩니다."}
+      },
+      {
+        "@type": "Question",
+        "name": "CSS에서 바로 사용할 수 있는 형식으로 복사되나요?",
+        "acceptedAnswer": {"@type": "Answer","text": "네, 복사 버튼을 누르면 CSS에서 바로 사용할 수 있는 형식으로 복사됩니다."}
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -38,6 +74,7 @@
     <a href="https://colorkit.wooahouse.com/" target="_blank" rel="noopener" class="active">🎨 ColorKit</a>
     <a href="https://textkit.wooahouse.com/" target="_blank" rel="noopener">📝 TextKit</a>
     <a href="https://qrkit.wooahouse.com/" target="_blank" rel="noopener">📱 QRKit</a>
+    <a href="https://calckit.wooahouse.com/" target="_blank" rel="noopener">🧮 CalcKit</a>
     <a href="https://steamkit.wooahouse.com/" target="_blank" rel="noopener">🎮 SteamKit</a>
     <a href="https://chromekit.wooahouse.com/" target="_blank" rel="noopener">🧩 ChromeKit</a>
     <a href="https://fontkit.wooahouse.com/" target="_blank" rel="noopener">🔤 FontKit</a>
@@ -152,6 +189,24 @@
   <div class="cross-link-tip">
     💡 색상 코드를 모른다면 <a href="color-picker.html">색상 추출</a>로 이미지에서 직접 추출해 보세요.
   </div>
+
+  <section class="faq-section" style="max-width:800px;margin:3rem auto;padding:0 1rem;">
+    <h2 style="font-size:1.4rem;margin-bottom:1.5rem;">자주 묻는 질문</h2>
+    <div class="faq-list">
+      <div class="faq-item" style="margin-bottom:1.2rem;padding:1rem;background:#f8f9fa;border-radius:8px;">
+        <h3 style="font-size:1rem;font-weight:600;margin-bottom:0.5rem;">Q. HEX, RGB, HSL이 뭔가요?</h3>
+        <p style="color:#555;margin:0;">모두 색상을 표현하는 방식입니다. HEX는 웹에서 가장 많이 쓰이는 16진수 형식, RGB는 빨강/초록/파랑 혼합값, HSL은 색조/채도/밝기 기반 표현입니다.</p>
+      </div>
+      <div class="faq-item" style="margin-bottom:1.2rem;padding:1rem;background:#f8f9fa;border-radius:8px;">
+        <h3 style="font-size:1rem;font-weight:600;margin-bottom:0.5rem;">Q. 실시간으로 변환되나요?</h3>
+        <p style="color:#555;margin:0;">네, 어떤 형식에 값을 입력하면 즉시 다른 형식으로 변환되어 표시됩니다.</p>
+      </div>
+      <div class="faq-item" style="padding:1rem;background:#f8f9fa;border-radius:8px;">
+        <h3 style="font-size:1rem;font-weight:600;margin-bottom:0.5rem;">Q. CSS에서 바로 사용할 수 있는 형식으로 복사되나요?</h3>
+        <p style="color:#555;margin:0;">네, 복사 버튼을 누르면 CSS에서 바로 사용할 수 있는 형식으로 복사됩니다.</p>
+      </div>
+    </div>
+  </section>
 </div>
 
 <footer>

@@ -18,6 +18,42 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="컬러킷">
   <link rel="stylesheet" href="css/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "랜덤 색상 생성기",
+    "url": "https://colorkit.wooahouse.com/random-color.html",
+    "applicationCategory": "UtilityApplication",
+    "operatingSystem": "Web",
+    "inLanguage": "ko",
+    "isAccessibleForFree": true,
+    "offers": {"@type": "Offer","price": "0","priceCurrency": "KRW"}
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "생성된 색상이 마음에 들지 않으면 다시 생성할 수 있나요?",
+        "acceptedAnswer": {"@type": "Answer","text": "네, 버튼을 클릭할 때마다 새로운 랜덤 색상이 생성됩니다."}
+      },
+      {
+        "@type": "Question",
+        "name": "특정 색상 계열에서만 랜덤 생성할 수 있나요?",
+        "acceptedAnswer": {"@type": "Answer","text": "색조 범위를 설정하여 원하는 계열의 랜덤 색상을 생성할 수 있습니다."}
+      },
+      {
+        "@type": "Question",
+        "name": "생성된 색상 코드를 복사할 수 있나요?",
+        "acceptedAnswer": {"@type": "Answer","text": "네, HEX, RGB, HSL 코드를 각각 복사할 수 있습니다."}
+      }
+    ]
+  }
+  </script>
   <style>
     .random-preview {
       width: 100%;
@@ -120,6 +156,7 @@
     <a href="https://colorkit.wooahouse.com/" target="_blank" rel="noopener" class="active">🎨 ColorKit</a>
     <a href="https://textkit.wooahouse.com/" target="_blank" rel="noopener">📝 TextKit</a>
     <a href="https://qrkit.wooahouse.com/" target="_blank" rel="noopener">📱 QRKit</a>
+    <a href="https://calckit.wooahouse.com/" target="_blank" rel="noopener">🧮 CalcKit</a>
     <a href="https://steamkit.wooahouse.com/" target="_blank" rel="noopener">🎮 SteamKit</a>
     <a href="https://chromekit.wooahouse.com/" target="_blank" rel="noopener">🧩 ChromeKit</a>
     <a href="https://fontkit.wooahouse.com/" target="_blank" rel="noopener">🔤 FontKit</a>
@@ -173,6 +210,24 @@
   <div class="cross-link-tip">
     💡 생성된 색상이 마음에 드셨나요? <a href="palette-generator.html">팔레트 생성기</a>로 어울리는 색상 조합을 만들어 보세요.
   </div>
+
+  <section class="faq-section" style="max-width:800px;margin:3rem auto;padding:0 1rem;">
+    <h2 style="font-size:1.4rem;margin-bottom:1.5rem;">자주 묻는 질문</h2>
+    <div class="faq-list">
+      <div class="faq-item" style="margin-bottom:1.2rem;padding:1rem;background:#f8f9fa;border-radius:8px;">
+        <h3 style="font-size:1rem;font-weight:600;margin-bottom:0.5rem;">Q. 생성된 색상이 마음에 들지 않으면 다시 생성할 수 있나요?</h3>
+        <p style="color:#555;margin:0;">네, 버튼을 클릭할 때마다 새로운 랜덤 색상이 생성됩니다.</p>
+      </div>
+      <div class="faq-item" style="margin-bottom:1.2rem;padding:1rem;background:#f8f9fa;border-radius:8px;">
+        <h3 style="font-size:1rem;font-weight:600;margin-bottom:0.5rem;">Q. 특정 색상 계열에서만 랜덤 생성할 수 있나요?</h3>
+        <p style="color:#555;margin:0;">색조 범위를 설정하여 원하는 계열의 랜덤 색상을 생성할 수 있습니다.</p>
+      </div>
+      <div class="faq-item" style="padding:1rem;background:#f8f9fa;border-radius:8px;">
+        <h3 style="font-size:1rem;font-weight:600;margin-bottom:0.5rem;">Q. 생성된 색상 코드를 복사할 수 있나요?</h3>
+        <p style="color:#555;margin:0;">네, HEX, RGB, HSL 코드를 각각 복사할 수 있습니다.</p>
+      </div>
+    </div>
+  </section>
 </div>
 
 <footer>

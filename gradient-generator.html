@@ -13,6 +13,42 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="컬러킷">
   <link rel="stylesheet" href="css/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "CSS 그라디언트 생성기",
+    "url": "https://colorkit.wooahouse.com/gradient-generator.html",
+    "applicationCategory": "UtilityApplication",
+    "operatingSystem": "Web",
+    "inLanguage": "ko",
+    "isAccessibleForFree": true,
+    "offers": {"@type": "Offer","price": "0","priceCurrency": "KRW"}
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "선형과 방사형 그라디언트 모두 생성할 수 있나요?",
+        "acceptedAnswer": {"@type": "Answer","text": "네, 선형(linear) 및 방사형(radial) 그라디언트를 모두 지원합니다."}
+      },
+      {
+        "@type": "Question",
+        "name": "생성한 그라디언트의 CSS 코드를 바로 복사할 수 있나요?",
+        "acceptedAnswer": {"@type": "Answer","text": "네, 생성된 CSS 코드를 복사 버튼으로 바로 복사할 수 있습니다."}
+      },
+      {
+        "@type": "Question",
+        "name": "색상을 몇 개까지 추가할 수 있나요?",
+        "acceptedAnswer": {"@type": "Answer","text": "여러 색상 정지점(color stop)을 자유롭게 추가하여 복잡한 그라디언트를 만들 수 있습니다."}
+      }
+    ]
+  }
+  </script>
   <style>
     .stop-row { display:flex; align-items:center; gap:10px; padding:10px 12px; background:#F9FAFB; border-radius:8px; margin-bottom:8px; }
     .stop-row input[type="color"] { width:40px; height:32px; }
@@ -46,6 +82,7 @@
     <a href="https://colorkit.wooahouse.com/" target="_blank" rel="noopener" class="active">🎨 ColorKit</a>
     <a href="https://textkit.wooahouse.com/" target="_blank" rel="noopener">📝 TextKit</a>
     <a href="https://qrkit.wooahouse.com/" target="_blank" rel="noopener">📱 QRKit</a>
+    <a href="https://calckit.wooahouse.com/" target="_blank" rel="noopener">🧮 CalcKit</a>
     <a href="https://steamkit.wooahouse.com/" target="_blank" rel="noopener">🎮 SteamKit</a>
     <a href="https://chromekit.wooahouse.com/" target="_blank" rel="noopener">🧩 ChromeKit</a>
     <a href="https://fontkit.wooahouse.com/" target="_blank" rel="noopener">🔤 FontKit</a>
@@ -130,6 +167,24 @@
   <div class="cross-link-tip">
     💡 생성한 색상으로 팔레트를 만들어 보려면 <a href="palette-generator.html">팔레트 생성기</a>를 이용하세요.
   </div>
+
+  <section class="faq-section" style="max-width:800px;margin:3rem auto;padding:0 1rem;">
+    <h2 style="font-size:1.4rem;margin-bottom:1.5rem;">자주 묻는 질문</h2>
+    <div class="faq-list">
+      <div class="faq-item" style="margin-bottom:1.2rem;padding:1rem;background:#f8f9fa;border-radius:8px;">
+        <h3 style="font-size:1rem;font-weight:600;margin-bottom:0.5rem;">Q. 선형과 방사형 그라디언트 모두 생성할 수 있나요?</h3>
+        <p style="color:#555;margin:0;">네, 선형(linear) 및 방사형(radial) 그라디언트를 모두 지원합니다.</p>
+      </div>
+      <div class="faq-item" style="margin-bottom:1.2rem;padding:1rem;background:#f8f9fa;border-radius:8px;">
+        <h3 style="font-size:1rem;font-weight:600;margin-bottom:0.5rem;">Q. 생성한 그라디언트의 CSS 코드를 바로 복사할 수 있나요?</h3>
+        <p style="color:#555;margin:0;">네, 생성된 CSS 코드를 복사 버튼으로 바로 복사할 수 있습니다.</p>
+      </div>
+      <div class="faq-item" style="padding:1rem;background:#f8f9fa;border-radius:8px;">
+        <h3 style="font-size:1rem;font-weight:600;margin-bottom:0.5rem;">Q. 색상을 몇 개까지 추가할 수 있나요?</h3>
+        <p style="color:#555;margin:0;">여러 색상 정지점(color stop)을 자유롭게 추가하여 복잡한 그라디언트를 만들 수 있습니다.</p>
+      </div>
+    </div>
+  </section>
 </div>
 
 <footer>

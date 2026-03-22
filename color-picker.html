@@ -13,6 +13,42 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-title" content="컬러킷">
   <link rel="stylesheet" href="css/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "색상 추출기",
+    "url": "https://colorkit.wooahouse.com/color-picker.html",
+    "applicationCategory": "UtilityApplication",
+    "operatingSystem": "Web",
+    "inLanguage": "ko",
+    "isAccessibleForFree": true,
+    "offers": {"@type": "Offer","price": "0","priceCurrency": "KRW"}
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "이미지에서 색상을 추출할 수 있나요?",
+        "acceptedAnswer": {"@type": "Answer","text": "네, 이미지를 업로드하고 원하는 부분을 클릭하면 해당 픽셀의 색상 코드를 추출할 수 있습니다."}
+      },
+      {
+        "@type": "Question",
+        "name": "추출한 색상을 저장할 수 있나요?",
+        "acceptedAnswer": {"@type": "Answer","text": "추출한 색상을 클립보드에 복사하여 바로 사용할 수 있습니다."}
+      },
+      {
+        "@type": "Question",
+        "name": "어떤 색상 형식으로 표시되나요?",
+        "acceptedAnswer": {"@type": "Answer","text": "HEX, RGB, HSL 세 가지 형식을 동시에 표시합니다."}
+      }
+    ]
+  }
+  </script>
   <style>
     #canvas-wrap { position:relative; display:inline-block; max-width:100%; }
     #imgCanvas { max-width:100%; border-radius:10px; cursor:crosshair; border:1px solid var(--border); display:block; }
@@ -51,6 +87,7 @@
     <a href="https://colorkit.wooahouse.com/" target="_blank" rel="noopener" class="active">🎨 ColorKit</a>
     <a href="https://textkit.wooahouse.com/" target="_blank" rel="noopener">📝 TextKit</a>
     <a href="https://qrkit.wooahouse.com/" target="_blank" rel="noopener">📱 QRKit</a>
+    <a href="https://calckit.wooahouse.com/" target="_blank" rel="noopener">🧮 CalcKit</a>
     <a href="https://steamkit.wooahouse.com/" target="_blank" rel="noopener">🎮 SteamKit</a>
     <a href="https://chromekit.wooahouse.com/" target="_blank" rel="noopener">🧩 ChromeKit</a>
     <a href="https://fontkit.wooahouse.com/" target="_blank" rel="noopener">🔤 FontKit</a>
@@ -137,6 +174,24 @@
   <div class="cross-link-tip">
     💡 추출한 색상을 다른 형식으로 변환하려면 <a href="color-converter.html">HEX ↔ RGB ↔ HSL 변환기</a>를 이용하세요.
   </div>
+
+  <section class="faq-section" style="max-width:800px;margin:3rem auto;padding:0 1rem;">
+    <h2 style="font-size:1.4rem;margin-bottom:1.5rem;">자주 묻는 질문</h2>
+    <div class="faq-list">
+      <div class="faq-item" style="margin-bottom:1.2rem;padding:1rem;background:#f8f9fa;border-radius:8px;">
+        <h3 style="font-size:1rem;font-weight:600;margin-bottom:0.5rem;">Q. 이미지에서 색상을 추출할 수 있나요?</h3>
+        <p style="color:#555;margin:0;">네, 이미지를 업로드하고 원하는 부분을 클릭하면 해당 픽셀의 색상 코드를 추출할 수 있습니다.</p>
+      </div>
+      <div class="faq-item" style="margin-bottom:1.2rem;padding:1rem;background:#f8f9fa;border-radius:8px;">
+        <h3 style="font-size:1rem;font-weight:600;margin-bottom:0.5rem;">Q. 추출한 색상을 저장할 수 있나요?</h3>
+        <p style="color:#555;margin:0;">추출한 색상을 클립보드에 복사하여 바로 사용할 수 있습니다.</p>
+      </div>
+      <div class="faq-item" style="padding:1rem;background:#f8f9fa;border-radius:8px;">
+        <h3 style="font-size:1rem;font-weight:600;margin-bottom:0.5rem;">Q. 어떤 색상 형식으로 표시되나요?</h3>
+        <p style="color:#555;margin:0;">HEX, RGB, HSL 세 가지 형식을 동시에 표시합니다.</p>
+      </div>
+    </div>
+  </section>
 </div>
 
 <footer>

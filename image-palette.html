@@ -27,6 +27,29 @@
     "inLanguage": "ko"
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "어떤 이미지 형식을 지원하나요?",
+        "acceptedAnswer": {"@type": "Answer","text": "JPG, PNG, WebP 등 일반적인 이미지 형식을 지원합니다."}
+      },
+      {
+        "@type": "Question",
+        "name": "추출되는 색상 수는 몇 개인가요?",
+        "acceptedAnswer": {"@type": "Answer","text": "주요 색상과 팔레트 색상을 추출하며, 개수를 조절할 수 있습니다."}
+      },
+      {
+        "@type": "Question",
+        "name": "추출한 색상을 CSS에서 바로 사용할 수 있나요?",
+        "acceptedAnswer": {"@type": "Answer","text": "각 색상의 HEX 코드를 클릭하여 복사한 뒤 CSS에 바로 사용할 수 있습니다."}
+      }
+    ]
+  }
+  </script>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6464921081676309" crossorigin="anonymous"></script>
   <link rel="manifest" href="/manifest.json">
   <meta name="theme-color" content="#8B5CF6">
@@ -307,6 +330,24 @@
   <div class="cross-link-tip">
     💡 추출한 색상을 활용해 <a href="gradient-generator.html">그라디언트를 만들어 보세요</a> 또는 <a href="https://imagekit.wooahouse.com/" target="_blank" rel="noopener">ImageKit에서 이미지 편집하기 →</a>
   </div>
+
+  <section class="faq-section" style="max-width:800px;margin:3rem auto;padding:0 1rem;">
+    <h2 style="font-size:1.4rem;margin-bottom:1.5rem;">자주 묻는 질문</h2>
+    <div class="faq-list">
+      <div class="faq-item" style="margin-bottom:1.2rem;padding:1rem;background:#f8f9fa;border-radius:8px;">
+        <h3 style="font-size:1rem;font-weight:600;margin-bottom:0.5rem;">Q. 어떤 이미지 형식을 지원하나요?</h3>
+        <p style="color:#555;margin:0;">JPG, PNG, WebP 등 일반적인 이미지 형식을 지원합니다.</p>
+      </div>
+      <div class="faq-item" style="margin-bottom:1.2rem;padding:1rem;background:#f8f9fa;border-radius:8px;">
+        <h3 style="font-size:1rem;font-weight:600;margin-bottom:0.5rem;">Q. 추출되는 색상 수는 몇 개인가요?</h3>
+        <p style="color:#555;margin:0;">주요 색상과 팔레트 색상을 추출하며, 개수를 조절할 수 있습니다.</p>
+      </div>
+      <div class="faq-item" style="padding:1rem;background:#f8f9fa;border-radius:8px;">
+        <h3 style="font-size:1rem;font-weight:600;margin-bottom:0.5rem;">Q. 추출한 색상을 CSS에서 바로 사용할 수 있나요?</h3>
+        <p style="color:#555;margin:0;">각 색상의 HEX 코드를 클릭하여 복사한 뒤 CSS에 바로 사용할 수 있습니다.</p>
+      </div>
+    </div>
+  </section>
 </div>
 
 <div class="toast" id="toast"></div>
