@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>이미지 색상 팔레트 추출 무료 — 사진에서 주요 색상 뽑기 | 컬러킷</title>
+  <meta name="description" content="이미지를 업로드하면 주요 색상을 자동으로 추출합니다. HEX, RGB 코드 복사 가능. 무료 온라인 이미지 팔레트 추출 도구.">
+  <meta name="keywords" content="이미지팔레트추출,사진색상추출,색상팔레트,이미지색상분석,주요색상추출,color palette,이미지색상코드,사진팔레트">
+  <link rel="canonical" href="https://colorkit.wooahouse.com/image-palette.html">
+  <!-- Open Graph -->
+  <meta property="og:title" content="이미지 색상 팔레트 추출 무료 | 컬러킷">
+  <meta property="og:description" content="이미지를 업로드하면 주요 색상을 자동으로 추출합니다. HEX, RGB 코드 복사 가능.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://colorkit.wooahouse.com/image-palette.html">
+  <meta property="og:locale" content="ko_KR">
+  <!-- 구조화 데이터 -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "이미지 색상 팔레트 추출기",
+    "url": "https://colorkit.wooahouse.com/image-palette.html",
+    "description": "이미지를 업로드하면 주요 색상을 자동으로 추출합니다. HEX, RGB 코드 복사 가능.",
+    "applicationCategory": "DesignApplication",
+    "operatingSystem": "Web",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "KRW" },
+    "inLanguage": "ko"
+  }
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6464921081676309" crossorigin="anonymous"></script>
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#8B5CF6">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="컬러킷">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .palette-extract-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      gap: 14px;
+      margin-top: 20px;
+    }
+    .palette-item {
+      background: white;
+      border-radius: var(--radius-sm);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      cursor: pointer;
+      transition: transform 0.15s;
+    }
+    .palette-item:hover { transform: translateY(-3px); }
+    .palette-item-swatch {
+      width: 100%;
+      height: 90px;
+    }
+    .palette-item-info {
+      padding: 10px;
+      text-align: center;
+    }
+    .palette-item-hex {
+      font-family: 'Courier New', monospace;
+      font-weight: 700;
+      font-size: 0.85rem;
+      color: var(--text);
+      margin-bottom: 2px;
+    }
+    .palette-item-rgb {
+      font-family: 'Courier New', monospace;
+      font-size: 0.72rem;
+      color: var(--text-light);
+      margin-bottom: 4px;
+    }
+    .palette-item-name {
+      font-size: 0.7rem;
+      color: var(--text-light);
+    }
+    .palette-item .btn-copy {
+      width: 100%;
+      justify-content: center;
+      border-radius: 0;
+      padding: 6px;
+      font-size: 0.75rem;
+    }
+    .dominant-section {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    .dominant-swatch {
+      width: 100px;
+      height: 100px;
+      border-radius: var(--radius);
+      border: 2px solid var(--border);
+      flex-shrink: 0;
+    }
+    .dominant-info { flex: 1; min-width: 150px; }
+    .dominant-label {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text-light);
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      margin-bottom: 6px;
+    }
+    .dominant-hex {
+      font-family: 'Courier New', monospace;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--text);
+    }
+    .dominant-rgb {
+      font-family: 'Courier New', monospace;
+      font-size: 0.9rem;
+      color: var(--text-light);
+    }
+    .palette-bar {
+      width: 100%;
+      height: 40px;
+      border-radius: var(--radius-sm);
+      display: flex;
+      overflow: hidden;
+      margin-top: 16px;
+      border: 1px solid var(--border);
+    }
+    .palette-bar-segment {
+      height: 100%;
+      transition: flex 0.3s;
+    }
+    .count-selector {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .count-btn {
+      padding: 6px 16px;
+      border: 1.5px solid var(--border);
+      border-radius: 20px;
+      background: white;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: inherit;
+      transition: all 0.15s;
+      color: var(--text);
+    }
+    .count-btn:hover { border-color: var(--primary); color: var(--primary); }
+    .count-btn.active {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+    }
+    .image-preview-wrap {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .image-preview-wrap img {
+      max-width: 100%;
+      max-height: 350px;
+      border-radius: var(--radius-sm);
+      box-shadow: var(--shadow);
+    }
+    .css-vars-output {
+      margin-top: 20px;
+    }
+    .toast {
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%) translateY(80px);
+      background: #1F2937;
+      color: white;
+      padding: 10px 24px;
+      border-radius: 30px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      opacity: 0;
+      transition: all 0.3s;
+      z-index: 999;
+      pointer-events: none;
+    }
+    .toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">컬러킷 <span>| ColorKit</span></a>
+    <nav>
+      <a href="color-converter.html">변환</a>
+      <a href="gradient-generator.html">생성</a>
+      <a href="contrast-checker.html">분석</a>
+      <a href="box-shadow.html">CSS 도구</a>
+      <a href="color-picker.html">색상 추출</a>
+    </nav>
+  </div>
+</header>
+
+<div class="our-sites-bar">
+  <span class="our-sites-label">Linker Services</span>
+  <div class="our-sites-links">
+    <a href="https://linker.wooahouse.com/" target="_blank" rel="noopener">🔗 Linker</a>
+    <a href="https://pdfkit.wooahouse.com/" target="_blank" rel="noopener">📄 PDFKit</a>
+    <a href="https://imagekit.wooahouse.com/" target="_blank" rel="noopener">🖼️ ImageKit</a>
+    <a href="https://colorkit.wooahouse.com/" target="_blank" rel="noopener" class="active">🎨 ColorKit</a>
+    <a href="https://textkit.wooahouse.com/" target="_blank" rel="noopener">📝 TextKit</a>
+    <a href="https://qrkit.wooahouse.com/" target="_blank" rel="noopener">📱 QRKit</a>
+    <a href="https://steamkit.wooahouse.com/" target="_blank" rel="noopener">🎮 SteamKit</a>
+    <a href="https://chromekit.wooahouse.com/" target="_blank" rel="noopener">🧩 ChromeKit</a>
+    <a href="https://fontkit.wooahouse.com/" target="_blank" rel="noopener">🔤 FontKit</a>
+    <a href="https://mactools.wooahouse.com/" target="_blank" rel="noopener">🍎 MacTools</a>
+    <a href="https://pctools.wooahouse.com/" target="_blank" rel="noopener">🖥️ PCTools</a>
+    <a href="https://vskit.wooahouse.com/" target="_blank" rel="noopener">💻 VSKit</a>
+    <a href="https://calckit.wooahouse.com/" target="_blank" rel="noopener">🧮 CalcKit</a>
+  </div>
+</div>
+
+<div class="tool-page">
+  <div class="breadcrumb">
+    <a href="index.html">컬러킷</a>
+    <span>›</span>
+    <span>이미지 색상 팔레트 추출</span>
+  </div>
+
+  <div class="tool-header">
+    <span class="tool-header-icon">🖼️</span>
+    <h1>이미지 색상 팔레트 추출</h1>
+    <p>이미지를 업로드하면 주요 색상을 자동으로 추출합니다</p>
+  </div>
+
+  <!-- Drop Zone -->
+  <div class="drop-zone" id="dropZone">
+    <span class="drop-zone-icon">📂</span>
+    <h3>이미지를 드래그 앤 드롭하세요</h3>
+    <p>JPG, PNG, WebP 등 이미지 파일 지원</p>
+    <button class="btn-select" onclick="document.getElementById('fileInput').click()">파일 선택</button>
+    <input type="file" id="fileInput" accept="image/*" hidden>
+  </div>
+
+  <!-- Image Preview -->
+  <div id="previewSection" class="image-preview-wrap" style="display:none;">
+    <img id="imagePreview" alt="업로드된 이미지 미리보기">
+  </div>
+
+  <!-- Color Count Selector -->
+  <div id="optionsSection" class="panel" style="display:none;">
+    <div class="panel-title">추출 색상 수</div>
+    <div class="count-selector">
+      <button class="count-btn" data-count="4">4색</button>
+      <button class="count-btn" data-count="6">6색</button>
+      <button class="count-btn active" data-count="8">8색</button>
+      <button class="count-btn" data-count="10">10색</button>
+      <button class="count-btn" data-count="12">12색</button>
+    </div>
+  </div>
+
+  <!-- Results -->
+  <div id="resultSection" style="display:none;">
+    <!-- Dominant Color -->
+    <div class="panel">
+      <div class="panel-title">주요 색상 (Dominant)</div>
+      <div class="dominant-section">
+        <div class="dominant-swatch" id="dominantSwatch"></div>
+        <div class="dominant-info">
+          <div class="dominant-label">가장 눈에 띄는 색상</div>
+          <div class="dominant-hex" id="dominantHex"></div>
+          <div class="dominant-rgb" id="dominantRgb"></div>
+          <div id="dominantName" style="font-size:0.82rem;color:var(--text-light);margin-top:4px;"></div>
+          <button class="btn-copy mt-8" onclick="copyText(document.getElementById('dominantHex').textContent)">HEX 복사</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Palette Bar -->
+    <div class="panel">
+      <div class="panel-title">팔레트 프리뷰</div>
+      <div class="palette-bar" id="paletteBar"></div>
+    </div>
+
+    <!-- Color Swatches Grid -->
+    <div class="panel">
+      <div class="panel-title">추출된 색상</div>
+      <div class="palette-extract-grid" id="paletteGrid"></div>
+    </div>
+
+    <!-- Bulk Copy & CSS Output -->
+    <div class="panel">
+      <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px;">
+        <button class="btn btn-primary" onclick="copyAllHex()">팔레트 코드 전체 복사</button>
+        <button class="btn btn-secondary" onclick="copyCssVars()">CSS 변수 복사</button>
+      </div>
+      <div class="css-vars-output">
+        <div class="code-block">
+          <button class="code-copy-btn" onclick="copyCssVars()">복사</button>
+          <pre id="cssVarsCode"></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cross-link-tip">
+    💡 추출한 색상을 활용해 <a href="gradient-generator.html">그라디언트를 만들어 보세요</a> 또는 <a href="https://imagekit.wooahouse.com/" target="_blank" rel="noopener">ImageKit에서 이미지 편집하기 →</a>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-bottom">
+      <p>© 2026 컬러킷. 모든 권리 보유.</p>
+      <div class="footer-bottom-links">
+        <a href="privacy.html">개인정보처리방침</a>
+        <a href="about.html">소개</a>
+        <a href="index.html">전체 도구</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.0/color-thief.umd.js"></script>
+<script src="js/pwa-install.js"></script>
+<script>
+(function() {
+  const colorThief = new ColorThief();
+  let currentImage = null;
+  let currentCount = 8;
+  let currentPalette = [];
+
+  // Color name approximation
+  const colorNames = [
+    { name: '빨강', h: [0, 15] }, { name: '주황', h: [15, 40] },
+    { name: '노랑', h: [40, 65] }, { name: '연두', h: [65, 80] },
+    { name: '초록', h: [80, 160] }, { name: '청록', h: [160, 190] },
+    { name: '파랑', h: [190, 260] }, { name: '남색', h: [260, 280] },
+    { name: '보라', h: [280, 320] }, { name: '분홍', h: [320, 345] },
+    { name: '빨강', h: [345, 361] }
+  ];
+
+  function getColorName(r, g, b) {
+    const max = Math.max(r, g, b), min = Math.min(r, g, b);
+    const l = (max + min) / 2;
+    const d = max - min;
+    if (d < 20) {
+      if (l < 40) return '검정';
+      if (l > 220) return '흰색';
+      return '회색';
+    }
+    let h;
+    if (max === r) h = ((g - b) / d + (g < b ? 6 : 0)) * 60;
+    else if (max === g) h = ((b - r) / d + 2) * 60;
+    else h = ((r - g) / d + 4) * 60;
+    if (h < 0) h += 360;
+    for (const c of colorNames) {
+      if (h >= c.h[0] && h < c.h[1]) return c.name;
+    }
+    return '색상';
+  }
+
+  function rgbToHex(r, g, b) {
+    return '#' + [r, g, b].map(v => v.toString(16).padStart(2, '0')).join('').toUpperCase();
+  }
+
+  // Drop zone
+  const dropZone = document.getElementById('dropZone');
+  const fileInput = document.getElementById('fileInput');
+
+  dropZone.addEventListener('dragover', e => { e.preventDefault(); dropZone.classList.add('drag-over'); });
+  dropZone.addEventListener('dragleave', () => dropZone.classList.remove('drag-over'));
+  dropZone.addEventListener('drop', e => {
+    e.preventDefault();
+    dropZone.classList.remove('drag-over');
+    if (e.dataTransfer.files.length) handleFile(e.dataTransfer.files[0]);
+  });
+  dropZone.addEventListener('click', e => {
+    if (e.target.tagName !== 'BUTTON') fileInput.click();
+  });
+  fileInput.addEventListener('change', () => {
+    if (fileInput.files.length) handleFile(fileInput.files[0]);
+  });
+
+  function handleFile(file) {
+    if (!file.type.startsWith('image/')) {
+      showToast('이미지 파일만 지원합니다.');
+      return;
+    }
+    const reader = new FileReader();
+    reader.onload = function(e) {
+      const img = document.getElementById('imagePreview');
+      img.src = e.target.result;
+      img.onload = function() {
+        currentImage = img;
+        document.getElementById('previewSection').style.display = 'block';
+        document.getElementById('optionsSection').style.display = 'block';
+        dropZone.style.display = 'none';
+        extractPalette();
+      };
+    };
+    reader.readAsDataURL(file);
+  }
+
+  // Count selector
+  document.querySelectorAll('.count-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('.count-btn').forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      currentCount = parseInt(this.dataset.count);
+      if (currentImage) extractPalette();
+    });
+  });
+
+  function extractPalette() {
+    if (!currentImage) return;
+
+    try {
+      const dominant = colorThief.getColor(currentImage);
+      const palette = colorThief.getPalette(currentImage, currentCount);
+      currentPalette = palette;
+
+      const domHex = rgbToHex(dominant[0], dominant[1], dominant[2]);
+      document.getElementById('dominantSwatch').style.background = domHex;
+      document.getElementById('dominantHex').textContent = domHex;
+      document.getElementById('dominantRgb').textContent = `rgb(${dominant[0]}, ${dominant[1]}, ${dominant[2]})`;
+      document.getElementById('dominantName').textContent = getColorName(dominant[0], dominant[1], dominant[2]);
+
+      // Palette bar
+      const bar = document.getElementById('paletteBar');
+      bar.innerHTML = '';
+      palette.forEach(c => {
+        const seg = document.createElement('div');
+        seg.className = 'palette-bar-segment';
+        seg.style.flex = '1';
+        seg.style.background = rgbToHex(c[0], c[1], c[2]);
+        bar.appendChild(seg);
+      });
+
+      // Palette grid
+      const grid = document.getElementById('paletteGrid');
+      grid.innerHTML = '';
+      palette.forEach(c => {
+        const hex = rgbToHex(c[0], c[1], c[2]);
+        const name = getColorName(c[0], c[1], c[2]);
+        const item = document.createElement('div');
+        item.className = 'palette-item';
+        item.innerHTML = `
+          <div class="palette-item-swatch" style="background:${hex};"></div>
+          <div class="palette-item-info">
+            <div class="palette-item-hex">${hex}</div>
+            <div class="palette-item-rgb">rgb(${c[0]}, ${c[1]}, ${c[2]})</div>
+            <div class="palette-item-name">${name}</div>
+          </div>
+          <button class="btn-copy" onclick="event.stopPropagation();copyText('${hex}')">HEX 복사</button>
+        `;
+        item.addEventListener('click', () => copyText(hex));
+        grid.appendChild(item);
+      });
+
+      // CSS vars
+      let css = ':root {\n';
+      palette.forEach((c, i) => {
+        css += `  --color-${i + 1}: ${rgbToHex(c[0], c[1], c[2])};\n`;
+      });
+      css += '}';
+      document.getElementById('cssVarsCode').textContent = css;
+
+      document.getElementById('resultSection').style.display = 'block';
+    } catch (err) {
+      showToast('색상 추출 중 오류가 발생했습니다. 다른 이미지를 시도해 주세요.');
+    }
+  }
+
+  // Copy functions (global)
+  window.copyText = function(text) {
+    navigator.clipboard.writeText(text).then(() => showToast('복사됨! ' + text));
+  };
+
+  window.copyAllHex = function() {
+    const hexArr = currentPalette.map(c => rgbToHex(c[0], c[1], c[2]));
+    const str = '[\'' + hexArr.join('\', \'') + '\']';
+    navigator.clipboard.writeText(str).then(() => showToast('팔레트 전체 코드가 복사되었습니다!'));
+  };
+
+  window.copyCssVars = function() {
+    const code = document.getElementById('cssVarsCode').textContent;
+    navigator.clipboard.writeText(code).then(() => {
+      showToast('CSS 변수 코드가 복사되었습니다!');
+      const btn = document.querySelector('.code-copy-btn');
+      if (btn) { btn.textContent = '복사됨!'; btn.classList.add('copied'); setTimeout(() => { btn.textContent = '복사'; btn.classList.remove('copied'); }, 1500); }
+    });
+  };
+
+  function showToast(msg) {
+    const t = document.getElementById('toast');
+    t.textContent = msg;
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 2000);
+  }
+})();
+</script>
+</body>
+</html>

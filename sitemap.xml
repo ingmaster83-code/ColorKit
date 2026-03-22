@@ -67,6 +67,18 @@
     <priority>0.9</priority>
   </url>
   <url>
+    <loc>https://colorkit.wooahouse.com/image-palette.html</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://colorkit.wooahouse.com/gradient-gallery.html</loc>
+    <lastmod>2026-03-22</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
     <loc>https://colorkit.wooahouse.com/about.html</loc>
     <lastmod>2026-03-15</lastmod>
     <changefreq>yearly</changefreq>

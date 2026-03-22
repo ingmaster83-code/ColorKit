@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS 그라디언트 갤러리 — 트렌디한 그라디언트 코드 모음 무료 | 컬러킷</title>
+  <meta name="description" content="트렌디한 CSS 그라디언트 50가지 모음. 클릭 한 번으로 CSS 코드 복사. 자연, 파스텔, 비비드, 다크, 비즈니스, 트렌드 카테고리별 그라디언트.">
+  <meta name="keywords" content="CSS그라디언트갤러리,그라디언트코드,CSS gradient,background gradient,그라디언트모음,무료그라디언트,CSS배경,그라디언트복사">
+  <link rel="canonical" href="https://colorkit.wooahouse.com/gradient-gallery.html">
+  <!-- Open Graph -->
+  <meta property="og:title" content="CSS 그라디언트 갤러리 — 트렌디한 그라디언트 코드 모음 | 컬러킷">
+  <meta property="og:description" content="트렌디한 CSS 그라디언트 50가지 모음. 클릭 한 번으로 CSS 코드 복사.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://colorkit.wooahouse.com/gradient-gallery.html">
+  <meta property="og:locale" content="ko_KR">
+  <!-- 구조화 데이터 -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "CSS 그라디언트 갤러리",
+    "url": "https://colorkit.wooahouse.com/gradient-gallery.html",
+    "description": "트렌디한 CSS 그라디언트 50가지 모음. 클릭 한 번으로 CSS 코드 복사.",
+    "applicationCategory": "DesignApplication",
+    "operatingSystem": "Web",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "KRW" },
+    "inLanguage": "ko"
+  }
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6464921081676309" crossorigin="anonymous"></script>
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#8B5CF6">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="컬러킷">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .gallery-controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      margin-bottom: 24px;
+    }
+    .search-input {
+      flex: 1;
+      min-width: 180px;
+      padding: 10px 16px;
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-sm);
+      font-size: 0.9rem;
+      font-family: inherit;
+      color: var(--text);
+      background: white;
+      outline: none;
+      transition: border-color 0.15s;
+    }
+    .search-input:focus { border-color: var(--primary); }
+    .filter-btns {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+    .filter-btn {
+      padding: 6px 14px;
+      border: 1.5px solid var(--border);
+      border-radius: 20px;
+      background: white;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: inherit;
+      transition: all 0.15s;
+      color: var(--text);
+    }
+    .filter-btn:hover { border-color: var(--primary); color: var(--primary); }
+    .filter-btn.active {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+    }
+    .gradient-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 18px;
+    }
+    .gradient-card {
+      background: white;
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: transform 0.2s, box-shadow 0.2s;
+      border: 1px solid transparent;
+    }
+    .gradient-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-hover);
+      border-color: rgba(139,92,246,0.15);
+    }
+    .gradient-card-preview {
+      width: 100%;
+      height: 160px;
+      cursor: pointer;
+      position: relative;
+    }
+    .gradient-card-preview:active { transform: scale(0.98); }
+    .gradient-card-body {
+      padding: 14px;
+    }
+    .gradient-card-name {
+      font-weight: 700;
+      font-size: 0.9rem;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+    .gradient-card-css {
+      font-family: 'Courier New', monospace;
+      font-size: 0.72rem;
+      color: var(--text-light);
+      line-height: 1.5;
+      word-break: break-all;
+      margin-bottom: 10px;
+      max-height: 40px;
+      overflow: hidden;
+    }
+    .gradient-card-actions {
+      display: flex;
+      gap: 8px;
+    }
+    .gradient-card-actions button {
+      flex: 1;
+      padding: 7px 10px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      background: #F9FAFB;
+      font-size: 0.78rem;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: inherit;
+      transition: all 0.15s;
+      color: var(--text);
+    }
+    .gradient-card-actions button:hover {
+      background: var(--primary-light);
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+    .gradient-card-actions button.copied {
+      background: #D1FAE5;
+      border-color: #059669;
+      color: #059669;
+    }
+    .toast {
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%) translateY(80px);
+      background: #1F2937;
+      color: white;
+      padding: 10px 24px;
+      border-radius: 30px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      opacity: 0;
+      transition: all 0.3s;
+      z-index: 999;
+      pointer-events: none;
+    }
+    .toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+    .no-results {
+      text-align: center;
+      padding: 60px 20px;
+      color: var(--text-light);
+      font-size: 0.95rem;
+      grid-column: 1 / -1;
+    }
+    @media (max-width: 520px) {
+      .gradient-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 12px; }
+      .gradient-card-preview { height: 120px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">컬러킷 <span>| ColorKit</span></a>
+    <nav>
+      <a href="color-converter.html">변환</a>
+      <a href="gradient-generator.html">생성</a>
+      <a href="contrast-checker.html">분석</a>
+      <a href="box-shadow.html">CSS 도구</a>
+      <a href="color-picker.html">색상 추출</a>
+    </nav>
+  </div>
+</header>
+
+<div class="our-sites-bar">
+  <span class="our-sites-label">Linker Services</span>
+  <div class="our-sites-links">
+    <a href="https://linker.wooahouse.com/" target="_blank" rel="noopener">🔗 Linker</a>
+    <a href="https://pdfkit.wooahouse.com/" target="_blank" rel="noopener">📄 PDFKit</a>
+    <a href="https://imagekit.wooahouse.com/" target="_blank" rel="noopener">🖼️ ImageKit</a>
+    <a href="https://colorkit.wooahouse.com/" target="_blank" rel="noopener" class="active">🎨 ColorKit</a>
+    <a href="https://textkit.wooahouse.com/" target="_blank" rel="noopener">📝 TextKit</a>
+    <a href="https://qrkit.wooahouse.com/" target="_blank" rel="noopener">📱 QRKit</a>
+    <a href="https://steamkit.wooahouse.com/" target="_blank" rel="noopener">🎮 SteamKit</a>
+    <a href="https://chromekit.wooahouse.com/" target="_blank" rel="noopener">🧩 ChromeKit</a>
+    <a href="https://fontkit.wooahouse.com/" target="_blank" rel="noopener">🔤 FontKit</a>
+    <a href="https://mactools.wooahouse.com/" target="_blank" rel="noopener">🍎 MacTools</a>
+    <a href="https://pctools.wooahouse.com/" target="_blank" rel="noopener">🖥️ PCTools</a>
+    <a href="https://vskit.wooahouse.com/" target="_blank" rel="noopener">💻 VSKit</a>
+    <a href="https://calckit.wooahouse.com/" target="_blank" rel="noopener">🧮 CalcKit</a>
+  </div>
+</div>
+
+<div class="tool-page" style="max-width:1100px;">
+  <div class="breadcrumb">
+    <a href="index.html">컬러킷</a>
+    <span>›</span>
+    <span>CSS 그라디언트 갤러리</span>
+  </div>
+
+  <div class="tool-header">
+    <span class="tool-header-icon">🌈</span>
+    <h1>CSS 그라디언트 갤러리</h1>
+    <p>트렌디한 CSS 그라디언트 50가지 이상. 클릭 한 번으로 코드를 복사하세요.</p>
+  </div>
+
+  <!-- Controls -->
+  <div class="gallery-controls">
+    <input type="text" class="search-input" id="searchInput" placeholder="그라디언트 이름 검색...">
+    <div class="filter-btns" id="filterBtns">
+      <button class="filter-btn active" data-cat="all">전체</button>
+      <button class="filter-btn" data-cat="nature">자연</button>
+      <button class="filter-btn" data-cat="pastel">파스텔</button>
+      <button class="filter-btn" data-cat="vivid">비비드</button>
+      <button class="filter-btn" data-cat="dark">다크</button>
+      <button class="filter-btn" data-cat="business">비즈니스</button>
+      <button class="filter-btn" data-cat="trend">트렌드 2025</button>
+      <button class="filter-btn" data-cat="direction">방향별</button>
+    </div>
+  </div>
+
+  <!-- Grid -->
+  <div class="gradient-grid" id="gradientGrid"></div>
+
+  <div class="cross-link-tip mt-24">
+    💡 그라디언트를 직접 커스터마이징하려면 <a href="gradient-generator.html">그라디언트 생성기</a>를 사용해 보세요. 색상이 마음에 드셨다면 <a href="https://fontkit.wooahouse.com/" target="_blank" rel="noopener">FontKit에서 어울리는 폰트도 찾아보세요 →</a>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-bottom">
+      <p>© 2026 컬러킷. 모든 권리 보유.</p>
+      <div class="footer-bottom-links">
+        <a href="privacy.html">개인정보처리방침</a>
+        <a href="about.html">소개</a>
+        <a href="index.html">전체 도구</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="js/pwa-install.js"></script>
+<script>
+(function() {
+  const gradients = [
+    // 자연 (Nature)
+    { name: '일출', css: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)', cat: 'nature' },
+    { name: '바다', css: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', cat: 'nature' },
+    { name: '숲', css: 'linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)', cat: 'nature' },
+    { name: '하늘', css: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)', cat: 'nature' },
+    { name: '노을', css: 'linear-gradient(135deg, #f77062 0%, #fe5196 100%)', cat: 'nature' },
+    { name: '새벽', css: 'linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%)', cat: 'nature' },
+    { name: '은하수', css: 'linear-gradient(135deg, #0c3483 0%, #a2b6df 50%, #6b8cce 100%)', cat: 'nature' },
+    { name: '초원', css: 'linear-gradient(135deg, #d4fc79 0%, #96e6a1 100%)', cat: 'nature' },
+    // 파스텔 (Pastel)
+    { name: '라벤더', css: 'linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%)', cat: 'pastel' },
+    { name: '복숭아', css: 'linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)', cat: 'pastel' },
+    { name: '민트', css: 'linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)', cat: 'pastel' },
+    { name: '바닐라', css: 'linear-gradient(135deg, #fff1eb 0%, #ace0f9 100%)', cat: 'pastel' },
+    { name: '라임', css: 'linear-gradient(135deg, #c1dfc4 0%, #deecdd 100%)', cat: 'pastel' },
+    { name: '코랄', css: 'linear-gradient(135deg, #fda085 0%, #f6d365 100%)', cat: 'pastel' },
+    { name: '블루밍', css: 'linear-gradient(135deg, #fccb90 0%, #d57eeb 100%)', cat: 'pastel' },
+    { name: '소다', css: 'linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%)', cat: 'pastel' },
+    // 비비드 (Vivid)
+    { name: '퍼플레인', css: 'linear-gradient(135deg, #7F00FF 0%, #E100FF 100%)', cat: 'vivid' },
+    { name: '핫핑크', css: 'linear-gradient(135deg, #f953c6 0%, #b91d73 100%)', cat: 'vivid' },
+    { name: '전기파랑', css: 'linear-gradient(135deg, #0052D4 0%, #4364F7 50%, #6FB1FC 100%)', cat: 'vivid' },
+    { name: '오렌지', css: 'linear-gradient(135deg, #FC4A1A 0%, #F7B733 100%)', cat: 'vivid' },
+    { name: '에메랄드', css: 'linear-gradient(135deg, #11998e 0%, #38ef7d 100%)', cat: 'vivid' },
+    { name: '루비', css: 'linear-gradient(135deg, #CB2D3E 0%, #EF473A 100%)', cat: 'vivid' },
+    { name: '네온그린', css: 'linear-gradient(135deg, #ADFF2F 0%, #00FF7F 100%)', cat: 'vivid' },
+    { name: '사이버', css: 'linear-gradient(135deg, #9b59b6 0%, #3498db 100%)', cat: 'vivid' },
+    // 다크 (Dark)
+    { name: '미드나잇', css: 'linear-gradient(135deg, #232526 0%, #414345 100%)', cat: 'dark' },
+    { name: '딥스페이스', css: 'linear-gradient(135deg, #000000 0%, #434343 100%)', cat: 'dark' },
+    { name: '블루나이트', css: 'linear-gradient(135deg, #0F2027 0%, #203A43 50%, #2C5364 100%)', cat: 'dark' },
+    { name: '퍼플다크', css: 'linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)', cat: 'dark' },
+    { name: '차콜', css: 'linear-gradient(135deg, #485563 0%, #29323c 100%)', cat: 'dark' },
+    { name: '인디고', css: 'linear-gradient(135deg, #1a1a4e 0%, #2d2d8e 100%)', cat: 'dark' },
+    // 비즈니스 (Business)
+    { name: '슬레이트', css: 'linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%)', cat: 'business' },
+    { name: '실버', css: 'linear-gradient(135deg, #bdc3c7 0%, #2c3e50 100%)', cat: 'business' },
+    { name: '코발트', css: 'linear-gradient(135deg, #1565C0 0%, #b92b27 100%)', cat: 'business' },
+    { name: '트러스트', css: 'linear-gradient(135deg, #3a7bd5 0%, #3a6073 100%)', cat: 'business' },
+    { name: '그린민트', css: 'linear-gradient(135deg, #00b09b 0%, #96c93d 100%)', cat: 'business' },
+    { name: '애쉬', css: 'linear-gradient(135deg, #606c88 0%, #3f4c6b 100%)', cat: 'business' },
+    // 트렌드 2025 (Trending)
+    { name: '코튼캔디', css: 'linear-gradient(135deg, #FFAFBD 0%, #ffc3a0 100%)', cat: 'trend' },
+    { name: '딸기우유', css: 'linear-gradient(135deg, #f8b195 0%, #f67280 50%, #c06c84 100%)', cat: 'trend' },
+    { name: '오로라', css: 'linear-gradient(135deg, #00d2ff 0%, #7b2ff7 100%)', cat: 'trend' },
+    { name: '하이퍼', css: 'linear-gradient(to right, #f64f59, #c471ed, #12c2e9)', cat: 'trend' },
+    { name: '크리스탈', css: 'linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%)', cat: 'trend' },
+    { name: '젤리', css: 'linear-gradient(135deg, #89FFFD 0%, #EF32D9 100%)', cat: 'trend' },
+    { name: '모카', css: 'linear-gradient(135deg, #8B5E3C 0%, #D4A96A 100%)', cat: 'trend' },
+    { name: '세이지', css: 'linear-gradient(135deg, #7fb185 0%, #b8d4bb 100%)', cat: 'trend' },
+    // 방향별 (Directions)
+    { name: '선셋 (→)', css: 'linear-gradient(to right, #ff9a9e 0%, #fad0c4 100%)', cat: 'direction' },
+    { name: '오션 (↓)', css: 'linear-gradient(to bottom, #00c6fb 0%, #005bea 100%)', cat: 'direction' },
+    { name: '네온 (45deg)', css: 'linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 50%, #2BFF88 100%)', cat: 'direction' },
+    { name: '솔라 (↗)', css: 'linear-gradient(to top right, #f83600 0%, #f9d423 100%)', cat: 'direction' },
+    { name: '파도 (←)', css: 'linear-gradient(to left, #0575E6 0%, #021B79 100%)', cat: 'direction' },
+    { name: '원형 빛', css: 'radial-gradient(circle, #f5f7fa 0%, #c3cfe2 100%)', cat: 'direction' },
+    { name: '코닉 무지개', css: 'conic-gradient(from 0deg, #ff0000, #ff8800, #ffff00, #00ff00, #0088ff, #8800ff, #ff0000)', cat: 'direction' },
+    { name: '원형 글로우', css: 'radial-gradient(circle at 30% 40%, #667eea 0%, #764ba2 100%)', cat: 'direction' }
+  ];
+
+  const grid = document.getElementById('gradientGrid');
+  const searchInput = document.getElementById('searchInput');
+
+  function renderGradients(filter, query) {
+    grid.innerHTML = '';
+    const filtered = gradients.filter(g => {
+      const catMatch = filter === 'all' || g.cat === filter;
+      const nameMatch = !query || g.name.toLowerCase().includes(query.toLowerCase());
+      return catMatch && nameMatch;
+    });
+
+    if (filtered.length === 0) {
+      grid.innerHTML = '<div class="no-results">검색 결과가 없습니다.</div>';
+      return;
+    }
+
+    filtered.forEach(g => {
+      const card = document.createElement('div');
+      card.className = 'gradient-card';
+      card.innerHTML = `
+        <div class="gradient-card-preview" style="background:${g.css};" title="클릭하여 코드 복사"></div>
+        <div class="gradient-card-body">
+          <div class="gradient-card-name">${g.name}</div>
+          <div class="gradient-card-css">${g.css}</div>
+          <div class="gradient-card-actions">
+            <button class="copy-bg-btn" data-css="background: ${g.css};">코드 복사</button>
+            <button class="copy-var-btn" data-css="${g.css}">CSS값 복사</button>
+          </div>
+        </div>
+      `;
+      // Click preview to copy
+      card.querySelector('.gradient-card-preview').addEventListener('click', () => {
+        copyToClipboard('background: ' + g.css + ';', card.querySelector('.copy-bg-btn'));
+      });
+      card.querySelector('.copy-bg-btn').addEventListener('click', function() {
+        copyToClipboard(this.dataset.css, this);
+      });
+      card.querySelector('.copy-var-btn').addEventListener('click', function() {
+        copyToClipboard(this.dataset.css, this);
+      });
+      grid.appendChild(card);
+    });
+  }
+
+  function copyToClipboard(text, btn) {
+    navigator.clipboard.writeText(text).then(() => {
+      showToast('복사됨!');
+      if (btn) {
+        const orig = btn.textContent;
+        btn.textContent = '복사됨!';
+        btn.classList.add('copied');
+        setTimeout(() => { btn.textContent = orig; btn.classList.remove('copied'); }, 1500);
+      }
+    });
+  }
+
+  // Filter buttons
+  let currentFilter = 'all';
+  document.getElementById('filterBtns').addEventListener('click', function(e) {
+    if (!e.target.classList.contains('filter-btn')) return;
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    e.target.classList.add('active');
+    currentFilter = e.target.dataset.cat;
+    renderGradients(currentFilter, searchInput.value.trim());
+  });
+
+  // Search
+  searchInput.addEventListener('input', function() {
+    renderGradients(currentFilter, this.value.trim());
+  });
+
+  function showToast(msg) {
+    const t = document.getElementById('toast');
+    t.textContent = msg;
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 1500);
+  }
+
+  // Initial render
+  renderGradients('all', '');
+})();
+</script>
+</body>
+</html>
