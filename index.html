@@ -46,7 +46,14 @@
       {"@type":"ListItem","position":7,"name":"색상 혼합기","url":"https://colorkit.wooahouse.com/color-mixer.html"},
       {"@type":"ListItem","position":8,"name":"박스 그림자 생성기","url":"https://colorkit.wooahouse.com/box-shadow.html"},
       {"@type":"ListItem","position":9,"name":"텍스트 그림자 생성기","url":"https://colorkit.wooahouse.com/text-shadow.html"},
-      {"@type":"ListItem","position":10,"name":"불투명도 변환기","url":"https://colorkit.wooahouse.com/opacity-converter.html"}
+      {"@type":"ListItem","position":10,"name":"불투명도 변환기","url":"https://colorkit.wooahouse.com/opacity-converter.html"},
+      {"@type":"ListItem","position":11,"name":"이미지 팔레트 추출","url":"https://colorkit.wooahouse.com/image-palette.html"},
+      {"@type":"ListItem","position":12,"name":"CSS 그라디언트 갤러리","url":"https://colorkit.wooahouse.com/gradient-gallery.html"},
+      {"@type":"ListItem","position":13,"name":"틴트·셰이드 생성기","url":"https://colorkit.wooahouse.com/tints-shades.html"},
+      {"@type":"ListItem","position":14,"name":"색상 이름 찾기","url":"https://colorkit.wooahouse.com/color-name.html"},
+      {"@type":"ListItem","position":15,"name":"CSS 변수 생성기","url":"https://colorkit.wooahouse.com/css-variables.html"},
+      {"@type":"ListItem","position":16,"name":"전체 색상 변환기","url":"https://colorkit.wooahouse.com/color-converter-full.html"},
+      {"@type":"ListItem","position":17,"name":"팔레트 대비 검사기","url":"https://colorkit.wooahouse.com/palette-contrast.html"}
     ]
   }
   </script>
@@ -138,7 +145,21 @@
         <div class="tool-name">색상 추출</div>
         <div class="tool-desc">이미지에서 색상 추출 (캔버스 픽셀 샘플링)</div>
       </a>
-    
+      <a href="color-converter-full.html" class="tool-card">
+        <span class="new-badge">NEW</span>
+        <span class="free-badge">무료</span>
+        <span class="tool-icon">🔁</span>
+        <div class="tool-name">전체 색상 변환기</div>
+        <div class="tool-desc">HEX·RGB·HSL·HSV·CMYK 5가지 형식 상호 변환</div>
+      </a>
+      <a href="color-name.html" class="tool-card">
+        <span class="new-badge">NEW</span>
+        <span class="free-badge">무료</span>
+        <span class="tool-icon">🏷️</span>
+        <div class="tool-name">색상 이름 찾기</div>
+        <div class="tool-desc">HEX 입력 → 가장 가까운 색상 이름(한/영) 반환</div>
+      </a>
+
       <div class="adsense-card">
         <ins class="adsbygoogle" style="display:block;width:100%;min-height:200px" data-ad-client="ca-pub-6464921081676309" data-ad-slot="7520795194" data-ad-format="auto" data-full-width-responsive="true"></ins>
         <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
@@ -173,7 +194,14 @@
         <div class="tool-name">랜덤 색상 생성기</div>
         <div class="tool-desc">랜덤 색상과 HEX/RGB/HSL 코드 생성</div>
       </a>
-    
+      <a href="tints-shades.html" class="tool-card">
+        <span class="new-badge">NEW</span>
+        <span class="free-badge">무료</span>
+        <span class="tool-icon">🎚️</span>
+        <div class="tool-name">틴트·셰이드 생성기</div>
+        <div class="tool-desc">색상의 밝기 단계별 스케일 생성 및 CSS 변수 복사</div>
+      </a>
+
       <div class="coupang-card">
         <script>new PartnersCoupang.G({"id":986943,"template":"carousel","trackingCode":"AF5600192","width":"160","height":"200","tsource":""});</script>
       </div>
@@ -201,7 +229,14 @@
         <div class="tool-name">색상 혼합기</div>
         <div class="tool-desc">두 색상을 비율로 혼합한 결과 색상</div>
       </a>
-    
+      <a href="palette-contrast.html" class="tool-card">
+        <span class="new-badge">NEW</span>
+        <span class="free-badge">무료</span>
+        <span class="tool-icon">🔲</span>
+        <div class="tool-name">팔레트 대비 검사기</div>
+        <div class="tool-desc">팔레트 색상 간 WCAG 대비율 N×N 매트릭스 분석</div>
+      </a>
+
       <div class="adsense-card">
         <ins class="adsbygoogle" style="display:block;width:100%;min-height:200px" data-ad-client="ca-pub-6464921081676309" data-ad-slot="7520795194" data-ad-format="auto" data-full-width-responsive="true"></ins>
         <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
@@ -235,6 +270,13 @@
         <span class="tool-icon">💧</span>
         <div class="tool-name">불투명도 변환기</div>
         <div class="tool-desc">HEX 색상에 투명도 추가 → rgba 변환</div>
+      </a>
+      <a href="css-variables.html" class="tool-card">
+        <span class="new-badge">NEW</span>
+        <span class="free-badge">무료</span>
+        <span class="tool-icon">📦</span>
+        <div class="tool-name">CSS 변수 생성기</div>
+        <div class="tool-desc">팔레트 → CSS / SCSS / Tailwind / JS 변수 코드 생성</div>
       </a>
 
       <div class="coupang-card">
@@ -280,24 +322,29 @@
       <div class="footer-links">
         <h4>변환</h4>
         <a href="color-converter.html">HEX ↔ RGB ↔ HSL</a>
+        <a href="color-converter-full.html">전체 색상 변환기</a>
         <a href="color-picker.html">색상 추출</a>
+        <a href="color-name.html">색상 이름 찾기</a>
       </div>
       <div class="footer-links">
         <h4>생성</h4>
         <a href="gradient-generator.html">그라디언트 생성기</a>
         <a href="palette-generator.html">팔레트 생성기</a>
         <a href="random-color.html">랜덤 색상 생성기</a>
+        <a href="tints-shades.html">틴트·셰이드 생성기</a>
       </div>
       <div class="footer-links">
         <h4>분석</h4>
         <a href="contrast-checker.html">색상 대비 검사기</a>
         <a href="color-mixer.html">색상 혼합기</a>
+        <a href="palette-contrast.html">팔레트 대비 검사기</a>
       </div>
       <div class="footer-links">
         <h4>CSS 도구</h4>
         <a href="box-shadow.html">박스 그림자 생성기</a>
         <a href="text-shadow.html">텍스트 그림자 생성기</a>
         <a href="opacity-converter.html">불투명도 변환기</a>
+        <a href="css-variables.html">CSS 변수 생성기</a>
       </div>
       <div class="footer-links">
         <h4>정보</h4>

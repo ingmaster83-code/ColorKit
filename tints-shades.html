@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tints Shades 생성기 무료 — 색상 밝기 변형 10단계 | WooaColor</title>
+  <meta name="description" content="색상 코드를 입력하면 밝은(Tints) 10단계, 어두운(Shades) 10단계를 자동 생성. Tailwind 스타일 CSS 변수로 복사 가능. 완전 무료.">
+  <meta name="keywords" content="tints shades 생성기, 색상 밝기, 색상 변형, tailwind 색상, CSS 변수, 색상 팔레트, tints, shades, 색상 단계">
+  <link rel="canonical" href="https://colorkit.wooahouse.com/tints-shades.html">
+  <meta property="og:title" content="Tints Shades 생성기 — 색상 밝기 변형 10단계 | WooaColor">
+  <meta property="og:description" content="색상 코드를 입력하면 밝은(Tints) 10단계, 어두운(Shades) 10단계를 자동 생성. Tailwind 스타일 CSS 변수로 복사 가능.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://colorkit.wooahouse.com/tints-shades.html">
+  <meta property="og:locale" content="ko_KR">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6464921081676309" crossorigin="anonymous"></script>
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#8B5CF6">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="WooaColor">
+  <link rel="stylesheet" href="css/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Tints Shades 생성기",
+    "url": "https://colorkit.wooahouse.com/tints-shades.html",
+    "applicationCategory": "UtilityApplication",
+    "operatingSystem": "Web",
+    "inLanguage": "ko",
+    "isAccessibleForFree": true,
+    "offers": {"@type": "Offer","price": "0","priceCurrency": "KRW"}
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Tints와 Shades의 차이는 무엇인가요?",
+        "acceptedAnswer": {"@type": "Answer","text": "Tints는 원래 색상에 흰색을 혼합하여 밝게 만든 변형이고, Shades는 검정을 혼합하여 어둡게 만든 변형입니다."}
+      },
+      {
+        "@type": "Question",
+        "name": "Tailwind CSS 변수로 복사한다는 게 무슨 뜻인가요?",
+        "acceptedAnswer": {"@type": "Answer","text": "--color-50, --color-100 ~ --color-950 형태의 CSS 변수로 정리해서 클립보드에 복사해 드립니다. CSS 파일에 그대로 붙여넣어 사용할 수 있습니다."}
+      },
+      {
+        "@type": "Question",
+        "name": "스와치를 클릭하면 어떻게 되나요?",
+        "acceptedAnswer": {"@type": "Answer","text": "해당 색상의 HEX 코드가 클립보드에 복사됩니다. 마우스를 올리면 HEX, RGB, HSL 정보가 툴팁으로 표시됩니다."}
+      },
+      {
+        "@type": "Question",
+        "name": "몇 단계까지 생성되나요?",
+        "acceptedAnswer": {"@type": "Answer","text": "Tints(밝은 계열) 10단계와 Shades(어두운 계열) 10단계, 총 20단계의 스와치를 생성합니다."}
+      }
+    ]
+  }
+  </script>
+  <style>
+    .ts-section { margin-bottom: 28px; }
+    .ts-section-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .ts-section-title span {
+      font-size: 0.78rem;
+      font-weight: 500;
+      color: var(--text-light);
+      background: #f3f4f6;
+      border-radius: 20px;
+      padding: 2px 10px;
+    }
+    .swatches-row {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+    .swatch-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      cursor: pointer;
+      position: relative;
+    }
+    .swatch-box {
+      width: 60px;
+      height: 60px;
+      border-radius: 10px;
+      border: 1px solid rgba(0,0,0,0.08);
+      transition: transform 0.15s, box-shadow 0.15s;
+      position: relative;
+    }
+    .swatch-box:hover {
+      transform: scale(1.1);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    .swatch-hex {
+      font-size: 0.65rem;
+      color: var(--text-light);
+      margin-top: 5px;
+      font-family: 'Courier New', monospace;
+      text-align: center;
+      width: 60px;
+      word-break: break-all;
+    }
+    .swatch-tooltip {
+      display: none;
+      position: absolute;
+      bottom: calc(100% + 8px);
+      left: 50%;
+      transform: translateX(-50%);
+      background: #1f2937;
+      color: #fff;
+      font-size: 0.72rem;
+      border-radius: 8px;
+      padding: 8px 10px;
+      white-space: nowrap;
+      z-index: 100;
+      pointer-events: none;
+      line-height: 1.6;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+    .swatch-tooltip::after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%);
+      border: 5px solid transparent;
+      border-top-color: #1f2937;
+    }
+    .swatch-item:hover .swatch-tooltip { display: block; }
+    .copy-css-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #1f2937;
+      color: #fff;
+      border: none;
+      border-radius: var(--radius-sm);
+      padding: 10px 18px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .copy-css-btn:hover { background: #374151; }
+    .picker-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .toast {
+      position: fixed;
+      bottom: 28px;
+      left: 50%;
+      transform: translateX(-50%) translateY(80px);
+      background: #059669;
+      color: #fff;
+      border-radius: 8px;
+      padding: 10px 22px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      z-index: 9999;
+      transition: transform 0.3s ease;
+      pointer-events: none;
+    }
+    .toast.show { transform: translateX(-50%) translateY(0); }
+    @media (max-width: 600px) {
+      .swatch-box { width: 44px; height: 44px; border-radius: 7px; }
+      .swatch-hex { font-size: 0.58rem; width: 44px; }
+      .swatches-row { gap: 4px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">WooaColor</a>
+    <nav>
+      <a href="color-converter.html">변환</a>
+      <a href="gradient-generator.html">생성</a>
+      <a href="contrast-checker.html">분석</a>
+      <a href="box-shadow.html">CSS 도구</a>
+      <a href="color-picker.html">색상 추출</a>
+    </nav>
+  </div>
+</header>
+
+<div class="our-sites-bar">
+  <span class="our-sites-label">WooaHouse Services</span>
+  <div class="our-sites-links">
+    <a href="https://wooahouse.com/" target="_blank" rel="noopener">🔗 WooaHouse</a>
+    <a href="https://pdfkit.wooahouse.com/" target="_blank" rel="noopener">📄 WooaPDF</a>
+    <a href="https://imagekit.wooahouse.com/" target="_blank" rel="noopener">🖼️ WooaImage</a>
+    <a href="https://colorkit.wooahouse.com/" target="_blank" rel="noopener" class="active">🎨 WooaColor</a>
+    <a href="https://textkit.wooahouse.com/" target="_blank" rel="noopener">📝 WooaText</a>
+    <a href="https://qrkit.wooahouse.com/" target="_blank" rel="noopener">📱 WooaQR</a>
+    <a href="https://calckit.wooahouse.com/" target="_blank" rel="noopener">🧮 WooaCalc</a>
+    <a href="https://chromekit.wooahouse.com/" target="_blank" rel="noopener">🧩 WooaChrome</a>
+    <a href="https://fontkit.wooahouse.com/" target="_blank" rel="noopener">🔤 WooaFont</a>
+    <a href="https://mactools.wooahouse.com/" target="_blank" rel="noopener">🍎 WooaMac</a>
+    <a href="https://pctools.wooahouse.com/" target="_blank" rel="noopener">🖥️ WooaPC</a>
+    <a href="https://vskit.wooahouse.com/" target="_blank" rel="noopener">💻 WooaVS</a>
+  </div>
+</div>
+
+<div class="page-with-sidebar">
+<div class="tool-page">
+  <div class="breadcrumb">
+    <a href="index.html">WooaColor</a>
+    <span>›</span>
+    <span>Tints &amp; Shades 생성기</span>
+  </div>
+
+  <div class="tool-header">
+    <span class="tool-header-icon">🎨</span>
+    <h1>Tints &amp; Shades 생성기 — 색상 밝기 변형 20단계</h1>
+    <p>색상 하나로 밝은 계열(Tints) 10단계 + 어두운 계열(Shades) 10단계를 즉시 생성합니다</p>
+  </div>
+
+  <!-- AdSense 상단 -->
+  <div style="text-align:center;margin:8px auto 20px;max-width:728px;padding:0 8px">
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6464921081676309" data-ad-slot="7080296704" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <!-- 색상 선택 -->
+  <div class="panel">
+    <div class="panel-title">기준 색상 선택</div>
+    <div class="picker-row">
+      <input type="color" id="colorPicker" value="#8B5CF6" oninput="onPickerChange(this.value)">
+      <div class="input-group" style="flex:1;min-width:140px;margin-bottom:0;">
+        <label>HEX 코드</label>
+        <input type="text" id="hexInput" value="#8B5CF6" maxlength="7" placeholder="#8B5CF6" oninput="onHexChange(this.value)">
+      </div>
+      <button class="btn-primary btn" onclick="generate()">생성</button>
+      <button class="copy-css-btn" onclick="copyCSSVars()" title="Tailwind 스타일 CSS 변수 복사">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+        CSS 변수 복사
+      </button>
+    </div>
+  </div>
+
+  <!-- Tints -->
+  <div class="panel" style="margin-top:0;">
+    <div class="ts-section">
+      <div class="ts-section-title">
+        ☀️ Tints — 밝은 계열
+        <span>원색 + 흰색 혼합</span>
+      </div>
+      <div class="swatches-row" id="tintsRow"></div>
+    </div>
+
+    <!-- 원색 -->
+    <div class="ts-section">
+      <div class="ts-section-title">⬛ 원색 (Base Color)</div>
+      <div class="swatches-row" id="baseRow"></div>
+    </div>
+
+    <!-- Shades -->
+    <div class="ts-section" style="margin-bottom:0;">
+      <div class="ts-section-title">
+        🌙 Shades — 어두운 계열
+        <span>원색 + 검정 혼합</span>
+      </div>
+      <div class="swatches-row" id="shadesRow"></div>
+    </div>
+  </div>
+
+  <!-- AdSense 중단 -->
+  <div style="text-align:center;margin:16px auto;max-width:728px;padding:0 8px">
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6464921081676309" data-ad-slot="1419180025" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <div class="cross-link-tip">
+    💡 생성한 색상의 가독성을 확인하려면 <a href="contrast-checker.html">색상 대비 검사기(WCAG)</a>를 이용하세요. 팔레트 조합이 필요하면 <a href="palette-generator.html">팔레트 생성기</a>도 확인해보세요.
+  </div>
+
+  <section class="faq-section" style="max-width:800px;margin:3rem auto;padding:0 1rem;">
+    <h2 style="font-size:1.4rem;margin-bottom:1.5rem;">자주 묻는 질문</h2>
+    <div class="faq-list">
+      <div class="faq-item" style="margin-bottom:1.2rem;padding:1rem;background:#f8f9fa;border-radius:8px;">
+        <h3 style="font-size:1rem;font-weight:600;margin-bottom:0.5rem;">Q. Tints와 Shades의 차이는 무엇인가요?</h3>
+        <p style="color:#555;margin:0;">Tints는 원래 색상에 흰색을 혼합하여 밝게 만든 변형이고, Shades는 검정을 혼합하여 어둡게 만든 변형입니다. 두 방향 모두 10단계로 표시됩니다.</p>
+      </div>
+      <div class="faq-item" style="margin-bottom:1.2rem;padding:1rem;background:#f8f9fa;border-radius:8px;">
+        <h3 style="font-size:1rem;font-weight:600;margin-bottom:0.5rem;">Q. Tailwind CSS 변수로 복사한다는 게 무슨 뜻인가요?</h3>
+        <p style="color:#555;margin:0;">--color-50, --color-100 ~ --color-950 형태의 CSS 변수로 정리해서 클립보드에 복사합니다. CSS :root 블록에 그대로 붙여넣어 사용할 수 있습니다.</p>
+      </div>
+      <div class="faq-item" style="margin-bottom:1.2rem;padding:1rem;background:#f8f9fa;border-radius:8px;">
+        <h3 style="font-size:1rem;font-weight:600;margin-bottom:0.5rem;">Q. 스와치를 클릭하면 어떻게 되나요?</h3>
+        <p style="color:#555;margin:0;">해당 색상의 HEX 코드가 클립보드에 복사됩니다. 마우스를 올리면 HEX, RGB, HSL 정보가 툴팁으로 표시됩니다.</p>
+      </div>
+      <div class="faq-item" style="padding:1rem;background:#f8f9fa;border-radius:8px;">
+        <h3 style="font-size:1rem;font-weight:600;margin-bottom:0.5rem;">Q. 생성된 색상을 디자인 도구에서 바로 사용할 수 있나요?</h3>
+        <p style="color:#555;margin:0;">각 스와치의 HEX 코드를 클릭해 복사하거나, CSS 변수 복사 버튼으로 전체를 한꺼번에 가져갈 수 있어 Figma, VS Code 등 어디서든 바로 활용 가능합니다.</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<aside class="tool-sidebar">
+  <div class="ad-card">
+    <div class="ad-card-label">광고</div>
+    <div class="ad-card-placeholder">📢<br>광고가 표시됩니다</div>
+    <ins class="adsbygoogle"
+         style="display:block;width:100%;min-height:250px"
+         data-ad-client="ca-pub-6464921081676309"
+         data-ad-slot="1419180025"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+</aside>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-bottom">
+      <p>© 2026 WooaColor. 모든 권리 보유.</p>
+      <div class="footer-bottom-links">
+        <a href="privacy.html">개인정보처리방침</a>
+        <a href="about.html">소개</a>
+        <a href="index.html">전체 도구</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script src="js/pwa-install.js"></script>
+<script>
+  /* ── 유틸리티 ── */
+  function hexToRgb(hex) {
+    hex = hex.replace('#','');
+    if(hex.length === 3) hex = hex.split('').map(c=>c+c).join('');
+    const n = parseInt(hex, 16);
+    return { r: (n>>16)&255, g: (n>>8)&255, b: n&255 };
+  }
+
+  function rgbToHex(r, g, b) {
+    return '#' + [r,g,b].map(v => Math.round(Math.max(0,Math.min(255,v))).toString(16).padStart(2,'0')).join('').toUpperCase();
+  }
+
+  function rgbToHsl(r, g, b) {
+    r /= 255; g /= 255; b /= 255;
+    const max = Math.max(r,g,b), min = Math.min(r,g,b);
+    let h, s, l = (max+min)/2;
+    if(max === min) { h = s = 0; }
+    else {
+      const d = max - min;
+      s = l > 0.5 ? d/(2-max-min) : d/(max+min);
+      switch(max) {
+        case r: h = ((g-b)/d + (g<b?6:0))/6; break;
+        case g: h = ((b-r)/d + 2)/6; break;
+        case b: h = ((r-g)/d + 4)/6; break;
+      }
+    }
+    return [Math.round(h*360), Math.round(s*100), Math.round(l*100)];
+  }
+
+  function mixWithWhite(hex, ratio) {
+    // ratio: 0=원색, 1=흰색
+    const {r,g,b} = hexToRgb(hex);
+    return rgbToHex(r+(255-r)*ratio, g+(255-g)*ratio, b+(255-b)*ratio);
+  }
+
+  function mixWithBlack(hex, ratio) {
+    // ratio: 0=원색, 1=검정
+    const {r,g,b} = hexToRgb(hex);
+    return rgbToHex(r*(1-ratio), g*(1-ratio), b*(1-ratio));
+  }
+
+  function isValidHex(hex) {
+    return /^#([0-9A-Fa-f]{6})$/.test(hex);
+  }
+
+  /* ── 토스트 ── */
+  let toastTimer;
+  function showToast(msg) {
+    const t = document.getElementById('toast');
+    t.textContent = msg;
+    t.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(()=>t.classList.remove('show'), 2000);
+  }
+
+  /* ── 스와치 생성 ── */
+  function makeSwatchEl(hex, label) {
+    const {r,g,b} = hexToRgb(hex);
+    const [h,s,l] = rgbToHsl(r,g,b);
+    const item = document.createElement('div');
+    item.className = 'swatch-item';
+
+    const box = document.createElement('div');
+    box.className = 'swatch-box';
+    box.style.background = hex;
+
+    const tip = document.createElement('div');
+    tip.className = 'swatch-tooltip';
+    tip.innerHTML = `<b>${hex}</b><br>RGB(${r}, ${g}, ${b})<br>HSL(${h}°, ${s}%, ${l}%)`;
+    box.appendChild(tip);
+
+    const hexTxt = document.createElement('div');
+    hexTxt.className = 'swatch-hex';
+    hexTxt.textContent = hex;
+
+    if(label) {
+      const lbl = document.createElement('div');
+      lbl.style.cssText = 'font-size:0.62rem;color:var(--text-light);margin-top:2px;text-align:center;width:60px;';
+      lbl.textContent = label;
+      item.appendChild(box);
+      item.appendChild(hexTxt);
+      item.appendChild(lbl);
+    } else {
+      item.appendChild(box);
+      item.appendChild(hexTxt);
+    }
+
+    item.addEventListener('click', () => {
+      navigator.clipboard.writeText(hex).then(()=>showToast('✅ ' + hex + ' 복사됨!')).catch(()=>{});
+    });
+    return item;
+  }
+
+  /* ── 메인 생성 ── */
+  let currentHex = '#8B5CF6';
+
+  function generate() {
+    const hex = currentHex;
+    if(!isValidHex(hex)) return;
+
+    // Tints: 10% ~ 90% 흰색 혼합 (밝은 → 원색 순)
+    const tintsRow = document.getElementById('tintsRow');
+    tintsRow.innerHTML = '';
+    // 90%흰→10%흰 순으로 나열 (왼쪽=가장 밝음)
+    const tintRatios = [0.9, 0.8, 0.7, 0.6, 0.5, 0.4, 0.3, 0.2, 0.1, 0.05];
+    tintRatios.forEach((ratio, i) => {
+      const mixed = mixWithWhite(hex, ratio);
+      const pct = Math.round((1-ratio)*100);
+      tintsRow.appendChild(makeSwatchEl(mixed, `+${Math.round(ratio*100)}% 흰색`));
+    });
+
+    // 원색
+    const baseRow = document.getElementById('baseRow');
+    baseRow.innerHTML = '';
+    baseRow.appendChild(makeSwatchEl(hex, '원색'));
+
+    // Shades: 원색 → 검정 방향
+    const shadesRow = document.getElementById('shadesRow');
+    shadesRow.innerHTML = '';
+    const shadeRatios = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 0.95];
+    shadeRatios.forEach((ratio) => {
+      const mixed = mixWithBlack(hex, ratio);
+      shadesRow.appendChild(makeSwatchEl(mixed, `+${Math.round(ratio*100)}% 검정`));
+    });
+  }
+
+  /* ── CSS 변수 복사 (Tailwind 스타일) ── */
+  function copyCSSVars() {
+    const hex = currentHex;
+    if(!isValidHex(hex)) { showToast('올바른 HEX 코드를 입력하세요'); return; }
+
+    // Tailwind 번호: 50,100,200,300,400,500,600,700,800,900,950
+    // 50=가장밝음(90%흰), 100=80%흰 ... 500=원색 ... 900=80%검정, 950=90%검정
+    const steps = [
+      {key:50,  color: mixWithWhite(hex, 0.90)},
+      {key:100, color: mixWithWhite(hex, 0.80)},
+      {key:200, color: mixWithWhite(hex, 0.65)},
+      {key:300, color: mixWithWhite(hex, 0.50)},
+      {key:400, color: mixWithWhite(hex, 0.30)},
+      {key:500, color: hex.toUpperCase()},
+      {key:600, color: mixWithBlack(hex, 0.15)},
+      {key:700, color: mixWithBlack(hex, 0.30)},
+      {key:800, color: mixWithBlack(hex, 0.50)},
+      {key:900, color: mixWithBlack(hex, 0.70)},
+      {key:950, color: mixWithBlack(hex, 0.85)},
+    ];
+
+    const lines = [':root {', ...steps.map(s=>`  --color-${s.key}: ${s.color};`), '}'];
+    const css = lines.join('\n');
+
+    navigator.clipboard.writeText(css)
+      .then(()=>showToast('✅ CSS 변수 복사됨!'))
+      .catch(()=>{
+        const ta = document.createElement('textarea');
+        ta.value = css;
+        document.body.appendChild(ta);
+        ta.select();
+        document.execCommand('copy');
+        document.body.removeChild(ta);
+        showToast('✅ CSS 변수 복사됨!');
+      });
+  }
+
+  /* ── 입력 연동 ── */
+  function onPickerChange(val) {
+    currentHex = val.toUpperCase();
+    document.getElementById('hexInput').value = currentHex;
+    generate();
+  }
+
+  function onHexChange(val) {
+    val = val.trim();
+    if(!val.startsWith('#')) val = '#' + val;
+    document.getElementById('hexInput').value = val;
+    if(isValidHex(val)) {
+      currentHex = val.toUpperCase();
+      document.getElementById('colorPicker').value = currentHex;
+      generate();
+    }
+  }
+
+  /* 초기 실행 */
+  generate();
+</script>
+</body>
+</html>

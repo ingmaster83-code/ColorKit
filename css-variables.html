@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS 색상 변수 생성기 무료 — CSS Custom Properties 코드 자동 생성 | WooaColor</title>
+  <meta name="description" content="색상 팔레트를 입력하면 CSS Custom Properties(변수), SCSS 변수, Tailwind 설정 코드를 자동으로 생성합니다. 무료 온라인 CSS 변수 생성기.">
+  <meta name="keywords" content="CSS변수생성기,CSS custom properties,SCSS변수,Tailwind색상,CSS색상변수,디자인시스템,색상토큰">
+  <link rel="canonical" href="https://colorkit.wooahouse.com/css-variables.html">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6464921081676309" crossorigin="anonymous"></script>
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#8B5CF6">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="WooaColor">
+  <link rel="stylesheet" href="css/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "CSS 색상 변수 생성기",
+    "url": "https://colorkit.wooahouse.com/css-variables.html",
+    "applicationCategory": "UtilityApplication",
+    "operatingSystem": "Web",
+    "inLanguage": "ko",
+    "isAccessibleForFree": true,
+    "offers": {"@type": "Offer","price": "0","priceCurrency": "KRW"}
+  }
+  </script>
+  <style>
+    .color-entry {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+      flex-wrap: wrap;
+    }
+    .color-entry-swatch {
+      width: 40px; height: 40px;
+      border-radius: 8px;
+      border: 2px solid #e2e8f0;
+      cursor: pointer;
+      flex-shrink: 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .color-entry-swatch input[type="color"] {
+      position: absolute; inset: -4px;
+      width: calc(100% + 8px); height: calc(100% + 8px);
+      border: none; padding: 0; cursor: pointer; opacity: 0;
+    }
+    .color-entry input[type="text"] {
+      flex: 1;
+      min-width: 100px;
+      padding: 8px 12px;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-family: 'Courier New', monospace;
+    }
+    .color-entry-name {
+      flex: 1;
+      min-width: 120px;
+      padding: 8px 12px;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      font-size: 0.9rem;
+    }
+    .color-entry-remove {
+      background: none; border: none; cursor: pointer;
+      color: #94a3b8; font-size: 1rem; padding: 4px;
+      flex-shrink: 0;
+    }
+    .color-entry-remove:hover { color: #EF4444; }
+    .add-color-btn {
+      background: none;
+      border: 2px dashed #cbd5e1;
+      border-radius: 8px;
+      padding: 10px;
+      width: 100%;
+      cursor: pointer;
+      color: #64748b;
+      font-size: 0.88rem;
+      font-weight: 600;
+      transition: all 0.15s;
+      margin-top: 4px;
+    }
+    .add-color-btn:hover { border-color: #8B5CF6; color: #8B5CF6; }
+    .output-tabs {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+    }
+    .output-tab {
+      padding: 6px 14px;
+      border: 2px solid #e2e8f0;
+      border-radius: 8px;
+      background: #fff;
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #64748b;
+      transition: all 0.15s;
+    }
+    .output-tab.active { border-color: #8B5CF6; background: #f5f3ff; color: #8B5CF6; }
+    .code-output {
+      background: #1e1e2e;
+      color: #cdd6f4;
+      border-radius: 10px;
+      padding: 16px;
+      font-family: 'Courier New', monospace;
+      font-size: 0.85rem;
+      line-height: 1.7;
+      white-space: pre;
+      overflow-x: auto;
+      max-height: 360px;
+      overflow-y: auto;
+    }
+    .copy-code-btn {
+      background: #8B5CF6;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      padding: 8px 20px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: opacity 0.15s;
+    }
+    .copy-code-btn:hover { opacity: 0.85; }
+    .palette-preview {
+      display: flex;
+      height: 48px;
+      border-radius: 10px;
+      overflow: hidden;
+      margin-top: 8px;
+    }
+    .palette-preview-swatch { flex: 1; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">WooaColor</a>
+    <nav>
+      <a href="color-converter.html">변환</a>
+      <a href="gradient-generator.html">생성</a>
+      <a href="contrast-checker.html">분석</a>
+      <a href="box-shadow.html">CSS 도구</a>
+      <a href="color-picker.html">색상 추출</a>
+    </nav>
+  </div>
+</header>
+
+<div class="our-sites-bar">
+  <span class="our-sites-label">WooaHouse Services</span>
+  <div class="our-sites-links">
+    <a href="https://wooahouse.com/" target="_blank" rel="noopener">🔗 WooaHouse</a>
+    <a href="https://pdfkit.wooahouse.com/" target="_blank" rel="noopener">📄 WooaPDF</a>
+    <a href="https://imagekit.wooahouse.com/" target="_blank" rel="noopener">🖼️ WooaImage</a>
+    <a href="https://colorkit.wooahouse.com/" target="_blank" rel="noopener" class="active">🎨 WooaColor</a>
+    <a href="https://textkit.wooahouse.com/" target="_blank" rel="noopener">📝 WooaText</a>
+    <a href="https://qrkit.wooahouse.com/" target="_blank" rel="noopener">📱 WooaQR</a>
+    <a href="https://calckit.wooahouse.com/" target="_blank" rel="noopener">🧮 WooaCalc</a>
+    <a href="https://chromekit.wooahouse.com/" target="_blank" rel="noopener">🧩 WooaChrome</a>
+    <a href="https://fontkit.wooahouse.com/" target="_blank" rel="noopener">🔤 WooaFont</a>
+    <a href="https://mactools.wooahouse.com/" target="_blank" rel="noopener">🍎 WooaMac</a>
+    <a href="https://pctools.wooahouse.com/" target="_blank" rel="noopener">🖥️ WooaPC</a>
+    <a href="https://vskit.wooahouse.com/" target="_blank" rel="noopener">💻 WooaVS</a>
+  </div>
+</div>
+
+<div class="page-with-sidebar">
+<div class="tool-page">
+  <div class="breadcrumb">
+    <a href="index.html">WooaColor</a>
+    <span>›</span>
+    <span>CSS 색상 변수 생성기</span>
+  </div>
+
+  <div class="tool-header">
+    <span class="tool-header-icon">📦</span>
+    <h1>CSS 색상 변수 생성기 무료 온라인 — Custom Properties 코드 자동 생성</h1>
+    <p>색상 팔레트를 입력하면 CSS 변수, SCSS 변수, Tailwind 설정 코드를 즉시 생성합니다.</p>
+  </div>
+
+  <div style="text-align:center;margin:8px auto 20px;max-width:728px;padding:0 8px">
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6464921081676309" data-ad-slot="7080296704" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <div class="panel">
+    <div class="panel-title">색상 팔레트 입력</div>
+    <div style="font-size:0.82rem;color:#64748b;margin-bottom:12px;">변수 이름과 색상을 입력하세요. 순서대로 CSS 변수가 생성됩니다.</div>
+
+    <div id="colorList"></div>
+    <button class="add-color-btn" id="addColorBtn">+ 색상 추가</button>
+
+    <div style="margin-top:16px;">
+      <div style="font-size:0.82rem;font-weight:600;color:#64748b;margin-bottom:6px;">팔레트 미리보기</div>
+      <div class="palette-preview" id="palettePreview"></div>
+    </div>
+
+    <div style="margin-top:20px;">
+      <div class="panel-title" style="margin-bottom:10px;">생성된 코드</div>
+      <div class="output-tabs">
+        <button class="output-tab active" onclick="setTab('css')">CSS 변수</button>
+        <button class="output-tab" onclick="setTab('scss')">SCSS 변수</button>
+        <button class="output-tab" onclick="setTab('tailwind')">Tailwind</button>
+        <button class="output-tab" onclick="setTab('js')">JS 객체</button>
+      </div>
+      <div class="code-output" id="codeOutput"></div>
+      <button class="copy-code-btn" id="copyCodeBtn">📋 코드 복사</button>
+    </div>
+  </div>
+
+  <div style="text-align:center;margin:16px auto;max-width:728px;padding:0 8px">
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6464921081676309" data-ad-slot="1419180025" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <div class="cross-link-tip">
+    💡 색상 밝기 변형이 필요하다면 <a href="tints-shades.html">Tints &amp; Shades 생성기</a>를 활용하세요.
+  </div>
+
+  <section class="faq-section" style="max-width:800px;margin:3rem auto;padding:0 1rem;">
+    <h2 style="font-size:1.4rem;margin-bottom:1.5rem;">자주 묻는 질문</h2>
+    <div class="faq-list">
+      <div class="faq-item" style="margin-bottom:1.2rem;padding:1rem;background:#f8f9fa;border-radius:8px;">
+        <h3 style="font-size:1rem;font-weight:600;margin-bottom:0.5rem;">Q. CSS Custom Properties란 무엇인가요?</h3>
+        <p style="color:#555;margin:0;">CSS Custom Properties(사용자 지정 속성)는 --color-primary: #8B5CF6; 처럼 CSS 파일에서 변수를 정의하고 var(--color-primary)로 재사용하는 기능입니다. 디자인 시스템 구축에 필수적입니다.</p>
+      </div>
+      <div class="faq-item" style="margin-bottom:1.2rem;padding:1rem;background:#f8f9fa;border-radius:8px;">
+        <h3 style="font-size:1rem;font-weight:600;margin-bottom:0.5rem;">Q. Tailwind 코드는 어떻게 사용하나요?</h3>
+        <p style="color:#555;margin:0;">생성된 Tailwind 코드를 tailwind.config.js의 theme.extend.colors에 붙여넣으면 됩니다. 이후 text-primary, bg-primary 등의 클래스로 사용할 수 있습니다.</p>
+      </div>
+      <div class="faq-item" style="padding:1rem;background:#f8f9fa;border-radius:8px;">
+        <h3 style="font-size:1rem;font-weight:600;margin-bottom:0.5rem;">Q. RGBA 형식도 지원하나요?</h3>
+        <p style="color:#555;margin:0;">네, CSS 변수 탭에서 rgba 형식도 함께 생성됩니다. 투명도 적용 시 유용하게 활용할 수 있습니다.</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<aside class="tool-sidebar">
+  <div class="ad-card">
+    <div class="ad-card-label">광고</div>
+    <div class="ad-card-placeholder">📢<br>광고가 표시됩니다</div>
+    <ins class="adsbygoogle"
+         style="display:block;width:100%;min-height:250px"
+         data-ad-client="ca-pub-6464921081676309"
+         data-ad-slot="1419180025"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+</aside>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-bottom">
+      <p>© 2026 WooaColor. 모든 권리 보유.</p>
+      <div class="footer-bottom-links">
+        <a href="privacy.html">개인정보처리방침</a>
+        <a href="about.html">소개</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  let activeTab = 'css';
+
+  const DEFAULT_PALETTE = [
+    { name: 'primary',   hex: '#8B5CF6' },
+    { name: 'secondary', hex: '#3B82F6' },
+    { name: 'accent',    hex: '#F59E0B' },
+    { name: 'success',   hex: '#22C55E' },
+    { name: 'danger',    hex: '#EF4444' },
+    { name: 'text',      hex: '#1E293B' },
+    { name: 'bg',        hex: '#F8FAFC' },
+  ];
+
+  let entries = DEFAULT_PALETTE.map(e => ({ ...e }));
+
+  function renderList() {
+    const list = document.getElementById('colorList');
+    list.innerHTML = '';
+    entries.forEach((entry, i) => {
+      const div = document.createElement('div');
+      div.className = 'color-entry';
+      div.innerHTML = `
+        <div class="color-entry-swatch" style="background:${entry.hex};">
+          <input type="color" value="${entry.hex}" onchange="updateHex(${i}, this.value)">
+        </div>
+        <input type="text" value="${entry.hex}" placeholder="#RRGGBB" maxlength="7"
+          oninput="updateHexText(${i}, this.value)" style="max-width:110px;">
+        <input class="color-entry-name" type="text" value="${entry.name}"
+          placeholder="변수 이름 (예: primary)" oninput="updateName(${i}, this.value)">
+        <button class="color-entry-remove" onclick="removeEntry(${i})">✕</button>`;
+      list.appendChild(div);
+    });
+    updatePreview();
+    generateCode();
+  }
+
+  function updateHex(i, hex) {
+    entries[i].hex = hex;
+    renderList();
+  }
+
+  function updateHexText(i, val) {
+    if (/^#[0-9A-Fa-f]{6}$/.test(val)) {
+      entries[i].hex = val;
+      updatePreview();
+      generateCode();
+    }
+  }
+
+  function updateName(i, val) {
+    entries[i].name = val.replace(/\s+/g, '-').toLowerCase();
+    generateCode();
+  }
+
+  function removeEntry(i) {
+    entries.splice(i, 1);
+    renderList();
+  }
+
+  document.getElementById('addColorBtn').addEventListener('click', () => {
+    entries.push({ name: `color-${entries.length + 1}`, hex: '#' + Math.floor(Math.random()*0xFFFFFF).toString(16).padStart(6,'0') });
+    renderList();
+  });
+
+  function updatePreview() {
+    const preview = document.getElementById('palettePreview');
+    preview.innerHTML = entries.map(e =>
+      `<div class="palette-preview-swatch" style="background:${e.hex};" title="${e.name}: ${e.hex}"></div>`
+    ).join('');
+  }
+
+  function hexToRgb(hex) {
+    const r = parseInt(hex.slice(1,3),16), g = parseInt(hex.slice(3,5),16), b = parseInt(hex.slice(5,7),16);
+    return { r, g, b };
+  }
+
+  function setTab(tab) {
+    activeTab = tab;
+    document.querySelectorAll('.output-tab').forEach(t => t.classList.remove('active'));
+    event.target.classList.add('active');
+    generateCode();
+  }
+
+  function generateCode() {
+    const valid = entries.filter(e => e.name && /^#[0-9A-Fa-f]{6}$/.test(e.hex));
+    let code = '';
+
+    if (activeTab === 'css') {
+      code = ':root {\n';
+      valid.forEach(e => {
+        const { r, g, b } = hexToRgb(e.hex);
+        code += `  --${e.name}: ${e.hex};\n`;
+        code += `  --${e.name}-rgb: ${r}, ${g}, ${b};\n`;
+      });
+      code += '}\n\n/* 사용 예시 */\n';
+      if (valid[0]) {
+        code += `.btn {\n  background: var(--${valid[0].name});\n  color: rgba(var(--${valid[0].name}-rgb), 0.9);\n}`;
+      }
+    } else if (activeTab === 'scss') {
+      valid.forEach(e => {
+        code += `$${e.name}: ${e.hex};\n`;
+      });
+      code += '\n// 사용 예시\n';
+      if (valid[0]) code += `.btn {\n  background: $${valid[0].name};\n}`;
+    } else if (activeTab === 'tailwind') {
+      code = '// tailwind.config.js\nmodule.exports = {\n  theme: {\n    extend: {\n      colors: {\n';
+      valid.forEach(e => {
+        code += `        '${e.name}': '${e.hex}',\n`;
+      });
+      code += "      },\n    },\n  },\n};";
+    } else if (activeTab === 'js') {
+      code = 'export const colors = {\n';
+      valid.forEach(e => {
+        const { r, g, b } = hexToRgb(e.hex);
+        code += `  ${e.name}: {\n    hex: '${e.hex}',\n    rgb: 'rgb(${r}, ${g}, ${b})',\n    rgba: (a) => \`rgba(${r}, ${g}, ${b}, \${a})\`,\n  },\n`;
+      });
+      code += '};';
+    }
+
+    document.getElementById('codeOutput').textContent = code;
+  }
+
+  document.getElementById('copyCodeBtn').addEventListener('click', () => {
+    const code = document.getElementById('codeOutput').textContent;
+    navigator.clipboard.writeText(code).then(() => {
+      const btn = document.getElementById('copyCodeBtn');
+      btn.textContent = '✅ 복사됨!';
+      setTimeout(() => { btn.textContent = '📋 코드 복사'; }, 1500);
+    });
+  });
+
+  renderList();
+</script>
+
+<script src="js/pwa-install.js"></script>
+</body>
+</html>
