@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9ZGENFSXWC"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-9ZGENFSXWC');
+  </script>
+  <meta name="naver-site-verification" content="7396a327607b884b9bef1283dfd3a5c6115a2b50" />
+  <meta name="google-site-verification" content="tNM8tmr_6DFold03YSScWz4KEtu5Zo0Fsqc03u5Afms" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>색맹 시뮬레이터 — 적록색맹·청황색맹·전색맹 이미지 미리보기 무료 | WooaColor</title>
+  <meta name="description" content="이미지를 업로드하면 적록색맹(Protanopia), 녹색맹(Deuteranopia), 청황색맹(Tritanopia), 전색맹(Achromatopsia) 등 색맹 유형별 시뮬레이션 결과를 미리볼 수 있습니다. 무료 온라인 색맹 시뮬레이터.">
+  <meta name="keywords" content="색맹시뮬레이터,색맹테스트,적록색맹,녹색맹,청황색맹,전색맹,Protanopia,Deuteranopia,Tritanopia,Achromatopsia,색각이상,접근성,WooaColor">
+  <link rel="canonical" href="https://colorkit.wooahouse.com/color-blindness.html">
+  <!-- Open Graph -->
+  <meta property="og:title" content="색맹 시뮬레이터 — 색맹 유형별 이미지 미리보기 | WooaColor">
+  <meta property="og:description" content="이미지 업로드 후 적록색맹·청황색맹·전색맹 등 색각 이상 시뮬레이션. 접근성 디자인 검토에 활용하세요.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://colorkit.wooahouse.com/color-blindness.html">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="og:image" content="https://colorkit.wooahouse.com/og-image.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "색맹 시뮬레이터",
+    "url": "https://colorkit.wooahouse.com/color-blindness.html",
+    "applicationCategory": "UtilityApplication",
+    "operatingSystem": "Web",
+    "inLanguage": "ko",
+    "isAccessibleForFree": true,
+    "offers": {"@type": "Offer","price": "0","priceCurrency": "KRW"}
+  }
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6464921081676309" crossorigin="anonymous"></script>
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#8B5CF6">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="WooaColor">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .sim-tabs {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin: 16px 0;
+    }
+    .sim-tab {
+      padding: 7px 16px;
+      border: 1.5px solid var(--border, #E5E7EB);
+      border-radius: 20px;
+      background: white;
+      font-size: 0.83rem;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: inherit;
+      transition: all 0.15s;
+      color: var(--text, #1F2937);
+    }
+    .sim-tab:hover { border-color: var(--primary, #8B5CF6); color: var(--primary, #8B5CF6); }
+    .sim-tab.active { background: var(--primary, #8B5CF6); color: white; border-color: var(--primary, #8B5CF6); }
+    .preview-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+    .preview-card {
+      background: #fff;
+      border-radius: 12px;
+      border: 1.5px solid var(--border, #E5E7EB);
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    .preview-card-header {
+      padding: 10px 14px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--text, #1F2937);
+      border-bottom: 1px solid var(--border, #E5E7EB);
+      background: #FAFAFA;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .preview-card canvas {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+    .preview-card-dl {
+      display: block;
+      text-align: center;
+      padding: 8px;
+      font-size: 0.78rem;
+      color: var(--primary, #8B5CF6);
+      font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      border-top: 1px solid var(--border, #E5E7EB);
+      background: #FAFAFA;
+      transition: background 0.15s;
+    }
+    .preview-card-dl:hover { background: var(--primary-light, #EDE9FE); }
+    #uploadSection { margin-bottom: 20px; }
+    .single-preview {
+      text-align: center;
+      margin-top: 20px;
+    }
+    .single-preview canvas {
+      max-width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.1);
+    }
+    .active-label {
+      background: var(--primary, #8B5CF6);
+      color: white;
+      font-size: 0.72rem;
+      padding: 2px 8px;
+      border-radius: 10px;
+    }
+    @media (max-width: 600px) {
+      .preview-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 400px) {
+      .preview-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">WooaColor</a>
+    <nav>
+      <a href="color-converter.html">변환</a>
+      <a href="gradient-generator.html">생성</a>
+      <a href="contrast-checker.html">분석</a>
+      <a href="box-shadow.html">CSS 도구</a>
+      <a href="color-picker.html">색상 추출</a>
+    </nav>
+  </div>
+</header>
+
+<div class="our-sites-bar">
+  <span class="our-sites-label">WooaHouse Services</span>
+  <div class="our-sites-links">
+    <a href="https://wooahouse.com/" target="_blank" rel="noopener">🔗 WooaHouse</a>
+    <a href="https://pdfkit.wooahouse.com/" target="_blank" rel="noopener">📄 WooaPDF</a>
+    <a href="https://imagekit.wooahouse.com/" target="_blank" rel="noopener">🖼️ WooaImage</a>
+    <a href="https://colorkit.wooahouse.com/" target="_blank" rel="noopener" class="active">🎨 WooaColor</a>
+    <a href="https://textkit.wooahouse.com/" target="_blank" rel="noopener">📝 WooaText</a>
+    <a href="https://qrkit.wooahouse.com/" target="_blank" rel="noopener">📱 WooaQR</a>
+    <a href="https://calckit.wooahouse.com/" target="_blank" rel="noopener">🧮 WooaCalc</a>
+    <a href="https://fontkit.wooahouse.com/" target="_blank" rel="noopener">🔤 WooaFont</a>
+    <a href="https://mactools.wooahouse.com/" target="_blank" rel="noopener">🍎 WooaMac</a>
+    <a href="https://pctools.wooahouse.com/" target="_blank" rel="noopener">🖥️ WooaPC</a>
+    <a href="https://vskit.wooahouse.com/" target="_blank" rel="noopener">💻 WooaVS</a>
+    <a href="https://wooaaudio.wooahouse.com/" target="_blank" rel="noopener">🎵 WooaAudio</a>
+    <a href="https://wooaviewer.wooahouse.com/" target="_blank" rel="noopener">🔍 WooaViewer</a>
+    <a href="https://wooadev.wooahouse.com/" target="_blank" rel="noopener">🛠️ WooaDev</a>
+  </div>
+</div>
+
+<div class="page-with-sidebar">
+<div class="tool-page">
+  <div class="breadcrumb">
+    <a href="index.html">WooaColor</a>
+    <span>›</span>
+    <span>색맹 시뮬레이터</span>
+  </div>
+
+  <div class="tool-header">
+    <span class="tool-header-icon">👁️</span>
+    <h1>색맹 시뮬레이터 무료 온라인 — 색각 이상 유형별 이미지 미리보기</h1>
+    <p>이미지를 업로드하면 4가지 색맹 유형으로 보이는 모습을 시뮬레이션합니다</p>
+  </div>
+
+  <!-- Upload Zone -->
+  <div id="uploadSection">
+    <div class="drop-zone" id="dropZone" onclick="document.getElementById('fileInput').click()">
+      <input type="file" id="fileInput" accept="image/*" style="display:none;" onchange="handleFile(event)">
+      <span class="drop-zone-icon">🖼️</span>
+      <h3>이미지를 드래그하거나 클릭하여 업로드</h3>
+      <p>JPG, PNG, GIF, WebP, BMP 지원 · 모든 처리가 브라우저에서 이루어져 이미지가 서버로 전송되지 않습니다</p>
+      <button class="btn-select" onclick="event.stopPropagation();" style="pointer-events:none;">이미지 선택</button>
+    </div>
+  </div>
+
+  <!-- Simulation Panel -->
+  <div id="simPanel" style="display:none;">
+    <div class="panel">
+      <div class="panel-title">시뮬레이션 보기 방식</div>
+      <div class="sim-tabs" id="viewTabs">
+        <button class="sim-tab active" data-view="all" onclick="setView('all', this)">모두 보기</button>
+        <button class="sim-tab" data-view="normal" onclick="setView('normal', this)">원본</button>
+        <button class="sim-tab" data-view="protanopia" onclick="setView('protanopia', this)">적록색맹 (Protanopia)</button>
+        <button class="sim-tab" data-view="deuteranopia" onclick="setView('deuteranopia', this)">녹색맹 (Deuteranopia)</button>
+        <button class="sim-tab" data-view="tritanopia" onclick="setView('tritanopia', this)">청황색맹 (Tritanopia)</button>
+        <button class="sim-tab" data-view="achromatopsia" onclick="setView('achromatopsia', this)">전색맹 (Achromatopsia)</button>
+      </div>
+
+      <!-- 모두 보기 그리드 -->
+      <div id="gridView" class="preview-grid">
+        <div class="preview-card">
+          <div class="preview-card-header">
+            원본 <span class="active-label">Normal</span>
+          </div>
+          <canvas id="canvas-normal"></canvas>
+          <a class="preview-card-dl" onclick="downloadCanvas('canvas-normal', '원본')">⬇ 다운로드</a>
+        </div>
+        <div class="preview-card">
+          <div class="preview-card-header">적록색맹 <span class="active-label">Protanopia</span></div>
+          <canvas id="canvas-protanopia"></canvas>
+          <a class="preview-card-dl" onclick="downloadCanvas('canvas-protanopia', '적록색맹')">⬇ 다운로드</a>
+        </div>
+        <div class="preview-card">
+          <div class="preview-card-header">녹색맹 <span class="active-label">Deuteranopia</span></div>
+          <canvas id="canvas-deuteranopia"></canvas>
+          <a class="preview-card-dl" onclick="downloadCanvas('canvas-deuteranopia', '녹색맹')">⬇ 다운로드</a>
+        </div>
+        <div class="preview-card">
+          <div class="preview-card-header">청황색맹 <span class="active-label">Tritanopia</span></div>
+          <canvas id="canvas-tritanopia"></canvas>
+          <a class="preview-card-dl" onclick="downloadCanvas('canvas-tritanopia', '청황색맹')">⬇ 다운로드</a>
+        </div>
+        <div class="preview-card">
+          <div class="preview-card-header">전색맹 <span class="active-label">Achromatopsia</span></div>
+          <canvas id="canvas-achromatopsia"></canvas>
+          <a class="preview-card-dl" id="downloadBtn" onclick="downloadCanvas('canvas-achromatopsia', '전색맹')">⬇ 다운로드</a>
+        </div>
+      </div>
+
+      <!-- 단일 보기 -->
+      <div id="singleView" style="display:none;" class="single-preview">
+        <canvas id="canvas-single"></canvas>
+        <div style="margin-top:12px;">
+          <a class="preview-card-dl" style="display:inline-block;padding:10px 28px;border-radius:8px;border:1.5px solid var(--primary);text-decoration:none;" onclick="downloadSingle()">⬇ 현재 보기 다운로드</a>
+        </div>
+      </div>
+    </div>
+
+    <button onclick="resetUpload()" class="btn btn-outline" style="margin-top:12px;">🔄 다른 이미지 사용</button>
+  </div>
+
+  <div class="cross-link-tip">
+    💡 색상 대비(접근성 기준)를 확인하려면 <a href="contrast-checker.html">색상 대비 검사기 (WCAG)</a>를 이용하세요.
+  </div>
+
+  <section class="faq-section" style="max-width:800px;margin:3rem auto;padding:0 1rem;">
+    <h2 style="font-size:1.4rem;margin-bottom:1.5rem;">자주 묻는 질문</h2>
+    <div class="faq-list">
+      <div class="faq-item" style="margin-bottom:1.2rem;padding:1rem;background:#f8f9fa;border-radius:8px;">
+        <h3 style="font-size:1rem;font-weight:600;margin-bottom:0.5rem;">Q. 이미지가 서버로 전송되나요?</h3>
+        <p style="color:#555;margin:0;">아니요, 이미지는 브라우저 내 Canvas API만으로 처리되며 어떠한 서버에도 전송되지 않습니다. 100% 개인정보 보호.</p>
+      </div>
+      <div class="faq-item" style="margin-bottom:1.2rem;padding:1rem;background:#f8f9fa;border-radius:8px;">
+        <h3 style="font-size:1rem;font-weight:600;margin-bottom:0.5rem;">Q. 어떤 색맹 유형을 지원하나요?</h3>
+        <p style="color:#555;margin:0;">적록색맹(Protanopia), 녹색맹(Deuteranopia), 청황색맹(Tritanopia), 전색맹(Achromatopsia) 4가지 주요 색각 이상 유형을 시뮬레이션합니다.</p>
+      </div>
+      <div class="faq-item" style="padding:1rem;background:#f8f9fa;border-radius:8px;">
+        <h3 style="font-size:1rem;font-weight:600;margin-bottom:0.5rem;">Q. 시뮬레이션 결과를 다운로드할 수 있나요?</h3>
+        <p style="color:#555;margin:0;">각 시뮬레이션 결과 이미지 아래의 다운로드 버튼을 클릭하면 PNG 파일로 저장할 수 있습니다.</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<aside class="tool-sidebar">
+  <div class="ad-card">
+    <ins class="adsbygoogle"
+         style="display:block;width:100%;min-height:250px"
+         data-ad-client="ca-pub-6464921081676309"
+         data-ad-slot="1419180025"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <div class="ad-card" style="margin-top:16px;overflow:hidden;">
+    <script src="https://ads-partners.coupang.com/g.js"></script>
+    <script>
+      new PartnersCoupang.G({"id":986943,"trackingCode":"AF5600192","subId":null,"template":"carousel","width":"300","height":"250"});
+    </script>
+  </div>
+</aside>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-bottom">
+      <p>© 2026 WooaColor. 모든 권리 보유.</p>
+      <div class="footer-bottom-links">
+        <a href="privacy.html">개인정보처리방침</a>
+        <a href="about.html">소개</a>
+        <a href="index.html">전체 도구</a>
+      </div>
+    </div>
+    <p class="coupang-notice">이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</p>
+  </div>
+</footer>
+
+<script>
+// ——— 색맹 시뮬레이션 행렬 ———
+
+const SIMULATIONS = {
+  normal: null, // 원본
+  protanopia: (r, g, b) => ({
+    r: 0.567 * r + 0.433 * g,
+    g: 0.558 * r + 0.442 * g,
+    b: 0.242 * g + 0.758 * b
+  }),
+  deuteranopia: (r, g, b) => ({
+    r: 0.625 * r + 0.375 * g,
+    g: 0.700 * r + 0.300 * g,
+    b: 0.300 * g + 0.700 * b
+  }),
+  tritanopia: (r, g, b) => ({
+    r: 0.950 * r + 0.050 * b,
+    g: 0.433 * g + 0.567 * b,
+    b: 0.475 * g + 0.525 * b
+  }),
+  achromatopsia: (r, g, b) => {
+    const gray = 0.299 * r + 0.587 * g + 0.114 * b;
+    return { r: gray, g: gray, b: gray };
+  }
+};
+
+let originalImageData = null;
+let originalWidth = 0;
+let originalHeight = 0;
+let currentSingleType = 'normal';
+
+// ——— 파일 업로드 처리 ———
+
+const dropZone = document.getElementById('dropZone');
+dropZone.addEventListener('dragover', e => { e.preventDefault(); dropZone.classList.add('drag-over'); });
+dropZone.addEventListener('dragleave', () => dropZone.classList.remove('drag-over'));
+dropZone.addEventListener('drop', e => {
+  e.preventDefault();
+  dropZone.classList.remove('drag-over');
+  const file = e.dataTransfer.files[0];
+  if (file && file.type.startsWith('image/')) processFile(file);
+});
+
+function handleFile(e) {
+  const file = e.target.files[0];
+  if (file) processFile(file);
+}
+
+function processFile(file) {
+  const url = URL.createObjectURL(file);
+  const img = new Image();
+  img.onload = () => {
+    const maxW = Math.min(img.width, 800);
+    const scale = maxW / img.width;
+    const w = Math.round(img.width * scale);
+    const h = Math.round(img.height * scale);
+
+    // 원본 데이터 추출
+    const tmpCanvas = document.createElement('canvas');
+    tmpCanvas.width = w;
+    tmpCanvas.height = h;
+    const tmpCtx = tmpCanvas.getContext('2d');
+    tmpCtx.drawImage(img, 0, 0, w, h);
+    originalImageData = tmpCtx.getImageData(0, 0, w, h);
+    originalWidth = w;
+    originalHeight = h;
+    URL.revokeObjectURL(url);
+
+    // 모든 캔버스 렌더링
+    Object.keys(SIMULATIONS).forEach(type => {
+      renderToCanvas('canvas-' + type, type);
+    });
+
+    document.getElementById('uploadSection').style.display = 'none';
+    document.getElementById('simPanel').style.display = 'block';
+  };
+  img.src = url;
+}
+
+function renderToCanvas(canvasId, type) {
+  const canvas = document.getElementById(canvasId);
+  canvas.width = originalWidth;
+  canvas.height = originalHeight;
+  const ctx = canvas.getContext('2d');
+
+  const srcData = originalImageData.data;
+  const outData = ctx.createImageData(originalWidth, originalHeight);
+  const dst = outData.data;
+  const fn = SIMULATIONS[type];
+
+  for (let i = 0; i < srcData.length; i += 4) {
+    const r = srcData[i], g = srcData[i + 1], b = srcData[i + 2], a = srcData[i + 3];
+    if (fn) {
+      const out = fn(r, g, b);
+      dst[i]     = Math.round(Math.max(0, Math.min(255, out.r)));
+      dst[i + 1] = Math.round(Math.max(0, Math.min(255, out.g)));
+      dst[i + 2] = Math.round(Math.max(0, Math.min(255, out.b)));
+    } else {
+      dst[i] = r; dst[i + 1] = g; dst[i + 2] = b;
+    }
+    dst[i + 3] = a;
+  }
+  ctx.putImageData(outData, 0, 0);
+}
+
+// ——— 보기 전환 ———
+
+function setView(type, btn) {
+  document.querySelectorAll('.sim-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+
+  const gridView = document.getElementById('gridView');
+  const singleView = document.getElementById('singleView');
+
+  if (type === 'all') {
+    gridView.style.display = 'grid';
+    singleView.style.display = 'none';
+  } else {
+    gridView.style.display = 'none';
+    singleView.style.display = 'block';
+    currentSingleType = type;
+    renderToCanvas('canvas-single', type);
+    const labels = {
+      normal: '원본',
+      protanopia: '적록색맹 (Protanopia)',
+      deuteranopia: '녹색맹 (Deuteranopia)',
+      tritanopia: '청황색맹 (Tritanopia)',
+      achromatopsia: '전색맹 (Achromatopsia)'
+    };
+    document.getElementById('singleView').querySelector('a').textContent = '⬇ ' + labels[type] + ' 다운로드';
+  }
+}
+
+// ——— 다운로드 ———
+
+function downloadCanvas(canvasId, label) {
+  const canvas = document.getElementById(canvasId);
+  const link = document.createElement('a');
+  link.download = '색맹시뮬레이션_' + label + '.png';
+  link.href = canvas.toDataURL('image/png');
+  link.click();
+}
+
+function downloadSingle() {
+  downloadCanvas('canvas-single', currentSingleType);
+}
+
+// ——— 초기화 ———
+
+function resetUpload() {
+  document.getElementById('fileInput').value = '';
+  originalImageData = null;
+  document.getElementById('uploadSection').style.display = 'block';
+  document.getElementById('simPanel').style.display = 'none';
+  // 탭 초기화
+  document.querySelectorAll('.sim-tab').forEach((t, i) => { if (i === 0) t.classList.add('active'); else t.classList.remove('active'); });
+  document.getElementById('gridView').style.display = 'grid';
+  document.getElementById('singleView').style.display = 'none';
+}
+</script>
+
+<script src="js/pwa-install.js"></script>
+</body>
+</html>

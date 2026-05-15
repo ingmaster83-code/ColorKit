@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9ZGENFSXWC"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-9ZGENFSXWC');
+  </script>
+  <meta name="naver-site-verification" content="7396a327607b884b9bef1283dfd3a5c6115a2b50" />
+  <meta name="google-site-verification" content="tNM8tmr_6DFold03YSScWz4KEtu5Zo0Fsqc03u5Afms" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>색상 조화 생성기 — 보색·유사색·삼색 팔레트 자동 생성 무료 | WooaColor</title>
+  <meta name="description" content="기준 색상을 입력하면 보색, 유사색, 삼색, 분보색, 정사각형 등 조화로운 색상 팔레트를 자동으로 생성합니다. 클릭 한 번으로 HEX 코드 복사. 무료 온라인 색상 조화 생성기.">
+  <meta name="keywords" content="색상조화,보색,유사색,삼색배색,컬러팔레트,색상배색,color harmony,complementary,analogous,triadic,색상조합,WooaColor">
+  <link rel="canonical" href="https://colorkit.wooahouse.com/color-harmony.html">
+  <!-- Open Graph -->
+  <meta property="og:title" content="색상 조화 생성기 — 보색·유사색·삼색 팔레트 | WooaColor">
+  <meta property="og:description" content="기준 색상 입력 시 보색·유사색·삼색 등 5가지 색상 조화 팔레트를 자동으로 생성합니다.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://colorkit.wooahouse.com/color-harmony.html">
+  <meta property="og:locale" content="ko_KR">
+  <meta property="og:image" content="https://colorkit.wooahouse.com/og-image.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "색상 조화 생성기",
+    "url": "https://colorkit.wooahouse.com/color-harmony.html",
+    "applicationCategory": "UtilityApplication",
+    "operatingSystem": "Web",
+    "inLanguage": "ko",
+    "isAccessibleForFree": true,
+    "offers": {"@type": "Offer","price": "0","priceCurrency": "KRW"}
+  }
+  </script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6464921081676309" crossorigin="anonymous"></script>
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#8B5CF6">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="WooaColor">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .base-color-wrap {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 28px;
+    }
+    .base-color-input {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--bg-card, #fff);
+      border: 1.5px solid var(--border, #E5E7EB);
+      border-radius: 10px;
+      padding: 10px 14px;
+    }
+    .base-color-input input[type="color"] {
+      width: 52px;
+      height: 44px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      padding: 0;
+      background: transparent;
+    }
+    .base-color-input input[type="text"] {
+      width: 100px;
+      font-family: 'Courier New', monospace;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text, #1F2937);
+      border: none;
+      outline: none;
+      background: transparent;
+      text-transform: uppercase;
+    }
+    .harmony-section {
+      margin-bottom: 32px;
+    }
+    .harmony-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text, #1F2937);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .harmony-title .badge {
+      font-size: 0.7rem;
+      font-weight: 600;
+      background: var(--primary-light, #EDE9FE);
+      color: var(--primary, #8B5CF6);
+      padding: 2px 8px;
+      border-radius: 20px;
+    }
+    .harmony-desc {
+      font-size: 0.82rem;
+      color: var(--text-light, #6B7280);
+      margin-bottom: 14px;
+    }
+    .swatch-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .swatch-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+      transition: transform 0.15s;
+    }
+    .swatch-card:hover {
+      transform: translateY(-3px);
+    }
+    .swatch {
+      width: 72px;
+      height: 72px;
+      border-radius: 10px;
+      border: 1px solid rgba(0,0,0,0.08);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+      position: relative;
+    }
+    .swatch-hex {
+      font-size: 0.72rem;
+      font-family: 'Courier New', monospace;
+      font-weight: 600;
+      color: var(--text-light, #6B7280);
+      text-transform: uppercase;
+    }
+    .swatch-label {
+      font-size: 0.68rem;
+      color: var(--text-light, #6B7280);
+    }
+    .copy-toast {
+      position: fixed;
+      bottom: 32px;
+      left: 50%;
+      transform: translateX(-50%) translateY(20px);
+      background: #1F2937;
+      color: #fff;
+      font-size: 0.88rem;
+      padding: 10px 20px;
+      border-radius: 8px;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.25s;
+      z-index: 9999;
+    }
+    .copy-toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+    .swatch-base {
+      border: 3px solid var(--primary, #8B5CF6) !important;
+    }
+    @media (max-width: 520px) {
+      .swatch { width: 56px; height: 56px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">WooaColor</a>
+    <nav>
+      <a href="color-converter.html">변환</a>
+      <a href="gradient-generator.html">생성</a>
+      <a href="contrast-checker.html">분석</a>
+      <a href="box-shadow.html">CSS 도구</a>
+      <a href="color-picker.html">색상 추출</a>
+    </nav>
+  </div>
+</header>
+
+<div class="our-sites-bar">
+  <span class="our-sites-label">WooaHouse Services</span>
+  <div class="our-sites-links">
+    <a href="https://wooahouse.com/" target="_blank" rel="noopener">🔗 WooaHouse</a>
+    <a href="https://pdfkit.wooahouse.com/" target="_blank" rel="noopener">📄 WooaPDF</a>
+    <a href="https://imagekit.wooahouse.com/" target="_blank" rel="noopener">🖼️ WooaImage</a>
+    <a href="https://colorkit.wooahouse.com/" target="_blank" rel="noopener" class="active">🎨 WooaColor</a>
+    <a href="https://textkit.wooahouse.com/" target="_blank" rel="noopener">📝 WooaText</a>
+    <a href="https://qrkit.wooahouse.com/" target="_blank" rel="noopener">📱 WooaQR</a>
+    <a href="https://calckit.wooahouse.com/" target="_blank" rel="noopener">🧮 WooaCalc</a>
+    <a href="https://fontkit.wooahouse.com/" target="_blank" rel="noopener">🔤 WooaFont</a>
+    <a href="https://mactools.wooahouse.com/" target="_blank" rel="noopener">🍎 WooaMac</a>
+    <a href="https://pctools.wooahouse.com/" target="_blank" rel="noopener">🖥️ WooaPC</a>
+    <a href="https://vskit.wooahouse.com/" target="_blank" rel="noopener">💻 WooaVS</a>
+    <a href="https://wooaaudio.wooahouse.com/" target="_blank" rel="noopener">🎵 WooaAudio</a>
+    <a href="https://wooaviewer.wooahouse.com/" target="_blank" rel="noopener">🔍 WooaViewer</a>
+    <a href="https://wooadev.wooahouse.com/" target="_blank" rel="noopener">🛠️ WooaDev</a>
+  </div>
+</div>
+
+<div class="page-with-sidebar">
+<div class="tool-page">
+  <div class="breadcrumb">
+    <a href="index.html">WooaColor</a>
+    <span>›</span>
+    <span>색상 조화 생성기</span>
+  </div>
+
+  <div class="tool-header">
+    <span class="tool-header-icon">🎨</span>
+    <h1>색상 조화 생성기 무료 온라인 — 보색·유사색·삼색 팔레트 자동 생성</h1>
+    <p>기준 색상을 선택하면 5가지 색상 조화 이론에 따른 팔레트를 자동으로 생성합니다</p>
+  </div>
+
+  <div class="panel">
+    <div class="panel-title">기준 색상 선택</div>
+    <div class="base-color-wrap">
+      <div class="base-color-input">
+        <input type="color" id="baseColorPicker" value="#8B5CF6">
+        <input type="text" id="baseColorHex" value="#8B5CF6" maxlength="7">
+      </div>
+      <p style="font-size:0.85rem;color:var(--text-light);">색상을 선택하거나 HEX 코드를 직접 입력하세요. 스와치를 클릭하면 HEX가 클립보드에 복사됩니다.</p>
+    </div>
+
+    <!-- Complementary -->
+    <div class="harmony-section">
+      <div class="harmony-title">
+        보색 (Complementary)
+        <span class="badge">+180°</span>
+      </div>
+      <div class="harmony-desc">색상환에서 정반대에 위치한 색으로, 강한 대비와 생동감을 줍니다.</div>
+      <div class="swatch-row" id="harmonyComplementary"></div>
+    </div>
+
+    <!-- Analogous -->
+    <div class="harmony-section">
+      <div class="harmony-title">
+        유사색 (Analogous)
+        <span class="badge">±30°</span>
+      </div>
+      <div class="harmony-desc">색상환에서 인접한 색으로, 부드럽고 조화로운 느낌을 줍니다.</div>
+      <div class="swatch-row" id="harmonyAnalogous"></div>
+    </div>
+
+    <!-- Triadic -->
+    <div class="harmony-section">
+      <div class="harmony-title">
+        삼색 (Triadic)
+        <span class="badge">+120° / +240°</span>
+      </div>
+      <div class="harmony-desc">색상환을 세 등분한 색상들로, 균형감 있으면서 다채로운 배색입니다.</div>
+      <div class="swatch-row" id="harmonyTriadic"></div>
+    </div>
+
+    <!-- Split-Complementary -->
+    <div class="harmony-section">
+      <div class="harmony-title">
+        분보색 (Split-Complementary)
+        <span class="badge">+150° / +210°</span>
+      </div>
+      <div class="harmony-desc">보색 양쪽의 색상을 사용해 보색보다 부드럽고 대비가 있는 배색입니다.</div>
+      <div class="swatch-row" id="harmonySplitComplementary"></div>
+    </div>
+
+    <!-- Tetradic -->
+    <div class="harmony-section">
+      <div class="harmony-title">
+        정사각형 (Tetradic)
+        <span class="badge">+90° / +180° / +270°</span>
+      </div>
+      <div class="harmony-desc">색상환을 네 등분한 색상들로, 풍부하고 다양한 배색을 만들 수 있습니다.</div>
+      <div class="swatch-row" id="harmonyTetradic"></div>
+    </div>
+  </div>
+
+  <div class="cross-link-tip">
+    💡 추출한 색상을 다른 형식으로 변환하려면 <a href="color-converter.html">HEX ↔ RGB ↔ HSL 변환기</a>를 이용하세요.
+  </div>
+
+  <section class="faq-section" style="max-width:800px;margin:3rem auto;padding:0 1rem;">
+    <h2 style="font-size:1.4rem;margin-bottom:1.5rem;">자주 묻는 질문</h2>
+    <div class="faq-list">
+      <div class="faq-item" style="margin-bottom:1.2rem;padding:1rem;background:#f8f9fa;border-radius:8px;">
+        <h3 style="font-size:1rem;font-weight:600;margin-bottom:0.5rem;">Q. 색상 조화란 무엇인가요?</h3>
+        <p style="color:#555;margin:0;">색상 조화는 색상환에서 특정 각도 관계에 있는 색상들을 조합해 시각적으로 균형 잡힌 배색을 만드는 이론입니다.</p>
+      </div>
+      <div class="faq-item" style="margin-bottom:1.2rem;padding:1rem;background:#f8f9fa;border-radius:8px;">
+        <h3 style="font-size:1rem;font-weight:600;margin-bottom:0.5rem;">Q. 스와치를 클릭하면 무엇이 복사되나요?</h3>
+        <p style="color:#555;margin:0;">스와치(색상 블록)를 클릭하면 해당 색상의 HEX 코드(예: #FF5733)가 클립보드에 자동으로 복사됩니다.</p>
+      </div>
+      <div class="faq-item" style="padding:1rem;background:#f8f9fa;border-radius:8px;">
+        <h3 style="font-size:1rem;font-weight:600;margin-bottom:0.5rem;">Q. 어떤 색상 조화를 사용하면 좋을까요?</h3>
+        <p style="color:#555;margin:0;">단순하고 강한 대비를 원할 때는 보색, 부드럽고 자연스러운 느낌엔 유사색, 다채로운 디자인엔 삼색이나 정사각형 배색을 추천합니다.</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<aside class="tool-sidebar">
+  <div class="ad-card">
+    <ins class="adsbygoogle"
+         style="display:block;width:100%;min-height:250px"
+         data-ad-client="ca-pub-6464921081676309"
+         data-ad-slot="1419180025"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <div class="ad-card" style="margin-top:16px;overflow:hidden;">
+    <script src="https://ads-partners.coupang.com/g.js"></script>
+    <script>
+      new PartnersCoupang.G({"id":986943,"trackingCode":"AF5600192","subId":null,"template":"carousel","width":"300","height":"250"});
+    </script>
+  </div>
+</aside>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-bottom">
+      <p>© 2026 WooaColor. 모든 권리 보유.</p>
+      <div class="footer-bottom-links">
+        <a href="privacy.html">개인정보처리방침</a>
+        <a href="about.html">소개</a>
+        <a href="index.html">전체 도구</a>
+      </div>
+    </div>
+    <p class="coupang-notice">이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.</p>
+  </div>
+</footer>
+
+<div class="copy-toast" id="copyToast">복사되었습니다!</div>
+
+<script>
+// ——— 색상 변환 유틸리티 ———
+
+function hexToRgb(hex) {
+  hex = hex.replace(/^#/, '');
+  if (hex.length === 3) hex = hex.split('').map(c => c + c).join('');
+  const n = parseInt(hex, 16);
+  return { r: (n >> 16) & 255, g: (n >> 8) & 255, b: n & 255 };
+}
+
+function rgbToHsl(r, g, b) {
+  r /= 255; g /= 255; b /= 255;
+  const max = Math.max(r, g, b), min = Math.min(r, g, b);
+  let h, s, l = (max + min) / 2;
+  if (max === min) {
+    h = s = 0;
+  } else {
+    const d = max - min;
+    s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+    switch (max) {
+      case r: h = ((g - b) / d + (g < b ? 6 : 0)) / 6; break;
+      case g: h = ((b - r) / d + 2) / 6; break;
+      case b: h = ((r - g) / d + 4) / 6; break;
+    }
+  }
+  return { h: Math.round(h * 360), s: Math.round(s * 100), l: Math.round(l * 100) };
+}
+
+function hslToRgb(h, s, l) {
+  s /= 100; l /= 100;
+  const k = n => (n + h / 30) % 12;
+  const a = s * Math.min(l, 1 - l);
+  const f = n => l - a * Math.max(-1, Math.min(k(n) - 3, Math.min(9 - k(n), 1)));
+  return {
+    r: Math.round(f(0) * 255),
+    g: Math.round(f(8) * 255),
+    b: Math.round(f(4) * 255)
+  };
+}
+
+function rgbToHex(r, g, b) {
+  return '#' + [r, g, b].map(v => Math.max(0, Math.min(255, v)).toString(16).padStart(2, '0').toUpperCase()).join('');
+}
+
+function hslShift(hsl, deltaH) {
+  const newH = ((hsl.h + deltaH) % 360 + 360) % 360;
+  const rgb = hslToRgb(newH, hsl.s, hsl.l);
+  return rgbToHex(rgb.r, rgb.g, rgb.b);
+}
+
+// ——— 스와치 생성 ———
+
+function createSwatch(hex, label, isBase) {
+  const card = document.createElement('div');
+  card.className = 'swatch-card';
+  card.title = `클릭해서 ${hex} 복사`;
+  card.onclick = () => copySwatch(hex);
+
+  const sw = document.createElement('div');
+  sw.className = 'swatch' + (isBase ? ' swatch-base' : '');
+  sw.style.background = hex;
+
+  const hexLabel = document.createElement('div');
+  hexLabel.className = 'swatch-hex';
+  hexLabel.textContent = hex;
+
+  const nameLabel = document.createElement('div');
+  nameLabel.className = 'swatch-label';
+  nameLabel.textContent = label;
+
+  card.appendChild(sw);
+  card.appendChild(hexLabel);
+  card.appendChild(nameLabel);
+  return card;
+}
+
+function copySwatch(hex) {
+  navigator.clipboard.writeText(hex).then(() => {
+    const toast = document.getElementById('copyToast');
+    toast.textContent = hex + ' 복사됨!';
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 1800);
+  }).catch(() => {
+    const ta = document.createElement('textarea');
+    ta.value = hex;
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+    const toast = document.getElementById('copyToast');
+    toast.textContent = hex + ' 복사됨!';
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 1800);
+  });
+}
+
+// ——— 팔레트 렌더링 ———
+
+function renderHarmonies(baseHex) {
+  const rgb = hexToRgb(baseHex);
+  const hsl = rgbToHsl(rgb.r, rgb.g, rgb.b);
+
+  // Complementary: base + 180
+  const compData = [
+    { hex: baseHex, label: '기준색' },
+    { hex: hslShift(hsl, 180), label: '보색' }
+  ];
+  renderRow('harmonyComplementary', compData, baseHex);
+
+  // Analogous: -30, base, +30
+  const analData = [
+    { hex: hslShift(hsl, -30), label: '-30°' },
+    { hex: baseHex, label: '기준색' },
+    { hex: hslShift(hsl, 30), label: '+30°' }
+  ];
+  renderRow('harmonyAnalogous', analData, baseHex);
+
+  // Triadic: base, +120, +240
+  const triadData = [
+    { hex: baseHex, label: '기준색' },
+    { hex: hslShift(hsl, 120), label: '+120°' },
+    { hex: hslShift(hsl, 240), label: '+240°' }
+  ];
+  renderRow('harmonyTriadic', triadData, baseHex);
+
+  // Split-Complementary: base, +150, +210
+  const splitData = [
+    { hex: baseHex, label: '기준색' },
+    { hex: hslShift(hsl, 150), label: '+150°' },
+    { hex: hslShift(hsl, 210), label: '+210°' }
+  ];
+  renderRow('harmonySplitComplementary', splitData, baseHex);
+
+  // Tetradic: base, +90, +180, +270
+  const tetData = [
+    { hex: baseHex, label: '기준색' },
+    { hex: hslShift(hsl, 90), label: '+90°' },
+    { hex: hslShift(hsl, 180), label: '+180°' },
+    { hex: hslShift(hsl, 270), label: '+270°' }
+  ];
+  renderRow('harmonyTetradic', tetData, baseHex);
+}
+
+function renderRow(containerId, data, baseHex) {
+  const container = document.getElementById(containerId);
+  container.innerHTML = '';
+  data.forEach(item => {
+    container.appendChild(createSwatch(item.hex, item.label, item.hex === baseHex));
+  });
+}
+
+// ——— 이벤트 바인딩 ———
+
+const picker = document.getElementById('baseColorPicker');
+const hexInput = document.getElementById('baseColorHex');
+
+function isValidHex(h) {
+  return /^#([0-9A-Fa-f]{6})$/.test(h);
+}
+
+picker.addEventListener('input', () => {
+  hexInput.value = picker.value.toUpperCase();
+  renderHarmonies(picker.value);
+});
+
+hexInput.addEventListener('input', () => {
+  let v = hexInput.value.trim();
+  if (!v.startsWith('#')) v = '#' + v;
+  hexInput.value = v.toUpperCase();
+  if (isValidHex(v)) {
+    picker.value = v;
+    renderHarmonies(v);
+  }
+});
+
+hexInput.addEventListener('keydown', e => {
+  if (e.key === 'Enter') {
+    let v = hexInput.value.trim();
+    if (!v.startsWith('#')) v = '#' + v;
+    if (isValidHex(v)) {
+      picker.value = v;
+      renderHarmonies(v);
+    }
+  }
+});
+
+// 초기 렌더링
+renderHarmonies(picker.value);
+</script>
+
+<script src="js/pwa-install.js"></script>
+</body>
+</html>
