@@ -1,0 +1,740 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9ZGENFSXWC"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-9ZGENFSXWC');
+  </script>
+  <meta name="naver-site-verification" content="7396a327607b884b9bef1283dfd3a5c6115a2b50" />
+  <meta name="google-site-verification" content="tNM8tmr_6DFold03YSScWz4KEtu5Zo0Fsqc03u5Afms" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Color Name Finder Free Online – HEX & RGB to Color Name | WooaColor</title>
+  <meta name="description" content="Enter a HEX or RGB color code to find the closest color name in English and Korean. Shows 5 similar colors too. Free online color name lookup tool.">
+  <meta name="keywords" content="color name finder, HEX color name, RGB color name, color name lookup, CSS color names, closest color name, color identifier, WooaColor">
+  <link rel="canonical" href="https://colorkit.wooahouse.com/en/color-name.html">
+  <link rel="alternate" hreflang="ko" href="https://colorkit.wooahouse.com/color-name.html">
+  <link rel="alternate" hreflang="en" href="https://colorkit.wooahouse.com/en/color-name.html">
+  <link rel="alternate" hreflang="x-default" href="https://colorkit.wooahouse.com/en/color-name.html">
+  <meta property="og:title" content="Color Name Finder Free Online – HEX & RGB to Color Name | WooaColor">
+  <meta property="og:description" content="Enter HEX or RGB to find the closest color name (English & Korean) with 5 similar colors. Free online tool.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://colorkit.wooahouse.com/en/color-name.html">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://colorkit.wooahouse.com/og-image.png">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6464921081676309" crossorigin="anonymous"></script>
+  <link rel="manifest" href="../manifest.json">
+  <meta name="theme-color" content="#8B5CF6">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="WooaColor">
+  <link rel="stylesheet" href="../css/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Color Name Finder",
+    "url": "https://colorkit.wooahouse.com/en/color-name.html",
+    "applicationCategory": "UtilityApplication",
+    "operatingSystem": "Web",
+    "inLanguage": "en",
+    "isAccessibleForFree": true,
+    "offers": {"@type": "Offer","price": "0","priceCurrency": "USD"}
+  }
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How does the color name finder work?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Enter a HEX or RGB value and the tool searches a database of named colors to find the closest match using color distance calculations."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What color name databases are included?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The tool includes standard CSS named colors and an extended list of common English and Korean color names."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Are similar colors also shown?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. In addition to the closest match, 5 similar named colors are displayed so you can explore nearby options."
+      }
+    }
+  ]
+}
+</script>
+  <style>
+    .cn-result-main {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      padding: 20px;
+      background: #f8f9fa;
+      border-radius: var(--radius);
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+    .cn-result-swatch {
+      width: 100px;
+      height: 100px;
+      border-radius: 14px;
+      border: 1px solid rgba(0,0,0,0.08);
+      flex-shrink: 0;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.12);
+    }
+    .cn-result-info { flex: 1; min-width: 160px; }
+    .cn-result-name-en {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1.2;
+    }
+    .cn-result-name-kr {
+      font-size: 1rem;
+      color: var(--text-light);
+      margin-bottom: 8px;
+    }
+    .cn-result-hex {
+      font-family: 'Courier New', monospace;
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--primary);
+      margin-bottom: 6px;
+    }
+    .cn-similarity {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #e8f5e9;
+      color: #2e7d32;
+      border-radius: 20px;
+      padding: 3px 12px;
+      font-size: 0.82rem;
+      font-weight: 700;
+    }
+    .cn-copy-btn {
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      border-radius: var(--radius-sm);
+      padding: 8px 16px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.15s;
+      white-space: nowrap;
+    }
+    .cn-copy-btn:hover { background: #7c3aed; }
+    .cn-similar-title {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 12px;
+    }
+    .cn-similar-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .cn-similar-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 14px;
+      background: #f8f9fa;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+    }
+    .cn-similar-swatch {
+      width: 40px;
+      height: 40px;
+      border-radius: 8px;
+      border: 1px solid rgba(0,0,0,0.08);
+      flex-shrink: 0;
+    }
+    .cn-similar-info { flex: 1; }
+    .cn-similar-name {
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+    .cn-similar-kr {
+      font-size: 0.78rem;
+      color: var(--text-light);
+    }
+    .cn-similar-hex {
+      font-family: 'Courier New', monospace;
+      font-size: 0.78rem;
+      color: var(--text-light);
+    }
+    .cn-similar-badge {
+      font-size: 0.75rem;
+      color: var(--text-light);
+      white-space: nowrap;
+    }
+    .cn-similar-copy {
+      background: none;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 4px 10px;
+      font-size: 0.75rem;
+      cursor: pointer;
+      color: var(--text-light);
+      transition: all 0.15s;
+      white-space: nowrap;
+    }
+    .cn-similar-copy:hover { background: var(--primary); color: #fff; border-color: var(--primary); }
+    .rgb-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 12px;
+      margin-top: 14px;
+    }
+    @media (max-width: 520px) { .rgb-row { grid-template-columns: 1fr; } }
+    .rgb-field label {
+      display: block;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--text-light);
+      margin-bottom: 4px;
+    }
+    .rgb-field input[type="range"] {
+      width: 100%;
+      accent-color: var(--primary);
+    }
+    .rgb-field input[type="number"] {
+      width: 100%;
+      padding: 6px 8px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      font-size: 0.88rem;
+      font-family: 'Courier New', monospace;
+      text-align: center;
+      outline: none;
+    }
+    .rgb-field input[type="number"]:focus { border-color: var(--primary); }
+    .picker-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .toast {
+      position: fixed;
+      bottom: 28px;
+      left: 50%;
+      transform: translateX(-50%) translateY(80px);
+      background: #059669;
+      color: #fff;
+      border-radius: 8px;
+      padding: 10px 22px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      z-index: 9999;
+      transition: transform 0.3s ease;
+      pointer-events: none;
+    }
+    .toast.show { transform: translateX(-50%) translateY(0); }
+    .lang-switcher { display:flex; align-items:center; gap:4px; }
+    .lang-switcher a { color:rgba(255,255,255,0.7); text-decoration:none; font-size:0.8rem; font-weight:600; padding:3px 8px; border-radius:12px; transition:background 0.15s; }
+    .lang-switcher a.active { color:white; background:rgba(255,255,255,0.25); }
+    .lang-switcher a:hover { color:white; background:rgba(255,255,255,0.18); }
+    .lang-switcher span { color:rgba(255,255,255,0.3); font-size:0.75rem; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="../index.html" class="logo">WooaColor</a>
+    <nav>
+      <a href="../color-converter.html">Convert</a>
+      <a href="../gradient-generator.html">Generate</a>
+      <a href="../contrast-checker.html">Analyze</a>
+      <a href="../box-shadow.html">CSS Tools</a>
+      <a href="../color-picker.html">Color Picker</a>
+    </nav>
+    <div class="header-right">
+      <div class="lang-switcher">
+        <a href="../color-name.html">KO</a>
+        <span>|</span>
+        <a href="color-name.html" class="active">EN</a>
+      </div>
+      <a href="../about.html" style="color:rgba(255,255,255,0.85); font-size:0.85rem; text-decoration:none; margin-left:8px;">About</a>
+    </div>
+  </div>
+</header>
+
+<div class="our-sites-bar">
+  <span class="our-sites-label">WooaHouse Services</span>
+  <div class="our-sites-links">
+    <a href="https://wooahouse.com/" target="_blank" rel="noopener">🔗 WooaHouse</a>
+    <a href="https://pdfkit.wooahouse.com/" target="_blank" rel="noopener">📄 WooaPDF</a>
+    <a href="https://imagekit.wooahouse.com/" target="_blank" rel="noopener">🖼️ WooaImage</a>
+    <a href="https://colorkit.wooahouse.com/en/" target="_blank" rel="noopener" class="active">🎨 WooaColor</a>
+    <a href="https://textkit.wooahouse.com/" target="_blank" rel="noopener">📝 WooaText</a>
+    <a href="https://qrkit.wooahouse.com/" target="_blank" rel="noopener">📱 WooaQR</a>
+    <a href="https://calckit.wooahouse.com/" target="_blank" rel="noopener">🧮 WooaCalc</a>
+    <a href="https://fontkit.wooahouse.com/" target="_blank" rel="noopener">🔤 WooaFont</a>
+    <a href="https://mactools.wooahouse.com/" target="_blank" rel="noopener">🍎 WooaMac</a>
+    <a href="https://pctools.wooahouse.com/" target="_blank" rel="noopener">🖥️ WooaPC</a>
+    <a href="https://vskit.wooahouse.com/" target="_blank" rel="noopener">💻 WooaVS</a>
+    <a href="https://wooaaudio.wooahouse.com/" target="_blank" rel="noopener">🎵 WooaAudio</a>
+    <a href="https://wooaviewer.wooahouse.com/" target="_blank" rel="noopener">🔍 WooaViewer</a>
+    <a href="https://wooadev.wooahouse.com/" target="_blank" rel="noopener">🛠️ WooaDev</a>
+  </div>
+</div>
+
+<div class="page-with-sidebar">
+<div class="tool-page">
+  <div class="breadcrumb">
+    <a href="../index.html">WooaColor</a>
+    <span>›</span>
+    <span>Color Name 찾기</span>
+  </div>
+
+  <div class="tool-header">
+    <span class="tool-header-icon">🏷️</span>
+    <h1>Color Name Finder – Free Online</h1>
+    <p>Color Code를 입력하면 Closest Color Name(Korean+English)과 Similar Colors 5개를 찾아드립니다</p>
+  </div>
+
+  <!-- AdSense 상단 -->
+  
+
+  <!-- 입력 패널 -->
+  <div class="panel">
+    <div class="panel-title">색상 입력</div>
+    <div class="picker-row">
+      <input type="color" id="colorPicker" value="#8B5CF6" oninput="onPickerChange(this.value)">
+      <div class="input-group" style="flex:1;min-width:140px;margin-bottom:0;">
+        <label>HEX 코드</label>
+        <input type="text" id="hexInput" value="#8B5CF6" maxlength="7" placeholder="#8B5CF6" oninput="onHexInput(this.value)">
+      </div>
+    </div>
+    <div class="rgb-row">
+      <div class="rgb-field">
+        <label>R (빨강) — <span id="rVal">139</span></label>
+        <input type="range" id="rSlider" min="0" max="255" value="139" oninput="onRgbChange()">
+        <input type="number" id="rNum" min="0" max="255" value="139" oninput="onRgbNumChange()">
+      </div>
+      <div class="rgb-field">
+        <label>G (초록) — <span id="gVal">92</span></label>
+        <input type="range" id="gSlider" min="0" max="255" value="92" oninput="onRgbChange()">
+        <input type="number" id="gNum" min="0" max="255" value="92" oninput="onRgbNumChange()">
+      </div>
+      <div class="rgb-field">
+        <label>B (파랑) — <span id="bVal">246</span></label>
+        <input type="range" id="bSlider" min="0" max="255" value="246" oninput="onRgbChange()">
+        <input type="number" id="bNum" min="0" max="255" value="246" oninput="onRgbNumChange()">
+      </div>
+    </div>
+  </div>
+
+  <!-- 결과 패널 -->
+  <div class="panel" style="margin-top:0;" id="resultPanel">
+    <div class="panel-title">Closest Color Name</div>
+    <div class="cn-result-main" id="mainResult"></div>
+    <div class="cn-similar-title">Similar Colors TOP 5</div>
+    <div class="cn-similar-list" id="similarList"></div>
+  </div>
+
+  <!-- AdSense 중단 -->
+  <div style="text-align:center;margin:16px auto;max-width:728px;padding:0 8px">
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6464921081676309" data-ad-slot="1419180025" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <div class="cross-link-tip">
+    💡 Color Code를 서로 변환하려면 <a href="../color-converter.html">색상 변환기(HEX↔RGB↔HSL)</a>를 이용하세요. Color Palette가 필요하면 <a href="../palette-generator.html">Palette Generator</a>도 확인해보세요.
+  </div>
+
+  <section class="faq-section" style="max-width:800px;margin:3rem auto;padding:0 1rem;">
+    <h2 style="font-size:1.4rem;margin-bottom:1.5rem;">Frequently Asked Questions</h2>
+    <div class="faq-list">
+      <div class="faq-item" style="margin-bottom:1.2rem;padding:1rem;background:#f8f9fa;border-radius:8px;">
+        <h3 style="font-size:1rem;font-weight:600;margin-bottom:0.5rem;">Q. How does the color name finder work?</h3>
+        <p style="color:#555;margin:0;">Enter a HEX or RGB value and the tool searches a database of named colors to find the closest match using color distance calculations.</p>
+      </div>
+      <div class="faq-item" style="margin-bottom:1.2rem;padding:1rem;background:#f8f9fa;border-radius:8px;">
+        <h3 style="font-size:1rem;font-weight:600;margin-bottom:0.5rem;">Q. What color name databases are included?</h3>
+        <p style="color:#555;margin:0;">The tool includes standard CSS named colors and an extended list of common English and Korean color names.</p>
+      </div>
+      <div class="faq-item" style="padding:1rem;background:#f8f9fa;border-radius:8px;">
+        <h3 style="font-size:1rem;font-weight:600;margin-bottom:0.5rem;">Q. Are similar colors also shown?</h3>
+        <p style="color:#555;margin:0;">Yes. In addition to the closest match, 5 similar named colors are displayed so you can explore nearby options.</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<aside class="tool-sidebar">
+  <div class="ad-card">
+    <ins class="adsbygoogle"
+         style="display:block;width:100%;min-height:250px"
+         data-ad-client="ca-pub-6464921081676309"
+         data-ad-slot="1419180025"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <div class="ad-card" style="margin-top:16px;overflow:hidden;">    
+  </div>
+</aside>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-bottom">
+      <p>© 2026 WooaColor. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="../privacy.html">Privacy Policy</a>
+        <a href="../about.html">About</a>
+        <a href="../index.html">전체 도구</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script src="../js/pwa-install.js"></script>
+<script>
+/* ── 색상 DB ── */
+const COLOR_DB = [
+  {name:'Red', kr:'빨강', hex:'#FF0000'},
+  {name:'Green', kr:'초록', hex:'#008000'},
+  {name:'Blue', kr:'파랑', hex:'#0000FF'},
+  {name:'White', kr:'흰색', hex:'#FFFFFF'},
+  {name:'Black', kr:'검정', hex:'#000000'},
+  {name:'Yellow', kr:'노랑', hex:'#FFFF00'},
+  {name:'Orange', kr:'주황', hex:'#FFA500'},
+  {name:'Purple', kr:'보라', hex:'#800080'},
+  {name:'Pink', kr:'분홍', hex:'#FFC0CB'},
+  {name:'Brown', kr:'갈색', hex:'#A52A2A'},
+  {name:'Gray', kr:'회색', hex:'#808080'},
+  {name:'Cyan', kr:'청록', hex:'#00FFFF'},
+  {name:'Magenta', kr:'자홍', hex:'#FF00FF'},
+  {name:'Lime', kr:'라임', hex:'#00FF00'},
+  {name:'Indigo', kr:'남색', hex:'#4B0082'},
+  {name:'Violet', kr:'제비꽃', hex:'#EE82EE'},
+  {name:'Gold', kr:'금색', hex:'#FFD700'},
+  {name:'Silver', kr:'은색', hex:'#C0C0C0'},
+  {name:'Coral', kr:'산호색', hex:'#FF7F50'},
+  {name:'Salmon', kr:'연어색', hex:'#FA8072'},
+  {name:'Tomato', kr:'토마토', hex:'#FF6347'},
+  {name:'Crimson', kr:'크림슨', hex:'#DC143C'},
+  {name:'Navy', kr:'네이비', hex:'#000080'},
+  {name:'Teal', kr:'청록색', hex:'#008080'},
+  {name:'Olive', kr:'올리브', hex:'#808000'},
+  {name:'Maroon', kr:'밤색', hex:'#800000'},
+  {name:'Turquoise', kr:'터코이즈', hex:'#40E0D0'},
+  {name:'Sky Blue', kr:'하늘색', hex:'#87CEEB'},
+  {name:'Royal Blue', kr:'로열블루', hex:'#4169E1'},
+  {name:'Hot Pink', kr:'핫핑크', hex:'#FF69B4'},
+  {name:'Deep Pink', kr:'딥핑크', hex:'#FF1493'},
+  {name:'Lavender', kr:'라벤더', hex:'#E6E6FA'},
+  {name:'Mint', kr:'민트', hex:'#98FF98'},
+  {name:'Beige', kr:'베이지', hex:'#F5F5DC'},
+  {name:'Ivory', kr:'아이보리', hex:'#FFFFF0'},
+  {name:'Khaki', kr:'카키', hex:'#F0E68C'},
+  {name:'Peach', kr:'복숭아색', hex:'#FFCBA4'},
+  {name:'Chocolate', kr:'초콜릿', hex:'#D2691E'},
+  {name:'Tan', kr:'황갈색', hex:'#D2B48C'},
+  {name:'Sienna', kr:'시에나', hex:'#A0522D'},
+  {name:'Peru', kr:'페루', hex:'#CD853F'},
+  {name:'Wheat', kr:'밀색', hex:'#F5DEB3'},
+  {name:'Forest Green', kr:'숲초록', hex:'#228B22'},
+  {name:'Lime Green', kr:'라임그린', hex:'#32CD32'},
+  {name:'Spring Green', kr:'봄초록', hex:'#00FF7F'},
+  {name:'Sea Green', kr:'바다초록', hex:'#2E8B57'},
+  {name:'Dark Green', kr:'짙은초록', hex:'#006400'},
+  {name:'Yellow Green', kr:'황록색', hex:'#9ACD32'},
+  {name:'Chartreuse', kr:'샤르트뢰즈', hex:'#7FFF00'},
+  {name:'Steel Blue', kr:'강철파랑', hex:'#4682B4'},
+  {name:'Dodger Blue', kr:'다저블루', hex:'#1E90FF'},
+  {name:'Powder Blue', kr:'파우더블루', hex:'#B0E0E6'},
+  {name:'Cadet Blue', kr:'카데트블루', hex:'#5F9EA0'},
+  {name:'Slate Blue', kr:'슬레이트블루', hex:'#6A5ACD'},
+  {name:'Medium Purple', kr:'중간보라', hex:'#9370DB'},
+  {name:'Dark Violet', kr:'짙은보라', hex:'#9400D3'},
+  {name:'Plum', kr:'자두색', hex:'#DDA0DD'},
+  {name:'Orchid', kr:'난초색', hex:'#DA70D6'},
+  {name:'Rose', kr:'장미', hex:'#FF007F'},
+  {name:'Lemon', kr:'레몬', hex:'#FFF44F'},
+  {name:'Amber', kr:'호박색', hex:'#FFBF00'},
+  {name:'Apricot', kr:'살구색', hex:'#FBCEB1'},
+  {name:'Burgundy', kr:'버건디', hex:'#800020'},
+  {name:'Charcoal', kr:'숯색', hex:'#36454F'},
+  {name:'Cream', kr:'크림', hex:'#FFFDD0'},
+  {name:'Emerald', kr:'에메랄드', hex:'#50C878'},
+  {name:'Jade', kr:'옥색', hex:'#00A86B'},
+  {name:'Mauve', kr:'모브', hex:'#E0B0FF'},
+  {name:'Mustard', kr:'머스타드', hex:'#FFDB58'},
+  {name:'Nude', kr:'누드', hex:'#E8C39E'},
+  {name:'Periwinkle', kr:'페리윙클', hex:'#CCCCFF'},
+  {name:'Ruby', kr:'루비', hex:'#9B111E'},
+  {name:'Rust', kr:'녹슨색', hex:'#B7410E'},
+  {name:'Sage', kr:'세이지', hex:'#BCB88A'},
+  {name:'Scarlet', kr:'주홍', hex:'#FF2400'},
+  {name:'Slate', kr:'슬레이트', hex:'#708090'},
+  {name:'Taupe', kr:'토프', hex:'#483C32'},
+  {name:'Umber', kr:'엄버', hex:'#635147'},
+  {name:'Alice Blue', kr:'앨리스블루', hex:'#F0F8FF'},
+  {name:'Antique White', kr:'앤틱화이트', hex:'#FAEBD7'},
+  {name:'Aqua', kr:'아쿠아', hex:'#00FFFF'},
+  {name:'Aquamarine', kr:'아쿠아마린', hex:'#7FFFD4'},
+  {name:'Azure', kr:'하늘파랑', hex:'#F0FFFF'},
+  {name:'Bisque', kr:'비스크', hex:'#FFE4C4'},
+  {name:'Blanched Almond', kr:'블랜치드아몬드', hex:'#FFEBCD'},
+  {name:'Blue Violet', kr:'파란보라', hex:'#8A2BE2'},
+  {name:'Burlywood', kr:'벌리우드', hex:'#DEB887'},
+  {name:'Cornflower Blue', kr:'수레국화파랑', hex:'#6495ED'},
+  {name:'Cornsilk', kr:'옥수수', hex:'#FFF8DC'},
+  {name:'Dark Blue', kr:'짙은파랑', hex:'#00008B'},
+  {name:'Dark Cyan', kr:'짙은청록', hex:'#008B8B'},
+  {name:'Dark Gray', kr:'짙은회색', hex:'#A9A9A9'},
+  {name:'Dark Khaki', kr:'짙은카키', hex:'#BDB76B'},
+  {name:'Dark Magenta', kr:'짙은자홍', hex:'#8B008B'},
+  {name:'Dark Olive Green', kr:'짙은올리브', hex:'#556B2F'},
+  {name:'Dark Orange', kr:'짙은주황', hex:'#FF8C00'},
+  {name:'Dark Orchid', kr:'짙은난초', hex:'#9932CC'},
+  {name:'Dark Red', kr:'짙은빨강', hex:'#8B0000'},
+  {name:'Dark Salmon', kr:'짙은연어', hex:'#E9967A'},
+  {name:'Dark Sea Green', kr:'짙은바다초록', hex:'#8FBC8F'},
+  {name:'Dark Slate Blue', kr:'짙은슬레이트블루', hex:'#483D8B'},
+  {name:'Dark Turquoise', kr:'짙은터코이즈', hex:'#00CED1'},
+  {name:'Deep Sky Blue', kr:'짙은하늘파랑', hex:'#00BFFF'},
+  {name:'Fire Brick', kr:'벽돌색', hex:'#B22222'},
+  {name:'Floral White', kr:'꽃흰색', hex:'#FFFAF0'},
+  {name:'Gainsboro', kr:'게인즈버러', hex:'#DCDCDC'},
+  {name:'Ghost White', kr:'고스트화이트', hex:'#F8F8FF'},
+  {name:'Green Yellow', kr:'초록노랑', hex:'#ADFF2F'},
+  {name:'Honeydew', kr:'허니듀', hex:'#F0FFF0'},
+  {name:'Indian Red', kr:'인디안레드', hex:'#CD5C5C'},
+  {name:'Lavender Blush', kr:'라벤더블러시', hex:'#FFF0F5'},
+  {name:'Lawn Green', kr:'잔디초록', hex:'#7CFC00'},
+  {name:'Lemon Chiffon', kr:'레몬시폰', hex:'#FFFACD'},
+  {name:'Light Blue', kr:'연한파랑', hex:'#ADD8E6'},
+  {name:'Light Coral', kr:'연한산호', hex:'#F08080'},
+  {name:'Light Cyan', kr:'연한청록', hex:'#E0FFFF'},
+  {name:'Light Gray', kr:'연한회색', hex:'#D3D3D3'},
+  {name:'Light Green', kr:'연한초록', hex:'#90EE90'},
+  {name:'Light Pink', kr:'연한분홍', hex:'#FFB6C1'},
+  {name:'Light Salmon', kr:'연한연어', hex:'#FFA07A'},
+  {name:'Light Sea Green', kr:'연한바다초록', hex:'#20B2AA'},
+  {name:'Light Sky Blue', kr:'연한하늘파랑', hex:'#87CEFA'},
+  {name:'Light Slate Gray', kr:'연한슬레이트회색', hex:'#778899'},
+  {name:'Light Steel Blue', kr:'연한강철파랑', hex:'#B0C4DE'},
+  {name:'Light Yellow', kr:'연한노랑', hex:'#FFFFE0'},
+  {name:'Linen', kr:'린넨', hex:'#FAF0E6'},
+  {name:'Medium Aquamarine', kr:'중간아쿠아마린', hex:'#66CDAA'},
+  {name:'Medium Blue', kr:'중간파랑', hex:'#0000CD'},
+  {name:'Medium Orchid', kr:'중간난초', hex:'#BA55D3'},
+  {name:'Medium Sea Green', kr:'중간바다초록', hex:'#3CB371'},
+  {name:'Medium Slate Blue', kr:'중간슬레이트블루', hex:'#7B68EE'},
+  {name:'Medium Spring Green', kr:'중간봄초록', hex:'#00FA9A'},
+  {name:'Medium Turquoise', kr:'중간터코이즈', hex:'#48D1CC'},
+  {name:'Medium Violet Red', kr:'중간보라빨강', hex:'#C71585'},
+  {name:'Midnight Blue', kr:'미드나잇블루', hex:'#191970'},
+  {name:'Mint Cream', kr:'민트크림', hex:'#F5FFFA'},
+  {name:'Misty Rose', kr:'미스티로즈', hex:'#FFE4E1'},
+  {name:'Moccasin', kr:'모카신', hex:'#FFE4B5'},
+  {name:'Navajo White', kr:'나바조화이트', hex:'#FFDEAD'},
+  {name:'Old Lace', kr:'올드레이스', hex:'#FDF5E6'},
+  {name:'Orange Red', kr:'주황빨강', hex:'#FF4500'},
+  {name:'Pale Golden Rod', kr:'페일골든로드', hex:'#EEE8AA'},
+  {name:'Pale Green', kr:'연한초록', hex:'#98FB98'},
+  {name:'Pale Turquoise', kr:'연한터코이즈', hex:'#AFEEEE'},
+  {name:'Pale Violet Red', kr:'연한보라빨강', hex:'#DB7093'},
+  {name:'Papaya Whip', kr:'파파야휩', hex:'#FFEFD5'},
+  {name:'Peach Puff', kr:'피치퍼프', hex:'#FFDAB9'},
+  {name:'Sandy Brown', kr:'모래갈색', hex:'#F4A460'},
+  {name:'Sea Shell', kr:'조개껍데기', hex:'#FFF5EE'},
+  {name:'Snow', kr:'눈색', hex:'#FFFAFA'},
+  {name:'Thistle', kr:'엉겅퀴', hex:'#D8BFD8'},
+  {name:'White Smoke', kr:'화이트스모크', hex:'#F5F5F5'},
+];
+
+/* ── 유틸리티 ── */
+function hexToRgb(hex) {
+  hex = hex.replace('#','');
+  if(hex.length===3) hex = hex.split('').map(c=>c+c).join('');
+  const n = parseInt(hex,16);
+  return {r:(n>>16)&255, g:(n>>8)&255, b:n&255};
+}
+
+function rgbToHex(r,g,b) {
+  return '#' + [r,g,b].map(v=>Math.round(Math.max(0,Math.min(255,v))).toString(16).padStart(2,'0')).join('').toUpperCase();
+}
+
+function colorDist(r1,g1,b1,r2,g2,b2) {
+  return Math.sqrt((r1-r2)**2+(g1-g2)**2+(b1-b2)**2);
+}
+
+function similarity(dist) {
+  return Math.max(0, Math.round((1 - dist/441.67)*100));
+}
+
+function isValidHex(hex) {
+  return /^#([0-9A-Fa-f]{6})$/.test(hex);
+}
+
+/* ── 토스트 ── */
+let toastTimer;
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(()=>t.classList.remove('show'), 2000);
+}
+
+function copyHex(hex) {
+  navigator.clipboard.writeText(hex)
+    .then(()=>showToast('✅ ' + hex + ' 복사됨!'))
+    .catch(()=>{
+      const ta = document.createElement('textarea');
+      ta.value = hex;
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand('copy');
+      document.body.removeChild(ta);
+      showToast('✅ ' + hex + ' 복사됨!');
+    });
+}
+
+/* ── 검색 ── */
+function findClosest(r,g,b) {
+  const results = COLOR_DB.map(c => {
+    const {r:cr,g:cg,b:cb} = hexToRgb(c.hex);
+    return {...c, dist: colorDist(r,g,b,cr,cg,cb)};
+  }).sort((a,b)=>a.dist-b.dist);
+  return results;
+}
+
+/* ── 렌더 ── */
+function render(r,g,b) {
+  const inputHex = rgbToHex(r,g,b);
+  const results = findClosest(r,g,b);
+  const best = results[0];
+  const similar = results.slice(0,5);
+
+  // 메인 결과
+  const sim = similarity(best.dist);
+  const mainEl = document.getElementById('mainResult');
+  mainEl.innerHTML = `
+    <div class="cn-result-swatch" style="background:${inputHex}"></div>
+    <div class="cn-result-info">
+      <div class="cn-result-name-en">${best.name}</div>
+      <div class="cn-result-name-kr">${best.kr}</div>
+      <div class="cn-result-hex">${best.hex}</div>
+      <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+        <div class="cn-similarity">유사도 ${sim}%</div>
+        ${best.dist===0?'<span style="font-size:0.78rem;color:#059669;font-weight:600;">정확히 일치</span>':''}
+      </div>
+    </div>
+    <button class="cn-copy-btn" onclick="copyHex('${best.hex}')">HEX 복사</button>
+  `;
+
+  // 유사 목록
+  const listEl = document.getElementById('similarList');
+  listEl.innerHTML = '';
+  similar.forEach((c,i) => {
+    const s = similarity(c.dist);
+    const item = document.createElement('div');
+    item.className = 'cn-similar-item';
+    item.innerHTML = `
+      <div class="cn-similar-swatch" style="background:${c.hex}"></div>
+      <div class="cn-similar-info">
+        <div class="cn-similar-name">${c.name}</div>
+        <div class="cn-similar-kr">${c.kr}</div>
+        <div class="cn-similar-hex">${c.hex}</div>
+      </div>
+      <div class="cn-similar-badge">유사도 ${s}%</div>
+      <button class="cn-similar-copy" onclick="copyHex('${c.hex}')">Copy</button>
+    `;
+    listEl.appendChild(item);
+  });
+}
+
+/* ── 입력 연동 ── */
+let currentR=139, currentG=92, currentB=246;
+
+function updateAll(r,g,b) {
+  currentR=r; currentG=g; currentB=b;
+  const hex = rgbToHex(r,g,b);
+
+  document.getElementById('colorPicker').value = hex;
+  document.getElementById('hexInput').value = hex;
+  document.getElementById('rSlider').value = r;
+  document.getElementById('gSlider').value = g;
+  document.getElementById('bSlider').value = b;
+  document.getElementById('rNum').value = r;
+  document.getElementById('gNum').value = g;
+  document.getElementById('bNum').value = b;
+  document.getElementById('rVal').textContent = r;
+  document.getElementById('gVal').textContent = g;
+  document.getElementById('bVal').textContent = b;
+
+  render(r,g,b);
+}
+
+function onPickerChange(val) {
+  if(isValidHex(val)) {
+    const {r,g,b} = hexToRgb(val);
+    updateAll(r,g,b);
+  }
+}
+
+function onHexInput(val) {
+  val = val.trim();
+  if(!val.startsWith('#')) val = '#' + val;
+  document.getElementById('hexInput').value = val;
+  if(isValidHex(val)) {
+    const {r,g,b} = hexToRgb(val);
+    updateAll(r,g,b);
+  }
+}
+
+function onRgbChange() {
+  const r = parseInt(document.getElementById('rSlider').value);
+  const g = parseInt(document.getElementById('gSlider').value);
+  const b = parseInt(document.getElementById('bSlider').value);
+  document.getElementById('rNum').value = r;
+  document.getElementById('gNum').value = g;
+  document.getElementById('bNum').value = b;
+  updateAll(r,g,b);
+}
+
+function onRgbNumChange() {
+  const r = Math.max(0,Math.min(255,parseInt(document.getElementById('rNum').value)||0));
+  const g = Math.max(0,Math.min(255,parseInt(document.getElementById('gNum').value)||0));
+  const b = Math.max(0,Math.min(255,parseInt(document.getElementById('bNum').value)||0));
+  document.getElementById('rSlider').value = r;
+  document.getElementById('gSlider').value = g;
+  document.getElementById('bSlider').value = b;
+  updateAll(r,g,b);
+}
+
+/* 초기 실행 */
+updateAll(currentR, currentG, currentB);
+</script>
+</body>
+</html>

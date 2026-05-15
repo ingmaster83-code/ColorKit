@@ -1,0 +1,386 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9ZGENFSXWC"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-9ZGENFSXWC');
+  </script>
+  <meta name="naver-site-verification" content="7396a327607b884b9bef1283dfd3a5c6115a2b50" />
+  <meta name="google-site-verification" content="tNM8tmr_6DFold03YSScWz4KEtu5Zo0Fsqc03u5Afms" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Color Generator Free Online – HEX RGB HSL | WooaColor</title>
+  <meta name="description" content="Generate a random color with one click and get its HEX, RGB, and HSL codes instantly. Includes a 10-color history. Free online random color generator for design inspiration.">
+  <meta name="keywords" content="random color generator, random HEX color, random color code, color inspiration, random RGB, random HSL, color generator online free, WooaColor">
+  <link rel="canonical" href="https://colorkit.wooahouse.com/en/random-color.html">
+  <link rel="alternate" hreflang="ko" href="https://colorkit.wooahouse.com/random-color.html">
+  <link rel="alternate" hreflang="en" href="https://colorkit.wooahouse.com/en/random-color.html">
+  <link rel="alternate" hreflang="x-default" href="https://colorkit.wooahouse.com/en/random-color.html">
+  <meta property="og:title" content="Random Color Generator Free Online – HEX RGB HSL | WooaColor">
+  <meta property="og:description" content="Generate a random color and get HEX, RGB, and HSL codes instantly. Includes color history. Free online tool.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://colorkit.wooahouse.com/en/random-color.html">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://colorkit.wooahouse.com/og-image.png">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6464921081676309" crossorigin="anonymous"></script>
+  <link rel="manifest" href="../manifest.json">
+  <meta name="theme-color" content="#8B5CF6">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="WooaColor">
+  <link rel="stylesheet" href="../css/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Random Color Generator",
+    "url": "https://colorkit.wooahouse.com/en/random-color.html",
+    "applicationCategory": "UtilityApplication",
+    "operatingSystem": "Web",
+    "inLanguage": "en",
+    "isAccessibleForFree": true,
+    "offers": {"@type": "Offer","price": "0","priceCurrency": "USD"}
+  }
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "How do I generate a random color?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Click the Generate button and a new random color is created instantly with its HEX, RGB, and HSL codes displayed."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How many colors are kept in history?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "The last 10 generated colors are shown in the history panel so you can revisit and copy any previous color."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I copy the generated color codes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Each code format (HEX, RGB, HSL) has a copy button for immediate use."
+      }
+    }
+  ]
+}
+</script>
+  <style>
+    .random-preview {
+      width: 100%;
+      height: 220px;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      transition: background 0.4s ease;
+      margin-bottom: 20px;
+    }
+    .generate-btn {
+      display: block;
+      width: 100%;
+      background: var(--primary);
+      color: white;
+      padding: 16px;
+      border: none;
+      border-radius: var(--radius-sm);
+      font-size: 1.1rem;
+      font-weight: 700;
+      cursor: pointer;
+      font-family: inherit;
+      transition: background 0.15s, transform 0.1s;
+      letter-spacing: 0.3px;
+      margin-bottom: 20px;
+    }
+    .generate-btn:hover { background: var(--primary-dark); }
+    .generate-btn:active { transform: scale(0.99); }
+    .code-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+      background: #F9FAFB;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 10px 14px;
+    }
+    .code-label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--text-light);
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      min-width: 38px;
+    }
+    .code-value {
+      flex: 1;
+      font-family: 'Courier New', monospace;
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+    .history-title {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-light);
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      margin-bottom: 12px;
+    }
+    .history-swatches {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .history-swatch {
+      width: 42px;
+      height: 42px;
+      border-radius: 8px;
+      border: 2px solid white;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+      cursor: pointer;
+      transition: transform 0.15s;
+      flex-shrink: 0;
+    }
+    .history-swatch:hover { transform: scale(1.12); }
+    .lang-switcher { display:flex; align-items:center; gap:4px; }
+    .lang-switcher a { color:rgba(255,255,255,0.7); text-decoration:none; font-size:0.8rem; font-weight:600; padding:3px 8px; border-radius:12px; transition:background 0.15s; }
+    .lang-switcher a.active { color:white; background:rgba(255,255,255,0.25); }
+    .lang-switcher a:hover { color:white; background:rgba(255,255,255,0.18); }
+    .lang-switcher span { color:rgba(255,255,255,0.3); font-size:0.75rem; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="../index.html" class="logo">WooaColor</a>
+    <nav>
+      <a href="../color-converter.html">Convert</a>
+      <a href="../gradient-generator.html">Generate</a>
+      <a href="../contrast-checker.html">Analyze</a>
+      <a href="../box-shadow.html">CSS Tools</a>
+      <a href="../color-picker.html">Color Picker</a>
+    </nav>
+    <div class="header-right">
+      <div class="lang-switcher">
+        <a href="../random-color.html">KO</a>
+        <span>|</span>
+        <a href="random-color.html" class="active">EN</a>
+      </div>
+      <a href="../about.html" style="color:rgba(255,255,255,0.85); font-size:0.85rem; text-decoration:none; margin-left:8px;">About</a>
+    </div>
+  </div>
+</header>
+
+<div class="our-sites-bar">
+  <span class="our-sites-label">WooaHouse Services</span>
+  <div class="our-sites-links">
+    <a href="https://wooahouse.com/" target="_blank" rel="noopener">🔗 WooaHouse</a>
+    <a href="https://pdfkit.wooahouse.com/" target="_blank" rel="noopener">📄 WooaPDF</a>
+    <a href="https://imagekit.wooahouse.com/" target="_blank" rel="noopener">🖼️ WooaImage</a>
+    <a href="https://colorkit.wooahouse.com/en/" target="_blank" rel="noopener" class="active">🎨 WooaColor</a>
+    <a href="https://textkit.wooahouse.com/" target="_blank" rel="noopener">📝 WooaText</a>
+    <a href="https://qrkit.wooahouse.com/" target="_blank" rel="noopener">📱 WooaQR</a>
+    <a href="https://calckit.wooahouse.com/" target="_blank" rel="noopener">🧮 WooaCalc</a>
+    <a href="https://fontkit.wooahouse.com/" target="_blank" rel="noopener">🔤 WooaFont</a>
+    <a href="https://mactools.wooahouse.com/" target="_blank" rel="noopener">🍎 WooaMac</a>
+    <a href="https://pctools.wooahouse.com/" target="_blank" rel="noopener">🖥️ WooaPC</a>
+    <a href="https://vskit.wooahouse.com/" target="_blank" rel="noopener">💻 WooaVS</a>
+    <a href="https://wooaaudio.wooahouse.com/" target="_blank" rel="noopener">🎵 WooaAudio</a>
+    <a href="https://wooaviewer.wooahouse.com/" target="_blank" rel="noopener">🔍 WooaViewer</a>
+    <a href="https://wooadev.wooahouse.com/" target="_blank" rel="noopener">🛠️ WooaDev</a>
+  </div>
+</div>
+
+<div class="page-with-sidebar">
+<div class="tool-page">
+  <div class="breadcrumb">
+    <a href="../index.html">WooaColor</a>
+    <span>›</span>
+    <span>랜덤 색상 생성기</span>
+  </div>
+
+  <div class="tool-header">
+    <span class="tool-header-icon">🎲</span>
+    <h1>Random Color Generator – Free Online</h1>
+    <p>버튼 한 번으로 새로운 색상을 생성하고 코드를 바로 복사하세요</p>
+  </div>
+
+  
+<div class="panel">
+    <div id="randomPreview" class="random-preview" style="background:#8B5CF6;"></div>
+    <button class="generate-btn" onclick="generateRandom()">🎲 다시 생성</button>
+
+    <div id="hexRow" class="code-row">
+      <span class="code-label">HEX</span>
+      <span class="code-value" id="hexVal">#8B5CF6</span>
+      <button class="btn-copy" onclick="copyCode('hexVal')">Copy</button>
+    </div>
+    <div id="rgbRow" class="code-row">
+      <span class="code-label">RGB</span>
+      <span class="code-value" id="rgbVal">rgb(139, 92, 246)</span>
+      <button class="btn-copy" onclick="copyCode('rgbVal')">Copy</button>
+    </div>
+    <div id="hslRow" class="code-row">
+      <span class="code-label">HSL</span>
+      <span class="code-value" id="hslVal">hsl(263, 90%, 66%)</span>
+      <button class="btn-copy" onclick="copyCode('hslVal')">Copy</button>
+    </div>
+  </div>
+
+  <div class="panel" style="margin-top:0;">
+    <div class="history-title">Recent Colors History</div>
+    <div id="historySwatches" class="history-swatches">
+      <span style="font-size:0.82rem;color:var(--text-light);">아직 생성된 색상이 없습니다.</span>
+    </div>
+  </div>
+
+  <div class="cross-link-tip">
+    💡 생성된 색상이 마음에 드셨나요? <a href="../palette-generator.html">Palette Generator</a>로 어울리는 색상 조합을 만들어 보세요.
+  </div>
+
+  <section class="faq-section" style="max-width:800px;margin:3rem auto;padding:0 1rem;">
+    <h2 style="font-size:1.4rem;margin-bottom:1.5rem;">Frequently Asked Questions</h2>
+    <div class="faq-list">
+      <div class="faq-item" style="margin-bottom:1.2rem;padding:1rem;background:#f8f9fa;border-radius:8px;">
+        <h3 style="font-size:1rem;font-weight:600;margin-bottom:0.5rem;">Q. How do I generate a random color?</h3>
+        <p style="color:#555;margin:0;">Click the Generate button and a new random color is created instantly with its HEX, RGB, and HSL codes displayed.</p>
+      </div>
+      <div class="faq-item" style="margin-bottom:1.2rem;padding:1rem;background:#f8f9fa;border-radius:8px;">
+        <h3 style="font-size:1rem;font-weight:600;margin-bottom:0.5rem;">Q. How many colors are kept in history?</h3>
+        <p style="color:#555;margin:0;">The last 10 generated colors are shown in the history panel so you can revisit and copy any previous color.</p>
+      </div>
+      <div class="faq-item" style="padding:1rem;background:#f8f9fa;border-radius:8px;">
+        <h3 style="font-size:1rem;font-weight:600;margin-bottom:0.5rem;">Q. Can I copy the generated color codes?</h3>
+        <p style="color:#555;margin:0;">Yes. Each code format (HEX, RGB, HSL) has a copy button for immediate use.</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<aside class="tool-sidebar">
+  <div class="ad-card">
+    <ins class="adsbygoogle"
+         style="display:block;width:100%;min-height:250px"
+         data-ad-client="ca-pub-6464921081676309"
+         data-ad-slot="1419180025"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <div class="ad-card" style="margin-top:16px;overflow:hidden;">    
+  </div>
+</aside>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-bottom">
+      <p>© 2026 WooaColor. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="../privacy.html">Privacy Policy</a>
+        <a href="../about.html">About</a>
+        <a href="../index.html">전체 도구</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+const history = [];
+
+function rgbToHex(r, g, b) {
+  return '#' + [r, g, b].map(v => v.toString(16).padStart(2, '0')).join('').toUpperCase();
+}
+
+function rgbToHSL(r, g, b) {
+  r /= 255; g /= 255; b /= 255;
+  const max = Math.max(r, g, b), min = Math.min(r, g, b);
+  let h, s, l = (max + min) / 2;
+  if (max === min) { h = s = 0; }
+  else {
+    const d = max - min;
+    s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+    switch (max) {
+      case r: h = ((g - b) / d + (g < b ? 6 : 0)) / 6; break;
+      case g: h = ((b - r) / d + 2) / 6; break;
+      case b: h = ((r - g) / d + 4) / 6; break;
+    }
+  }
+  return { h: Math.round(h * 360), s: Math.round(s * 100), l: Math.round(l * 100) };
+}
+
+function generateRandom() {
+  const r = Math.floor(Math.random() * 256);
+  const g = Math.floor(Math.random() * 256);
+  const b = Math.floor(Math.random() * 256);
+  const hex = rgbToHex(r, g, b);
+  const hsl = rgbToHSL(r, g, b);
+
+  document.getElementById('randomPreview').style.background = hex;
+  document.getElementById('hexVal').textContent = hex;
+  document.getElementById('rgbVal').textContent = `rgb(${r}, ${g}, ${b})`;
+  document.getElementById('hslVal').textContent = `hsl(${hsl.h}, ${hsl.s}%, ${hsl.l}%)`;
+
+  history.unshift(hex);
+  if (history.length > 10) history.pop();
+  renderHistory();
+}
+
+function renderHistory() {
+  const container = document.getElementById('historySwatches');
+  if (history.length === 0) {
+    container.innerHTML = '<span style="font-size:0.82rem;color:var(--text-light);">아직 생성된 색상이 없습니다.</span>';
+    return;
+  }
+  container.innerHTML = history.map(hex =>
+    `<div class="history-swatch" style="background:${hex};" title="${hex}" onclick="applyHistory('${hex}')"></div>`
+  ).join('');
+}
+
+function applyHistory(hex) {
+  const r = parseInt(hex.slice(1, 3), 16);
+  const g = parseInt(hex.slice(3, 5), 16);
+  const b = parseInt(hex.slice(5, 7), 16);
+  const hsl = rgbToHSL(r, g, b);
+  document.getElementById('randomPreview').style.background = hex;
+  document.getElementById('hexVal').textContent = hex;
+  document.getElementById('rgbVal').textContent = `rgb(${r}, ${g}, ${b})`;
+  document.getElementById('hslVal').textContent = `hsl(${hsl.h}, ${hsl.s}%, ${hsl.l}%)`;
+}
+
+function copyCode(id) {
+  const text = document.getElementById(id).textContent;
+  navigator.clipboard.writeText(text).then(() => {
+    const row = document.getElementById(id).closest('.code-row');
+    const btn = row.querySelector('.btn-copy');
+    btn.textContent = 'Copied!';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = 'Copy'; btn.classList.remove('copied'); }, 1500);
+  });
+}
+
+// Keyboard shortcut: Space to generate
+document.addEventListener('keydown', e => {
+  if (e.code === 'Space' && e.target.tagName !== 'INPUT' && e.target.tagName !== 'BUTTON') {
+    e.preventDefault();
+    generateRandom();
+  }
+});
+</script>
+<script src="../js/pwa-install.js"></script>
+</body>
+</html>

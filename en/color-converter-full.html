@@ -1,0 +1,453 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9ZGENFSXWC"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-9ZGENFSXWC');
+  </script>
+  <meta name="naver-site-verification" content="7396a327607b884b9bef1283dfd3a5c6115a2b50" />
+  <meta name="google-site-verification" content="tNM8tmr_6DFold03YSScWz4KEtu5Zo0Fsqc03u5Afms" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Color Converter HEX RGB HSL CMYK HSV Free Online | WooaColor</title>
+  <meta name="description" content="Convert between HEX, RGB, HSL, CMYK, and HSV color formats in real time. Supports print CMYK values too. Free online full color converter for web and print.">
+  <meta name="keywords" content="CMYK converter, HEX RGB HSL converter, HSV converter, color format converter, print color, CMYK color, full color converter online free, WooaColor">
+  <link rel="canonical" href="https://colorkit.wooahouse.com/en/color-converter-full.html">
+  <link rel="alternate" hreflang="ko" href="https://colorkit.wooahouse.com/color-converter-full.html">
+  <link rel="alternate" hreflang="en" href="https://colorkit.wooahouse.com/en/color-converter-full.html">
+  <link rel="alternate" hreflang="x-default" href="https://colorkit.wooahouse.com/en/color-converter-full.html">
+  <meta property="og:title" content="Color Converter HEX RGB HSL CMYK HSV Free Online | WooaColor">
+  <meta property="og:description" content="Convert between HEX, RGB, HSL, CMYK, and HSV color formats instantly. Supports print-ready CMYK. Free online tool.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://colorkit.wooahouse.com/en/color-converter-full.html">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://colorkit.wooahouse.com/og-image.png">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6464921081676309" crossorigin="anonymous"></script>
+  <link rel="manifest" href="../manifest.json">
+  <meta name="theme-color" content="#8B5CF6">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="WooaColor">
+  <link rel="stylesheet" href="../css/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Full Color Converter (HEX RGB HSL CMYK HSV)",
+    "url": "https://colorkit.wooahouse.com/en/color-converter-full.html",
+    "applicationCategory": "UtilityApplication",
+    "operatingSystem": "Web",
+    "inLanguage": "en",
+    "isAccessibleForFree": true,
+    "offers": {"@type": "Offer","price": "0","priceCurrency": "USD"}
+  }
+  </script>
+  <style>
+    .format-block { margin-bottom: 20px; }
+    .format-title {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #64748b;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+    }
+    .input-row { display: flex; gap: 8px; margin-bottom: 6px; flex-wrap: wrap; }
+    .input-row .input-group { flex: 1; min-width: 200px; }
+    .sub-inputs { display: flex; gap: 8px; margin-top: 6px; }
+    .sub-input-wrap { flex: 1; text-align: center; }
+    .sub-input-wrap label { display: block; font-size: 0.72rem; color: #64748b; margin-bottom: 3px; }
+    .sub-input-wrap input {
+      width: 100%; padding: 6px 4px;
+      border: 1px solid #e2e8f0; border-radius: 6px;
+      text-align: center; font-size: 0.88rem; background: #f9fafb; outline: none;
+    }
+    .sub-input-wrap input:focus { border-color: #8B5CF6; background: #fff; }
+    .color-preview-large {
+      width: 100%; height: 80px;
+      border-radius: 12px;
+      margin-bottom: 16px;
+      transition: background 0.2s;
+      border: 1px solid #e2e8f0;
+    }
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+      gap: 10px;
+      margin-top: 16px;
+    }
+    .info-cell {
+      background: #f9fafb;
+      border-radius: 8px;
+      padding: 10px;
+      text-align: center;
+      cursor: pointer;
+      transition: background 0.15s;
+      position: relative;
+    }
+    .info-cell:hover { background: #f0eeff; }
+    .info-cell-label { font-size: 0.72rem; color: #64748b; margin-bottom: 4px; }
+    .info-cell-val { font-family: 'Courier New', monospace; font-weight: 700; font-size: 0.88rem; word-break: break-all; }
+    .copied-toast {
+      position: fixed; bottom: 24px; right: 24px;
+      background: #22C55E; color: #fff;
+      padding: 10px 20px; border-radius: 8px;
+      font-weight: 700; font-size: 0.9rem;
+      display: none; z-index: 9999;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    }
+    .lang-switcher { display:flex; align-items:center; gap:4px; }
+    .lang-switcher a { color:rgba(255,255,255,0.7); text-decoration:none; font-size:0.8rem; font-weight:600; padding:3px 8px; border-radius:12px; transition:background 0.15s; }
+    .lang-switcher a.active { color:white; background:rgba(255,255,255,0.25); }
+    .lang-switcher a:hover { color:white; background:rgba(255,255,255,0.18); }
+    .lang-switcher span { color:rgba(255,255,255,0.3); font-size:0.75rem; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="../index.html" class="logo">WooaColor</a>
+    <nav>
+      <a href="../color-converter.html">Convert</a>
+      <a href="../gradient-generator.html">Generate</a>
+      <a href="../contrast-checker.html">Analyze</a>
+      <a href="../box-shadow.html">CSS Tools</a>
+      <a href="../color-picker.html">Color Picker</a>
+    </nav>
+    <div class="header-right">
+      <div class="lang-switcher">
+        <a href="../color-converter-full.html">KO</a>
+        <span>|</span>
+        <a href="color-converter-full.html" class="active">EN</a>
+      </div>
+      <a href="../about.html" style="color:rgba(255,255,255,0.85); font-size:0.85rem; text-decoration:none; margin-left:8px;">About</a>
+    </div>
+  </div>
+</header>
+
+<div class="our-sites-bar">
+  <span class="our-sites-label">WooaHouse Services</span>
+  <div class="our-sites-links">
+    <a href="https://wooahouse.com/" target="_blank" rel="noopener">🔗 WooaHouse</a>
+    <a href="https://pdfkit.wooahouse.com/" target="_blank" rel="noopener">📄 WooaPDF</a>
+    <a href="https://imagekit.wooahouse.com/" target="_blank" rel="noopener">🖼️ WooaImage</a>
+    <a href="https://colorkit.wooahouse.com/en/" target="_blank" rel="noopener" class="active">🎨 WooaColor</a>
+    <a href="https://textkit.wooahouse.com/" target="_blank" rel="noopener">📝 WooaText</a>
+    <a href="https://qrkit.wooahouse.com/" target="_blank" rel="noopener">📱 WooaQR</a>
+    <a href="https://calckit.wooahouse.com/" target="_blank" rel="noopener">🧮 WooaCalc</a>
+    <a href="https://fontkit.wooahouse.com/" target="_blank" rel="noopener">🔤 WooaFont</a>
+    <a href="https://mactools.wooahouse.com/" target="_blank" rel="noopener">🍎 WooaMac</a>
+    <a href="https://pctools.wooahouse.com/" target="_blank" rel="noopener">🖥️ WooaPC</a>
+    <a href="https://vskit.wooahouse.com/" target="_blank" rel="noopener">💻 WooaVS</a>
+    <a href="https://wooaaudio.wooahouse.com/" target="_blank" rel="noopener">🎵 WooaAudio</a>
+    <a href="https://wooaviewer.wooahouse.com/" target="_blank" rel="noopener">🔍 WooaViewer</a>
+    <a href="https://wooadev.wooahouse.com/" target="_blank" rel="noopener">🛠️ WooaDev</a>
+  </div>
+</div>
+
+<div class="page-with-sidebar">
+<div class="tool-page">
+  <div class="breadcrumb">
+    <a href="../index.html">WooaColor</a>
+    <span>›</span>
+    <span>색상 변환기 (전체)</span>
+  </div>
+
+  <div class="tool-header">
+    <span class="tool-header-icon">🔄</span>
+    <h1>Full Color Converter – HEX RGB HSL CMYK HSV</h1>
+    <p>5가지 색상 형식을 실시간으로 상호 변환합니다. 인쇄용 CMYK까지 지원.</p>
+  </div>
+
+  
+
+  <div class="panel">
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:16px;">
+      <div id="colorPreview" class="color-preview-large" style="background:#8B5CF6;"></div>
+    </div>
+
+    <!-- HEX -->
+    <div class="format-block">
+      <div class="format-title">HEX</div>
+      <div class="input-row">
+        <div class="input-group">
+          <label>HEX</label>
+          <input type="text" id="hexInput" value="#8B5CF6" placeholder="#RRGGBB" maxlength="7" oninput="fromHex()">
+          <button class="btn-copy" onclick="copyText(document.getElementById('hexInput').value)">Copy</button>
+        </div>
+        <input type="color" id="colorPicker" value="#8B5CF6" oninput="fromPicker()" style="height:48px;width:48px;padding:2px;border:1px solid #e2e8f0;border-radius:8px;cursor:pointer;flex-shrink:0;">
+      </div>
+    </div>
+
+    <!-- RGB -->
+    <div class="format-block">
+      <div class="format-title">RGB</div>
+      <div class="input-group" style="margin-bottom:6px;">
+        <label>RGB</label>
+        <input type="text" id="rgbStr" value="rgb(139, 92, 246)" readonly>
+        <button class="btn-copy" onclick="copyText(document.getElementById('rgbStr').value)">Copy</button>
+      </div>
+      <div class="sub-inputs">
+        <div class="sub-input-wrap"><label>R (0–255)</label><input type="number" id="rIn" min="0" max="255" value="139" oninput="fromRGB()"></div>
+        <div class="sub-input-wrap"><label>G (0–255)</label><input type="number" id="gIn" min="0" max="255" value="92"  oninput="fromRGB()"></div>
+        <div class="sub-input-wrap"><label>B (0–255)</label><input type="number" id="bIn" min="0" max="255" value="246" oninput="fromRGB()"></div>
+      </div>
+    </div>
+
+    <!-- HSL -->
+    <div class="format-block">
+      <div class="format-title">HSL</div>
+      <div class="input-group" style="margin-bottom:6px;">
+        <label>HSL</label>
+        <input type="text" id="hslStr" value="hsl(263, 90%, 66%)" readonly>
+        <button class="btn-copy" onclick="copyText(document.getElementById('hslStr').value)">Copy</button>
+      </div>
+      <div class="sub-inputs">
+        <div class="sub-input-wrap"><label>H (0–360)</label><input type="number" id="hIn" min="0" max="360" value="263" oninput="fromHSL()"></div>
+        <div class="sub-input-wrap"><label>S (0–100)</label><input type="number" id="sIn" min="0" max="100" value="90"  oninput="fromHSL()"></div>
+        <div class="sub-input-wrap"><label>L (0–100)</label><input type="number" id="lIn" min="0" max="100" value="66"  oninput="fromHSL()"></div>
+      </div>
+    </div>
+
+    <!-- HSV -->
+    <div class="format-block">
+      <div class="format-title">HSV / HSB</div>
+      <div class="input-group" style="margin-bottom:6px;">
+        <label>HSV</label>
+        <input type="text" id="hsvStr" value="" readonly>
+        <button class="btn-copy" onclick="copyText(document.getElementById('hsvStr').value)">Copy</button>
+      </div>
+      <div class="sub-inputs">
+        <div class="sub-input-wrap"><label>H (0–360)</label><input type="number" id="hvIn" min="0" max="360" value="263" oninput="fromHSV()"></div>
+        <div class="sub-input-wrap"><label>S (0–100)</label><input type="number" id="svIn" min="0" max="100" value="63"  oninput="fromHSV()"></div>
+        <div class="sub-input-wrap"><label>V (0–100)</label><input type="number" id="vvIn" min="0" max="100" value="96"  oninput="fromHSV()"></div>
+      </div>
+    </div>
+
+    <!-- CMYK -->
+    <div class="format-block">
+      <div class="format-title">CMYK (인쇄용)</div>
+      <div class="input-group" style="margin-bottom:6px;">
+        <label>CMYK</label>
+        <input type="text" id="cmykStr" value="" readonly>
+        <button class="btn-copy" onclick="copyText(document.getElementById('cmykStr').value)">Copy</button>
+      </div>
+      <div class="sub-inputs">
+        <div class="sub-input-wrap"><label>C (0–100)</label><input type="number" id="cIn" min="0" max="100" oninput="fromCMYK()"></div>
+        <div class="sub-input-wrap"><label>M (0–100)</label><input type="number" id="mIn" min="0" max="100" oninput="fromCMYK()"></div>
+        <div class="sub-input-wrap"><label>Y (0–100)</label><input type="number" id="yIn" min="0" max="100" oninput="fromCMYK()"></div>
+        <div class="sub-input-wrap"><label>K (0–100)</label><input type="number" id="kIn" min="0" max="100" oninput="fromCMYK()"></div>
+      </div>
+    </div>
+
+    <!-- Info grid -->
+    <div class="info-grid" id="infoGrid"></div>
+  </div>
+
+  <div style="text-align:center;margin:16px auto;max-width:728px;padding:0 8px">
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6464921081676309" data-ad-slot="1419180025" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <div class="cross-link-tip">
+    💡 기본 HEX/RGB/HSL 변환만 필요하다면 <a href="../color-converter.html">색상 변환기</a>를 이용하세요.
+  </div>
+
+  <section class="faq-section" style="max-width:800px;margin:3rem auto;padding:0 1rem;">
+    <h2 style="font-size:1.4rem;margin-bottom:1.5rem;">Frequently Asked Questions</h2>
+    <div class="faq-list">
+      <div class="faq-item" style="margin-bottom:1.2rem;padding:1rem;background:#f8f9fa;border-radius:8px;">
+        <h3 style="font-size:1rem;font-weight:600;margin-bottom:0.5rem;">Q. What color formats are supported?</h3>
+        <p style="color:#555;margin:0;">HEX, RGB, HSL, CMYK, and HSV are all supported. Enter a value in any format and the rest update instantly.</p>
+      </div>
+      <div class="faq-item" style="margin-bottom:1.2rem;padding:1rem;background:#f8f9fa;border-radius:8px;">
+        <h3 style="font-size:1rem;font-weight:600;margin-bottom:0.5rem;">Q. Why would I need CMYK conversion?</h3>
+        <p style="color:#555;margin:0;">CMYK is used in print design. Converting your web colors (HEX/RGB) to CMYK ensures accurate color reproduction when printing.</p>
+      </div>
+      <div class="faq-item" style="padding:1rem;background:#f8f9fa;border-radius:8px;">
+        <h3 style="font-size:1rem;font-weight:600;margin-bottom:0.5rem;">Q. Is conversion done in real time?</h3>
+        <p style="color:#555;margin:0;">Yes. As soon as you enter a value in any format field, all other formats are recalculated and displayed instantly.</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<aside class="tool-sidebar">
+  <div class="ad-card">
+    <ins class="adsbygoogle"
+         style="display:block;width:100%;min-height:250px"
+         data-ad-client="ca-pub-6464921081676309"
+         data-ad-slot="1419180025"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <div class="ad-card" style="margin-top:16px;overflow:hidden;">    
+  </div>
+</aside>
+</div>
+
+<div class="copied-toast" id="toast">✅ 복사됨!</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-bottom">
+      <p>© 2026 WooaColor. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="../privacy.html">Privacy Policy</a>
+        <a href="../about.html">About</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // ─── Conversion helpers ───
+  function clamp(v, lo, hi) { return Math.max(lo, Math.min(hi, v)); }
+
+  function hexToRgb(hex) {
+    hex = hex.replace('#','');
+    if (hex.length === 3) hex = hex.split('').map(c=>c+c).join('');
+    const n = parseInt(hex, 16);
+    return { r: (n>>16)&255, g: (n>>8)&255, b: n&255 };
+  }
+
+  function rgbToHex(r,g,b) {
+    return '#' + [r,g,b].map(v => clamp(Math.round(v),0,255).toString(16).padStart(2,'0')).join('');
+  }
+
+  function rgbToHsl(r,g,b) {
+    r/=255; g/=255; b/=255;
+    const max=Math.max(r,g,b), min=Math.min(r,g,b);
+    let h,s,l=(max+min)/2;
+    if (max===min) { h=s=0; }
+    else {
+      const d=max-min;
+      s = l>0.5 ? d/(2-max-min) : d/(max+min);
+      switch(max){
+        case r: h=((g-b)/d+(g<b?6:0))/6; break;
+        case g: h=((b-r)/d+2)/6; break;
+        case b: h=((r-g)/d+4)/6; break;
+      }
+    }
+    return { h: Math.round(h*360), s: Math.round(s*100), l: Math.round(l*100) };
+  }
+
+  function hslToRgb(h,s,l) {
+    s/=100; l/=100;
+    const c=(1-Math.abs(2*l-1))*s, x=c*(1-Math.abs((h/60)%2-1)), m=l-c/2;
+    let r=0,g=0,b=0;
+    if(h<60){r=c;g=x;}else if(h<120){r=x;g=c;}else if(h<180){g=c;b=x;}
+    else if(h<240){g=x;b=c;}else if(h<300){r=x;b=c;}else{r=c;b=x;}
+    return { r:Math.round((r+m)*255), g:Math.round((g+m)*255), b:Math.round((b+m)*255) };
+  }
+
+  function rgbToHsv(r,g,b) {
+    r/=255; g/=255; b/=255;
+    const max=Math.max(r,g,b), min=Math.min(r,g,b), d=max-min;
+    let h=0,s=max===0?0:d/max,v=max;
+    if(d!==0){
+      switch(max){
+        case r: h=((g-b)/d+(g<b?6:0))/6; break;
+        case g: h=((b-r)/d+2)/6; break;
+        case b: h=((r-g)/d+4)/6; break;
+      }
+    }
+    return { h:Math.round(h*360), s:Math.round(s*100), v:Math.round(v*100) };
+  }
+
+  function hsvToRgb(h,s,v) {
+    s/=100; v/=100;
+    const i=Math.floor(h/60)%6, f=h/60-Math.floor(h/60);
+    const p=v*(1-s), q=v*(1-f*s), t=v*(1-(1-f)*s);
+    let r,g,b;
+    switch(i){ case 0:r=v;g=t;b=p;break; case 1:r=q;g=v;b=p;break; case 2:r=p;g=v;b=t;break;
+               case 3:r=p;g=q;b=v;break; case 4:r=t;g=p;b=v;break; case 5:r=v;g=p;b=q;break; }
+    return { r:Math.round(r*255), g:Math.round(g*255), b:Math.round(b*255) };
+  }
+
+  function rgbToCmyk(r,g,b) {
+    r/=255; g/=255; b/=255;
+    const k=1-Math.max(r,g,b);
+    if(k===1) return {c:0,m:0,y:0,k:100};
+    return {
+      c:Math.round((1-r-k)/(1-k)*100),
+      m:Math.round((1-g-k)/(1-k)*100),
+      y:Math.round((1-b-k)/(1-k)*100),
+      k:Math.round(k*100)
+    };
+  }
+
+  function cmykToRgb(c,m,y,k) {
+    c/=100; m/=100; y/=100; k/=100;
+    return {
+      r:Math.round(255*(1-c)*(1-k)),
+      g:Math.round(255*(1-m)*(1-k)),
+      b:Math.round(255*(1-y)*(1-k))
+    };
+  }
+
+  // ─── Update all fields from RGB ───
+  function updateAll(r,g,b) {
+    r=clamp(Math.round(r),0,255); g=clamp(Math.round(g),0,255); b=clamp(Math.round(b),0,255);
+    const hex = rgbToHex(r,g,b);
+    const hsl = rgbToHsl(r,g,b);
+    const hsv = rgbToHsv(r,g,b);
+    const cmyk = rgbToCmyk(r,g,b);
+
+    document.getElementById('colorPreview').style.background = hex;
+    document.getElementById('colorPicker').value = hex;
+    document.getElementById('hexInput').value = hex;
+    document.getElementById('rgbStr').value = `rgb(${r}, ${g}, ${b})`;
+    document.getElementById('rIn').value=r; document.getElementById('gIn').value=g; document.getElementById('bIn').value=b;
+    document.getElementById('hslStr').value = `hsl(${hsl.h}, ${hsl.s}%, ${hsl.l}%)`;
+    document.getElementById('hIn').value=hsl.h; document.getElementById('sIn').value=hsl.s; document.getElementById('lIn').value=hsl.l;
+    document.getElementById('hsvStr').value = `hsv(${hsv.h}, ${hsv.s}%, ${hsv.v}%)`;
+    document.getElementById('hvIn').value=hsv.h; document.getElementById('svIn').value=hsv.s; document.getElementById('vvIn').value=hsv.v;
+    document.getElementById('cmykStr').value = `cmyk(${cmyk.c}%, ${cmyk.m}%, ${cmyk.y}%, ${cmyk.k}%)`;
+    document.getElementById('cIn').value=cmyk.c; document.getElementById('mIn').value=cmyk.m; document.getElementById('yIn').value=cmyk.y; document.getElementById('kIn').value=cmyk.k;
+
+    // Brightness estimate
+    const lum = 0.299*r + 0.587*g + 0.114*b;
+    document.getElementById('infoGrid').innerHTML = `
+      <div class="info-cell" onclick="copyText('${hex}')"><div class="info-cell-label">HEX</div><div class="info-cell-val">${hex}</div></div>
+      <div class="info-cell" onclick="copyText('rgb(${r}, ${g}, ${b})')"><div class="info-cell-label">RGB</div><div class="info-cell-val">rgb(${r}, ${g}, ${b})</div></div>
+      <div class="info-cell" onclick="copyText('hsl(${hsl.h}, ${hsl.s}%, ${hsl.l}%)')"><div class="info-cell-label">HSL</div><div class="info-cell-val">hsl(${hsl.h}, ${hsl.s}%, ${hsl.l}%)</div></div>
+      <div class="info-cell" onclick="copyText('hsv(${hsv.h}, ${hsv.s}%, ${hsv.v}%)')"><div class="info-cell-label">HSV</div><div class="info-cell-val">hsv(${hsv.h}, ${hsv.s}%, ${hsv.v}%)</div></div>
+      <div class="info-cell" onclick="copyText('cmyk(${cmyk.c}%, ${cmyk.m}%, ${cmyk.y}%, ${cmyk.k}%)')"><div class="info-cell-label">CMYK</div><div class="info-cell-val">cmyk(${cmyk.c}%, ${cmyk.m}%, ${cmyk.y}%, ${cmyk.k}%)</div></div>
+      <div class="info-cell"><div class="info-cell-label">밝기</div><div class="info-cell-val">${lum < 128 ? '어두움 🌑' : '밝음 ☀️'}</div></div>
+    `;
+  }
+
+  function fromPicker() { const {r,g,b}=hexToRgb(document.getElementById('colorPicker').value); updateAll(r,g,b); }
+  function fromHex() {
+    const v = document.getElementById('hexInput').value;
+    if(/^#[0-9A-Fa-f]{6}$/.test(v)) { const {r,g,b}=hexToRgb(v); updateAll(r,g,b); }
+  }
+  function fromRGB() { updateAll(+document.getElementById('rIn').value, +document.getElementById('gIn').value, +document.getElementById('bIn').value); }
+  function fromHSL() { const {r,g,b}=hslToRgb(+document.getElementById('hIn').value, +document.getElementById('sIn').value, +document.getElementById('lIn').value); updateAll(r,g,b); }
+  function fromHSV() { const {r,g,b}=hsvToRgb(+document.getElementById('hvIn').value, +document.getElementById('svIn').value, +document.getElementById('vvIn').value); updateAll(r,g,b); }
+  function fromCMYK() { const {r,g,b}=cmykToRgb(+document.getElementById('cIn').value, +document.getElementById('mIn').value, +document.getElementById('yIn').value, +document.getElementById('kIn').value); updateAll(r,g,b); }
+
+  function copyText(text) {
+    navigator.clipboard.writeText(text).then(() => {
+      const t = document.getElementById('toast');
+      t.style.display = 'block';
+      setTimeout(() => { t.style.display = 'none'; }, 1500);
+    });
+  }
+
+  // Init
+  const init = hexToRgb('#8B5CF6');
+  updateAll(init.r, init.g, init.b);
+</script>
+
+<script src="../js/pwa-install.js"></script>
+</body>
+</html>

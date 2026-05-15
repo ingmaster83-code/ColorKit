@@ -1,0 +1,387 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9ZGENFSXWC"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-9ZGENFSXWC');
+  </script>
+  <meta name="naver-site-verification" content="7396a327607b884b9bef1283dfd3a5c6115a2b50" />
+  <meta name="google-site-verification" content="tNM8tmr_6DFold03YSScWz4KEtu5Zo0Fsqc03u5Afms" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Opacity Converter Free Online – HEX to RGBA & 8-digit HEX | WooaColor</title>
+  <meta name="description" content="Add opacity to a HEX color and get rgba(), 8-digit HEX (#RRGGBBAA), and hsla() codes instantly. Checkerboard preview included. Free online opacity/alpha converter.">
+  <meta name="keywords" content="opacity converter, rgba converter, 8-digit HEX, RRGGBBAA, alpha channel, CSS transparency, HEX to rgba, hsla converter, color opacity online free, WooaColor">
+  <link rel="canonical" href="https://colorkit.wooahouse.com/en/opacity-converter.html">
+  <link rel="alternate" hreflang="ko" href="https://colorkit.wooahouse.com/opacity-converter.html">
+  <link rel="alternate" hreflang="en" href="https://colorkit.wooahouse.com/en/opacity-converter.html">
+  <link rel="alternate" hreflang="x-default" href="https://colorkit.wooahouse.com/en/opacity-converter.html">
+  <meta property="og:title" content="Opacity Converter Free Online – HEX to RGBA & 8-Digit HEX | WooaColor">
+  <meta property="og:description" content="Add opacity to a HEX color to get rgba / 8-digit HEX / hsla codes instantly. Free online converter.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://colorkit.wooahouse.com/en/opacity-converter.html">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://colorkit.wooahouse.com/og-image.png">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6464921081676309" crossorigin="anonymous"></script>
+  <link rel="manifest" href="../manifest.json">
+  <meta name="theme-color" content="#8B5CF6">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="WooaColor">
+  <link rel="stylesheet" href="../css/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Opacity Converter",
+    "url": "https://colorkit.wooahouse.com/en/opacity-converter.html",
+    "applicationCategory": "UtilityApplication",
+    "operatingSystem": "Web",
+    "inLanguage": "en",
+    "isAccessibleForFree": true,
+    "offers": {"@type": "Offer","price": "0","priceCurrency": "USD"}
+  }
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What output formats does this converter provide?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "It generates rgba(), 8-digit HEX (#RRGGBBAA), and hsla() codes from any HEX color with adjustable opacity."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "What is an 8-digit HEX color?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "An 8-digit HEX color (e.g. #FF5733CC) appends an alpha channel byte to the standard 6-digit HEX, defining both color and opacity in one value."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I preview the transparent color?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. A checkerboard background is shown behind the color preview to help you visualize transparency."
+      }
+    }
+  ]
+}
+</script>
+  <style>
+    .opacity-preview {
+      width: 100%;
+      height: 100px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--border);
+      margin-bottom: 16px;
+      background-image:
+        linear-gradient(45deg, #ccc 25%, transparent 25%),
+        linear-gradient(-45deg, #ccc 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, #ccc 75%),
+        linear-gradient(-45deg, transparent 75%, #ccc 75%);
+      background-size: 16px 16px;
+      background-position: 0 0, 0 8px, 8px -8px, -8px 0px;
+      position: relative;
+    }
+    .opacity-preview-inner {
+      position: absolute;
+      inset: 0;
+      border-radius: calc(var(--radius-sm) - 1px);
+      transition: background 0.2s;
+    }
+    .code-result-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 12px;
+      background: #F9FAFB;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 10px 14px;
+    }
+    .code-result-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--text-light);
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      min-width: 60px;
+    }
+    .code-result-val {
+      flex: 1;
+      font-family: 'Courier New', monospace;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text);
+      word-break: break-all;
+    }
+    .hex-input-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+    }
+    .hex-input-row input[type="text"] {
+      flex: 1;
+      padding: 10px 14px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      font-size: 0.95rem;
+      font-family: 'Courier New', monospace;
+      background: #F9FAFB;
+      outline: none;
+      transition: border-color 0.15s;
+    }
+    .hex-input-row input[type="text"]:focus { border-color: var(--primary); background: white; }
+    .opacity-slider-row {
+      margin-bottom: 20px;
+    }
+    .opacity-slider-row label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--text-light);
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+      margin-bottom: 10px;
+    }
+    .lang-switcher { display:flex; align-items:center; gap:4px; }
+    .lang-switcher a { color:rgba(255,255,255,0.7); text-decoration:none; font-size:0.8rem; font-weight:600; padding:3px 8px; border-radius:12px; transition:background 0.15s; }
+    .lang-switcher a.active { color:white; background:rgba(255,255,255,0.25); }
+    .lang-switcher a:hover { color:white; background:rgba(255,255,255,0.18); }
+    .lang-switcher span { color:rgba(255,255,255,0.3); font-size:0.75rem; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="../index.html" class="logo">WooaColor</a>
+    <nav>
+      <a href="../color-converter.html">Convert</a>
+      <a href="../gradient-generator.html">Generate</a>
+      <a href="../contrast-checker.html">Analyze</a>
+      <a href="../box-shadow.html">CSS Tools</a>
+      <a href="../color-picker.html">Color Picker</a>
+    </nav>
+    <div class="header-right">
+      <div class="lang-switcher">
+        <a href="../opacity-converter.html">KO</a>
+        <span>|</span>
+        <a href="opacity-converter.html" class="active">EN</a>
+      </div>
+      <a href="../about.html" style="color:rgba(255,255,255,0.85); font-size:0.85rem; text-decoration:none; margin-left:8px;">About</a>
+    </div>
+  </div>
+</header>
+
+<div class="our-sites-bar">
+  <span class="our-sites-label">WooaHouse Services</span>
+  <div class="our-sites-links">
+    <a href="https://wooahouse.com/" target="_blank" rel="noopener">🔗 WooaHouse</a>
+    <a href="https://pdfkit.wooahouse.com/" target="_blank" rel="noopener">📄 WooaPDF</a>
+    <a href="https://imagekit.wooahouse.com/" target="_blank" rel="noopener">🖼️ WooaImage</a>
+    <a href="https://colorkit.wooahouse.com/en/" target="_blank" rel="noopener" class="active">🎨 WooaColor</a>
+    <a href="https://textkit.wooahouse.com/" target="_blank" rel="noopener">📝 WooaText</a>
+    <a href="https://qrkit.wooahouse.com/" target="_blank" rel="noopener">📱 WooaQR</a>
+    <a href="https://calckit.wooahouse.com/" target="_blank" rel="noopener">🧮 WooaCalc</a>
+    <a href="https://fontkit.wooahouse.com/" target="_blank" rel="noopener">🔤 WooaFont</a>
+    <a href="https://mactools.wooahouse.com/" target="_blank" rel="noopener">🍎 WooaMac</a>
+    <a href="https://pctools.wooahouse.com/" target="_blank" rel="noopener">🖥️ WooaPC</a>
+    <a href="https://vskit.wooahouse.com/" target="_blank" rel="noopener">💻 WooaVS</a>
+    <a href="https://wooaaudio.wooahouse.com/" target="_blank" rel="noopener">🎵 WooaAudio</a>
+    <a href="https://wooaviewer.wooahouse.com/" target="_blank" rel="noopener">🔍 WooaViewer</a>
+    <a href="https://wooadev.wooahouse.com/" target="_blank" rel="noopener">🛠️ WooaDev</a>
+  </div>
+</div>
+
+<div class="page-with-sidebar">
+<div class="tool-page">
+  <div class="breadcrumb">
+    <a href="../index.html">WooaColor</a>
+    <span>›</span>
+    <span>Opacity 변환기</span>
+  </div>
+
+  <div class="tool-header">
+    <span class="tool-header-icon">💧</span>
+    <h1>Opacity Converter – HEX to RGBA Free Online</h1>
+    <p>HEX 색상에 Transparency를 추가해 rgba, 8-digit HEX, hsla 코드를 얻으세요</p>
+  </div>
+
+  
+<div class="panel">
+    <div class="hex-input-row">
+      <input type="color" id="colorPicker" value="#8B5CF6">
+      <input type="text" id="hexInput" value="#8B5CF6" maxlength="7" placeholder="#RRGGBB">
+    </div>
+
+    <div class="opacity-slider-row">
+      <label>Opacity (Opacity): <span id="opacityLabel">80%</span></label>
+      <div class="range-wrap">
+        <input type="range" id="opacitySlider" min="0" max="100" value="80">
+      </div>
+    </div>
+
+    <div class="opacity-preview">
+      <div id="previewInner" class="opacity-preview-inner"></div>
+    </div>
+  </div>
+
+  <div class="panel" style="margin-top:0;">
+    <div class="panel-title">변환 결과</div>
+
+    <div class="code-result-row">
+      <span class="code-result-label">rgba()</span>
+      <span class="code-result-val" id="rgbaVal">rgba(139, 92, 246, 0.80)</span>
+      <button class="btn-copy" onclick="copyResult('rgbaVal')">Copy</button>
+    </div>
+    <div class="code-result-row">
+      <span class="code-result-label">8-digit HEX</span>
+      <span class="code-result-val" id="hex8Val">#8B5CF6CC</span>
+      <button class="btn-copy" onclick="copyResult('hex8Val')">Copy</button>
+    </div>
+    <div class="code-result-row">
+      <span class="code-result-label">hsla()</span>
+      <span class="code-result-val" id="hslaVal">hsla(263, 90%, 66%, 0.80)</span>
+      <button class="btn-copy" onclick="copyResult('hslaVal')">Copy</button>
+    </div>
+  </div>
+
+  <div class="cross-link-tip">
+    💡 Color Code를 모른다면 <a href="../color-converter.html">색상 변환기</a>에서 HEX 코드를 확인하세요.
+  </div>
+
+  <section class="faq-section" style="max-width:800px;margin:3rem auto;padding:0 1rem;">
+    <h2 style="font-size:1.4rem;margin-bottom:1.5rem;">Frequently Asked Questions</h2>
+    <div class="faq-list">
+      <div class="faq-item" style="margin-bottom:1.2rem;padding:1rem;background:#f8f9fa;border-radius:8px;">
+        <h3 style="font-size:1rem;font-weight:600;margin-bottom:0.5rem;">Q. What output formats does this converter provide?</h3>
+        <p style="color:#555;margin:0;">It generates rgba(), 8-digit HEX (#RRGGBBAA), and hsla() codes from any HEX color with adjustable opacity.</p>
+      </div>
+      <div class="faq-item" style="margin-bottom:1.2rem;padding:1rem;background:#f8f9fa;border-radius:8px;">
+        <h3 style="font-size:1rem;font-weight:600;margin-bottom:0.5rem;">Q. What is an 8-digit HEX color?</h3>
+        <p style="color:#555;margin:0;">An 8-digit HEX color (e.g. #FF5733CC) appends an alpha channel byte to the standard 6-digit HEX, defining both color and opacity in one value.</p>
+      </div>
+      <div class="faq-item" style="padding:1rem;background:#f8f9fa;border-radius:8px;">
+        <h3 style="font-size:1rem;font-weight:600;margin-bottom:0.5rem;">Q. Can I preview the transparent color?</h3>
+        <p style="color:#555;margin:0;">Yes. A checkerboard background is shown behind the color preview to help you visualize transparency.</p>
+      </div>
+    </div>
+  </section>
+</div>
+<aside class="tool-sidebar">
+  <div class="ad-card">
+    <ins class="adsbygoogle"
+         style="display:block;width:100%;min-height:250px"
+         data-ad-client="ca-pub-6464921081676309"
+         data-ad-slot="1419180025"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <div class="ad-card" style="margin-top:16px;overflow:hidden;">    
+  </div>
+</aside>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-bottom">
+      <p>© 2026 WooaColor. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="../privacy.html">Privacy Policy</a>
+        <a href="../about.html">About</a>
+        <a href="../index.html">전체 도구</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+function hexToRGB(hex) {
+  hex = hex.replace(/^#/, '');
+  if (hex.length === 3) hex = hex.split('').map(c => c + c).join('');
+  if (hex.length !== 6) return null;
+  const r = parseInt(hex.slice(0, 2), 16);
+  const g = parseInt(hex.slice(2, 4), 16);
+  const b = parseInt(hex.slice(4, 6), 16);
+  if (isNaN(r) || isNaN(g) || isNaN(b)) return null;
+  return { r, g, b };
+}
+
+function rgbToHSL(r, g, b) {
+  r /= 255; g /= 255; b /= 255;
+  const max = Math.max(r, g, b), min = Math.min(r, g, b);
+  let h, s, l = (max + min) / 2;
+  if (max === min) { h = s = 0; }
+  else {
+    const d = max - min;
+    s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+    switch (max) {
+      case r: h = ((g - b) / d + (g < b ? 6 : 0)) / 6; break;
+      case g: h = ((b - r) / d + 2) / 6; break;
+      case b: h = ((r - g) / d + 4) / 6; break;
+    }
+  }
+  return { h: Math.round(h * 360), s: Math.round(s * 100), l: Math.round(l * 100) };
+}
+
+function update() {
+  const hex = document.getElementById('hexInput').value.trim();
+  const opacity = parseInt(document.getElementById('opacitySlider').value);
+  const rgb = hexToRGB(hex);
+
+  document.getElementById('opacityLabel').textContent = opacity + '%';
+
+  if (!rgb) return;
+
+  const a = (opacity / 100).toFixed(2);
+  const hsl = rgbToHSL(rgb.r, rgb.g, rgb.b);
+  const alphaHex = Math.round(opacity / 100 * 255).toString(16).padStart(2, '0').toUpperCase();
+  const hex6 = hex.replace(/^#/, '').toUpperCase().padStart(6, '0');
+
+  document.getElementById('rgbaVal').textContent = `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, ${a})`;
+  document.getElementById('hex8Val').textContent = `#${hex6}${alphaHex}`;
+  document.getElementById('hslaVal').textContent = `hsla(${hsl.h}, ${hsl.s}%, ${hsl.l}%, ${a})`;
+
+  document.getElementById('previewInner').style.background = `rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, ${a})`;
+
+  try { document.getElementById('colorPicker').value = '#' + hex6; } catch(e) {}
+}
+
+function copyResult(id) {
+  const text = document.getElementById(id).textContent;
+  navigator.clipboard.writeText(text).then(() => {
+    const row = document.getElementById(id).closest('.code-result-row');
+    const btn = row.querySelector('.btn-copy');
+    btn.textContent = 'Copied!';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = 'Copy'; btn.classList.remove('copied'); }, 1500);
+  });
+}
+
+document.getElementById('hexInput').addEventListener('input', update);
+document.getElementById('opacitySlider').addEventListener('input', update);
+document.getElementById('colorPicker').addEventListener('input', function() {
+  document.getElementById('hexInput').value = this.value.toUpperCase();
+  update();
+});
+
+update();
+</script>
+<script src="../js/pwa-install.js"></script>
+</body>
+</html>

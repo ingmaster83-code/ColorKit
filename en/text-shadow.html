@@ -1,0 +1,426 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9ZGENFSXWC"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-9ZGENFSXWC');
+  </script>
+  <meta name="naver-site-verification" content="7396a327607b884b9bef1283dfd3a5c6115a2b50" />
+  <meta name="google-site-verification" content="tNM8tmr_6DFold03YSScWz4KEtu5Zo0Fsqc03u5Afms" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Text Shadow Generator Free Online – text-shadow Code | WooaColor</title>
+  <meta name="description" content="Generate CSS text-shadow code instantly with sliders. Set H-offset, V-offset, blur, color, and sample text. Real-time preview and one-click copy. Free online text shadow generator.">
+  <meta name="keywords" content="CSS text shadow generator, text-shadow code, CSS typography effect, text shadow online free, CSS text effect, WooaColor">
+  <link rel="canonical" href="https://colorkit.wooahouse.com/en/text-shadow.html">
+  <link rel="alternate" hreflang="ko" href="https://colorkit.wooahouse.com/text-shadow.html">
+  <link rel="alternate" hreflang="en" href="https://colorkit.wooahouse.com/en/text-shadow.html">
+  <link rel="alternate" hreflang="x-default" href="https://colorkit.wooahouse.com/en/text-shadow.html">
+  <meta property="og:title" content="CSS Text Shadow Generator Free Online | WooaColor">
+  <meta property="og:description" content="Generate CSS text-shadow code with sliders. Live preview and one-click copy. Free online tool.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://colorkit.wooahouse.com/en/text-shadow.html">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://colorkit.wooahouse.com/og-image.png">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6464921081676309" crossorigin="anonymous"></script>
+  <link rel="manifest" href="../manifest.json">
+  <meta name="theme-color" content="#8B5CF6">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="WooaColor">
+  <link rel="stylesheet" href="../css/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "CSS Text Shadow Generator",
+    "url": "https://colorkit.wooahouse.com/en/text-shadow.html",
+    "applicationCategory": "UtilityApplication",
+    "operatingSystem": "Web",
+    "inLanguage": "en",
+    "isAccessibleForFree": true,
+    "offers": {"@type": "Offer","price": "0","priceCurrency": "USD"}
+  }
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What text-shadow properties can I control?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You can adjust horizontal offset, vertical offset, blur radius, and shadow color with live preview on sample text."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I preview the shadow on custom text?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. Type any text in the sample field to preview how the shadow looks on your own content."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I copy the generated code?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Click the copy button next to the CSS output to copy the text-shadow code directly to your clipboard."
+      }
+    }
+  ]
+}
+</script>
+  <style>
+    .slider-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+    .slider-row label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text);
+      min-width: 110px;
+    }
+    .slider-row input[type="range"] { flex: 1; }
+    .slider-val {
+      min-width: 48px;
+      text-align: right;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--primary);
+      font-family: 'Courier New', monospace;
+    }
+    .color-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .color-row label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text);
+      min-width: 110px;
+    }
+    .color-row input[type="text"] {
+      flex: 1;
+      padding: 8px 12px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      font-size: 0.9rem;
+      font-family: 'Courier New', monospace;
+      background: #F9FAFB;
+      outline: none;
+      transition: border-color 0.15s;
+    }
+    .color-row input[type="text"]:focus { border-color: var(--primary); background: white; }
+    .sample-text-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 20px;
+    }
+    .sample-text-row label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text);
+      min-width: 110px;
+    }
+    .sample-text-row input[type="text"] {
+      flex: 1;
+      padding: 9px 12px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      font-size: 0.9rem;
+      background: #F9FAFB;
+      outline: none;
+      font-family: inherit;
+      transition: border-color 0.15s;
+    }
+    .sample-text-row input[type="text"]:focus { border-color: var(--primary); background: white; }
+    .text-preview-area {
+      background: #F3F4F6;
+      border-radius: var(--radius-sm);
+      padding: 40px 24px;
+      text-align: center;
+      min-height: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 4px;
+    }
+    #previewText {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #1A1A2E;
+      transition: text-shadow 0.2s;
+      word-break: break-word;
+    }
+    .text-color-row {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+    .text-color-row label {
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text);
+      min-width: 110px;
+    }
+    @media (max-width: 520px) {
+      .slider-row { flex-wrap: wrap; }
+      .slider-row label, .color-row label, .sample-text-row label { min-width: 100%; }
+    }
+    .lang-switcher { display:flex; align-items:center; gap:4px; }
+    .lang-switcher a { color:rgba(255,255,255,0.7); text-decoration:none; font-size:0.8rem; font-weight:600; padding:3px 8px; border-radius:12px; transition:background 0.15s; }
+    .lang-switcher a.active { color:white; background:rgba(255,255,255,0.25); }
+    .lang-switcher a:hover { color:white; background:rgba(255,255,255,0.18); }
+    .lang-switcher span { color:rgba(255,255,255,0.3); font-size:0.75rem; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="../index.html" class="logo">WooaColor</a>
+    <nav>
+      <a href="../color-converter.html">Convert</a>
+      <a href="../gradient-generator.html">Generate</a>
+      <a href="../contrast-checker.html">Analyze</a>
+      <a href="../box-shadow.html">CSS Tools</a>
+      <a href="../color-picker.html">Color Picker</a>
+    </nav>
+    <div class="header-right">
+      <div class="lang-switcher">
+        <a href="../text-shadow.html">KO</a>
+        <span>|</span>
+        <a href="text-shadow.html" class="active">EN</a>
+      </div>
+      <a href="../about.html" style="color:rgba(255,255,255,0.85); font-size:0.85rem; text-decoration:none; margin-left:8px;">About</a>
+    </div>
+  </div>
+</header>
+
+<div class="our-sites-bar">
+  <span class="our-sites-label">WooaHouse Services</span>
+  <div class="our-sites-links">
+    <a href="https://wooahouse.com/" target="_blank" rel="noopener">🔗 WooaHouse</a>
+    <a href="https://pdfkit.wooahouse.com/" target="_blank" rel="noopener">📄 WooaPDF</a>
+    <a href="https://imagekit.wooahouse.com/" target="_blank" rel="noopener">🖼️ WooaImage</a>
+    <a href="https://colorkit.wooahouse.com/en/" target="_blank" rel="noopener" class="active">🎨 WooaColor</a>
+    <a href="https://textkit.wooahouse.com/" target="_blank" rel="noopener">📝 WooaText</a>
+    <a href="https://qrkit.wooahouse.com/" target="_blank" rel="noopener">📱 WooaQR</a>
+    <a href="https://calckit.wooahouse.com/" target="_blank" rel="noopener">🧮 WooaCalc</a>
+    <a href="https://fontkit.wooahouse.com/" target="_blank" rel="noopener">🔤 WooaFont</a>
+    <a href="https://mactools.wooahouse.com/" target="_blank" rel="noopener">🍎 WooaMac</a>
+    <a href="https://pctools.wooahouse.com/" target="_blank" rel="noopener">🖥️ WooaPC</a>
+    <a href="https://vskit.wooahouse.com/" target="_blank" rel="noopener">💻 WooaVS</a>
+    <a href="https://wooaaudio.wooahouse.com/" target="_blank" rel="noopener">🎵 WooaAudio</a>
+    <a href="https://wooaviewer.wooahouse.com/" target="_blank" rel="noopener">🔍 WooaViewer</a>
+    <a href="https://wooadev.wooahouse.com/" target="_blank" rel="noopener">🛠️ WooaDev</a>
+  </div>
+</div>
+
+<div class="page-with-sidebar">
+<div class="tool-page">
+  <div class="breadcrumb">
+    <a href="../index.html">WooaColor</a>
+    <span>›</span>
+    <span>텍스트 그림자 생성기</span>
+  </div>
+
+  <div class="tool-header">
+    <span class="tool-header-icon">🔤</span>
+    <h1>CSS Text Shadow Generator – Free Online</h1>
+    <p>슬라이더로 CSS text-shadow 코드를 즉시 생성하세요</p>
+  </div>
+
+  
+<div class="panel">
+    <div class="sample-text-row">
+      <label>Sample Text</label>
+      <input type="text" id="sampleText" value="WooaColor WooaColor" placeholder="미리볼 텍스트 입력">
+    </div>
+    <div class="text-color-row">
+      <label>Text Color</label>
+      <input type="color" id="textColorPicker" value="#1A1A2E">
+      <input type="text" id="textColorHex" value="#1A1A2E" maxlength="7" placeholder="#RRGGBB" style="flex:1;padding:8px 12px;border:1px solid var(--border);border-radius:var(--radius-sm);font-size:0.9rem;font-family:'Courier New',monospace;background:#F9FAFB;outline:none;">
+    </div>
+    <div class="slider-row">
+      <label>H-offset</label>
+      <input type="range" id="hOffset" min="-20" max="20" value="2">
+      <span class="slider-val" id="hOffsetVal">2px</span>
+    </div>
+    <div class="slider-row">
+      <label>V-offset</label>
+      <input type="range" id="vOffset" min="-20" max="20" value="2">
+      <span class="slider-val" id="vOffsetVal">2px</span>
+    </div>
+    <div class="slider-row">
+      <label>Blur</label>
+      <input type="range" id="blur" min="0" max="30" value="4">
+      <span class="slider-val" id="blurVal">4px</span>
+    </div>
+    <div class="color-row">
+      <label>Shadow Color</label>
+      <input type="color" id="shadowColorPicker" value="#000000">
+      <input type="text" id="shadowColorHex" value="#000000" maxlength="7" placeholder="#RRGGBB">
+    </div>
+    <div class="slider-row">
+      <label>Transparency (Alpha)</label>
+      <input type="range" id="shadowAlpha" min="0" max="100" value="40">
+      <span class="slider-val" id="shadowAlphaVal">40%</span>
+    </div>
+  </div>
+
+  <div class="panel" style="margin-top:0;">
+    <div class="panel-title">Preview</div>
+    <div class="text-preview-area">
+      <div id="previewText">WooaColor WooaColor</div>
+    </div>
+  </div>
+
+  <div class="panel" style="margin-top:0;">
+    <div class="panel-title">생성된 CSS Code</div>
+    <div class="code-block">
+      <pre id="cssCode">text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);</pre>
+      <button class="code-copy-btn" onclick="copyCSS()">Copy</button>
+    </div>
+  </div>
+
+  <div class="cross-link-tip">
+    💡 박스에 그림자를 적용하려면 <a href="../box-shadow.html">Box Shadow</a>를 사용해 보세요.
+  </div>
+
+  <section class="faq-section" style="max-width:800px;margin:3rem auto;padding:0 1rem;">
+    <h2 style="font-size:1.4rem;margin-bottom:1.5rem;">Frequently Asked Questions</h2>
+    <div class="faq-list">
+      <div class="faq-item" style="margin-bottom:1.2rem;padding:1rem;background:#f8f9fa;border-radius:8px;">
+        <h3 style="font-size:1rem;font-weight:600;margin-bottom:0.5rem;">Q. What text-shadow properties can I control?</h3>
+        <p style="color:#555;margin:0;">You can adjust horizontal offset, vertical offset, blur radius, and shadow color with live preview on sample text.</p>
+      </div>
+      <div class="faq-item" style="margin-bottom:1.2rem;padding:1rem;background:#f8f9fa;border-radius:8px;">
+        <h3 style="font-size:1rem;font-weight:600;margin-bottom:0.5rem;">Q. Can I preview the shadow on custom text?</h3>
+        <p style="color:#555;margin:0;">Yes. Type any text in the sample field to preview how the shadow looks on your own content.</p>
+      </div>
+      <div class="faq-item" style="padding:1rem;background:#f8f9fa;border-radius:8px;">
+        <h3 style="font-size:1rem;font-weight:600;margin-bottom:0.5rem;">Q. How do I copy the generated code?</h3>
+        <p style="color:#555;margin:0;">Click the copy button next to the CSS output to copy the text-shadow code directly to your clipboard.</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<aside class="tool-sidebar">
+  <div class="ad-card">
+    <ins class="adsbygoogle"
+         style="display:block;width:100%;min-height:250px"
+         data-ad-client="ca-pub-6464921081676309"
+         data-ad-slot="1419180025"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <div class="ad-card" style="margin-top:16px;overflow:hidden;">    
+  </div>
+</aside>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-bottom">
+      <p>© 2026 WooaColor. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="../privacy.html">Privacy Policy</a>
+        <a href="../about.html">About</a>
+        <a href="../index.html">전체 도구</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+function hexToRGB(hex) {
+  hex = hex.replace(/^#/, '');
+  if (hex.length === 3) hex = hex.split('').map(c => c + c).join('');
+  if (hex.length !== 6) return null;
+  return {
+    r: parseInt(hex.slice(0, 2), 16),
+    g: parseInt(hex.slice(2, 4), 16),
+    b: parseInt(hex.slice(4, 6), 16)
+  };
+}
+
+function update() {
+  const h = parseInt(document.getElementById('hOffset').value);
+  const v = parseInt(document.getElementById('vOffset').value);
+  const blur = parseInt(document.getElementById('blur').value);
+  const shadowHex = document.getElementById('shadowColorHex').value;
+  const alpha = parseInt(document.getElementById('shadowAlpha').value);
+  const sampleText = document.getElementById('sampleText').value || 'WooaColor WooaColor';
+  const textHex = document.getElementById('textColorHex').value;
+
+  document.getElementById('hOffsetVal').textContent = h + 'px';
+  document.getElementById('vOffsetVal').textContent = v + 'px';
+  document.getElementById('blurVal').textContent = blur + 'px';
+  document.getElementById('shadowAlphaVal').textContent = alpha + '%';
+
+  const rgb = hexToRGB(shadowHex) || { r: 0, g: 0, b: 0 };
+  const a = (alpha / 100).toFixed(2);
+  const shadow = `${h}px ${v}px ${blur}px rgba(${rgb.r}, ${rgb.g}, ${rgb.b}, ${a})`;
+  const cssLine = `text-shadow: ${shadow};`;
+
+  const preview = document.getElementById('previewText');
+  preview.textContent = sampleText;
+  preview.style.textShadow = shadow;
+  const textRgb = hexToRGB(textHex);
+  if (textRgb) preview.style.color = `rgb(${textRgb.r},${textRgb.g},${textRgb.b})`;
+
+  document.getElementById('cssCode').textContent = cssLine;
+
+  try { document.getElementById('shadowColorPicker').value = shadowHex; } catch(e) {}
+  try { document.getElementById('textColorPicker').value = textHex; } catch(e) {}
+}
+
+function copyCSS() {
+  const text = document.getElementById('cssCode').textContent;
+  navigator.clipboard.writeText(text).then(() => {
+    const btn = document.querySelector('.code-copy-btn');
+    btn.textContent = 'Copied!';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = 'Copy'; btn.classList.remove('copied'); }, 1500);
+  });
+}
+
+['hOffset', 'vOffset', 'blur', 'shadowAlpha'].forEach(id => {
+  document.getElementById(id).addEventListener('input', update);
+});
+document.getElementById('shadowColorHex').addEventListener('input', update);
+document.getElementById('textColorHex').addEventListener('input', update);
+document.getElementById('sampleText').addEventListener('input', update);
+document.getElementById('shadowColorPicker').addEventListener('input', function() {
+  document.getElementById('shadowColorHex').value = this.value.toUpperCase();
+  update();
+});
+document.getElementById('textColorPicker').addEventListener('input', function() {
+  document.getElementById('textColorHex').value = this.value.toUpperCase();
+  update();
+});
+
+update();
+</script>
+<script src="../js/pwa-install.js"></script>
+</body>
+</html>

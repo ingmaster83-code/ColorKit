@@ -1,0 +1,362 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9ZGENFSXWC"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-9ZGENFSXWC');
+  </script>
+  <meta name="naver-site-verification" content="7396a327607b884b9bef1283dfd3a5c6115a2b50" />
+  <meta name="google-site-verification" content="tNM8tmr_6DFold03YSScWz4KEtu5Zo0Fsqc03u5Afms" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CSS Gradient Generator Free Online – Linear & Radial | WooaColor</title>
+  <meta name="description" content="Generate CSS linear-gradient and radial-gradient code in real time. Add/remove color stops, choose direction, preview instantly. Free online CSS gradient generator.">
+  <meta name="keywords" content="CSS gradient generator, linear-gradient, radial-gradient, CSS background gradient, gradient code, color gradient online free, WooaColor">
+  <link rel="canonical" href="https://colorkit.wooahouse.com/en/gradient-generator.html">
+  <link rel="alternate" hreflang="ko" href="https://colorkit.wooahouse.com/gradient-generator.html">
+  <link rel="alternate" hreflang="en" href="https://colorkit.wooahouse.com/en/gradient-generator.html">
+  <link rel="alternate" hreflang="x-default" href="https://colorkit.wooahouse.com/en/gradient-generator.html">
+  <meta property="og:title" content="CSS Gradient Generator Free Online | WooaColor">
+  <meta property="og:description" content="Generate CSS linear and radial gradient code in real time. Preview and copy with one click. Free online tool.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://colorkit.wooahouse.com/en/gradient-generator.html">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://colorkit.wooahouse.com/og-image.png">
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6464921081676309" crossorigin="anonymous"></script>
+  <link rel="manifest" href="../manifest.json">
+  <meta name="theme-color" content="#8B5CF6">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="WooaColor">
+  <link rel="stylesheet" href="../css/style.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "CSS Gradient Generator",
+    "url": "https://colorkit.wooahouse.com/en/gradient-generator.html",
+    "applicationCategory": "UtilityApplication",
+    "operatingSystem": "Web",
+    "inLanguage": "en",
+    "isAccessibleForFree": true,
+    "offers": {"@type": "Offer","price": "0","priceCurrency": "USD"}
+  }
+  </script>
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What types of gradients can I create?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "You can create CSS linear-gradient (directional) and radial-gradient (radial) styles with any number of color stops."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I add multiple color stops?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. You can add, remove, and reorder color stops freely to create complex multi-color gradients."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How do I use the generated CSS code?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Click the copy button next to the generated CSS code and paste it directly into your stylesheet."
+      }
+    }
+  ]
+}
+</script>
+  <style>
+    .stop-row { display:flex; align-items:center; gap:10px; padding:10px 12px; background:#F9FAFB; border-radius:8px; margin-bottom:8px; }
+    .stop-row input[type="color"] { width:40px; height:32px; }
+    .stop-row input[type="range"] { flex:1; }
+    .stop-percent { min-width:38px; text-align:right; font-size:0.82rem; font-weight:600; color:var(--primary); }
+    .direction-btn { padding:6px 14px; border-radius:20px; border:1px solid var(--border); background:white; cursor:pointer; font-size:0.82rem; font-family:inherit; transition:all 0.15s; }
+    .direction-btn.active { background:var(--primary); color:white; border-color:var(--primary); }
+    .lang-switcher { display:flex; align-items:center; gap:4px; }
+    .lang-switcher a { color:rgba(255,255,255,0.7); text-decoration:none; font-size:0.8rem; font-weight:600; padding:3px 8px; border-radius:12px; transition:background 0.15s; }
+    .lang-switcher a.active { color:white; background:rgba(255,255,255,0.25); }
+    .lang-switcher a:hover { color:white; background:rgba(255,255,255,0.18); }
+    .lang-switcher span { color:rgba(255,255,255,0.3); font-size:0.75rem; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <a href="../index.html" class="logo">WooaColor</a>
+    <nav>
+      <a href="../color-converter.html">Convert</a>
+      <a href="../gradient-generator.html">Generate</a>
+      <a href="../contrast-checker.html">Analyze</a>
+      <a href="../box-shadow.html">CSS Tools</a>
+      <a href="../color-picker.html">Color Picker</a>
+    </nav>
+    <div class="header-right">
+      <div class="lang-switcher">
+        <a href="../gradient-generator.html">KO</a>
+        <span>|</span>
+        <a href="gradient-generator.html" class="active">EN</a>
+      </div>
+      <a href="../about.html" style="color:rgba(255,255,255,0.85); font-size:0.85rem; text-decoration:none; margin-left:8px;">About</a>
+    </div>
+  </div>
+</header>
+
+<div class="our-sites-bar">
+  <span class="our-sites-label">WooaHouse Services</span>
+  <div class="our-sites-links">
+    <a href="https://wooahouse.com/" target="_blank" rel="noopener">🔗 WooaHouse</a>
+    <a href="https://pdfkit.wooahouse.com/" target="_blank" rel="noopener">📄 WooaPDF</a>
+    <a href="https://imagekit.wooahouse.com/" target="_blank" rel="noopener">🖼️ WooaImage</a>
+    <a href="https://colorkit.wooahouse.com/en/" target="_blank" rel="noopener" class="active">🎨 WooaColor</a>
+    <a href="https://textkit.wooahouse.com/" target="_blank" rel="noopener">📝 WooaText</a>
+    <a href="https://qrkit.wooahouse.com/" target="_blank" rel="noopener">📱 WooaQR</a>
+    <a href="https://calckit.wooahouse.com/" target="_blank" rel="noopener">🧮 WooaCalc</a>
+    <a href="https://fontkit.wooahouse.com/" target="_blank" rel="noopener">🔤 WooaFont</a>
+    <a href="https://mactools.wooahouse.com/" target="_blank" rel="noopener">🍎 WooaMac</a>
+    <a href="https://pctools.wooahouse.com/" target="_blank" rel="noopener">🖥️ WooaPC</a>
+    <a href="https://vskit.wooahouse.com/" target="_blank" rel="noopener">💻 WooaVS</a>
+    <a href="https://wooaaudio.wooahouse.com/" target="_blank" rel="noopener">🎵 WooaAudio</a>
+    <a href="https://wooaviewer.wooahouse.com/" target="_blank" rel="noopener">🔍 WooaViewer</a>
+    <a href="https://wooadev.wooahouse.com/" target="_blank" rel="noopener">🛠️ WooaDev</a>
+  </div>
+</div>
+
+<div class="page-with-sidebar">
+<div class="tool-page" style="max-width:860px;">
+  <div class="breadcrumb">
+    <a href="../index.html">WooaColor</a>
+    <span>›</span>
+    <span>그라디언트 생성기</span>
+  </div>
+
+  <div class="tool-header">
+    <span class="tool-header-icon">🌈</span>
+    <h1>CSS Gradient Generator – Free Online</h1>
+    <p>CSS 그라디언트 코드를 실시간으로 생성하고 Preview</p>
+  </div>
+
+  <!-- Preview -->
+  
+<div class="panel">
+    <div id="gradientPreview" class="gradient-preview" style="height:160px;"></div>
+
+    <!-- Type & Direction -->
+    <div style="margin-bottom:16px;">
+      <div style="font-size:0.82rem;font-weight:600;color:var(--text-light);margin-bottom:8px;">유형</div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;">
+        <button class="direction-btn active" onclick="setType('linear',this)">Linear (선형)</button>
+        <button class="direction-btn" onclick="setType('radial',this)">Radial (방사형)</button>
+        <button class="direction-btn" onclick="setType('conic',this)">Conic (원추형)</button>
+      </div>
+    </div>
+
+    <div id="linearOptions">
+      <div style="font-size:0.82rem;font-weight:600;color:var(--text-light);margin-bottom:8px;">Direction</div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px;" id="directionBtns">
+        <button class="direction-btn" onclick="setDir('to right',this)">→ 오른쪽</button>
+        <button class="direction-btn" onclick="setDir('to left',this)">← 왼쪽</button>
+        <button class="direction-btn active" onclick="setDir('135deg',this)">↘ 대각선</button>
+        <button class="direction-btn" onclick="setDir('to bottom',this)">↓ 아래</button>
+        <button class="direction-btn" onclick="setDir('to top',this)">↑ 위</button>
+        <button class="direction-btn" onclick="setDir('45deg',this)">↗ 반대각선</button>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:4px;">
+        <label style="font-size:0.82rem;color:var(--text-light);min-width:60px;">각도 직접:</label>
+        <div class="range-wrap" style="flex:1;">
+          <input type="range" id="angleSlider" min="0" max="360" value="135" oninput="setAngle(this.value)">
+          <span class="range-value" id="angleVal">135°</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Color Stops -->
+  <div class="panel" style="margin-top:0;">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;">
+      <div class="panel-title" style="margin-bottom:0;">Color Stops</div>
+      <button class="btn-copy" onclick="addStop()">+ Add Color</button>
+    </div>
+    <div id="stopsContainer"></div>
+  </div>
+
+  <!-- CSS Code -->
+  <div class="panel" style="margin-top:0;">
+    <div class="panel-title">생성된 CSS Code</div>
+    <div class="code-block">
+      <pre id="cssCode">background: linear-gradient(135deg, #8B5CF6 0%, #A78BFA 100%);</pre>
+      <button class="code-copy-btn" onclick="copyCSS()">Copy</button>
+    </div>
+    <div style="margin-top:10px;font-size:0.82rem;color:var(--text-light);">
+      전체 속성 (background-image)도 함께 제공됩니다
+    </div>
+    <div class="code-block" style="margin-top:8px;">
+      <pre id="cssCodeFull">background-image: linear-gradient(135deg, #8B5CF6 0%, #A78BFA 100%);</pre>
+      <button class="code-copy-btn" onclick="copyCSSFull()">Copy</button>
+    </div>
+  </div>
+
+  <div class="cross-link-tip">
+    💡 생성한 색상으로 팔레트를 만들어 보려면 <a href="../palette-generator.html">Palette Generator</a>를 이용하세요.
+  </div>
+
+  <section class="faq-section" style="max-width:800px;margin:3rem auto;padding:0 1rem;">
+    <h2 style="font-size:1.4rem;margin-bottom:1.5rem;">Frequently Asked Questions</h2>
+    <div class="faq-list">
+      <div class="faq-item" style="margin-bottom:1.2rem;padding:1rem;background:#f8f9fa;border-radius:8px;">
+        <h3 style="font-size:1rem;font-weight:600;margin-bottom:0.5rem;">Q. What types of gradients can I create?</h3>
+        <p style="color:#555;margin:0;">You can create CSS linear-gradient (directional) and radial-gradient (radial) styles with any number of color stops.</p>
+      </div>
+      <div class="faq-item" style="margin-bottom:1.2rem;padding:1rem;background:#f8f9fa;border-radius:8px;">
+        <h3 style="font-size:1rem;font-weight:600;margin-bottom:0.5rem;">Q. Can I add multiple color stops?</h3>
+        <p style="color:#555;margin:0;">Yes. You can add, remove, and reorder color stops freely to create complex multi-color gradients.</p>
+      </div>
+      <div class="faq-item" style="padding:1rem;background:#f8f9fa;border-radius:8px;">
+        <h3 style="font-size:1rem;font-weight:600;margin-bottom:0.5rem;">Q. How do I use the generated CSS code?</h3>
+        <p style="color:#555;margin:0;">Click the copy button next to the generated CSS code and paste it directly into your stylesheet.</p>
+      </div>
+    </div>
+  </section>
+</div>
+<aside class="tool-sidebar">
+  <div class="ad-card">
+    <ins class="adsbygoogle"
+         style="display:block;width:100%;min-height:250px"
+         data-ad-client="ca-pub-6464921081676309"
+         data-ad-slot="1419180025"
+         data-ad-format="auto"
+         data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+  </div>
+
+  <div class="ad-card" style="margin-top:16px;overflow:hidden;">    
+  </div>
+</aside>
+</div>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-bottom">
+      <p>© 2026 WooaColor. All rights reserved.</p>
+      <div class="footer-bottom-links">
+        <a href="../privacy.html">Privacy Policy</a>
+        <a href="../about.html">About</a>
+        <a href="../index.html">전체 도구</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+let gradType = 'linear';
+let gradDir = '135deg';
+let stops = [
+  { color: '#8B5CF6', pos: 0 },
+  { color: '#A78BFA', pos: 100 }
+];
+
+function setType(type, btn) {
+  gradType = type;
+  document.querySelectorAll('[onclick^="setType"]').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  document.getElementById('linearOptions').style.display = type === 'linear' ? 'block' : 'none';
+  updateGradient();
+}
+
+function setDir(dir, btn) {
+  gradDir = dir;
+  document.querySelectorAll('[onclick^="setDir"]').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  if (!isNaN(parseInt(dir))) {
+    document.getElementById('angleSlider').value = parseInt(dir);
+    document.getElementById('angleVal').textContent = parseInt(dir) + '°';
+  }
+  updateGradient();
+}
+
+function setAngle(val) {
+  gradDir = val + 'deg';
+  document.getElementById('angleVal').textContent = val + '°';
+  document.querySelectorAll('[onclick^="setDir"]').forEach(b => b.classList.remove('active'));
+  updateGradient();
+}
+
+function addStop() {
+  stops.push({ color: '#' + Math.floor(Math.random()*0xFFFFFF).toString(16).padStart(6,'0').toUpperCase(), pos: 50 });
+  renderStops();
+  updateGradient();
+}
+
+function removeStop(idx) {
+  if (stops.length <= 2) return;
+  stops.splice(idx, 1);
+  renderStops();
+  updateGradient();
+}
+
+function renderStops() {
+  const container = document.getElementById('stopsContainer');
+  container.innerHTML = stops.map((s, i) => `
+    <div class="stop-row">
+      <input type="color" value="${s.color}" oninput="stops[${i}].color=this.value; updateGradient();">
+      <span style="font-size:0.82rem;color:var(--text-light);min-width:28px;">정지점 ${i+1}</span>
+      <input type="range" min="0" max="100" value="${s.pos}" oninput="stops[${i}].pos=parseInt(this.value); this.nextElementSibling.textContent=this.value+'%'; updateGradient();">
+      <span class="stop-percent">${s.pos}%</span>
+      ${stops.length > 2 ? `<button onclick="removeStop(${i})" style="background:none;border:none;cursor:pointer;color:#CBD5E0;font-size:1rem;padding:4px;" title="삭제">✕</button>` : ''}
+    </div>
+  `).join('');
+}
+
+function buildGradientCSS() {
+  const sortedStops = [...stops].sort((a,b) => a.pos - b.pos);
+  const stopsStr = sortedStops.map(s => `${s.color} ${s.pos}%`).join(', ');
+  if (gradType === 'linear') return `linear-gradient(${gradDir}, ${stopsStr})`;
+  if (gradType === 'radial') return `radial-gradient(circle, ${stopsStr})`;
+  return `conic-gradient(${stopsStr})`;
+}
+
+function updateGradient() {
+  const css = buildGradientCSS();
+  document.getElementById('gradientPreview').style.background = css;
+  document.getElementById('cssCode').textContent = `background: ${css};`;
+  document.getElementById('cssCodeFull').textContent = `background-image: ${css};`;
+}
+
+function copyCSS() {
+  const text = document.getElementById('cssCode').textContent;
+  navigator.clipboard.writeText(text).then(() => {
+    const btn = document.querySelector('#cssCode + .code-copy-btn') || document.querySelectorAll('.code-copy-btn')[0];
+    btn.textContent = 'Copied!'; btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = 'Copy'; btn.classList.remove('copied'); }, 1500);
+  });
+}
+
+function copyCSSFull() {
+  const text = document.getElementById('cssCodeFull').textContent;
+  navigator.clipboard.writeText(text).then(() => {
+    const btns = document.querySelectorAll('.code-copy-btn');
+    btns[1].textContent = 'Copied!'; btns[1].classList.add('copied');
+    setTimeout(() => { btns[1].textContent = '복사'; btns[1].classList.remove('copied'); }, 1500);
+  });
+}
+
+// Init
+renderStops();
+updateGradient();
+</script>
+<script src="../js/pwa-install.js"></script>
+</body>
+</html>
