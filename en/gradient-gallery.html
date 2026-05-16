@@ -27,7 +27,7 @@
   <meta property="og:url" content="https://colorkit.wooahouse.com/en/gradient-gallery.html">
   <meta property="og:locale" content="en_US">
   <meta property="og:image" content="https://colorkit.wooahouse.com/og-image.png">
-  <!-- 구조화 데이터 -->
+  <!-- -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -227,6 +227,7 @@
       .gradient-grid { grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 12px; }
       .gradient-card-preview { height: 120px; }
     }
+  
     .lang-switcher { display:flex; align-items:center; gap:4px; }
     .lang-switcher a { color:rgba(255,255,255,0.7); text-decoration:none; font-size:0.8rem; font-weight:600; padding:3px 8px; border-radius:12px; transition:background 0.15s; }
     .lang-switcher a.active { color:white; background:rgba(255,255,255,0.25); }
@@ -246,6 +247,14 @@
       <a href="../box-shadow.html">CSS Tools</a>
       <a href="../color-picker.html">Color Picker</a>
     </nav>
+  <div class="header-right">
+    <div class="lang-switcher">
+      <a href="../gradient-gallery.html" class="active">KO</a>
+      <span>|</span>
+      <a href="en/gradient-gallery.html">EN</a>
+    </div>
+    <a href="../about.html" style="color:rgba(255,255,255,0.85); font-size:0.85rem; text-decoration:none; margin-left:8px;">About</a>
+    </div>
     <div class="header-right">
       <div class="lang-switcher">
         <a href="../gradient-gallery.html">KO</a>
@@ -283,27 +292,27 @@
   <div class="breadcrumb">
     <a href="../index.html">WooaColor</a>
     <span>›</span>
-    <span>CSS 그라디언트 갤러리</span>
+    <span>Gradient Gallery</span>
   </div>
 
   <div class="tool-header">
     <span class="tool-header-icon">🌈</span>
     <h1>CSS Gradient Gallery – 50+ Trendy Presets</h1>
-    <p>트렌디한 CSS 그라디언트 50가지 이상. 클릭 한 번으로 코드를 복사하세요.</p>
+    <p>50+ trendy CSS gradient presets. Click to copy the code instantly.</p>
   </div>
 
   <!-- Controls -->
   <div class="gallery-controls">
-    <input type="text" class="search-input" id="searchInput" placeholder="그라디언트 이름 검색...">
+    <input type="text" class="search-input" id="searchInput" placeholder="Search gradient name...">
     <div class="filter-btns" id="filterBtns">
-      <button class="filter-btn active" data-cat="all">전체</button>
-      <button class="filter-btn" data-cat="nature">자연</button>
-      <button class="filter-btn" data-cat="pastel">파스텔</button>
-      <button class="filter-btn" data-cat="vivid">비비드</button>
-      <button class="filter-btn" data-cat="dark">다크</button>
-      <button class="filter-btn" data-cat="business">비즈니스</button>
-      <button class="filter-btn" data-cat="trend">트렌드 2025</button>
-      <button class="filter-btn" data-cat="direction">Direction별</button>
+      <button class="filter-btn active" data-cat="all">All</button>
+      <button class="filter-btn" data-cat="nature">Nature</button>
+      <button class="filter-btn" data-cat="pastel">Pastel</button>
+      <button class="filter-btn" data-cat="vivid">Vivid</button>
+      <button class="filter-btn" data-cat="dark">Dark</button>
+      <button class="filter-btn" data-cat="business">Business</button>
+      <button class="filter-btn" data-cat="trend">Trending 2025</button>
+      <button class="filter-btn" data-cat="direction">By Direction</button>
     </div>
   </div>
 
@@ -311,7 +320,7 @@
   <div class="gradient-grid" id="gradientGrid"></div>
 
   <div class="cross-link-tip mt-24">
-    💡 그라디언트를 직접 커스터마이징하려면 <a href="../gradient-generator.html">Gradient Generator</a>를 사용해 보세요. 색상이 마음에 드셨다면 <a href="https://fontkit.wooahouse.com/" target="_blank" rel="noopener">WooaFont에서 어울리는 폰트도 찾아보세요 →</a>
+    💡 To customize gradients directly, try the <a href="../gradient-generator.html">Gradient Generator</a>. If you love the colors, <a href="https://fontkit.wooahouse.com/" target="_blank" rel="noopener">find matching fonts at WooaFont →</a>
   </div>
 
   <section class="faq-section" style="max-width:800px;margin:3rem auto;padding:0 1rem;">
@@ -357,7 +366,7 @@
       <div class="footer-bottom-links">
         <a href="../privacy.html">Privacy Policy</a>
         <a href="../about.html">About</a>
-        <a href="../index.html">전체 도구</a>
+        <a href="../index.html">All Tools</a>
       </div>
     </div>
   </div>
@@ -367,65 +376,65 @@
 <script>
 (function() {
   const gradients = [
-    // 자연 (Nature)
-    { name: '일출', css: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)', cat: 'nature' },
-    { name: '바다', css: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', cat: 'nature' },
-    { name: '숲', css: 'linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)', cat: 'nature' },
-    { name: '하늘', css: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)', cat: 'nature' },
-    { name: '노을', css: 'linear-gradient(135deg, #f77062 0%, #fe5196 100%)', cat: 'nature' },
-    { name: '새벽', css: 'linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%)', cat: 'nature' },
-    { name: '은하수', css: 'linear-gradient(135deg, #0c3483 0%, #a2b6df 50%, #6b8cce 100%)', cat: 'nature' },
-    { name: '초원', css: 'linear-gradient(135deg, #d4fc79 0%, #96e6a1 100%)', cat: 'nature' },
-    // 파스텔 (Pastel)
-    { name: '라벤더', css: 'linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%)', cat: 'pastel' },
-    { name: '복숭아', css: 'linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)', cat: 'pastel' },
-    { name: '민트', css: 'linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)', cat: 'pastel' },
-    { name: '바닐라', css: 'linear-gradient(135deg, #fff1eb 0%, #ace0f9 100%)', cat: 'pastel' },
-    { name: '라임', css: 'linear-gradient(135deg, #c1dfc4 0%, #deecdd 100%)', cat: 'pastel' },
-    { name: '코랄', css: 'linear-gradient(135deg, #fda085 0%, #f6d365 100%)', cat: 'pastel' },
-    { name: '블루밍', css: 'linear-gradient(135deg, #fccb90 0%, #d57eeb 100%)', cat: 'pastel' },
-    { name: '소다', css: 'linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%)', cat: 'pastel' },
-    // 비비드 (Vivid)
-    { name: '퍼플레인', css: 'linear-gradient(135deg, #7F00FF 0%, #E100FF 100%)', cat: 'vivid' },
-    { name: '핫핑크', css: 'linear-gradient(135deg, #f953c6 0%, #b91d73 100%)', cat: 'vivid' },
-    { name: '전기파랑', css: 'linear-gradient(135deg, #0052D4 0%, #4364F7 50%, #6FB1FC 100%)', cat: 'vivid' },
-    { name: '오렌지', css: 'linear-gradient(135deg, #FC4A1A 0%, #F7B733 100%)', cat: 'vivid' },
-    { name: '에메랄드', css: 'linear-gradient(135deg, #11998e 0%, #38ef7d 100%)', cat: 'vivid' },
-    { name: '루비', css: 'linear-gradient(135deg, #CB2D3E 0%, #EF473A 100%)', cat: 'vivid' },
-    { name: '네온그린', css: 'linear-gradient(135deg, #ADFF2F 0%, #00FF7F 100%)', cat: 'vivid' },
-    { name: '사이버', css: 'linear-gradient(135deg, #9b59b6 0%, #3498db 100%)', cat: 'vivid' },
-    // 다크 (Dark)
-    { name: '미드나잇', css: 'linear-gradient(135deg, #232526 0%, #414345 100%)', cat: 'dark' },
-    { name: '딥스페이스', css: 'linear-gradient(135deg, #000000 0%, #434343 100%)', cat: 'dark' },
-    { name: '블루나이트', css: 'linear-gradient(135deg, #0F2027 0%, #203A43 50%, #2C5364 100%)', cat: 'dark' },
-    { name: '퍼플다크', css: 'linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)', cat: 'dark' },
-    { name: '차콜', css: 'linear-gradient(135deg, #485563 0%, #29323c 100%)', cat: 'dark' },
-    { name: '인디고', css: 'linear-gradient(135deg, #1a1a4e 0%, #2d2d8e 100%)', cat: 'dark' },
-    // 비즈니스 (Business)
-    { name: '슬레이트', css: 'linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%)', cat: 'business' },
-    { name: '실버', css: 'linear-gradient(135deg, #bdc3c7 0%, #2c3e50 100%)', cat: 'business' },
-    { name: '코발트', css: 'linear-gradient(135deg, #1565C0 0%, #b92b27 100%)', cat: 'business' },
-    { name: '트러스트', css: 'linear-gradient(135deg, #3a7bd5 0%, #3a6073 100%)', cat: 'business' },
-    { name: '그린민트', css: 'linear-gradient(135deg, #00b09b 0%, #96c93d 100%)', cat: 'business' },
-    { name: '애쉬', css: 'linear-gradient(135deg, #606c88 0%, #3f4c6b 100%)', cat: 'business' },
-    // 트렌드 2025 (Trending)
-    { name: '코튼캔디', css: 'linear-gradient(135deg, #FFAFBD 0%, #ffc3a0 100%)', cat: 'trend' },
-    { name: '딸기우유', css: 'linear-gradient(135deg, #f8b195 0%, #f67280 50%, #c06c84 100%)', cat: 'trend' },
-    { name: '오로라', css: 'linear-gradient(135deg, #00d2ff 0%, #7b2ff7 100%)', cat: 'trend' },
-    { name: '하이퍼', css: 'linear-gradient(to right, #f64f59, #c471ed, #12c2e9)', cat: 'trend' },
-    { name: '크리스탈', css: 'linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%)', cat: 'trend' },
-    { name: '젤리', css: 'linear-gradient(135deg, #89FFFD 0%, #EF32D9 100%)', cat: 'trend' },
-    { name: '모카', css: 'linear-gradient(135deg, #8B5E3C 0%, #D4A96A 100%)', cat: 'trend' },
-    { name: '세이지', css: 'linear-gradient(135deg, #7fb185 0%, #b8d4bb 100%)', cat: 'trend' },
-    // Direction별 (Directions)
-    { name: '선셋 (→)', css: 'linear-gradient(to right, #ff9a9e 0%, #fad0c4 100%)', cat: 'direction' },
-    { name: '오션 (↓)', css: 'linear-gradient(to bottom, #00c6fb 0%, #005bea 100%)', cat: 'direction' },
-    { name: '네온 (45deg)', css: 'linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 50%, #2BFF88 100%)', cat: 'direction' },
-    { name: '솔라 (↗)', css: 'linear-gradient(to top right, #f83600 0%, #f9d423 100%)', cat: 'direction' },
-    { name: '파도 (←)', css: 'linear-gradient(to left, #0575E6 0%, #021B79 100%)', cat: 'direction' },
-    { name: '원형 빛', css: 'radial-gradient(circle, #f5f7fa 0%, #c3cfe2 100%)', cat: 'direction' },
-    { name: '코닉 무지개', css: 'conic-gradient(from 0deg, #ff0000, #ff8800, #ffff00, #00ff00, #0088ff, #8800ff, #ff0000)', cat: 'direction' },
-    { name: '원형 글로우', css: 'radial-gradient(circle at 30% 40%, #667eea 0%, #764ba2 100%)', cat: 'direction' }
+    //
+    { name: 'Sunrise', css: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)', cat: 'nature' },
+    { name: 'Ocean', css: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', cat: 'nature' },
+    { name: 'Forest', css: 'linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)', cat: 'nature' },
+    { name: 'Sky', css: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)', cat: 'nature' },
+    { name: 'Sunset', css: 'linear-gradient(135deg, #f77062 0%, #fe5196 100%)', cat: 'nature' },
+    { name: 'Dawn', css: 'linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%)', cat: 'nature' },
+    { name: 'Galaxy', css: 'linear-gradient(135deg, #0c3483 0%, #a2b6df 50%, #6b8cce 100%)', cat: 'nature' },
+    { name: 'Meadow', css: 'linear-gradient(135deg, #d4fc79 0%, #96e6a1 100%)', cat: 'nature' },
+    //
+    { name: 'Lavender', css: 'linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%)', cat: 'pastel' },
+    { name: 'Peach', css: 'linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)', cat: 'pastel' },
+    { name: 'Mint', css: 'linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)', cat: 'pastel' },
+    { name: 'Vanilla', css: 'linear-gradient(135deg, #fff1eb 0%, #ace0f9 100%)', cat: 'pastel' },
+    { name: 'Lime', css: 'linear-gradient(135deg, #c1dfc4 0%, #deecdd 100%)', cat: 'pastel' },
+    { name: 'Coral', css: 'linear-gradient(135deg, #fda085 0%, #f6d365 100%)', cat: 'pastel' },
+    { name: 'Blooming', css: 'linear-gradient(135deg, #fccb90 0%, #d57eeb 100%)', cat: 'pastel' },
+    { name: 'Soda', css: 'linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%)', cat: 'pastel' },
+    //
+    { name: 'Purple Rain', css: 'linear-gradient(135deg, #7F00FF 0%, #E100FF 100%)', cat: 'vivid' },
+    { name: 'Hot Pink', css: 'linear-gradient(135deg, #f953c6 0%, #b91d73 100%)', cat: 'vivid' },
+    { name: 'Electric Blue', css: 'linear-gradient(135deg, #0052D4 0%, #4364F7 50%, #6FB1FC 100%)', cat: 'vivid' },
+    { name: 'Orange', css: 'linear-gradient(135deg, #FC4A1A 0%, #F7B733 100%)', cat: 'vivid' },
+    { name: 'Emerald', css: 'linear-gradient(135deg, #11998e 0%, #38ef7d 100%)', cat: 'vivid' },
+    { name: 'Ruby', css: 'linear-gradient(135deg, #CB2D3E 0%, #EF473A 100%)', cat: 'vivid' },
+    { name: 'Neon Green', css: 'linear-gradient(135deg, #ADFF2F 0%, #00FF7F 100%)', cat: 'vivid' },
+    { name: 'Cyber', css: 'linear-gradient(135deg, #9b59b6 0%, #3498db 100%)', cat: 'vivid' },
+    //
+    { name: 'Midnight', css: 'linear-gradient(135deg, #232526 0%, #414345 100%)', cat: 'dark' },
+    { name: 'Deep Space', css: 'linear-gradient(135deg, #000000 0%, #434343 100%)', cat: 'dark' },
+    { name: 'Blue Night', css: 'linear-gradient(135deg, #0F2027 0%, #203A43 50%, #2C5364 100%)', cat: 'dark' },
+    { name: 'Purple Dark', css: 'linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)', cat: 'dark' },
+    { name: 'Charcoal', css: 'linear-gradient(135deg, #485563 0%, #29323c 100%)', cat: 'dark' },
+    { name: 'Indigo', css: 'linear-gradient(135deg, #1a1a4e 0%, #2d2d8e 100%)', cat: 'dark' },
+    //
+    { name: 'Slate', css: 'linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%)', cat: 'business' },
+    { name: 'Silver', css: 'linear-gradient(135deg, #bdc3c7 0%, #2c3e50 100%)', cat: 'business' },
+    { name: 'Cobalt', css: 'linear-gradient(135deg, #1565C0 0%, #b92b27 100%)', cat: 'business' },
+    { name: 'Trust', css: 'linear-gradient(135deg, #3a7bd5 0%, #3a6073 100%)', cat: 'business' },
+    { name: 'Green Mint', css: 'linear-gradient(135deg, #00b09b 0%, #96c93d 100%)', cat: 'business' },
+    { name: 'Ash', css: 'linear-gradient(135deg, #606c88 0%, #3f4c6b 100%)', cat: 'business' },
+    //
+    { name: 'Cotton Candy', css: 'linear-gradient(135deg, #FFAFBD 0%, #ffc3a0 100%)', cat: 'trend' },
+    { name: 'Strawberry Milk', css: 'linear-gradient(135deg, #f8b195 0%, #f67280 50%, #c06c84 100%)', cat: 'trend' },
+    { name: 'Aurora', css: 'linear-gradient(135deg, #00d2ff 0%, #7b2ff7 100%)', cat: 'trend' },
+    { name: 'Hyper', css: 'linear-gradient(to right, #f64f59, #c471ed, #12c2e9)', cat: 'trend' },
+    { name: 'Crystal', css: 'linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%)', cat: 'trend' },
+    { name: 'Jelly', css: 'linear-gradient(135deg, #89FFFD 0%, #EF32D9 100%)', cat: 'trend' },
+    { name: 'Mocha', css: 'linear-gradient(135deg, #8B5E3C 0%, #D4A96A 100%)', cat: 'trend' },
+    { name: 'Sage', css: 'linear-gradient(135deg, #7fb185 0%, #b8d4bb 100%)', cat: 'trend' },
+    // By Direction
+    { name: 'Sunset (→)', css: 'linear-gradient(to right, #ff9a9e 0%, #fad0c4 100%)', cat: 'direction' },
+    { name: 'Ocean (↓)', css: 'linear-gradient(to bottom, #00c6fb 0%, #005bea 100%)', cat: 'direction' },
+    { name: 'Neon (45deg)', css: 'linear-gradient(45deg, #FA8BFF 0%, #2BD2FF 50%, #2BFF88 100%)', cat: 'direction' },
+    { name: 'Solar (↗)', css: 'linear-gradient(to top right, #f83600 0%, #f9d423 100%)', cat: 'direction' },
+    { name: 'Wave (←)', css: 'linear-gradient(to left, #0575E6 0%, #021B79 100%)', cat: 'direction' },
+    { name: 'Radial Light', css: 'radial-gradient(circle, #f5f7fa 0%, #c3cfe2 100%)', cat: 'direction' },
+    { name: 'Conic Rainbow', css: 'conic-gradient(from 0deg, #ff0000, #ff8800, #ffff00, #00ff00, #0088ff, #8800ff, #ff0000)', cat: 'direction' },
+    { name: 'Radial Glow', css: 'radial-gradient(circle at 30% 40%, #667eea 0%, #764ba2 100%)', cat: 'direction' }
   ];
 
   const grid = document.getElementById('gradientGrid');
@@ -440,7 +449,7 @@
     });
 
     if (filtered.length === 0) {
-      grid.innerHTML = '<div class="no-results">검색 결과가 없습니다.</div>';
+      grid.innerHTML = '<div class="no-results">No results found.</div>';
       return;
     }
 
@@ -448,13 +457,13 @@
       const card = document.createElement('div');
       card.className = 'gradient-card';
       card.innerHTML = `
-        <div class="gradient-card-preview" style="background:${g.css};" title="클릭하여 코드 복사"></div>
+        <div class="gradient-card-preview" style="background:${g.css};" title="Click to copy code"></div>
         <div class="gradient-card-body">
           <div class="gradient-card-name">${g.name}</div>
           <div class="gradient-card-css">${g.css}</div>
           <div class="gradient-card-actions">
             <button class="copy-bg-btn" data-css="background: ${g.css};">Copy Code</button>
-            <button class="copy-var-btn" data-css="${g.css}">CSS값 복사</button>
+            <button class="copy-var-btn" data-css="${g.css}">Copy CSS</button>
           </div>
         </div>
       `;

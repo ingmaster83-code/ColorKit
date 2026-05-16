@@ -90,12 +90,13 @@
     }
     .swatch-box:hover { transform:scale(1.06); }
     .swatch-box:hover::after {
-      content:'복사'; position:absolute; inset:0;
+      content:'Copy'; position:absolute; inset:0;
       display:flex; align-items:center; justify-content:center;
       background:rgba(0,0,0,0.25); color:white; font-size:0.75rem;
       font-weight:700; border-radius:10px;
     }
     .swatch-hex { font-size:0.72rem; color:var(--text-light); text-align:center; margin-top:5px; font-family:'Courier New',monospace; }
+  
     .lang-switcher { display:flex; align-items:center; gap:4px; }
     .lang-switcher a { color:rgba(255,255,255,0.7); text-decoration:none; font-size:0.8rem; font-weight:600; padding:3px 8px; border-radius:12px; transition:background 0.15s; }
     .lang-switcher a.active { color:white; background:rgba(255,255,255,0.25); }
@@ -115,6 +116,14 @@
       <a href="../box-shadow.html">CSS Tools</a>
       <a href="../color-picker.html">Color Picker</a>
     </nav>
+  <div class="header-right">
+    <div class="lang-switcher">
+      <a href="../palette-generator.html" class="active">KO</a>
+      <span>|</span>
+      <a href="en/palette-generator.html">EN</a>
+    </div>
+    <a href="../about.html" style="color:rgba(255,255,255,0.85); font-size:0.85rem; text-decoration:none; margin-left:8px;">About</a>
+    </div>
     <div class="header-right">
       <div class="lang-switcher">
         <a href="../palette-generator.html">KO</a>
@@ -151,13 +160,13 @@
   <div class="breadcrumb">
     <a href="../index.html">WooaColor</a>
     <span>›</span>
-    <span>팔레트 생성기</span>
+    <span>Palette Generator</span>
   </div>
 
   <div class="tool-header">
     <span class="tool-header-icon">🎨</span>
     <h1>Color Palette Generator – Free Online</h1>
-    <p>Base Color에서 5가지 조화 팔레트를 자동 생성합니다</p>
+    <p>Auto-generate five harmony palettes from a base color.</p>
   </div>
 
   <!-- Base Color -->
@@ -170,7 +179,7 @@
         <label>HEX</label>
         <input type="text" id="baseHex" value="#8B5CF6" maxlength="7" oninput="syncFromHex(this.value)">
       </div>
-      <button class="btn-primary btn" onclick="generateAll()">팔레트 생성</button>
+      <button class="btn-primary btn" onclick="generateAll()">Generate Palette</button>
     </div>
   </div>
 
@@ -180,7 +189,7 @@
   </div>
 
   <div class="cross-link-tip">
-    💡 색상 대비가 충분한지 확인하려면 <a href="../contrast-checker.html">Contrast Checker</a>를 이용하세요.
+    💡 To verify sufficient color contrast, use the <a href="../contrast-checker.html">Contrast Checker</a>.
   </div>
 
   <section class="faq-section" style="max-width:800px;margin:3rem auto;padding:0 1rem;">
@@ -224,7 +233,7 @@
       <div class="footer-bottom-links">
         <a href="../privacy.html">Privacy Policy</a>
         <a href="../about.html">About</a>
-        <a href="../index.html">전체 도구</a>
+        <a href="../index.html">All Tools</a>
       </div>
     </div>
   </div>
@@ -267,7 +276,7 @@ function generatePalettes(hex) {
   const palettes = [
     {
       name: '🔵 Complementary (Complementary)',
-      desc: '색상환에서 정반대의 색상',
+      desc: 'Opposite on the color wheel',
       colors: [
         hslToHex(h, s, l),
         hslToHex((h+30)%360, s, l),
@@ -278,7 +287,7 @@ function generatePalettes(hex) {
     },
     {
       name: '🟢 Analogous (Analogous)',
-      desc: '색상환에서 인접한 색상들',
+      desc: 'Adjacent colors on the color wheel',
       colors: [
         hslToHex((h-40+360)%360, s, l),
         hslToHex((h-20+360)%360, s, l),
@@ -289,7 +298,7 @@ function generatePalettes(hex) {
     },
     {
       name: '🔺 Triadic (Triadic)',
-      desc: '색상환에서 120° 간격의 세 색상',
+      desc: 'Three colors 120° apart on the wheel',
       colors: [
         hslToHex(h, s, l),
         hslToHex((h+120)%360, s, l),
@@ -299,8 +308,8 @@ function generatePalettes(hex) {
       ]
     },
     {
-      name: '✂️ 분할 Complementary (Split-Complementary)',
-      desc: 'Complementary의 인접 두 색상',
+      name: '✂️ Split-Complementary',
+      desc: 'Two colors adjacent to the complement',
       colors: [
         hslToHex(h, s, l),
         hslToHex((h+150)%360, s, l),
@@ -311,7 +320,7 @@ function generatePalettes(hex) {
     },
     {
       name: '⬜ Monochromatic (Monochromatic)',
-      desc: '같은 색조의 밝기·채도 변형',
+      desc: 'Brightness and saturation variations of the same hue',
       colors: [
         hslToHex(h, s, Math.max(15, l-30)),
         hslToHex(h, s, Math.max(15, l-15)),
@@ -350,7 +359,7 @@ function copyHex(hex) {
   navigator.clipboard.writeText(hex).then(() => {
     const tip = document.createElement('div');
     tip.style.cssText = 'position:fixed;bottom:80px;left:50%;transform:translateX(-50%);background:#1F2937;color:white;padding:8px 20px;border-radius:20px;font-size:0.85rem;z-index:9999;pointer-events:none;';
-    tip.textContent = hex + ' 복사됨!';
+    tip.textContent = hex + ' Copied!';
     document.body.appendChild(tip);
     setTimeout(() => tip.remove(), 1500);
   });

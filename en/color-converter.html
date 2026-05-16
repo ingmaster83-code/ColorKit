@@ -78,6 +78,13 @@
   ]
 }
 </script>
+  <style>
+    .lang-switcher { display:flex; align-items:center; gap:4px; }
+    .lang-switcher a { color:rgba(255,255,255,0.7); text-decoration:none; font-size:0.8rem; font-weight:600; padding:3px 8px; border-radius:12px; transition:background 0.15s; }
+    .lang-switcher a.active { color:white; background:rgba(255,255,255,0.25); }
+    .lang-switcher a:hover { color:white; background:rgba(255,255,255,0.18); }
+    .lang-switcher span { color:rgba(255,255,255,0.3); font-size:0.75rem; }
+  </style>
 </head>
 <body>
 
@@ -91,6 +98,14 @@
       <a href="../box-shadow.html">CSS Tools</a>
       <a href="../color-picker.html">Color Picker</a>
     </nav>
+  <div class="header-right">
+    <div class="lang-switcher">
+      <a href="../color-converter.html" class="active">KO</a>
+      <span>|</span>
+      <a href="en/color-converter.html">EN</a>
+    </div>
+    <a href="../about.html" style="color:rgba(255,255,255,0.85); font-size:0.85rem; text-decoration:none; margin-left:8px;">About</a>
+    </div>
     <div class="header-right">
       <div class="lang-switcher">
         <a href="../color-converter.html">KO</a>
@@ -127,13 +142,13 @@
   <div class="breadcrumb">
     <a href="../index.html">WooaColor</a>
     <span>›</span>
-    <span>HEX ↔ RGB ↔ HSL 변환</span>
+    <span>HEX ↔ RGB ↔ HSL</span>
   </div>
 
   <div class="tool-header">
     <span class="tool-header-icon">🔄</span>
     <h1>HEX RGB HSL Color Converter</h1>
-    <p>세 가지 Color Code를 실시간으로 상호 변환합니다</p>
+    <p>Convert between three color code formats in real time.</p>
   </div>
 
   
@@ -205,7 +220,7 @@
 
   <!-- Info Panel -->
   <div class="panel" style="margin-top:0;">
-    <div class="panel-title">색상 정보</div>
+    <div class="panel-title">Color Info</div>
     <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;">
       <div style="background:#F9FAFB;padding:12px;border-radius:8px;text-align:center;">
         <div style="font-size:0.75rem;color:var(--text-light);margin-bottom:4px;">HEX</div>
@@ -220,14 +235,14 @@
         <div id="infoHSL" style="font-family:'Courier New',monospace;font-weight:700;font-size:0.95rem;">263°, 90%, 66%</div>
       </div>
       <div style="background:#F9FAFB;padding:12px;border-radius:8px;text-align:center;">
-        <div style="font-size:0.75rem;color:var(--text-light);margin-bottom:4px;">밝기</div>
-        <div id="infoBrightness" style="font-weight:700;font-size:0.95rem;">어두움</div>
+        <div style="font-size:0.75rem;color:var(--text-light);margin-bottom:4px;">Brightness</div>
+        <div id="infoBrightness" style="font-weight:700;font-size:0.95rem;">Dark</div>
       </div>
     </div>
   </div>
 
   <div class="cross-link-tip">
-    💡 Color Code를 모른다면 <a href="../color-picker.html">Color Picker</a>로 이미지에서 직접 추출해 보세요.
+    💡 Don't know the color code? Use the <a href="../color-picker.html">Color Picker</a> to extract it from an image.
   </div>
 
   <section class="faq-section" style="max-width:800px;margin:3rem auto;padding:0 1rem;">
@@ -272,7 +287,7 @@
       <div class="footer-bottom-links">
         <a href="../privacy.html">Privacy Policy</a>
         <a href="../about.html">About</a>
-        <a href="../index.html">전체 도구</a>
+        <a href="../index.html">All Tools</a>
       </div>
     </div>
   </div>
@@ -352,7 +367,7 @@ function updateAll(r,g,b) {
   document.getElementById('infoHSL').textContent = `${hsl.h}°, ${hsl.s}%, ${hsl.l}%`;
 
   const lum = getLuminance(r,g,b);
-  document.getElementById('infoBrightness').textContent = lum > 0.179 ? '밝음' : '어두움';
+  document.getElementById('infoBrightness').textContent = lum > 0.179 ? 'Light' : 'Dark';
 
   document.getElementById('errorMsg').style.display = 'none';
   updating = false;
@@ -362,7 +377,7 @@ function updateFromHEX() {
   const val = document.getElementById('hexInput').value.trim();
   const rgb = hexToRGB(val);
   if (!rgb) {
-    document.getElementById('errorMsg').textContent = '올바른 HEX 코드를 입력하세요 (예: #8B5CF6)';
+    document.getElementById('errorMsg').textContent = 'Enter a valid HEX code (e.g. #8B5CF6)';
     document.getElementById('errorMsg').style.display = 'block';
     return;
   }
@@ -396,7 +411,7 @@ function updateFromRGBText() {
   const val = document.getElementById('rgbInput').value.trim();
   const m = val.match(/rgb\(\s*(\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*\)/i);
   if (!m) {
-    document.getElementById('errorMsg').textContent = '올바른 RGB 형식을 입력하세요 (예: rgb(139, 92, 246))';
+    document.getElementById('errorMsg').textContent = 'Enter a valid RGB format (e.g. rgb(139, 92, 246))';
     document.getElementById('errorMsg').style.display = 'block';
     return;
   }
@@ -407,7 +422,7 @@ function updateFromHSLText() {
   const val = document.getElementById('hslInput').value.trim();
   const m = val.match(/hsl\(\s*(\d+)\s*,\s*(\d+)%?\s*,\s*(\d+)%?\s*\)/i);
   if (!m) {
-    document.getElementById('errorMsg').textContent = '올바른 HSL 형식을 입력하세요 (예: hsl(263, 90%, 66%))';
+    document.getElementById('errorMsg').textContent = 'Enter a valid HSL format (e.g. hsl(263, 90%, 66%))';
     document.getElementById('errorMsg').style.display = 'block';
     return;
   }

@@ -157,6 +157,7 @@
       margin-top: 8px;
     }
     .palette-preview-swatch { flex: 1; }
+  
     .lang-switcher { display:flex; align-items:center; gap:4px; }
     .lang-switcher a { color:rgba(255,255,255,0.7); text-decoration:none; font-size:0.8rem; font-weight:600; padding:3px 8px; border-radius:12px; transition:background 0.15s; }
     .lang-switcher a.active { color:white; background:rgba(255,255,255,0.25); }
@@ -176,6 +177,14 @@
       <a href="../box-shadow.html">CSS Tools</a>
       <a href="../color-picker.html">Color Picker</a>
     </nav>
+  <div class="header-right">
+    <div class="lang-switcher">
+      <a href="../css-variables.html" class="active">KO</a>
+      <span>|</span>
+      <a href="en/css-variables.html">EN</a>
+    </div>
+    <a href="../about.html" style="color:rgba(255,255,255,0.85); font-size:0.85rem; text-decoration:none; margin-left:8px;">About</a>
+    </div>
     <div class="header-right">
       <div class="lang-switcher">
         <a href="../css-variables.html">KO</a>
@@ -212,31 +221,31 @@
   <div class="breadcrumb">
     <a href="../index.html">WooaColor</a>
     <span>›</span>
-    <span>CSS 색상 변수 생성기</span>
+    <span>CSS Variables</span>
   </div>
 
   <div class="tool-header">
     <span class="tool-header-icon">📦</span>
     <h1>CSS Variables Generator – Free Online</h1>
-    <p>Color Palette를 입력하면 CSS Variables, SCSS Variables, Tailwind Config 코드를 즉시 생성합니다.</p>
+    <p>Enter your color palette to instantly generate CSS Variables, SCSS Variables, and Tailwind Config code.</p>
   </div>
 
   
 
   <div class="panel">
-    <div class="panel-title">Color Palette 입력</div>
-    <div style="font-size:0.82rem;color:#64748b;margin-bottom:12px;">변수 이름과 색상을 입력하세요. 순서대로 CSS Variables가 생성됩니다.</div>
+    <div class="panel-title">Color Palette Input</div>
+    <div style="font-size:0.82rem;color:#64748b;margin-bottom:12px;">Enter variable names and colors. CSS variables are generated in order.</div>
 
     <div id="colorList"></div>
     <button class="add-color-btn" id="addColorBtn">+ Add Color</button>
 
     <div style="margin-top:16px;">
-      <div style="font-size:0.82rem;font-weight:600;color:#64748b;margin-bottom:6px;">팔레트 Preview</div>
+      <div style="font-size:0.82rem;font-weight:600;color:#64748b;margin-bottom:6px;">Palette Preview</div>
       <div class="palette-preview" id="palettePreview"></div>
     </div>
 
     <div style="margin-top:20px;">
-      <div class="panel-title" style="margin-bottom:10px;">생성된 코드</div>
+      <div class="panel-title" style="margin-bottom:10px;">Generated Code</div>
       <div class="output-tabs">
         <button class="output-tab active" onclick="setTab('css')">CSS Variables</button>
         <button class="output-tab" onclick="setTab('scss')">SCSS Variables</button>
@@ -244,7 +253,7 @@
         <button class="output-tab" onclick="setTab('js')">JS Object</button>
       </div>
       <div class="code-output" id="codeOutput"></div>
-      <button class="copy-code-btn" id="copyCodeBtn">📋 코드 복사</button>
+      <button class="copy-code-btn" id="copyCodeBtn">📋 Copy Code</button>
     </div>
   </div>
 
@@ -254,7 +263,7 @@
   </div>
 
   <div class="cross-link-tip">
-    💡 색상 밝기 변형이 필요하다면 <a href="../tints-shades.html">Tints &amp; Shades 생성기</a>를 활용하세요.
+    💡 For brightness variations, use the <a href="../tints-shades.html">Tints &amp; Shades Generator</a>.
   </div>
 
   <section class="faq-section" style="max-width:800px;margin:3rem auto;padding:0 1rem;">
@@ -332,7 +341,7 @@
         <input type="text" value="${entry.hex}" placeholder="#RRGGBB" maxlength="7"
           oninput="updateHexText(${i}, this.value)" style="max-width:110px;">
         <input class="color-entry-name" type="text" value="${entry.name}"
-          placeholder="변수 이름 (예: primary)" oninput="updateName(${i}, this.value)">
+          placeholder="Variable name (e.g. primary)" oninput="updateName(${i}, this.value)">
         <button class="color-entry-remove" onclick="removeEntry(${i})">✕</button>`;
       list.appendChild(div);
     });
@@ -398,7 +407,7 @@
         code += `  --${e.name}: ${e.hex};\n`;
         code += `  --${e.name}-rgb: ${r}, ${g}, ${b};\n`;
       });
-      code += '}\n\n/* 사용 예시 */\n';
+      code += '}\n\n/* Usage example */\n';
       if (valid[0]) {
         code += `.btn {\n  background: var(--${valid[0].name});\n  color: rgba(var(--${valid[0].name}-rgb), 0.9);\n}`;
       }
@@ -406,7 +415,7 @@
       valid.forEach(e => {
         code += `$${e.name}: ${e.hex};\n`;
       });
-      code += '\n// 사용 예시\n';
+      code += '\n// Usage example\n';
       if (valid[0]) code += `.btn {\n  background: $${valid[0].name};\n}`;
     } else if (activeTab === 'tailwind') {
       code = '// tailwind.config.js\nmodule.exports = {\n  theme: {\n    extend: {\n      colors: {\n';
@@ -430,8 +439,8 @@
     const code = document.getElementById('codeOutput').textContent;
     navigator.clipboard.writeText(code).then(() => {
       const btn = document.getElementById('copyCodeBtn');
-      btn.textContent = '✅ 복사됨!';
-      setTimeout(() => { btn.textContent = '📋 코드 복사'; }, 1500);
+      btn.textContent = '✅ Copied!';
+      setTimeout(() => { btn.textContent = '📋 Copy Code'; }, 1500);
     });
   });
 

@@ -85,6 +85,7 @@
     .stop-percent { min-width:38px; text-align:right; font-size:0.82rem; font-weight:600; color:var(--primary); }
     .direction-btn { padding:6px 14px; border-radius:20px; border:1px solid var(--border); background:white; cursor:pointer; font-size:0.82rem; font-family:inherit; transition:all 0.15s; }
     .direction-btn.active { background:var(--primary); color:white; border-color:var(--primary); }
+  
     .lang-switcher { display:flex; align-items:center; gap:4px; }
     .lang-switcher a { color:rgba(255,255,255,0.7); text-decoration:none; font-size:0.8rem; font-weight:600; padding:3px 8px; border-radius:12px; transition:background 0.15s; }
     .lang-switcher a.active { color:white; background:rgba(255,255,255,0.25); }
@@ -104,6 +105,14 @@
       <a href="../box-shadow.html">CSS Tools</a>
       <a href="../color-picker.html">Color Picker</a>
     </nav>
+  <div class="header-right">
+    <div class="lang-switcher">
+      <a href="../gradient-generator.html" class="active">KO</a>
+      <span>|</span>
+      <a href="en/gradient-generator.html">EN</a>
+    </div>
+    <a href="../about.html" style="color:rgba(255,255,255,0.85); font-size:0.85rem; text-decoration:none; margin-left:8px;">About</a>
+    </div>
     <div class="header-right">
       <div class="lang-switcher">
         <a href="../gradient-generator.html">KO</a>
@@ -140,13 +149,13 @@
   <div class="breadcrumb">
     <a href="../index.html">WooaColor</a>
     <span>›</span>
-    <span>그라디언트 생성기</span>
+    <span>Gradient Generator</span>
   </div>
 
   <div class="tool-header">
     <span class="tool-header-icon">🌈</span>
     <h1>CSS Gradient Generator – Free Online</h1>
-    <p>CSS 그라디언트 코드를 실시간으로 생성하고 Preview</p>
+    <p>Generate CSS gradient code in real time with a live preview.</p>
   </div>
 
   <!-- Preview -->
@@ -156,26 +165,26 @@
 
     <!-- Type & Direction -->
     <div style="margin-bottom:16px;">
-      <div style="font-size:0.82rem;font-weight:600;color:var(--text-light);margin-bottom:8px;">유형</div>
+      <div style="font-size:0.82rem;font-weight:600;color:var(--text-light);margin-bottom:8px;">Type</div>
       <div style="display:flex;gap:8px;flex-wrap:wrap;">
-        <button class="direction-btn active" onclick="setType('linear',this)">Linear (선형)</button>
-        <button class="direction-btn" onclick="setType('radial',this)">Radial (방사형)</button>
-        <button class="direction-btn" onclick="setType('conic',this)">Conic (원추형)</button>
+        <button class="direction-btn active" onclick="setType('linear',this)">Linear</button>
+        <button class="direction-btn" onclick="setType('radial',this)">Radial</button>
+        <button class="direction-btn" onclick="setType('conic',this)">Conic</button>
       </div>
     </div>
 
     <div id="linearOptions">
       <div style="font-size:0.82rem;font-weight:600;color:var(--text-light);margin-bottom:8px;">Direction</div>
       <div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px;" id="directionBtns">
-        <button class="direction-btn" onclick="setDir('to right',this)">→ 오른쪽</button>
-        <button class="direction-btn" onclick="setDir('to left',this)">← 왼쪽</button>
-        <button class="direction-btn active" onclick="setDir('135deg',this)">↘ 대각선</button>
-        <button class="direction-btn" onclick="setDir('to bottom',this)">↓ 아래</button>
-        <button class="direction-btn" onclick="setDir('to top',this)">↑ 위</button>
-        <button class="direction-btn" onclick="setDir('45deg',this)">↗ 반대각선</button>
+        <button class="direction-btn" onclick="setDir('to right',this)">→ Right</button>
+        <button class="direction-btn" onclick="setDir('to left',this)">← Left</button>
+        <button class="direction-btn active" onclick="setDir('135deg',this)">↘ Diagonal</button>
+        <button class="direction-btn" onclick="setDir('to bottom',this)">↓ Down</button>
+        <button class="direction-btn" onclick="setDir('to top',this)">↑ Up</button>
+        <button class="direction-btn" onclick="setDir('45deg',this)">↗ Anti-diagonal</button>
       </div>
       <div style="display:flex;align-items:center;gap:10px;margin-bottom:4px;">
-        <label style="font-size:0.82rem;color:var(--text-light);min-width:60px;">각도 직접:</label>
+        <label style="font-size:0.82rem;color:var(--text-light);min-width:60px;">Custom angle:</label>
         <div class="range-wrap" style="flex:1;">
           <input type="range" id="angleSlider" min="0" max="360" value="135" oninput="setAngle(this.value)">
           <span class="range-value" id="angleVal">135°</span>
@@ -195,13 +204,13 @@
 
   <!-- CSS Code -->
   <div class="panel" style="margin-top:0;">
-    <div class="panel-title">생성된 CSS Code</div>
+    <div class="panel-title">Generated CSS Code</div>
     <div class="code-block">
       <pre id="cssCode">background: linear-gradient(135deg, #8B5CF6 0%, #A78BFA 100%);</pre>
       <button class="code-copy-btn" onclick="copyCSS()">Copy</button>
     </div>
     <div style="margin-top:10px;font-size:0.82rem;color:var(--text-light);">
-      전체 속성 (background-image)도 함께 제공됩니다
+      Full property (background-image) is also included
     </div>
     <div class="code-block" style="margin-top:8px;">
       <pre id="cssCodeFull">background-image: linear-gradient(135deg, #8B5CF6 0%, #A78BFA 100%);</pre>
@@ -210,7 +219,7 @@
   </div>
 
   <div class="cross-link-tip">
-    💡 생성한 색상으로 팔레트를 만들어 보려면 <a href="../palette-generator.html">Palette Generator</a>를 이용하세요.
+    💡 To build a palette from the generated colors, use the <a href="../palette-generator.html">Palette Generator</a>.
   </div>
 
   <section class="faq-section" style="max-width:800px;margin:3rem auto;padding:0 1rem;">
@@ -254,7 +263,7 @@
       <div class="footer-bottom-links">
         <a href="../privacy.html">Privacy Policy</a>
         <a href="../about.html">About</a>
-        <a href="../index.html">전체 도구</a>
+        <a href="../index.html">All Tools</a>
       </div>
     </div>
   </div>
@@ -312,10 +321,10 @@ function renderStops() {
   container.innerHTML = stops.map((s, i) => `
     <div class="stop-row">
       <input type="color" value="${s.color}" oninput="stops[${i}].color=this.value; updateGradient();">
-      <span style="font-size:0.82rem;color:var(--text-light);min-width:28px;">정지점 ${i+1}</span>
+      <span style="font-size:0.82rem;color:var(--text-light);min-width:28px;">Stop ${i+1}</span>
       <input type="range" min="0" max="100" value="${s.pos}" oninput="stops[${i}].pos=parseInt(this.value); this.nextElementSibling.textContent=this.value+'%'; updateGradient();">
       <span class="stop-percent">${s.pos}%</span>
-      ${stops.length > 2 ? `<button onclick="removeStop(${i})" style="background:none;border:none;cursor:pointer;color:#CBD5E0;font-size:1rem;padding:4px;" title="삭제">✕</button>` : ''}
+      ${stops.length > 2 ? `<button onclick="removeStop(${i})" style="background:none;border:none;cursor:pointer;color:#CBD5E0;font-size:1rem;padding:4px;" title="Remove">✕</button>` : ''}
     </div>
   `).join('');
 }
@@ -349,7 +358,7 @@ function copyCSSFull() {
   navigator.clipboard.writeText(text).then(() => {
     const btns = document.querySelectorAll('.code-copy-btn');
     btns[1].textContent = 'Copied!'; btns[1].classList.add('copied');
-    setTimeout(() => { btns[1].textContent = '복사'; btns[1].classList.remove('copied'); }, 1500);
+    setTimeout(() => { btns[1].textContent = 'Copy'; btns[1].classList.remove('copied'); }, 1500);
   });
 }
 

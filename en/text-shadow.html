@@ -182,6 +182,7 @@
       .slider-row { flex-wrap: wrap; }
       .slider-row label, .color-row label, .sample-text-row label { min-width: 100%; }
     }
+  
     .lang-switcher { display:flex; align-items:center; gap:4px; }
     .lang-switcher a { color:rgba(255,255,255,0.7); text-decoration:none; font-size:0.8rem; font-weight:600; padding:3px 8px; border-radius:12px; transition:background 0.15s; }
     .lang-switcher a.active { color:white; background:rgba(255,255,255,0.25); }
@@ -201,6 +202,14 @@
       <a href="../box-shadow.html">CSS Tools</a>
       <a href="../color-picker.html">Color Picker</a>
     </nav>
+  <div class="header-right">
+    <div class="lang-switcher">
+      <a href="../text-shadow.html" class="active">KO</a>
+      <span>|</span>
+      <a href="en/text-shadow.html">EN</a>
+    </div>
+    <a href="../about.html" style="color:rgba(255,255,255,0.85); font-size:0.85rem; text-decoration:none; margin-left:8px;">About</a>
+    </div>
     <div class="header-right">
       <div class="lang-switcher">
         <a href="../text-shadow.html">KO</a>
@@ -237,20 +246,20 @@
   <div class="breadcrumb">
     <a href="../index.html">WooaColor</a>
     <span>›</span>
-    <span>텍스트 그림자 생성기</span>
+    <span>Text Shadow</span>
   </div>
 
   <div class="tool-header">
     <span class="tool-header-icon">🔤</span>
     <h1>CSS Text Shadow Generator – Free Online</h1>
-    <p>슬라이더로 CSS text-shadow 코드를 즉시 생성하세요</p>
+    <p>Configure CSS text-shadow with sliders and copy the code instantly.</p>
   </div>
 
   
 <div class="panel">
     <div class="sample-text-row">
       <label>Sample Text</label>
-      <input type="text" id="sampleText" value="WooaColor WooaColor" placeholder="미리볼 텍스트 입력">
+      <input type="text" id="sampleText" value="WooaColor WooaColor" placeholder="Enter preview text">
     </div>
     <div class="text-color-row">
       <label>Text Color</label>
@@ -292,7 +301,7 @@
   </div>
 
   <div class="panel" style="margin-top:0;">
-    <div class="panel-title">생성된 CSS Code</div>
+    <div class="panel-title">Generated CSS Code</div>
     <div class="code-block">
       <pre id="cssCode">text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);</pre>
       <button class="code-copy-btn" onclick="copyCSS()">Copy</button>
@@ -300,7 +309,7 @@
   </div>
 
   <div class="cross-link-tip">
-    💡 박스에 그림자를 적용하려면 <a href="../box-shadow.html">Box Shadow</a>를 사용해 보세요.
+    💡 To add a shadow to a box, try the <a href="../box-shadow.html">Box Shadow Generator</a>.
   </div>
 
   <section class="faq-section" style="max-width:800px;margin:3rem auto;padding:0 1rem;">
@@ -345,7 +354,7 @@
       <div class="footer-bottom-links">
         <a href="../privacy.html">Privacy Policy</a>
         <a href="../about.html">About</a>
-        <a href="../index.html">전체 도구</a>
+        <a href="../index.html">All Tools</a>
       </div>
     </div>
   </div>

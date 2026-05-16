@@ -177,6 +177,7 @@
       text-align: center;
       margin-top: 4px;
     }
+  
     .lang-switcher { display:flex; align-items:center; gap:4px; }
     .lang-switcher a { color:rgba(255,255,255,0.7); text-decoration:none; font-size:0.8rem; font-weight:600; padding:3px 8px; border-radius:12px; transition:background 0.15s; }
     .lang-switcher a.active { color:white; background:rgba(255,255,255,0.25); }
@@ -196,6 +197,14 @@
       <a href="../box-shadow.html">CSS Tools</a>
       <a href="../color-picker.html">Color Picker</a>
     </nav>
+  <div class="header-right">
+    <div class="lang-switcher">
+      <a href="../palette-contrast.html" class="active">KO</a>
+      <span>|</span>
+      <a href="en/palette-contrast.html">EN</a>
+    </div>
+    <a href="../about.html" style="color:rgba(255,255,255,0.85); font-size:0.85rem; text-decoration:none; margin-left:8px;">About</a>
+    </div>
     <div class="header-right">
       <div class="lang-switcher">
         <a href="../palette-contrast.html">KO</a>
@@ -232,29 +241,29 @@
   <div class="breadcrumb">
     <a href="../index.html">WooaColor</a>
     <span>›</span>
-    <span>팔레트 대비 검사기</span>
+    <span>Palette Contrast</span>
   </div>
 
   <div class="tool-header">
     <span class="tool-header-icon">🧮</span>
     <h1>Palette Contrast Checker – WCAG Matrix</h1>
-    <p>Color Palette 전체의 조합별 Contrast Ratio을 매트릭스로 한눈에 확인하세요. AA/AAA 통과 여부 즉시 표시.</p>
+    <p>View contrast ratios for all color pairs in your palette as a matrix. AA/AAA pass/fail shown instantly.</p>
   </div>
 
   
 
   <div class="panel">
-    <div class="panel-title">Color Palette 입력</div>
-    <div style="font-size:0.82rem;color:#64748b;margin-bottom:12px;">2~8개 색상을 입력하면 모든 조합의 Contrast Ratio을 매트릭스로 표시합니다.</div>
+    <div class="panel-title">Color Palette Input</div>
+    <div style="font-size:0.82rem;color:#64748b;margin-bottom:12px;">Enter 2–8 colors to display all pairwise contrast ratios in a matrix.</div>
 
     <div id="paletteList"></div>
     <button class="add-palette-btn" id="addPaletteBtn">+ Add Color</button>
 
     <div class="matrix-wrap" id="matrixWrap" style="margin-top:24px;">
       <div class="legend">
-        <div class="legend-item"><div class="legend-dot" style="background:#dcfce7;border:1px solid #86efac;"></div> AAA 통과 (≥7:1)</div>
-        <div class="legend-item"><div class="legend-dot" style="background:#fef9c3;border:1px solid #fcd34d;"></div> AA 통과 (≥4.5:1)</div>
-        <div class="legend-item"><div class="legend-dot" style="background:#fee2e2;border:1px solid #fca5a5;"></div> 미통과 (&lt;4.5:1)</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#dcfce7;border:1px solid #86efac;"></div> AAA Pass (≥7:1)</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#fef9c3;border:1px solid #fcd34d;"></div> AA Pass (≥4.5:1)</div>
+        <div class="legend-item"><div class="legend-dot" style="background:#fee2e2;border:1px solid #fca5a5;"></div> Fail (&lt;4.5:1)</div>
       </div>
       <table class="matrix-table" id="matrixTable"></table>
     </div>
@@ -266,7 +275,7 @@
   </div>
 
   <div class="cross-link-tip">
-    💡 두 색상만 비교할 때는 <a href="../contrast-checker.html">Contrast Checker</a>를 이용하세요.
+    💡 To compare just two colors, use the <a href="../contrast-checker.html">Contrast Checker</a>.
   </div>
 
   <section class="faq-section" style="max-width:800px;margin:3rem auto;padding:0 1rem;">
@@ -318,12 +327,12 @@
 
 <script>
   const DEFAULT = [
-    { label:'배경(흰색)',  hex:'#FFFFFF' },
-    { label:'본문',        hex:'#1E293B' },
+    { label:'Background(White)',  hex:'#FFFFFF' },
+    { label:'Body Text',        hex:'#1E293B' },
     { label:'Primary',     hex:'#8B5CF6' },
     { label:'Secondary',   hex:'#3B82F6' },
-    { label:'성공',        hex:'#22C55E' },
-    { label:'경고',        hex:'#F59E0B' },
+    { label:'Success',        hex:'#22C55E' },
+    { label:'Warning',        hex:'#F59E0B' },
   ];
   let palette = DEFAULT.map(e=>({...e}));
 
@@ -361,7 +370,7 @@
         </div>
         <input type="text" value="${p.hex}" maxlength="7" placeholder="#RRGGBB"
           oninput="updateColorText(${i},this.value)" style="width:110px;">
-        <input type="text" value="${p.label}" placeholder="이름"
+        <input type="text" value="${p.label}" placeholder="Name"
           oninput="updateLabel(${i},this.value)"
           style="flex:1;padding:8px 10px;border:1px solid #e2e8f0;border-radius:8px;font-size:0.88rem;">
         <button class="palette-entry-remove" onclick="removePalette(${i})">✕</button>`;
@@ -379,7 +388,7 @@
 
   document.getElementById('addPaletteBtn').addEventListener('click', () => {
     if(palette.length>=8) return;
-    palette.push({ label:`색상 ${palette.length+1}`, hex:'#'+Math.floor(Math.random()*0xFFFFFF).toString(16).padStart(6,'0') });
+    palette.push({ label:`Color ${palette.length+1}`, hex:'#'+Math.floor(Math.random()*0xFFFFFF).toString(16).padStart(6,'0') });
     renderList();
   });
 

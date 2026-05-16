@@ -27,7 +27,7 @@
   <meta property="og:url" content="https://colorkit.wooahouse.com/en/image-palette.html">
   <meta property="og:locale" content="en_US">
   <meta property="og:image" content="https://colorkit.wooahouse.com/og-image.png">
-  <!-- 구조화 데이터 -->
+  <!-- -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -231,6 +231,7 @@
       opacity: 1;
       transform: translateX(-50%) translateY(0);
     }
+  
     .lang-switcher { display:flex; align-items:center; gap:4px; }
     .lang-switcher a { color:rgba(255,255,255,0.7); text-decoration:none; font-size:0.8rem; font-weight:600; padding:3px 8px; border-radius:12px; transition:background 0.15s; }
     .lang-switcher a.active { color:white; background:rgba(255,255,255,0.25); }
@@ -250,6 +251,14 @@
       <a href="../box-shadow.html">CSS Tools</a>
       <a href="../color-picker.html">Color Picker</a>
     </nav>
+  <div class="header-right">
+    <div class="lang-switcher">
+      <a href="../image-palette.html" class="active">KO</a>
+      <span>|</span>
+      <a href="en/image-palette.html">EN</a>
+    </div>
+    <a href="../about.html" style="color:rgba(255,255,255,0.85); font-size:0.85rem; text-decoration:none; margin-left:8px;">About</a>
+    </div>
     <div class="header-right">
       <div class="lang-switcher">
         <a href="../image-palette.html">KO</a>
@@ -286,38 +295,38 @@
   <div class="breadcrumb">
     <a href="../index.html">WooaColor</a>
     <span>›</span>
-    <span>이미지 Color Palette 추출</span>
+    <span>Image Palette</span>
   </div>
 
   <div class="tool-header">
     <span class="tool-header-icon">🖼️</span>
     <h1>Image Palette Extractor – Free Online</h1>
-    <p>이미지를 업로드하면 Dominant Colors을 자동으로 추출합니다</p>
+    <p>Upload any image to automatically extract its dominant color palette.</p>
   </div>
 
   <!-- Drop Zone -->
   <div class="drop-zone" id="dropZone">
     <span class="drop-zone-icon">📂</span>
-    <h3>이미지를 드래그 앤 드롭하세요</h3>
-    <p>JPG, PNG, WebP 등 이미지 파일 지원</p>
+    <h3>Drag and drop an image here</h3>
+    <p>Supports JPG, PNG, WebP, and other image formats</p>
     <button class="btn-select" onclick="document.getElementById('fileInput').click()">Select File</button>
     <input type="file" id="fileInput" accept="image/*" hidden>
   </div>
 
   <!-- Image Preview -->
   <div id="previewSection" class="image-preview-wrap" style="display:none;">
-    <img id="imagePreview" alt="업로드된 이미지 Preview">
+    <img id="imagePreview" alt="Uploaded image preview">
   </div>
 
   <!-- Color Count Selector -->
   <div id="optionsSection" class="panel" style="display:none;">
-    <div class="panel-title">추출 색상 수</div>
+    <div class="panel-title">Number of Colors</div>
     <div class="count-selector">
-      <button class="count-btn" data-count="4">4색</button>
-      <button class="count-btn" data-count="6">6색</button>
-      <button class="count-btn active" data-count="8">8색</button>
-      <button class="count-btn" data-count="10">10색</button>
-      <button class="count-btn" data-count="12">12색</button>
+      <button class="count-btn" data-count="4">4</button>
+      <button class="count-btn" data-count="6">6</button>
+      <button class="count-btn active" data-count="8">8</button>
+      <button class="count-btn" data-count="10">10</button>
+      <button class="count-btn" data-count="12">12</button>
     </div>
   </div>
 
@@ -330,32 +339,32 @@
       <div class="dominant-section">
         <div class="dominant-swatch" id="dominantSwatch"></div>
         <div class="dominant-info">
-          <div class="dominant-label">가장 눈에 띄는 색상</div>
+          <div class="dominant-label">Most prominent color</div>
           <div class="dominant-hex" id="dominantHex"></div>
           <div class="dominant-rgb" id="dominantRgb"></div>
           <div id="dominantName" style="font-size:0.82rem;color:var(--text-light);margin-top:4px;"></div>
-          <button class="btn-copy mt-8" onclick="copyText(document.getElementById('dominantHex').textContent)">HEX 복사</button>
+          <button class="btn-copy mt-8" onclick="copyText(document.getElementById('dominantHex').textContent)">Copy HEX</button>
         </div>
       </div>
     </div>
 
     <!-- Palette Bar -->
     <div class="panel">
-      <div class="panel-title">팔레트 프리뷰</div>
+      <div class="panel-title">Palette Preview</div>
       <div class="palette-bar" id="paletteBar"></div>
     </div>
 
     <!-- Color Swatches Grid -->
     <div class="panel">
-      <div class="panel-title">추출된 색상</div>
+      <div class="panel-title">Extracted Colors</div>
       <div class="palette-extract-grid" id="paletteGrid"></div>
     </div>
 
     <!-- Bulk Copy & CSS Output -->
     <div class="panel">
       <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px;">
-        <button class="btn btn-primary" onclick="copyAllHex()">팔레트 코드 전체 복사</button>
-        <button class="btn btn-secondary" onclick="copyCssVars()">CSS Variables 복사</button>
+        <button class="btn btn-primary" onclick="copyAllHex()">Copy All HEX Codes</button>
+        <button class="btn btn-secondary" onclick="copyCssVars()">Copy CSS Variables</button>
       </div>
       <div class="css-vars-output">
         <div class="code-block">
@@ -367,7 +376,7 @@
   </div>
 
   <div class="cross-link-tip">
-    💡 추출한 색상을 활용해 <a href="../gradient-generator.html">그라디언트를 만들어 보세요</a> 또는 <a href="https://imagekit.wooahouse.com/" target="_blank" rel="noopener">WooaImage에서 이미지 편집하기 →</a>
+    💡 Use the extracted colors to <a href="../gradient-generator.html">create a gradient</a> or <a href="https://imagekit.wooahouse.com/" target="_blank" rel="noopener">edit your image at WooaImage →</a>
   </div>
 
   <section class="faq-section" style="max-width:800px;margin:3rem auto;padding:0 1rem;">
@@ -413,7 +422,7 @@
       <div class="footer-bottom-links">
         <a href="../privacy.html">Privacy Policy</a>
         <a href="../about.html">About</a>
-        <a href="../index.html">전체 도구</a>
+        <a href="../index.html">All Tools</a>
       </div>
     </div>
   </div>
@@ -430,12 +439,12 @@
 
   // Color name approximation
   const colorNames = [
-    { name: '빨강', h: [0, 15] }, { name: '주황', h: [15, 40] },
-    { name: '노랑', h: [40, 65] }, { name: '연두', h: [65, 80] },
-    { name: '초록', h: [80, 160] }, { name: '청록', h: [160, 190] },
-    { name: '파랑', h: [190, 260] }, { name: '남색', h: [260, 280] },
-    { name: '보라', h: [280, 320] }, { name: '분홍', h: [320, 345] },
-    { name: '빨강', h: [345, 361] }
+    { name: 'Red', h: [0, 15] }, { name: 'Orange', h: [15, 40] },
+    { name: 'Yellow', h: [40, 65] }, { name: 'Yellow-Green', h: [65, 80] },
+    { name: 'Green', h: [80, 160] }, { name: 'Cyan', h: [160, 190] },
+    { name: 'Blue', h: [190, 260] }, { name: 'Indigo', h: [260, 280] },
+    { name: 'Purple', h: [280, 320] }, { name: 'Pink', h: [320, 345] },
+    { name: 'Red', h: [345, 361] }
   ];
 
   function getColorName(r, g, b) {
@@ -443,9 +452,9 @@
     const l = (max + min) / 2;
     const d = max - min;
     if (d < 20) {
-      if (l < 40) return '검정';
-      if (l > 220) return '흰색';
-      return '회색';
+      if (l < 40) return 'Black';
+      if (l > 220) return 'White';
+      return 'Gray';
     }
     let h;
     if (max === r) h = ((g - b) / d + (g < b ? 6 : 0)) * 60;
@@ -455,7 +464,7 @@
     for (const c of colorNames) {
       if (h >= c.h[0] && h < c.h[1]) return c.name;
     }
-    return '색상';
+    return 'Color';
   }
 
   function rgbToHex(r, g, b) {
@@ -482,7 +491,7 @@
 
   function handleFile(file) {
     if (!file.type.startsWith('image/')) {
-      showToast('이미지 파일만 지원합니다.');
+      showToast('Only image files are supported.');
       return;
     }
     const reader = new FileReader();
@@ -550,7 +559,7 @@
             <div class="palette-item-rgb">rgb(${c[0]}, ${c[1]}, ${c[2]})</div>
             <div class="palette-item-name">${name}</div>
           </div>
-          <button class="btn-copy" onclick="event.stopPropagation();copyText('${hex}')">HEX 복사</button>
+          <button class="btn-copy" onclick="event.stopPropagation();copyText('${hex}')">Copy HEX</button>
         `;
         item.addEventListener('click', () => copyText(hex));
         grid.appendChild(item);
@@ -566,25 +575,25 @@
 
       document.getElementById('resultSection').style.display = 'block';
     } catch (err) {
-      showToast('색상 추출 중 Error가 발생했습니다. 다른 이미지를 시도해 주세요.');
+      showToast('An error occurred while extracting colors. Please try another image.');
     }
   }
 
   // Copy functions (global)
   window.copyText = function(text) {
-    navigator.clipboard.writeText(text).then(() => showToast('복사됨! ' + text));
+    navigator.clipboard.writeText(text).then(() => showToast('Copied! ' + text));
   };
 
   window.copyAllHex = function() {
     const hexArr = currentPalette.map(c => rgbToHex(c[0], c[1], c[2]));
     const str = '[\'' + hexArr.join('\', \'') + '\']';
-    navigator.clipboard.writeText(str).then(() => showToast('팔레트 전체 코드가 복사되었습니다!'));
+    navigator.clipboard.writeText(str).then(() => showToast('All palette codes copied!'));
   };
 
   window.copyCssVars = function() {
     const code = document.getElementById('cssVarsCode').textContent;
     navigator.clipboard.writeText(code).then(() => {
-      showToast('CSS Variables 코드가 복사되었습니다!');
+      showToast('CSS Variables copied!');
       const btn = document.querySelector('.code-copy-btn');
       if (btn) { btn.textContent = 'Copied!'; btn.classList.add('copied'); setTimeout(() => { btn.textContent = 'Copy'; btn.classList.remove('copied'); }, 1500); }
     });

@@ -154,6 +154,7 @@
       flex-shrink: 0;
     }
     .history-swatch:hover { transform: scale(1.12); }
+  
     .lang-switcher { display:flex; align-items:center; gap:4px; }
     .lang-switcher a { color:rgba(255,255,255,0.7); text-decoration:none; font-size:0.8rem; font-weight:600; padding:3px 8px; border-radius:12px; transition:background 0.15s; }
     .lang-switcher a.active { color:white; background:rgba(255,255,255,0.25); }
@@ -173,6 +174,14 @@
       <a href="../box-shadow.html">CSS Tools</a>
       <a href="../color-picker.html">Color Picker</a>
     </nav>
+  <div class="header-right">
+    <div class="lang-switcher">
+      <a href="../random-color.html" class="active">KO</a>
+      <span>|</span>
+      <a href="en/random-color.html">EN</a>
+    </div>
+    <a href="../about.html" style="color:rgba(255,255,255,0.85); font-size:0.85rem; text-decoration:none; margin-left:8px;">About</a>
+    </div>
     <div class="header-right">
       <div class="lang-switcher">
         <a href="../random-color.html">KO</a>
@@ -209,19 +218,19 @@
   <div class="breadcrumb">
     <a href="../index.html">WooaColor</a>
     <span>›</span>
-    <span>랜덤 색상 생성기</span>
+    <span>Random Color</span>
   </div>
 
   <div class="tool-header">
     <span class="tool-header-icon">🎲</span>
     <h1>Random Color Generator – Free Online</h1>
-    <p>버튼 한 번으로 새로운 색상을 생성하고 코드를 바로 복사하세요</p>
+    <p>Generate a new random color and copy its code with one click.</p>
   </div>
 
   
 <div class="panel">
     <div id="randomPreview" class="random-preview" style="background:#8B5CF6;"></div>
-    <button class="generate-btn" onclick="generateRandom()">🎲 다시 생성</button>
+    <button class="generate-btn" onclick="generateRandom()">🎲 Generate</button>
 
     <div id="hexRow" class="code-row">
       <span class="code-label">HEX</span>
@@ -243,12 +252,12 @@
   <div class="panel" style="margin-top:0;">
     <div class="history-title">Recent Colors History</div>
     <div id="historySwatches" class="history-swatches">
-      <span style="font-size:0.82rem;color:var(--text-light);">아직 생성된 색상이 없습니다.</span>
+      <span style="font-size:0.82rem;color:var(--text-light);">No colors generated yet.</span>
     </div>
   </div>
 
   <div class="cross-link-tip">
-    💡 생성된 색상이 마음에 드셨나요? <a href="../palette-generator.html">Palette Generator</a>로 어울리는 색상 조합을 만들어 보세요.
+    💡 Like the generated color? Use the <a href="../palette-generator.html">Palette Generator</a> to find a matching palette.
   </div>
 
   <section class="faq-section" style="max-width:800px;margin:3rem auto;padding:0 1rem;">
@@ -293,7 +302,7 @@
       <div class="footer-bottom-links">
         <a href="../privacy.html">Privacy Policy</a>
         <a href="../about.html">About</a>
-        <a href="../index.html">전체 도구</a>
+        <a href="../index.html">All Tools</a>
       </div>
     </div>
   </div>
@@ -343,7 +352,7 @@ function generateRandom() {
 function renderHistory() {
   const container = document.getElementById('historySwatches');
   if (history.length === 0) {
-    container.innerHTML = '<span style="font-size:0.82rem;color:var(--text-light);">아직 생성된 색상이 없습니다.</span>';
+    container.innerHTML = '<span style="font-size:0.82rem;color:var(--text-light);">No colors generated yet.</span>';
     return;
   }
   container.innerHTML = history.map(hex =>

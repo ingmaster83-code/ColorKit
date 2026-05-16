@@ -90,6 +90,7 @@
     }
     #crosshair::before { width:2px; height:100%; left:9px; top:0; }
     #crosshair::after { height:2px; width:100%; top:9px; left:0; }
+  
     .lang-switcher { display:flex; align-items:center; gap:4px; }
     .lang-switcher a { color:rgba(255,255,255,0.7); text-decoration:none; font-size:0.8rem; font-weight:600; padding:3px 8px; border-radius:12px; transition:background 0.15s; }
     .lang-switcher a.active { color:white; background:rgba(255,255,255,0.25); }
@@ -109,6 +110,14 @@
       <a href="../box-shadow.html">CSS Tools</a>
       <a href="../color-picker.html">Color Picker</a>
     </nav>
+  <div class="header-right">
+    <div class="lang-switcher">
+      <a href="../color-picker.html" class="active">KO</a>
+      <span>|</span>
+      <a href="en/color-picker.html">EN</a>
+    </div>
+    <a href="../about.html" style="color:rgba(255,255,255,0.85); font-size:0.85rem; text-decoration:none; margin-left:8px;">About</a>
+    </div>
     <div class="header-right">
       <div class="lang-switcher">
         <a href="../color-picker.html">KO</a>
@@ -151,15 +160,15 @@
   <div class="tool-header">
     <span class="tool-header-icon">🖼️</span>
     <h1>Image Color Picker – Extract Pixel Colors</h1>
-    <p>이미지를 업로드하고 원하는 픽셀을 클릭해 색상을 추출하세요</p>
+    <p>Upload an image and click any pixel to extract its color code.</p>
   </div>
 
   <!-- Upload Zone -->
   <div class="drop-zone" id="dropZone" onclick="document.getElementById('fileInput').click()">
     <input type="file" id="fileInput" accept="image/*" style="display:none;" onchange="loadImage(event)">
     <span class="drop-zone-icon">🖼️</span>
-    <h3>이미지를 드래그하거나 클릭하여 업로드</h3>
-    <p>JPG, PNG, GIF, WebP, BMP 지원</p>
+    <h3>Drag or click to upload an image</h3>
+    <p>JPG, PNG, GIF, WebP, BMP supported</p>
     <button class="btn-select" onclick="event.stopPropagation();" style="pointer-events:none;">Select Image</button>
   </div>
 
@@ -167,7 +176,7 @@
   <div id="canvasSection" style="display:none;margin-top:20px;">
     
 <div class="panel">
-      <div class="panel-title">이미지 클릭으로 색상 추출</div>
+      <div class="panel-title">Click Image to Pick Color</div>
       <div style="text-align:center;overflow:auto;">
         <div id="canvas-wrap">
           <canvas id="imgCanvas"></canvas>
@@ -178,7 +187,7 @@
 
     <!-- Current Color -->
     <div class="panel" style="margin-top:0;">
-      <div class="panel-title">현재 선택 색상</div>
+      <div class="panel-title">Selected Color</div>
       <div style="display:flex;align-items:center;gap:20px;flex-wrap:wrap;">
         <div id="currentSwatch" style="width:80px;height:80px;border-radius:12px;border:1px solid var(--border);flex-shrink:0;background:#cccccc;"></div>
         <div style="flex:1;">
@@ -200,24 +209,24 @@
         </div>
       </div>
       <div style="margin-top:12px;font-size:0.82rem;color:var(--text-light);">
-        📍 클릭 위치: <span id="clickPos">—</span>
+        📍 Click position: <span id="clickPos">—</span>
       </div>
     </div>
 
     <!-- Color History -->
     <div class="panel" style="margin-top:0;">
       <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;">
-        <div class="panel-title" style="margin-bottom:0;">최근 추출 색상 (최대 10개)</div>
+        <div class="panel-title" style="margin-bottom:0;">Recent Colors (up to 10)</div>
         <button class="btn-copy" onclick="clearHistory()">Reset</button>
       </div>
       <div id="colorHistory" class="color-history">
-        <span style="color:var(--text-light);font-size:0.85rem;">이미지를 클릭하면 여기에 색상이 쌓입니다</span>
+        <span style="color:var(--text-light);font-size:0.85rem;">Click the image to collect colors here</span>
       </div>
     </div>
   </div>
 
   <div class="cross-link-tip">
-    💡 추출한 색상을 다른 형식으로 변환하려면 <a href="../color-converter.html">HEX ↔ RGB ↔ HSL 변환기</a>를 이용하세요.
+    💡 To convert extracted colors to other formats, use the <a href="../color-converter.html">HEX ↔ RGB ↔ HSL Converter</a>.
   </div>
 
   <section class="faq-section" style="max-width:800px;margin:3rem auto;padding:0 1rem;">
@@ -262,7 +271,7 @@
       <div class="footer-bottom-links">
         <a href="../privacy.html">Privacy Policy</a>
         <a href="../about.html">About</a>
-        <a href="../index.html">전체 도구</a>
+        <a href="../index.html">All Tools</a>
       </div>
     </div>
   </div>
@@ -338,7 +347,7 @@ function addHistory(hex, r, g, b) {
 function renderHistory() {
   const el = document.getElementById('colorHistory');
   if (!colorHistory.length) {
-    el.innerHTML = '<span style="color:var(--text-light);font-size:0.85rem;">이미지를 클릭하면 여기에 색상이 쌓입니다</span>';
+    el.innerHTML = '<span style="color:var(--text-light);font-size:0.85rem;">Click the image to collect colors here</span>';
     return;
   }
   el.innerHTML = colorHistory.map(c =>

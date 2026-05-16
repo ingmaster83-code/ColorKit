@@ -189,6 +189,7 @@
       transition: background 0.15s;
     }
     .swap-btn:hover { background: #DDD6FE; }
+  
     .lang-switcher { display:flex; align-items:center; gap:4px; }
     .lang-switcher a { color:rgba(255,255,255,0.7); text-decoration:none; font-size:0.8rem; font-weight:600; padding:3px 8px; border-radius:12px; transition:background 0.15s; }
     .lang-switcher a.active { color:white; background:rgba(255,255,255,0.25); }
@@ -208,6 +209,14 @@
       <a href="../box-shadow.html">CSS Tools</a>
       <a href="../color-picker.html">Color Picker</a>
     </nav>
+  <div class="header-right">
+    <div class="lang-switcher">
+      <a href="../contrast-checker.html" class="active">KO</a>
+      <span>|</span>
+      <a href="en/contrast-checker.html">EN</a>
+    </div>
+    <a href="../about.html" style="color:rgba(255,255,255,0.85); font-size:0.85rem; text-decoration:none; margin-left:8px;">About</a>
+    </div>
     <div class="header-right">
       <div class="lang-switcher">
         <a href="../contrast-checker.html">KO</a>
@@ -244,13 +253,13 @@
   <div class="breadcrumb">
     <a href="../index.html">WooaColor</a>
     <span>›</span>
-    <span>색상 대비 검사기</span>
+    <span>Contrast Checker</span>
   </div>
 
   <div class="tool-header">
     <span class="tool-header-icon">👁️</span>
     <h1>WCAG Color Contrast Checker – Free Online</h1>
-    <p>WCAG 접근성 기준에 따른 색상 Contrast Ratio을 즉시 검사합니다</p>
+    <p>Instantly check color contrast ratios against WCAG accessibility standards.</p>
   </div>
 
   
@@ -271,41 +280,41 @@
         </div>
       </div>
     </div>
-    <button class="swap-btn" onclick="swapColors()">⇄ 전경/배경 교체</button>
+    <button class="swap-btn" onclick="swapColors()">⇄ Swap FG/BG</button>
 
     <div class="ratio-display">
       <div class="ratio-number" id="ratioDisplay">18.09:1</div>
-      <div class="ratio-label">색상 Contrast Ratio (Contrast Ratio)</div>
+      <div class="ratio-label">Color Contrast Ratio</div>
     </div>
 
     <div class="wcag-grid">
       <div class="wcag-item">
         <div>
-          <div class="wcag-item-label">AA 일반 텍스트</div>
-          <div class="wcag-item-desc">최소 4.5:1 필요</div>
+          <div class="wcag-item-label">AA Normal Text</div>
+          <div class="wcag-item-desc">Min 4.5:1 required</div>
         </div>
-        <span id="badge-aa-normal" class="wcag-badge wcag-pass">✓ 통과</span>
+        <span id="badge-aa-normal" class="wcag-badge wcag-pass">✓ Pass</span>
       </div>
       <div class="wcag-item">
         <div>
-          <div class="wcag-item-label">AA 큰 텍스트</div>
-          <div class="wcag-item-desc">최소 3:1 필요 (18pt+)</div>
+          <div class="wcag-item-label">AA Large Text</div>
+          <div class="wcag-item-desc">Min 3:1 required (18pt+)</div>
         </div>
-        <span id="badge-aa-large" class="wcag-badge wcag-pass">✓ 통과</span>
+        <span id="badge-aa-large" class="wcag-badge wcag-pass">✓ Pass</span>
       </div>
       <div class="wcag-item">
         <div>
-          <div class="wcag-item-label">AAA 일반 텍스트</div>
-          <div class="wcag-item-desc">최소 7:1 필요</div>
+          <div class="wcag-item-label">AAA Normal Text</div>
+          <div class="wcag-item-desc">Min 7:1 required</div>
         </div>
-        <span id="badge-aaa-normal" class="wcag-badge wcag-pass">✓ 통과</span>
+        <span id="badge-aaa-normal" class="wcag-badge wcag-pass">✓ Pass</span>
       </div>
       <div class="wcag-item">
         <div>
-          <div class="wcag-item-label">AAA 큰 텍스트</div>
-          <div class="wcag-item-desc">최소 4.5:1 필요</div>
+          <div class="wcag-item-label">AAA Large Text</div>
+          <div class="wcag-item-desc">Min 4.5:1 required</div>
         </div>
-        <span id="badge-aaa-large" class="wcag-badge wcag-pass">✓ 통과</span>
+        <span id="badge-aaa-large" class="wcag-badge wcag-pass">✓ Pass</span>
       </div>
     </div>
   </div>
@@ -313,14 +322,14 @@
   <div class="panel" style="margin-top:0;">
     <div class="panel-title">Preview</div>
     <div id="previewBox" class="preview-box" style="background:#FFFFFF; color:#1A1A2E;">
-      <div class="preview-large">큰 텍스트 Preview (18pt 이상)</div>
-      <div class="preview-normal">일반 텍스트 Preview입니다. This is a normal text preview for contrast check.</div>
-      <div class="preview-small">작은 텍스트 Preview. Small text preview for accessibility testing.</div>
+      <div class="preview-large">Large Text Preview (18pt+)</div>
+      <div class="preview-normal">Normal text preview. This is a normal text preview for contrast check.</div>
+      <div class="preview-small">Small text preview. Small text preview for accessibility testing.</div>
     </div>
   </div>
 
   <div class="cross-link-tip">
-    💡 Color Code를 모른다면 <a href="../color-converter.html">색상 변환기</a>에서 HEX 코드를 확인하세요.
+    💡 If you don't know the color code, look it up with the <a href="../color-converter.html">Color Converter</a>.
   </div>
 
   <section class="faq-section" style="max-width:800px;margin:3rem auto;padding:0 1rem;">
@@ -365,7 +374,7 @@
       <div class="footer-bottom-links">
         <a href="../privacy.html">Privacy Policy</a>
         <a href="../about.html">About</a>
-        <a href="../index.html">전체 도구</a>
+        <a href="../index.html">All Tools</a>
       </div>
     </div>
   </div>
@@ -405,10 +414,10 @@ function getContrastRatio(hex1, hex2) {
 function setBadge(id, pass) {
   const el = document.getElementById(id);
   if (pass) {
-    el.textContent = '✓ 통과';
+    el.textContent = '✓ Pass';
     el.className = 'wcag-badge wcag-pass';
   } else {
-    el.textContent = '✗ 실패';
+    el.textContent = '✗ Fail';
     el.className = 'wcag-badge wcag-fail';
   }
 }

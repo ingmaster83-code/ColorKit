@@ -199,6 +199,7 @@
       .swatch-hex { font-size: 0.58rem; width: 44px; }
       .swatches-row { gap: 4px; }
     }
+  
     .lang-switcher { display:flex; align-items:center; gap:4px; }
     .lang-switcher a { color:rgba(255,255,255,0.7); text-decoration:none; font-size:0.8rem; font-weight:600; padding:3px 8px; border-radius:12px; transition:background 0.15s; }
     .lang-switcher a.active { color:white; background:rgba(255,255,255,0.25); }
@@ -218,6 +219,14 @@
       <a href="../box-shadow.html">CSS Tools</a>
       <a href="../color-picker.html">Color Picker</a>
     </nav>
+  <div class="header-right">
+    <div class="lang-switcher">
+      <a href="../tints-shades.html" class="active">KO</a>
+      <span>|</span>
+      <a href="en/tints-shades.html">EN</a>
+    </div>
+    <a href="../about.html" style="color:rgba(255,255,255,0.85); font-size:0.85rem; text-decoration:none; margin-left:8px;">About</a>
+    </div>
     <div class="header-right">
       <div class="lang-switcher">
         <a href="../tints-shades.html">KO</a>
@@ -254,31 +263,31 @@
   <div class="breadcrumb">
     <a href="../index.html">WooaColor</a>
     <span>›</span>
-    <span>Tints &amp; Shades 생성기</span>
+    <span>Tints &amp; Shades</span>
   </div>
 
   <div class="tool-header">
     <span class="tool-header-icon">🎨</span>
     <h1>Tints & Shades Generator – Free Online</h1>
-    <p>색상 하나로 밝은 계열(Tints) 10단계 + 어두운 계열(Shades) 10단계를 즉시 생성합니다</p>
+    <p>Generate 10 tints and 10 shades from a single color instantly.</p>
   </div>
 
-  <!-- AdSense 상단 -->
+  <!-- AdSense Top -->
   
 
-  <!-- 색상 선택 -->
+  <!-- -->
   <div class="panel">
-    <div class="panel-title">Base Color 선택</div>
+    <div class="panel-title">Base Color</div>
     <div class="picker-row">
       <input type="color" id="colorPicker" value="#8B5CF6" oninput="onPickerChange(this.value)">
       <div class="input-group" style="flex:1;min-width:140px;margin-bottom:0;">
-        <label>HEX 코드</label>
+        <label>HEX Code</label>
         <input type="text" id="hexInput" value="#8B5CF6" maxlength="7" placeholder="#8B5CF6" oninput="onHexChange(this.value)">
       </div>
       <button class="btn-primary btn" onclick="generate()">Generate</button>
-      <button class="copy-css-btn" onclick="copyCSSVars()" title="Tailwind 스타일 CSS Variables 복사">
+      <button class="copy-css-btn" onclick="copyCSSVars()" title="Copy Tailwind-style CSS Variables">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
-        CSS Variables 복사
+        Copy CSS Variables
       </button>
     </div>
   </div>
@@ -287,36 +296,36 @@
   <div class="panel" style="margin-top:0;">
     <div class="ts-section">
       <div class="ts-section-title">
-        ☀️ Tints — 밝은 계열
-        <span>원색 + 흰색 혼합</span>
+        ☀️ Tints — Lighter
+        <span>Base + White mix</span>
       </div>
       <div class="swatches-row" id="tintsRow"></div>
     </div>
 
-    <!-- 원색 -->
+    <!-- -->
     <div class="ts-section">
-      <div class="ts-section-title">⬛ 원색 (Base Color)</div>
+      <div class="ts-section-title">⬛ Base Color</div>
       <div class="swatches-row" id="baseRow"></div>
     </div>
 
     <!-- Shades -->
     <div class="ts-section" style="margin-bottom:0;">
       <div class="ts-section-title">
-        🌙 Shades — 어두운 계열
-        <span>원색 + 검정 혼합</span>
+        🌙 Shades — Darker
+        <span>Base + Black mix</span>
       </div>
       <div class="swatches-row" id="shadesRow"></div>
     </div>
   </div>
 
-  <!-- AdSense 중단 -->
+  <!-- AdSense Mid -->
   <div style="text-align:center;margin:16px auto;max-width:728px;padding:0 8px">
     <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6464921081676309" data-ad-slot="1419180025" data-ad-format="auto" data-full-width-responsive="true"></ins>
     <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
   </div>
 
   <div class="cross-link-tip">
-    💡 생성한 색상의 가독성을 확인하려면 <a href="../contrast-checker.html">색상 대비 검사기(WCAG)</a>를 이용하세요. 팔레트 조합이 필요하면 <a href="../palette-generator.html">Palette Generator</a>도 확인해보세요.
+    💡 To check the readability of generated colors, use the <a href="../contrast-checker.html">Contrast Checker (WCAG)</a>. For palette combinations, see the <a href="../palette-generator.html">Palette Generator</a>.
   </div>
 
   <section class="faq-section" style="max-width:800px;margin:3rem auto;padding:0 1rem;">
@@ -361,7 +370,7 @@
       <div class="footer-bottom-links">
         <a href="../privacy.html">Privacy Policy</a>
         <a href="../about.html">About</a>
-        <a href="../index.html">전체 도구</a>
+        <a href="../index.html">All Tools</a>
       </div>
     </div>
   </div>
@@ -371,7 +380,7 @@
 
 <script src="../js/pwa-install.js"></script>
 <script>
-  /* ── 유틸리티 ── */
+  /* ── */
   function hexToRgb(hex) {
     hex = hex.replace('#','');
     if(hex.length === 3) hex = hex.split('').map(c=>c+c).join('');
@@ -401,13 +410,13 @@
   }
 
   function mixWithWhite(hex, ratio) {
-    // ratio: 0=원색, 1=흰색
+    // ratio: 0=base, 1=white
     const {r,g,b} = hexToRgb(hex);
     return rgbToHex(r+(255-r)*ratio, g+(255-g)*ratio, b+(255-b)*ratio);
   }
 
   function mixWithBlack(hex, ratio) {
-    // ratio: 0=원색, 1=검정
+    // ratio: 0=base, 1=black
     const {r,g,b} = hexToRgb(hex);
     return rgbToHex(r*(1-ratio), g*(1-ratio), b*(1-ratio));
   }
@@ -416,7 +425,7 @@
     return /^#([0-9A-Fa-f]{6})$/.test(hex);
   }
 
-  /* ── 토스트 ── */
+  /* ── */
   let toastTimer;
   function showToast(msg) {
     const t = document.getElementById('toast');
@@ -426,7 +435,7 @@
     toastTimer = setTimeout(()=>t.classList.remove('show'), 2000);
   }
 
-  /* ── 스와치 생성 ── */
+  /* ── */
   function makeSwatchEl(hex, label) {
     const {r,g,b} = hexToRgb(hex);
     const [h,s,l] = rgbToHsl(r,g,b);
@@ -459,51 +468,51 @@
     }
 
     item.addEventListener('click', () => {
-      navigator.clipboard.writeText(hex).then(()=>showToast('✅ ' + hex + ' 복사됨!')).catch(()=>{});
+      navigator.clipboard.writeText(hex).then(()=>showToast('✅ ' + hex + ' Copied!')).catch(()=>{});
     });
     return item;
   }
 
-  /* ── 메인 생성 ── */
+  /* ── */
   let currentHex = '#8B5CF6';
 
   function generate() {
     const hex = currentHex;
     if(!isValidHex(hex)) return;
 
-    // Tints: 10% ~ 90% 흰색 혼합 (밝은 → 원색 순)
+    // Tints: 10% ~ 90% white mix (light → base)
     const tintsRow = document.getElementById('tintsRow');
     tintsRow.innerHTML = '';
-    // 90%흰→10%흰 순으로 나열 (왼쪽=가장 밝음)
+    // 90%white→10%white order (left=lightest)
     const tintRatios = [0.9, 0.8, 0.7, 0.6, 0.5, 0.4, 0.3, 0.2, 0.1, 0.05];
     tintRatios.forEach((ratio, i) => {
       const mixed = mixWithWhite(hex, ratio);
       const pct = Math.round((1-ratio)*100);
-      tintsRow.appendChild(makeSwatchEl(mixed, `+${Math.round(ratio*100)}% 흰색`));
+      tintsRow.appendChild(makeSwatchEl(mixed, `+${Math.round(ratio*100)}% White`));
     });
 
-    // 원색
+    //
     const baseRow = document.getElementById('baseRow');
     baseRow.innerHTML = '';
-    baseRow.appendChild(makeSwatchEl(hex, '원색'));
+    baseRow.appendChild(makeSwatchEl(hex, 'Base'));
 
-    // Shades: 원색 → 검정 Direction
+    // Shades: base → black direction
     const shadesRow = document.getElementById('shadesRow');
     shadesRow.innerHTML = '';
     const shadeRatios = [0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 0.95];
     shadeRatios.forEach((ratio) => {
       const mixed = mixWithBlack(hex, ratio);
-      shadesRow.appendChild(makeSwatchEl(mixed, `+${Math.round(ratio*100)}% 검정`));
+      shadesRow.appendChild(makeSwatchEl(mixed, `+${Math.round(ratio*100)}% Black`));
     });
   }
 
-  /* ── CSS Variables 복사 (Tailwind 스타일) ── */
+  /* ── Copy CSS Variables (Tailwind style) ── */
   function copyCSSVars() {
     const hex = currentHex;
-    if(!isValidHex(hex)) { showToast('올바른 HEX 코드를 입력하세요'); return; }
+    if(!isValidHex(hex)) { showToast('Enter a valid HEX code'); return; }
 
-    // Tailwind 번호: 50,100,200,300,400,500,600,700,800,900,950
-    // 50=가장밝음(90%흰), 100=80%흰 ... 500=원색 ... 900=80%검정, 950=90%검정
+    // Tailwind numbers: 50,100,200,300,400,500,600,700,800,900,950
+    // 50=lightest(90%white), 100=80%white ... 500=base ... 900=80%black, 950=90%black
     const steps = [
       {key:50,  color: mixWithWhite(hex, 0.90)},
       {key:100, color: mixWithWhite(hex, 0.80)},
@@ -522,7 +531,7 @@
     const css = lines.join('\n');
 
     navigator.clipboard.writeText(css)
-      .then(()=>showToast('✅ CSS Variables 복사됨!'))
+      .then(()=>showToast('✅ CSS Variables Copied!'))
       .catch(()=>{
         const ta = document.createElement('textarea');
         ta.value = css;
@@ -530,11 +539,11 @@
         ta.select();
         document.execCommand('copy');
         document.body.removeChild(ta);
-        showToast('✅ CSS Variables 복사됨!');
+        showToast('✅ CSS Variables Copied!');
       });
   }
 
-  /* ── 입력 연동 ── */
+  /* ── */
   function onPickerChange(val) {
     currentHex = val.toUpperCase();
     document.getElementById('hexInput').value = currentHex;
@@ -552,7 +561,7 @@
     }
   }
 
-  /* 초기 실행 */
+  /* Initial run */
   generate();
 </script>
 </body>

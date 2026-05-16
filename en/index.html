@@ -27,7 +27,7 @@
   <meta property="og:url" content="https://colorkit.wooahouse.com/en/index.html">
   <meta property="og:locale" content="en_US">
   <meta property="og:image" content="https://colorkit.wooahouse.com/og-image.png">
-  <!-- 구조화 데이터 -->
+  <!-- -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -49,23 +49,23 @@
     "@type": "ItemList",
     "name": "WooaColor – Free Online Color Tools",
     "itemListElement": [
-      {"@type":"ListItem","position":1,"name":"HEX RGB HSL 변환","url":"https://colorkit.wooahouse.com/color-converter.html"},
-      {"@type":"ListItem","position":2,"name":"색상 추출","url":"https://colorkit.wooahouse.com/color-picker.html"},
-      {"@type":"ListItem","position":3,"name":"그라디언트 생성기","url":"https://colorkit.wooahouse.com/gradient-generator.html"},
-      {"@type":"ListItem","position":4,"name":"Color Palette 생성기","url":"https://colorkit.wooahouse.com/palette-generator.html"},
-      {"@type":"ListItem","position":5,"name":"랜덤 색상 생성기","url":"https://colorkit.wooahouse.com/random-color.html"},
-      {"@type":"ListItem","position":6,"name":"색상 대비 검사기","url":"https://colorkit.wooahouse.com/contrast-checker.html"},
-      {"@type":"ListItem","position":7,"name":"색상 혼합기","url":"https://colorkit.wooahouse.com/color-mixer.html"},
-      {"@type":"ListItem","position":8,"name":"박스 그림자 생성기","url":"https://colorkit.wooahouse.com/box-shadow.html"},
-      {"@type":"ListItem","position":9,"name":"텍스트 그림자 생성기","url":"https://colorkit.wooahouse.com/text-shadow.html"},
-      {"@type":"ListItem","position":10,"name":"Opacity 변환기","url":"https://colorkit.wooahouse.com/opacity-converter.html"},
-      {"@type":"ListItem","position":11,"name":"이미지 팔레트 추출","url":"https://colorkit.wooahouse.com/image-palette.html"},
-      {"@type":"ListItem","position":12,"name":"CSS 그라디언트 갤러리","url":"https://colorkit.wooahouse.com/gradient-gallery.html"},
-      {"@type":"ListItem","position":13,"name":"틴트·셰이드 생성기","url":"https://colorkit.wooahouse.com/tints-shades.html"},
-      {"@type":"ListItem","position":14,"name":"Color Name 찾기","url":"https://colorkit.wooahouse.com/color-name.html"},
-      {"@type":"ListItem","position":15,"name":"CSS Variables 생성기","url":"https://colorkit.wooahouse.com/css-variables.html"},
-      {"@type":"ListItem","position":16,"name":"전체 색상 변환기","url":"https://colorkit.wooahouse.com/color-converter-full.html"},
-      {"@type":"ListItem","position":17,"name":"팔레트 대비 검사기","url":"https://colorkit.wooahouse.com/palette-contrast.html"}
+      {"@type":"ListItem","position":1,"name":"HEX RGB HSL Converter","url":"https://colorkit.wooahouse.com/color-converter.html"},
+      {"@type":"ListItem","position":2,"name":"Color Picker","url":"https://colorkit.wooahouse.com/color-picker.html"},
+      {"@type":"ListItem","position":3,"name":"Gradient Generator","url":"https://colorkit.wooahouse.com/gradient-generator.html"},
+      {"@type":"ListItem","position":4,"name":"Color Palette Generator","url":"https://colorkit.wooahouse.com/palette-generator.html"},
+      {"@type":"ListItem","position":5,"name":"Random Color Generator","url":"https://colorkit.wooahouse.com/random-color.html"},
+      {"@type":"ListItem","position":6,"name":"Color Contrast Checker","url":"https://colorkit.wooahouse.com/contrast-checker.html"},
+      {"@type":"ListItem","position":7,"name":"Color Mixer","url":"https://colorkit.wooahouse.com/color-mixer.html"},
+      {"@type":"ListItem","position":8,"name":"Box Shadow Generator","url":"https://colorkit.wooahouse.com/box-shadow.html"},
+      {"@type":"ListItem","position":9,"name":"Text Shadow Generator","url":"https://colorkit.wooahouse.com/text-shadow.html"},
+      {"@type":"ListItem","position":10,"name":"Opacity Converter","url":"https://colorkit.wooahouse.com/opacity-converter.html"},
+      {"@type":"ListItem","position":11,"name":"Image Palette Extractor","url":"https://colorkit.wooahouse.com/image-palette.html"},
+      {"@type":"ListItem","position":12,"name":"CSS Gradient Gallery","url":"https://colorkit.wooahouse.com/gradient-gallery.html"},
+      {"@type":"ListItem","position":13,"name":"Tints & Shades Generator","url":"https://colorkit.wooahouse.com/tints-shades.html"},
+      {"@type":"ListItem","position":14,"name":"Color Name Finder","url":"https://colorkit.wooahouse.com/color-name.html"},
+      {"@type":"ListItem","position":15,"name":"CSS Variables Generator","url":"https://colorkit.wooahouse.com/css-variables.html"},
+      {"@type":"ListItem","position":16,"name":"Full Color Converter","url":"https://colorkit.wooahouse.com/color-converter-full.html"},
+      {"@type":"ListItem","position":17,"name":"Palette Contrast Checker","url":"https://colorkit.wooahouse.com/palette-contrast.html"}
     ]
   }
   </script>
@@ -94,6 +94,7 @@
       .index-sidebar { display: none; }
       .index-mobile-ad { display: block; }
     }
+  
     .lang-switcher { display:flex; align-items:center; gap:4px; }
     .lang-switcher a { color:rgba(255,255,255,0.7); text-decoration:none; font-size:0.8rem; font-weight:600; padding:3px 8px; border-radius:12px; transition:background 0.15s; }
     .lang-switcher a.active { color:white; background:rgba(255,255,255,0.25); }
@@ -113,7 +114,12 @@
       <a href="../color-picker.html">Color Picker</a>
     </nav>
     <div class="header-right">
-      <a href="../about.html" style="color:rgba(255,255,255,0.85); font-size:0.85rem; text-decoration:none;">About</a>
+      <div class="lang-switcher">
+        <a href="../index.html" class="active">KO</a>
+        <span>|</span>
+        <a href="en/index.html">EN</a>
+      </div>
+      <a href="../about.html" style="color:rgba(255,255,255,0.85); font-size:0.85rem; text-decoration:none; margin-left:8px;">About</a>
     </div>
     <div class="header-right">
       <div class="lang-switcher">
@@ -360,14 +366,14 @@
     <div class="footer-top">
       <div class="footer-brand">
         <span class="logo-footer">WooaColor</span>
-        <p>무료 온라인 색상 도구 모음. 변환, 생성, 분석, CSS Code까지 모든 색상 작업을 브라우저에서 처리하세요.</p>
+        <p>Free online color tools. Convert, generate, analyze, and code — all in your browser.</p>
       </div>
       <div class="footer-links">
         <h4>Convert</h4>
         <a href="../color-converter.html">HEX ↔ RGB ↔ HSL</a>
         <a href="../color-converter-full.html">Full Color Converter</a>
         <a href="../color-picker.html">Color Picker</a>
-        <a href="../color-name.html">Color Name 찾기</a>
+        <a href="../color-name.html">Color Name Finder</a>
       </div>
       <div class="footer-links">
         <h4>Generate</h4>
@@ -386,8 +392,8 @@
         <h4>CSS Tools</h4>
         <a href="../box-shadow.html">Box Shadow</a>
         <a href="../text-shadow.html">Text Shadow</a>
-        <a href="../opacity-converter.html">Opacity 변환기</a>
-        <a href="../css-variables.html">CSS Variables 생성기</a>
+        <a href="../opacity-converter.html">Opacity Converter</a>
+        <a href="../css-variables.html">CSS Variables Generator</a>
       </div>
       <div class="footer-links">
         <h4>Info</h4>

@@ -169,6 +169,7 @@
     @media (max-width: 520px) {
       .swatch { width: 56px; height: 56px; }
     }
+  
     .lang-switcher { display:flex; align-items:center; gap:4px; }
     .lang-switcher a { color:rgba(255,255,255,0.7); text-decoration:none; font-size:0.8rem; font-weight:600; padding:3px 8px; border-radius:12px; transition:background 0.15s; }
     .lang-switcher a.active { color:white; background:rgba(255,255,255,0.25); }
@@ -188,6 +189,14 @@
       <a href="../box-shadow.html">CSS Tools</a>
       <a href="../color-picker.html">Color Picker</a>
     </nav>
+  <div class="header-right">
+    <div class="lang-switcher">
+      <a href="../color-harmony.html" class="active">KO</a>
+      <span>|</span>
+      <a href="en/color-harmony.html">EN</a>
+    </div>
+    <a href="../about.html" style="color:rgba(255,255,255,0.85); font-size:0.85rem; text-decoration:none; margin-left:8px;">About</a>
+    </div>
     <div class="header-right">
       <div class="lang-switcher">
         <a href="../color-harmony.html">KO</a>
@@ -224,23 +233,23 @@
   <div class="breadcrumb">
     <a href="../index.html">WooaColor</a>
     <span>›</span>
-    <span>색상 조화 생성기</span>
+    <span>Color Harmony</span>
   </div>
 
   <div class="tool-header">
     <span class="tool-header-icon">🎨</span>
     <h1>Color Harmony Generator – Free Online</h1>
-    <p>Base Color을 선택하면 5가지 색상 조화 이론에 따른 팔레트를 자동으로 생성합니다</p>
+    <p>Select a base color to auto-generate palettes based on five color harmony theories.</p>
   </div>
 
   <div class="panel">
-    <div class="panel-title">Base Color 선택</div>
+    <div class="panel-title">Base Color</div>
     <div class="base-color-wrap">
       <div class="base-color-input">
         <input type="color" id="baseColorPicker" value="#8B5CF6">
         <input type="text" id="baseColorHex" value="#8B5CF6" maxlength="7">
       </div>
-      <p style="font-size:0.85rem;color:var(--text-light);">색상을 선택하거나 HEX 코드를 직접 입력하세요. 스와치를 클릭하면 HEX가 클립보드에 복사됩니다.</p>
+      <p style="font-size:0.85rem;color:var(--text-light);">Select a color or enter a HEX code directly. Click any swatch to copy its HEX to the clipboard.</p>
     </div>
 
     <!-- Complementary -->
@@ -249,7 +258,7 @@
         Complementary (Complementary)
         <span class="badge">+180°</span>
       </div>
-      <div class="harmony-desc">색상환에서 정반대에 위치한 색으로, 강한 대비와 생동감을 줍니다.</div>
+      <div class="harmony-desc">The color directly opposite on the color wheel, giving strong contrast and vibrancy.</div>
       <div class="swatch-row" id="harmonyComplementary"></div>
     </div>
 
@@ -259,27 +268,27 @@
         Analogous (Analogous)
         <span class="badge">±30°</span>
       </div>
-      <div class="harmony-desc">색상환에서 인접한 색으로, 부드럽고 조화로운 느낌을 줍니다.</div>
+      <div class="harmony-desc">Colors adjacent on the color wheel, creating a smooth and harmonious feel.</div>
       <div class="swatch-row" id="harmonyAnalogous"></div>
     </div>
 
     <!-- Triadic -->
     <div class="harmony-section">
       <div class="harmony-title">
-        삼색 (Triadic)
+        Triadic
         <span class="badge">+120° / +240°</span>
       </div>
-      <div class="harmony-desc">색상환을 세 등분한 색상들로, 균형감 있으면서 다채로운 배색입니다.</div>
+      <div class="harmony-desc">Three colors evenly spaced on the color wheel, offering a balanced and vibrant palette.</div>
       <div class="swatch-row" id="harmonyTriadic"></div>
     </div>
 
     <!-- Split-Complementary -->
     <div class="harmony-section">
       <div class="harmony-title">
-        분Complementary (Split-Complementary)
+        Split-Complementary
         <span class="badge">+150° / +210°</span>
       </div>
-      <div class="harmony-desc">Complementary 양쪽의 색상을 사용해 Complementary보다 부드럽고 대비가 있는 배색입니다.</div>
+      <div class="harmony-desc">Uses colors on either side of the complement for a softer yet contrasting palette.</div>
       <div class="swatch-row" id="harmonySplitComplementary"></div>
     </div>
 
@@ -289,13 +298,13 @@
         Square (Tetradic)
         <span class="badge">+90° / +180° / +270°</span>
       </div>
-      <div class="harmony-desc">색상환을 네 등분한 색상들로, 풍부하고 다양한 배색을 만들 수 있습니다.</div>
+      <div class="harmony-desc">Four colors evenly spaced on the color wheel, creating a rich and varied palette.</div>
       <div class="swatch-row" id="harmonyTetradic"></div>
     </div>
   </div>
 
   <div class="cross-link-tip">
-    💡 추출한 색상을 다른 형식으로 변환하려면 <a href="../color-converter.html">HEX ↔ RGB ↔ HSL 변환기</a>를 이용하세요.
+    💡 To convert extracted colors to other formats, use the <a href="../color-converter.html">HEX ↔ RGB ↔ HSL Converter</a>.
   </div>
 
   <section class="faq-section" style="max-width:800px;margin:3rem auto;padding:0 1rem;">
@@ -340,17 +349,17 @@
       <div class="footer-bottom-links">
         <a href="../privacy.html">Privacy Policy</a>
         <a href="../about.html">About</a>
-        <a href="../index.html">전체 도구</a>
+        <a href="../index.html">All Tools</a>
       </div>
     </div>
     
   </div>
 </footer>
 
-<div class="copy-toast" id="copyToast">복사되었습니다!</div>
+<div class="copy-toast" id="copyToast">Copied!</div>
 
 <script>
-// ——— 색상 변환 유틸리티 ———
+// ───
 
 function hexToRgb(hex) {
   hex = hex.replace(/^#/, '');
@@ -399,12 +408,12 @@ function hslShift(hsl, deltaH) {
   return rgbToHex(rgb.r, rgb.g, rgb.b);
 }
 
-// ——— 스와치 생성 ———
+// ───
 
 function createSwatch(hex, label, isBase) {
   const card = document.createElement('div');
   card.className = 'swatch-card';
-  card.title = `클릭해서 ${hex} 복사`;
+  card.title = `Click to copy ${hex}`;
   card.onclick = () => copySwatch(hex);
 
   const sw = document.createElement('div');
@@ -428,7 +437,7 @@ function createSwatch(hex, label, isBase) {
 function copySwatch(hex) {
   navigator.clipboard.writeText(hex).then(() => {
     const toast = document.getElementById('copyToast');
-    toast.textContent = hex + ' 복사됨!';
+    toast.textContent = hex + ' Copied!';
     toast.classList.add('show');
     setTimeout(() => toast.classList.remove('show'), 1800);
   }).catch(() => {
@@ -439,13 +448,13 @@ function copySwatch(hex) {
     document.execCommand('copy');
     document.body.removeChild(ta);
     const toast = document.getElementById('copyToast');
-    toast.textContent = hex + ' 복사됨!';
+    toast.textContent = hex + ' Copied!';
     toast.classList.add('show');
     setTimeout(() => toast.classList.remove('show'), 1800);
   });
 }
 
-// ——— 팔레트 렌더링 ———
+// ───
 
 function renderHarmonies(baseHex) {
   const rgb = hexToRgb(baseHex);
@@ -453,7 +462,7 @@ function renderHarmonies(baseHex) {
 
   // Complementary: base + 180
   const compData = [
-    { hex: baseHex, label: '기준색' },
+    { hex: baseHex, label: 'Base' },
     { hex: hslShift(hsl, 180), label: 'Complementary' }
   ];
   renderRow('harmonyComplementary', compData, baseHex);
@@ -461,14 +470,14 @@ function renderHarmonies(baseHex) {
   // Analogous: -30, base, +30
   const analData = [
     { hex: hslShift(hsl, -30), label: '-30°' },
-    { hex: baseHex, label: '기준색' },
+    { hex: baseHex, label: 'Base' },
     { hex: hslShift(hsl, 30), label: '+30°' }
   ];
   renderRow('harmonyAnalogous', analData, baseHex);
 
   // Triadic: base, +120, +240
   const triadData = [
-    { hex: baseHex, label: '기준색' },
+    { hex: baseHex, label: 'Base' },
     { hex: hslShift(hsl, 120), label: '+120°' },
     { hex: hslShift(hsl, 240), label: '+240°' }
   ];
@@ -476,7 +485,7 @@ function renderHarmonies(baseHex) {
 
   // Split-Complementary: base, +150, +210
   const splitData = [
-    { hex: baseHex, label: '기준색' },
+    { hex: baseHex, label: 'Base' },
     { hex: hslShift(hsl, 150), label: '+150°' },
     { hex: hslShift(hsl, 210), label: '+210°' }
   ];
@@ -484,7 +493,7 @@ function renderHarmonies(baseHex) {
 
   // Tetradic: base, +90, +180, +270
   const tetData = [
-    { hex: baseHex, label: '기준색' },
+    { hex: baseHex, label: 'Base' },
     { hex: hslShift(hsl, 90), label: '+90°' },
     { hex: hslShift(hsl, 180), label: '+180°' },
     { hex: hslShift(hsl, 270), label: '+270°' }
@@ -500,7 +509,7 @@ function renderRow(containerId, data, baseHex) {
   });
 }
 
-// ——— 이벤트 바인딩 ———
+// ───
 
 const picker = document.getElementById('baseColorPicker');
 const hexInput = document.getElementById('baseColorHex');
@@ -535,7 +544,7 @@ hexInput.addEventListener('keydown', e => {
   }
 });
 
-// 초기 렌더링
+//
 renderHarmonies(picker.value);
 </script>
 

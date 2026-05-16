@@ -100,6 +100,7 @@
       display: none; z-index: 9999;
       box-shadow: 0 4px 16px rgba(0,0,0,0.15);
     }
+  
     .lang-switcher { display:flex; align-items:center; gap:4px; }
     .lang-switcher a { color:rgba(255,255,255,0.7); text-decoration:none; font-size:0.8rem; font-weight:600; padding:3px 8px; border-radius:12px; transition:background 0.15s; }
     .lang-switcher a.active { color:white; background:rgba(255,255,255,0.25); }
@@ -119,6 +120,14 @@
       <a href="../box-shadow.html">CSS Tools</a>
       <a href="../color-picker.html">Color Picker</a>
     </nav>
+  <div class="header-right">
+    <div class="lang-switcher">
+      <a href="../color-converter-full.html" class="active">KO</a>
+      <span>|</span>
+      <a href="en/color-converter-full.html">EN</a>
+    </div>
+    <a href="../about.html" style="color:rgba(255,255,255,0.85); font-size:0.85rem; text-decoration:none; margin-left:8px;">About</a>
+    </div>
     <div class="header-right">
       <div class="lang-switcher">
         <a href="../color-converter-full.html">KO</a>
@@ -155,13 +164,13 @@
   <div class="breadcrumb">
     <a href="../index.html">WooaColor</a>
     <span>›</span>
-    <span>색상 변환기 (전체)</span>
+    <span>Full Color Converter</span>
   </div>
 
   <div class="tool-header">
     <span class="tool-header-icon">🔄</span>
     <h1>Full Color Converter – HEX RGB HSL CMYK HSV</h1>
-    <p>5가지 색상 형식을 실시간으로 상호 변환합니다. 인쇄용 CMYK까지 지원.</p>
+    <p>Convert between five color formats in real time. Supports print-ready CMYK.</p>
   </div>
 
   
@@ -231,7 +240,7 @@
 
     <!-- CMYK -->
     <div class="format-block">
-      <div class="format-title">CMYK (인쇄용)</div>
+      <div class="format-title">CMYK (Print)</div>
       <div class="input-group" style="margin-bottom:6px;">
         <label>CMYK</label>
         <input type="text" id="cmykStr" value="" readonly>
@@ -255,7 +264,7 @@
   </div>
 
   <div class="cross-link-tip">
-    💡 기본 HEX/RGB/HSL 변환만 필요하다면 <a href="../color-converter.html">색상 변환기</a>를 이용하세요.
+    💡 For basic HEX/RGB/HSL conversion, use the <a href="../color-converter.html">Color Converter</a>.
   </div>
 
   <section class="faq-section" style="max-width:800px;margin:3rem auto;padding:0 1rem;">
@@ -293,7 +302,7 @@
 </aside>
 </div>
 
-<div class="copied-toast" id="toast">✅ 복사됨!</div>
+<div class="copied-toast" id="toast">✅ Copied!</div>
 
 <footer>
   <div class="footer-inner">
@@ -421,7 +430,7 @@
       <div class="info-cell" onclick="copyText('hsl(${hsl.h}, ${hsl.s}%, ${hsl.l}%)')"><div class="info-cell-label">HSL</div><div class="info-cell-val">hsl(${hsl.h}, ${hsl.s}%, ${hsl.l}%)</div></div>
       <div class="info-cell" onclick="copyText('hsv(${hsv.h}, ${hsv.s}%, ${hsv.v}%)')"><div class="info-cell-label">HSV</div><div class="info-cell-val">hsv(${hsv.h}, ${hsv.s}%, ${hsv.v}%)</div></div>
       <div class="info-cell" onclick="copyText('cmyk(${cmyk.c}%, ${cmyk.m}%, ${cmyk.y}%, ${cmyk.k}%)')"><div class="info-cell-label">CMYK</div><div class="info-cell-val">cmyk(${cmyk.c}%, ${cmyk.m}%, ${cmyk.y}%, ${cmyk.k}%)</div></div>
-      <div class="info-cell"><div class="info-cell-label">밝기</div><div class="info-cell-val">${lum < 128 ? '어두움 🌑' : '밝음 ☀️'}</div></div>
+      <div class="info-cell"><div class="info-cell-label">Brightness</div><div class="info-cell-val">${lum < 128 ? 'Dark 🌑' : 'Light ☀️'}</div></div>
     `;
   }
 

@@ -162,6 +162,7 @@
       .slider-row { flex-wrap: wrap; }
       .slider-row label { min-width: 100%; }
     }
+  
     .lang-switcher { display:flex; align-items:center; gap:4px; }
     .lang-switcher a { color:rgba(255,255,255,0.7); text-decoration:none; font-size:0.8rem; font-weight:600; padding:3px 8px; border-radius:12px; transition:background 0.15s; }
     .lang-switcher a.active { color:white; background:rgba(255,255,255,0.25); }
@@ -181,6 +182,14 @@
       <a href="../box-shadow.html">CSS Tools</a>
       <a href="../color-picker.html">Color Picker</a>
     </nav>
+  <div class="header-right">
+    <div class="lang-switcher">
+      <a href="../box-shadow.html" class="active">KO</a>
+      <span>|</span>
+      <a href="en/box-shadow.html">EN</a>
+    </div>
+    <a href="../about.html" style="color:rgba(255,255,255,0.85); font-size:0.85rem; text-decoration:none; margin-left:8px;">About</a>
+    </div>
     <div class="header-right">
       <div class="lang-switcher">
         <a href="../box-shadow.html">KO</a>
@@ -217,13 +226,13 @@
   <div class="breadcrumb">
     <a href="../index.html">WooaColor</a>
     <span>›</span>
-    <span>박스 그림자 생성기</span>
+    <span>Box Shadow</span>
   </div>
 
   <div class="tool-header">
     <span class="tool-header-icon">🟦</span>
     <h1>CSS Box Shadow Generator – Free Online</h1>
-    <p>슬라이더로 CSS box-shadow 코드를 즉시 생성하세요</p>
+    <p>Configure CSS box-shadow with sliders and copy the code instantly.</p>
   </div>
 
   
@@ -272,7 +281,7 @@
   </div>
 
   <div class="panel" style="margin-top:0;">
-    <div class="panel-title">생성된 CSS Code</div>
+    <div class="panel-title">Generated CSS Code</div>
     <div class="code-block">
       <pre id="cssCode">box-shadow: 4px 4px 10px 0px rgba(0, 0, 0, 0.2);</pre>
       <button class="code-copy-btn" onclick="copyCSS()">Copy</button>
@@ -280,7 +289,7 @@
   </div>
 
   <div class="cross-link-tip">
-    💡 텍스트에 그림자를 적용하려면 <a href="../text-shadow.html">Text Shadow</a>를 사용해 보세요.
+    💡 To add a shadow to text, try the <a href="../text-shadow.html">Text Shadow Generator</a>.
   </div>
 
   <section class="faq-section" style="max-width:800px;margin:3rem auto;padding:0 1rem;">
@@ -325,7 +334,7 @@
       <div class="footer-bottom-links">
         <a href="../privacy.html">Privacy Policy</a>
         <a href="../about.html">About</a>
-        <a href="../index.html">전체 도구</a>
+        <a href="../index.html">All Tools</a>
       </div>
     </div>
   </div>

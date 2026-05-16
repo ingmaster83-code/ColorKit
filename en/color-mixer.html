@@ -191,6 +191,7 @@
       font-size: 0.88rem;
       font-weight: 600;
     }
+  
     .lang-switcher { display:flex; align-items:center; gap:4px; }
     .lang-switcher a { color:rgba(255,255,255,0.7); text-decoration:none; font-size:0.8rem; font-weight:600; padding:3px 8px; border-radius:12px; transition:background 0.15s; }
     .lang-switcher a.active { color:white; background:rgba(255,255,255,0.25); }
@@ -210,6 +211,14 @@
       <a href="../box-shadow.html">CSS Tools</a>
       <a href="../color-picker.html">Color Picker</a>
     </nav>
+  <div class="header-right">
+    <div class="lang-switcher">
+      <a href="../color-mixer.html" class="active">KO</a>
+      <span>|</span>
+      <a href="en/color-mixer.html">EN</a>
+    </div>
+    <a href="../about.html" style="color:rgba(255,255,255,0.85); font-size:0.85rem; text-decoration:none; margin-left:8px;">About</a>
+    </div>
     <div class="header-right">
       <div class="lang-switcher">
         <a href="../color-mixer.html">KO</a>
@@ -246,20 +255,20 @@
   <div class="breadcrumb">
     <a href="../index.html">WooaColor</a>
     <span>›</span>
-    <span>색상 혼합기</span>
+    <span>Color Mixer</span>
   </div>
 
   <div class="tool-header">
     <span class="tool-header-icon">🧪</span>
     <h1>Color Mixer – Blend Two Colors Free Online</h1>
-    <p>두 색상을 원하는 비율로 혼합한 결과를 확인하세요</p>
+    <p>Blend two colors in any ratio and see the resulting color.</p>
   </div>
 
   
 <div class="panel">
     <div class="mixer-colors-row">
       <div class="mixer-color-block">
-        <label>색상 A</label>
+        <label>Color A</label>
         <div class="mixer-color-row">
           <input type="color" id="colorA" value="#8B5CF6">
           <input type="text" id="hexA" value="#8B5CF6" maxlength="7" placeholder="#RRGGBB">
@@ -267,7 +276,7 @@
         <div id="swatchA" class="color-swatch-big" style="background:#8B5CF6;"></div>
       </div>
       <div class="mixer-color-block">
-        <label>색상 B</label>
+        <label>Color B</label>
         <div class="mixer-color-row">
           <input type="color" id="colorB" value="#EC4899">
           <input type="text" id="hexB" value="#EC4899" maxlength="7" placeholder="#RRGGBB">
@@ -277,7 +286,7 @@
     </div>
 
     <div class="ratio-section">
-      <label>색상 A 비율: <span id="ratioLabel">50%</span></label>
+      <label>Color A Ratio: <span id="ratioLabel">50%</span></label>
       <div class="range-wrap">
         <input type="range" id="ratioSlider" min="0" max="100" value="50">
       </div>
@@ -322,11 +331,11 @@
         <div class="step-label">100%</div>
       </div>
     </div>
-    <div style="font-size:0.75rem;color:var(--text-light);text-align:center;margin-top:6px;">← 색상 A 100% &nbsp;&nbsp; 색상 B 100% →</div>
+    <div style="font-size:0.75rem;color:var(--text-light);text-align:center;margin-top:6px;">← Color A 100% &nbsp;&nbsp; Color B 100% →</div>
   </div>
 
   <div class="cross-link-tip">
-    💡 혼합된 색상의 접근성을 확인하려면 <a href="../contrast-checker.html">Contrast Checker</a>를 사용해 보세요.
+    💡 To check the accessibility of the mixed color, use the <a href="../contrast-checker.html">Contrast Checker</a>.
   </div>
 
   <section class="faq-section" style="max-width:800px;margin:3rem auto;padding:0 1rem;">
@@ -371,7 +380,7 @@
       <div class="footer-bottom-links">
         <a href="../privacy.html">Privacy Policy</a>
         <a href="../about.html">About</a>
-        <a href="../index.html">전체 도구</a>
+        <a href="../index.html">All Tools</a>
       </div>
     </div>
   </div>

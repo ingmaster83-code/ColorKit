@@ -57,6 +57,7 @@
     }
     .privacy-card ul { padding-left: 20px; }
     .privacy-card li:last-child { margin-bottom: 0; }
+  
     .lang-switcher { display:flex; align-items:center; gap:4px; }
     .lang-switcher a { color:rgba(255,255,255,0.7); text-decoration:none; font-size:0.8rem; font-weight:600; padding:3px 8px; border-radius:12px; transition:background 0.15s; }
     .lang-switcher a.active { color:white; background:rgba(255,255,255,0.25); }
@@ -70,7 +71,12 @@
   <div class="header-inner">
     <a href="../index.html" class="logo">WooaColor</a>
     <div class="header-right">
-      <a href="../about.html" style="color:white; font-size:0.85rem; text-decoration:none; font-weight:600;">About</a>
+      <div class="lang-switcher">
+        <a href="../privacy.html" class="active">KO</a>
+        <span>|</span>
+        <a href="en/privacy.html">EN</a>
+      </div>
+      <a href="../about.html" style="color:rgba(255,255,255,0.85); font-size:0.85rem; text-decoration:none; margin-left:8px;">About</a>
     </div>
     <div class="header-right">
       <div class="lang-switcher">
@@ -84,40 +90,40 @@
 
 <div class="privacy-page">
   <h1>Privacy Policy</h1>
-  <p class="updated">최종 업데이트: 2026년 3월 15일</p>
+  <p class="updated">Last updated: March 15, 2026</p>
 
   <div class="privacy-card">
-    <h2>1. 개인정보 수집 여부</h2>
-    <p>WooaColor(colorkit.wooahouse.com)은 회원가입, 로그인 등의 기능이 없으며, 사용자의 개인정보를 직접 수집하지 않습니다. 본 서비스는 정적 웹사이트로 운영되며 서버 측에서 별도의 데이터를 저장하지 않습니다. 모든 색상 처리는 사용자의 브라우저 내에서만 이루어집니다.</p>
+    <h2>1. Data Collection</h2>
+    <p>WooaColor (colorkit.wooahouse.com) has no signup or login features and does not directly collect personal data. This service operates as a static website with no server-side data storage. All color processing happens only within your browser.</p>
   </div>
 
   <div class="privacy-card">
-    <h2>2. 제3자 서비스</h2>
-    <p>WooaColor은 아래 제3자 서비스를 사용하며, 각 서비스의 개인정보 처리방침이 적용됩니다.</p>
+    <h2>2. Third-Party Services</h2>
+    <p>WooaColor uses the following third-party services, each governed by their own privacy policies.</p>
     <ul>
-      <li><strong>Google AdSense:</strong> 광고 게재를 위해 사용됩니다. Google은 쿠키를 통해 광고 관련 정보를 수집할 수 있습니다.</li>
-      <li><strong>Google Analytics (해당 시):</strong> 익명화된 방문 통계 수집에 사용될 수 있습니다.</li>
+      <li><strong>Google AdSense:</strong> Used to display ads. Google may collect ad-related information via cookies.</li>
+      <li><strong>Google Analytics (if applicable):</strong> May be used to collect anonymized visit statistics.</li>
     </ul>
   </div>
 
   <div class="privacy-card">
-    <h2>3. 쿠키</h2>
-    <p>WooaColor은 자체적으로 쿠키를 사용하지 않습니다. 다만 Google AdSense 등 제3자 서비스에서 광고 목적으로 쿠키를 사용할 수 있습니다. 브라우저 설정에서 쿠키를 비활성화할 수 있습니다.</p>
+    <h2>3. Cookies</h2>
+    <p>WooaColor does not use its own cookies. However, third-party services such as Google AdSense may use cookies for advertising purposes. You can disable cookies in your browser settings.</p>
   </div>
 
   <div class="privacy-card">
-    <h2>4. 로컬 스토리지</h2>
-    <p>WooaColor의 일부 기능(PWA 설치 배너 제어 등)은 브라우저의 sessionStorage를 사용합니다. 이 데이터는 사용자의 기기에만 저장되며 서버로 전송되지 않습니다.</p>
+    <h2>4. Local Storage</h2>
+    <p>Some WooaColor features (such as controlling the PWA install banner) use the browser's sessionStorage. This data is stored only on your device and is never sent to a server.</p>
   </div>
 
   <div class="privacy-card">
-    <h2>5. 외부 링크</h2>
-    <p>WooaColor의 링크는 WooaHouse 네트워크 사이트 및 제3자 사이트로 연결될 수 있습니다. 해당 사이트의 개인정보 처리방침은 각 사이트에서 확인하시기 바랍니다. WooaColor은 외부 사이트의 개인정보 처리에 대해 책임지지 않습니다.</p>
+    <h2>5. External Links</h2>
+    <p>WooaColor links may lead to WooaHouse network sites or third-party sites. Please review each site's privacy policy independently. WooaColor is not responsible for the privacy practices of external sites.</p>
   </div>
 
   <div class="privacy-card">
-    <h2>6. 문의</h2>
-    <p>개인정보 처리방침 관련 문의는 아래 이메일로 연락 주세요.</p>
+    <h2>6. Contact</h2>
+    <p>For questions about this Privacy Policy, please contact us at the email below.</p>
     <p><strong>wooahouse02@gmail.com</strong></p>
   </div>
 </div>
@@ -129,7 +135,7 @@
       <div class="footer-bottom-links">
         <a href="../privacy.html">Privacy Policy</a>
         <a href="../about.html">About</a>
-        <a href="../index.html">홈</a>
+        <a href="../index.html">Home</a>
       </div>
     </div>
   </div>

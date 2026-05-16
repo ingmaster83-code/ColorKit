@@ -134,6 +134,7 @@
     @media (max-width: 400px) {
       .preview-grid { grid-template-columns: 1fr; }
     }
+  
     .lang-switcher { display:flex; align-items:center; gap:4px; }
     .lang-switcher a { color:rgba(255,255,255,0.7); text-decoration:none; font-size:0.8rem; font-weight:600; padding:3px 8px; border-radius:12px; transition:background 0.15s; }
     .lang-switcher a.active { color:white; background:rgba(255,255,255,0.25); }
@@ -153,6 +154,14 @@
       <a href="../box-shadow.html">CSS Tools</a>
       <a href="../color-picker.html">Color Picker</a>
     </nav>
+  <div class="header-right">
+    <div class="lang-switcher">
+      <a href="../color-blindness.html" class="active">KO</a>
+      <span>|</span>
+      <a href="en/color-blindness.html">EN</a>
+    </div>
+    <a href="../about.html" style="color:rgba(255,255,255,0.85); font-size:0.85rem; text-decoration:none; margin-left:8px;">About</a>
+    </div>
     <div class="header-right">
       <div class="lang-switcher">
         <a href="../color-blindness.html">KO</a>
@@ -189,13 +198,13 @@
   <div class="breadcrumb">
     <a href="../index.html">WooaColor</a>
     <span>›</span>
-    <span>색맹 시뮬레이터</span>
+    <span>Color Blindness Sim</span>
   </div>
 
   <div class="tool-header">
     <span class="tool-header-icon">👁️</span>
     <h1>Color Blindness Simulator – Free Online</h1>
-    <p>이미지를 업로드하면 4가지 색맹 유형으로 보이는 모습을 시뮬레이션합니다</p>
+    <p>Upload an image to simulate how it appears to viewers with four types of color blindness.</p>
   </div>
 
   <!-- Upload Zone -->
@@ -203,8 +212,8 @@
     <div class="drop-zone" id="dropZone" onclick="document.getElementById('fileInput').click()">
       <input type="file" id="fileInput" accept="image/*" style="display:none;" onchange="handleFile(event)">
       <span class="drop-zone-icon">🖼️</span>
-      <h3>이미지를 드래그하거나 클릭하여 업로드</h3>
-      <p>JPG, PNG, GIF, WebP, BMP 지원 · 모든 처리가 브라우저에서 이루어져 이미지가 서버로 전송되지 않습니다</p>
+      <h3>Drag or click to upload an image</h3>
+      <p>Supports JPG, PNG, GIF, WebP, BMP · All processing happens in your browser — no data sent to any server</p>
       <button class="btn-select" onclick="event.stopPropagation();" style="pointer-events:none;">Select Image</button>
     </div>
   </div>
@@ -212,61 +221,61 @@
   <!-- Simulation Panel -->
   <div id="simPanel" style="display:none;">
     <div class="panel">
-      <div class="panel-title">시뮬레이션 보기 방식</div>
+      <div class="panel-title">Simulation View Mode</div>
       <div class="sim-tabs" id="viewTabs">
-        <button class="sim-tab active" data-view="all" onclick="setView('all', this)">모두 보기</button>
-        <button class="sim-tab" data-view="normal" onclick="setView('normal', this)">원본</button>
+        <button class="sim-tab active" data-view="all" onclick="setView('all', this)">View All</button>
+        <button class="sim-tab" data-view="normal" onclick="setView('normal', this)">Original</button>
         <button class="sim-tab" data-view="protanopia" onclick="setView('protanopia', this)">Protanopia (Red-Blind)</button>
         <button class="sim-tab" data-view="deuteranopia" onclick="setView('deuteranopia', this)">Deuteranopia (Green-Blind)</button>
         <button class="sim-tab" data-view="tritanopia" onclick="setView('tritanopia', this)">Tritanopia (Blue-Yellow Blind)</button>
         <button class="sim-tab" data-view="achromatopsia" onclick="setView('achromatopsia', this)">Achromatopsia (Grayscale)</button>
       </div>
 
-      <!-- 모두 보기 그리드 -->
+      <!-- -->
       <div id="gridView" class="preview-grid">
         <div class="preview-card">
           <div class="preview-card-header">
-            원본 <span class="active-label">Normal</span>
+            Original <span class="active-label">Normal</span>
           </div>
           <canvas id="canvas-normal"></canvas>
-          <a class="preview-card-dl" onclick="downloadCanvas('canvas-normal', '원본')">⬇ 다운로드</a>
+          <a class="preview-card-dl" onclick="downloadCanvas('canvas-normal', 'Original')">⬇ Download</a>
         </div>
         <div class="preview-card">
-          <div class="preview-card-header">적록색맹 <span class="active-label">Protanopia</span></div>
+          <div class="preview-card-header">Protanopia <span class="active-label">Protanopia</span></div>
           <canvas id="canvas-protanopia"></canvas>
-          <a class="preview-card-dl" onclick="downloadCanvas('canvas-protanopia', '적록색맹')">⬇ 다운로드</a>
+          <a class="preview-card-dl" onclick="downloadCanvas('canvas-protanopia', 'Protanopia')">⬇ Download</a>
         </div>
         <div class="preview-card">
-          <div class="preview-card-header">녹색맹 <span class="active-label">Deuteranopia</span></div>
+          <div class="preview-card-header">Deuteranopia <span class="active-label">Deuteranopia</span></div>
           <canvas id="canvas-deuteranopia"></canvas>
-          <a class="preview-card-dl" onclick="downloadCanvas('canvas-deuteranopia', '녹색맹')">⬇ 다운로드</a>
+          <a class="preview-card-dl" onclick="downloadCanvas('canvas-deuteranopia', 'Deuteranopia')">⬇ Download</a>
         </div>
         <div class="preview-card">
-          <div class="preview-card-header">청황색맹 <span class="active-label">Tritanopia</span></div>
+          <div class="preview-card-header">Tritanopia <span class="active-label">Tritanopia</span></div>
           <canvas id="canvas-tritanopia"></canvas>
-          <a class="preview-card-dl" onclick="downloadCanvas('canvas-tritanopia', '청황색맹')">⬇ 다운로드</a>
+          <a class="preview-card-dl" onclick="downloadCanvas('canvas-tritanopia', 'Tritanopia')">⬇ Download</a>
         </div>
         <div class="preview-card">
-          <div class="preview-card-header">전색맹 <span class="active-label">Achromatopsia</span></div>
+          <div class="preview-card-header">Achromatopsia <span class="active-label">Achromatopsia</span></div>
           <canvas id="canvas-achromatopsia"></canvas>
-          <a class="preview-card-dl" id="downloadBtn" onclick="downloadCanvas('canvas-achromatopsia', '전색맹')">⬇ 다운로드</a>
+          <a class="preview-card-dl" id="downloadBtn" onclick="downloadCanvas('canvas-achromatopsia', 'Achromatopsia')">⬇ Download</a>
         </div>
       </div>
 
-      <!-- 단일 보기 -->
+      <!-- -->
       <div id="singleView" style="display:none;" class="single-preview">
         <canvas id="canvas-single"></canvas>
         <div style="margin-top:12px;">
-          <a class="preview-card-dl" style="display:inline-block;padding:10px 28px;border-radius:8px;border:1.5px solid var(--primary);text-decoration:none;" onclick="downloadSingle()">⬇ 현재 보기 다운로드</a>
+          <a class="preview-card-dl" style="display:inline-block;padding:10px 28px;border-radius:8px;border:1.5px solid var(--primary);text-decoration:none;" onclick="downloadSingle()">⬇ Download Current View</a>
         </div>
       </div>
     </div>
 
-    <button onclick="resetUpload()" class="btn btn-outline" style="margin-top:12px;">🔄 다른 이미지 사용</button>
+    <button onclick="resetUpload()" class="btn btn-outline" style="margin-top:12px;">🔄 Use Another Image</button>
   </div>
 
   <div class="cross-link-tip">
-    💡 색상 대비(접근성 기준)를 확인하려면 <a href="../contrast-checker.html">색상 대비 검사기 (WCAG)</a>를 이용하세요.
+    💡 To check color contrast for accessibility, use the <a href="../contrast-checker.html">Contrast Checker (WCAG)</a>.
   </div>
 
   <section class="faq-section" style="max-width:800px;margin:3rem auto;padding:0 1rem;">
@@ -311,7 +320,7 @@
       <div class="footer-bottom-links">
         <a href="../privacy.html">Privacy Policy</a>
         <a href="../about.html">About</a>
-        <a href="../index.html">전체 도구</a>
+        <a href="../index.html">All Tools</a>
       </div>
     </div>
     
@@ -319,10 +328,10 @@
 </footer>
 
 <script>
-// ——— 색맹 시뮬레이션 행렬 ———
+// ───
 
 const SIMULATIONS = {
-  normal: null, // 원본
+  normal: null, //
   protanopia: (r, g, b) => ({
     r: 0.567 * r + 0.433 * g,
     g: 0.558 * r + 0.442 * g,
@@ -349,7 +358,7 @@ let originalWidth = 0;
 let originalHeight = 0;
 let currentSingleType = 'normal';
 
-// ——— 파일 업로드 처리 ———
+// ───
 
 const dropZone = document.getElementById('dropZone');
 dropZone.addEventListener('dragover', e => { e.preventDefault(); dropZone.classList.add('drag-over'); });
@@ -375,7 +384,7 @@ function processFile(file) {
     const w = Math.round(img.width * scale);
     const h = Math.round(img.height * scale);
 
-    // 원본 데이터 추출
+    //
     const tmpCanvas = document.createElement('canvas');
     tmpCanvas.width = w;
     tmpCanvas.height = h;
@@ -386,7 +395,7 @@ function processFile(file) {
     originalHeight = h;
     URL.revokeObjectURL(url);
 
-    // 모든 캔버스 렌더링
+    //
     Object.keys(SIMULATIONS).forEach(type => {
       renderToCanvas('canvas-' + type, type);
     });
@@ -423,7 +432,7 @@ function renderToCanvas(canvasId, type) {
   ctx.putImageData(outData, 0, 0);
 }
 
-// ——— 보기 전환 ———
+// ───
 
 function setView(type, btn) {
   document.querySelectorAll('.sim-tab').forEach(t => t.classList.remove('active'));
@@ -441,22 +450,22 @@ function setView(type, btn) {
     currentSingleType = type;
     renderToCanvas('canvas-single', type);
     const labels = {
-      normal: '원본',
+      normal: 'Original',
       protanopia: 'Protanopia (Red-Blind)',
       deuteranopia: 'Deuteranopia (Green-Blind)',
       tritanopia: 'Tritanopia (Blue-Yellow Blind)',
       achromatopsia: 'Achromatopsia (Grayscale)'
     };
-    document.getElementById('singleView').querySelector('a').textContent = '⬇ ' + labels[type] + ' 다운로드';
+    document.getElementById('singleView').querySelector('a').textContent = '⬇ Download ' + labels[type];
   }
 }
 
-// ——— 다운로드 ———
+// ───
 
 function downloadCanvas(canvasId, label) {
   const canvas = document.getElementById(canvasId);
   const link = document.createElement('a');
-  link.download = '색맹시뮬레이션_' + label + '.png';
+  link.download = 'color_blindness_simulation_' + label + '.png';
   link.href = canvas.toDataURL('image/png');
   link.click();
 }
@@ -465,14 +474,14 @@ function downloadSingle() {
   downloadCanvas('canvas-single', currentSingleType);
 }
 
-// ——— 초기화 ———
+// ───
 
 function resetUpload() {
   document.getElementById('fileInput').value = '';
   originalImageData = null;
   document.getElementById('uploadSection').style.display = 'block';
   document.getElementById('simPanel').style.display = 'none';
-  // 탭 초기화
+  //
   document.querySelectorAll('.sim-tab').forEach((t, i) => { if (i === 0) t.classList.add('active'); else t.classList.remove('active'); });
   document.getElementById('gridView').style.display = 'grid';
   document.getElementById('singleView').style.display = 'none';

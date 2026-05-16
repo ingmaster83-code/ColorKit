@@ -250,6 +250,7 @@
       pointer-events: none;
     }
     .toast.show { transform: translateX(-50%) translateY(0); }
+  
     .lang-switcher { display:flex; align-items:center; gap:4px; }
     .lang-switcher a { color:rgba(255,255,255,0.7); text-decoration:none; font-size:0.8rem; font-weight:600; padding:3px 8px; border-radius:12px; transition:background 0.15s; }
     .lang-switcher a.active { color:white; background:rgba(255,255,255,0.25); }
@@ -269,6 +270,14 @@
       <a href="../box-shadow.html">CSS Tools</a>
       <a href="../color-picker.html">Color Picker</a>
     </nav>
+  <div class="header-right">
+    <div class="lang-switcher">
+      <a href="../color-name.html" class="active">KO</a>
+      <span>|</span>
+      <a href="en/color-name.html">EN</a>
+    </div>
+    <a href="../about.html" style="color:rgba(255,255,255,0.85); font-size:0.85rem; text-decoration:none; margin-left:8px;">About</a>
+    </div>
     <div class="header-right">
       <div class="lang-switcher">
         <a href="../color-name.html">KO</a>
@@ -305,48 +314,48 @@
   <div class="breadcrumb">
     <a href="../index.html">WooaColor</a>
     <span>›</span>
-    <span>Color Name 찾기</span>
+    <span>Color Name Finder</span>
   </div>
 
   <div class="tool-header">
     <span class="tool-header-icon">🏷️</span>
     <h1>Color Name Finder – Free Online</h1>
-    <p>Color Code를 입력하면 Closest Color Name(Korean+English)과 Similar Colors 5개를 찾아드립니다</p>
+    <p>Enter a color code to find the closest color name and top 5 similar colors.</p>
   </div>
 
-  <!-- AdSense 상단 -->
+  <!-- AdSense Top -->
   
 
-  <!-- 입력 패널 -->
+  <!-- -->
   <div class="panel">
-    <div class="panel-title">색상 입력</div>
+    <div class="panel-title">Color Input</div>
     <div class="picker-row">
       <input type="color" id="colorPicker" value="#8B5CF6" oninput="onPickerChange(this.value)">
       <div class="input-group" style="flex:1;min-width:140px;margin-bottom:0;">
-        <label>HEX 코드</label>
+        <label>HEX Code</label>
         <input type="text" id="hexInput" value="#8B5CF6" maxlength="7" placeholder="#8B5CF6" oninput="onHexInput(this.value)">
       </div>
     </div>
     <div class="rgb-row">
       <div class="rgb-field">
-        <label>R (빨강) — <span id="rVal">139</span></label>
+        <label>R (Red) — <span id="rVal">139</span></label>
         <input type="range" id="rSlider" min="0" max="255" value="139" oninput="onRgbChange()">
         <input type="number" id="rNum" min="0" max="255" value="139" oninput="onRgbNumChange()">
       </div>
       <div class="rgb-field">
-        <label>G (초록) — <span id="gVal">92</span></label>
+        <label>G (Green) — <span id="gVal">92</span></label>
         <input type="range" id="gSlider" min="0" max="255" value="92" oninput="onRgbChange()">
         <input type="number" id="gNum" min="0" max="255" value="92" oninput="onRgbNumChange()">
       </div>
       <div class="rgb-field">
-        <label>B (파랑) — <span id="bVal">246</span></label>
+        <label>B (Blue) — <span id="bVal">246</span></label>
         <input type="range" id="bSlider" min="0" max="255" value="246" oninput="onRgbChange()">
         <input type="number" id="bNum" min="0" max="255" value="246" oninput="onRgbNumChange()">
       </div>
     </div>
   </div>
 
-  <!-- 결과 패널 -->
+  <!-- -->
   <div class="panel" style="margin-top:0;" id="resultPanel">
     <div class="panel-title">Closest Color Name</div>
     <div class="cn-result-main" id="mainResult"></div>
@@ -354,14 +363,14 @@
     <div class="cn-similar-list" id="similarList"></div>
   </div>
 
-  <!-- AdSense 중단 -->
+  <!-- AdSense Mid -->
   <div style="text-align:center;margin:16px auto;max-width:728px;padding:0 8px">
     <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6464921081676309" data-ad-slot="1419180025" data-ad-format="auto" data-full-width-responsive="true"></ins>
     <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
   </div>
 
   <div class="cross-link-tip">
-    💡 Color Code를 서로 변환하려면 <a href="../color-converter.html">색상 변환기(HEX↔RGB↔HSL)</a>를 이용하세요. Color Palette가 필요하면 <a href="../palette-generator.html">Palette Generator</a>도 확인해보세요.
+    💡 To convert color codes, use the <a href="../color-converter.html">Color Converter (HEX↔RGB↔HSL)</a>. For palette generation, see the <a href="../palette-generator.html">Palette Generator</a>.
   </div>
 
   <section class="faq-section" style="max-width:800px;margin:3rem auto;padding:0 1rem;">
@@ -406,7 +415,7 @@
       <div class="footer-bottom-links">
         <a href="../privacy.html">Privacy Policy</a>
         <a href="../about.html">About</a>
-        <a href="../index.html">전체 도구</a>
+        <a href="../index.html">All Tools</a>
       </div>
     </div>
   </div>
@@ -416,163 +425,163 @@
 
 <script src="../js/pwa-install.js"></script>
 <script>
-/* ── 색상 DB ── */
+/* ── */
 const COLOR_DB = [
-  {name:'Red', kr:'빨강', hex:'#FF0000'},
-  {name:'Green', kr:'초록', hex:'#008000'},
-  {name:'Blue', kr:'파랑', hex:'#0000FF'},
-  {name:'White', kr:'흰색', hex:'#FFFFFF'},
-  {name:'Black', kr:'검정', hex:'#000000'},
-  {name:'Yellow', kr:'노랑', hex:'#FFFF00'},
-  {name:'Orange', kr:'주황', hex:'#FFA500'},
-  {name:'Purple', kr:'보라', hex:'#800080'},
-  {name:'Pink', kr:'분홍', hex:'#FFC0CB'},
-  {name:'Brown', kr:'갈색', hex:'#A52A2A'},
-  {name:'Gray', kr:'회색', hex:'#808080'},
-  {name:'Cyan', kr:'청록', hex:'#00FFFF'},
-  {name:'Magenta', kr:'자홍', hex:'#FF00FF'},
-  {name:'Lime', kr:'라임', hex:'#00FF00'},
-  {name:'Indigo', kr:'남색', hex:'#4B0082'},
-  {name:'Violet', kr:'제비꽃', hex:'#EE82EE'},
-  {name:'Gold', kr:'금색', hex:'#FFD700'},
-  {name:'Silver', kr:'은색', hex:'#C0C0C0'},
-  {name:'Coral', kr:'산호색', hex:'#FF7F50'},
-  {name:'Salmon', kr:'연어색', hex:'#FA8072'},
-  {name:'Tomato', kr:'토마토', hex:'#FF6347'},
-  {name:'Crimson', kr:'크림슨', hex:'#DC143C'},
-  {name:'Navy', kr:'네이비', hex:'#000080'},
-  {name:'Teal', kr:'청록색', hex:'#008080'},
-  {name:'Olive', kr:'올리브', hex:'#808000'},
-  {name:'Maroon', kr:'밤색', hex:'#800000'},
-  {name:'Turquoise', kr:'터코이즈', hex:'#40E0D0'},
-  {name:'Sky Blue', kr:'하늘색', hex:'#87CEEB'},
-  {name:'Royal Blue', kr:'로열블루', hex:'#4169E1'},
-  {name:'Hot Pink', kr:'핫핑크', hex:'#FF69B4'},
-  {name:'Deep Pink', kr:'딥핑크', hex:'#FF1493'},
-  {name:'Lavender', kr:'라벤더', hex:'#E6E6FA'},
-  {name:'Mint', kr:'민트', hex:'#98FF98'},
-  {name:'Beige', kr:'베이지', hex:'#F5F5DC'},
-  {name:'Ivory', kr:'아이보리', hex:'#FFFFF0'},
-  {name:'Khaki', kr:'카키', hex:'#F0E68C'},
-  {name:'Peach', kr:'복숭아색', hex:'#FFCBA4'},
-  {name:'Chocolate', kr:'초콜릿', hex:'#D2691E'},
-  {name:'Tan', kr:'황갈색', hex:'#D2B48C'},
-  {name:'Sienna', kr:'시에나', hex:'#A0522D'},
-  {name:'Peru', kr:'페루', hex:'#CD853F'},
-  {name:'Wheat', kr:'밀색', hex:'#F5DEB3'},
-  {name:'Forest Green', kr:'숲초록', hex:'#228B22'},
-  {name:'Lime Green', kr:'라임그린', hex:'#32CD32'},
-  {name:'Spring Green', kr:'봄초록', hex:'#00FF7F'},
-  {name:'Sea Green', kr:'바다초록', hex:'#2E8B57'},
-  {name:'Dark Green', kr:'짙은초록', hex:'#006400'},
-  {name:'Yellow Green', kr:'황록색', hex:'#9ACD32'},
-  {name:'Chartreuse', kr:'샤르트뢰즈', hex:'#7FFF00'},
-  {name:'Steel Blue', kr:'강철파랑', hex:'#4682B4'},
-  {name:'Dodger Blue', kr:'다저블루', hex:'#1E90FF'},
-  {name:'Powder Blue', kr:'파우더블루', hex:'#B0E0E6'},
-  {name:'Cadet Blue', kr:'카데트블루', hex:'#5F9EA0'},
-  {name:'Slate Blue', kr:'슬레이트블루', hex:'#6A5ACD'},
-  {name:'Medium Purple', kr:'중간보라', hex:'#9370DB'},
-  {name:'Dark Violet', kr:'짙은보라', hex:'#9400D3'},
-  {name:'Plum', kr:'자두색', hex:'#DDA0DD'},
-  {name:'Orchid', kr:'난초색', hex:'#DA70D6'},
-  {name:'Rose', kr:'장미', hex:'#FF007F'},
-  {name:'Lemon', kr:'레몬', hex:'#FFF44F'},
-  {name:'Amber', kr:'호박색', hex:'#FFBF00'},
-  {name:'Apricot', kr:'살구색', hex:'#FBCEB1'},
-  {name:'Burgundy', kr:'버건디', hex:'#800020'},
-  {name:'Charcoal', kr:'숯색', hex:'#36454F'},
-  {name:'Cream', kr:'크림', hex:'#FFFDD0'},
-  {name:'Emerald', kr:'에메랄드', hex:'#50C878'},
-  {name:'Jade', kr:'옥색', hex:'#00A86B'},
-  {name:'Mauve', kr:'모브', hex:'#E0B0FF'},
-  {name:'Mustard', kr:'머스타드', hex:'#FFDB58'},
-  {name:'Nude', kr:'누드', hex:'#E8C39E'},
-  {name:'Periwinkle', kr:'페리윙클', hex:'#CCCCFF'},
-  {name:'Ruby', kr:'루비', hex:'#9B111E'},
-  {name:'Rust', kr:'녹슨색', hex:'#B7410E'},
-  {name:'Sage', kr:'세이지', hex:'#BCB88A'},
-  {name:'Scarlet', kr:'주홍', hex:'#FF2400'},
-  {name:'Slate', kr:'슬레이트', hex:'#708090'},
-  {name:'Taupe', kr:'토프', hex:'#483C32'},
-  {name:'Umber', kr:'엄버', hex:'#635147'},
-  {name:'Alice Blue', kr:'앨리스블루', hex:'#F0F8FF'},
-  {name:'Antique White', kr:'앤틱화이트', hex:'#FAEBD7'},
-  {name:'Aqua', kr:'아쿠아', hex:'#00FFFF'},
-  {name:'Aquamarine', kr:'아쿠아마린', hex:'#7FFFD4'},
-  {name:'Azure', kr:'하늘파랑', hex:'#F0FFFF'},
-  {name:'Bisque', kr:'비스크', hex:'#FFE4C4'},
-  {name:'Blanched Almond', kr:'블랜치드아몬드', hex:'#FFEBCD'},
-  {name:'Blue Violet', kr:'파란보라', hex:'#8A2BE2'},
-  {name:'Burlywood', kr:'벌리우드', hex:'#DEB887'},
-  {name:'Cornflower Blue', kr:'수레국화파랑', hex:'#6495ED'},
-  {name:'Cornsilk', kr:'옥수수', hex:'#FFF8DC'},
-  {name:'Dark Blue', kr:'짙은파랑', hex:'#00008B'},
-  {name:'Dark Cyan', kr:'짙은청록', hex:'#008B8B'},
-  {name:'Dark Gray', kr:'짙은회색', hex:'#A9A9A9'},
-  {name:'Dark Khaki', kr:'짙은카키', hex:'#BDB76B'},
-  {name:'Dark Magenta', kr:'짙은자홍', hex:'#8B008B'},
-  {name:'Dark Olive Green', kr:'짙은올리브', hex:'#556B2F'},
-  {name:'Dark Orange', kr:'짙은주황', hex:'#FF8C00'},
-  {name:'Dark Orchid', kr:'짙은난초', hex:'#9932CC'},
-  {name:'Dark Red', kr:'짙은빨강', hex:'#8B0000'},
-  {name:'Dark Salmon', kr:'짙은연어', hex:'#E9967A'},
-  {name:'Dark Sea Green', kr:'짙은바다초록', hex:'#8FBC8F'},
-  {name:'Dark Slate Blue', kr:'짙은슬레이트블루', hex:'#483D8B'},
-  {name:'Dark Turquoise', kr:'짙은터코이즈', hex:'#00CED1'},
-  {name:'Deep Sky Blue', kr:'짙은하늘파랑', hex:'#00BFFF'},
-  {name:'Fire Brick', kr:'벽돌색', hex:'#B22222'},
-  {name:'Floral White', kr:'꽃흰색', hex:'#FFFAF0'},
-  {name:'Gainsboro', kr:'게인즈버러', hex:'#DCDCDC'},
-  {name:'Ghost White', kr:'고스트화이트', hex:'#F8F8FF'},
-  {name:'Green Yellow', kr:'초록노랑', hex:'#ADFF2F'},
-  {name:'Honeydew', kr:'허니듀', hex:'#F0FFF0'},
-  {name:'Indian Red', kr:'인디안레드', hex:'#CD5C5C'},
-  {name:'Lavender Blush', kr:'라벤더블러시', hex:'#FFF0F5'},
-  {name:'Lawn Green', kr:'잔디초록', hex:'#7CFC00'},
-  {name:'Lemon Chiffon', kr:'레몬시폰', hex:'#FFFACD'},
-  {name:'Light Blue', kr:'연한파랑', hex:'#ADD8E6'},
-  {name:'Light Coral', kr:'연한산호', hex:'#F08080'},
-  {name:'Light Cyan', kr:'연한청록', hex:'#E0FFFF'},
-  {name:'Light Gray', kr:'연한회색', hex:'#D3D3D3'},
-  {name:'Light Green', kr:'연한초록', hex:'#90EE90'},
-  {name:'Light Pink', kr:'연한분홍', hex:'#FFB6C1'},
-  {name:'Light Salmon', kr:'연한연어', hex:'#FFA07A'},
-  {name:'Light Sea Green', kr:'연한바다초록', hex:'#20B2AA'},
-  {name:'Light Sky Blue', kr:'연한하늘파랑', hex:'#87CEFA'},
-  {name:'Light Slate Gray', kr:'연한슬레이트회색', hex:'#778899'},
-  {name:'Light Steel Blue', kr:'연한강철파랑', hex:'#B0C4DE'},
-  {name:'Light Yellow', kr:'연한노랑', hex:'#FFFFE0'},
-  {name:'Linen', kr:'린넨', hex:'#FAF0E6'},
-  {name:'Medium Aquamarine', kr:'중간아쿠아마린', hex:'#66CDAA'},
-  {name:'Medium Blue', kr:'중간파랑', hex:'#0000CD'},
-  {name:'Medium Orchid', kr:'중간난초', hex:'#BA55D3'},
-  {name:'Medium Sea Green', kr:'중간바다초록', hex:'#3CB371'},
-  {name:'Medium Slate Blue', kr:'중간슬레이트블루', hex:'#7B68EE'},
-  {name:'Medium Spring Green', kr:'중간봄초록', hex:'#00FA9A'},
-  {name:'Medium Turquoise', kr:'중간터코이즈', hex:'#48D1CC'},
-  {name:'Medium Violet Red', kr:'중간보라빨강', hex:'#C71585'},
-  {name:'Midnight Blue', kr:'미드나잇블루', hex:'#191970'},
-  {name:'Mint Cream', kr:'민트크림', hex:'#F5FFFA'},
-  {name:'Misty Rose', kr:'미스티로즈', hex:'#FFE4E1'},
-  {name:'Moccasin', kr:'모카신', hex:'#FFE4B5'},
-  {name:'Navajo White', kr:'나바조화이트', hex:'#FFDEAD'},
-  {name:'Old Lace', kr:'올드레이스', hex:'#FDF5E6'},
-  {name:'Orange Red', kr:'주황빨강', hex:'#FF4500'},
-  {name:'Pale Golden Rod', kr:'페일골든로드', hex:'#EEE8AA'},
-  {name:'Pale Green', kr:'연한초록', hex:'#98FB98'},
-  {name:'Pale Turquoise', kr:'연한터코이즈', hex:'#AFEEEE'},
-  {name:'Pale Violet Red', kr:'연한보라빨강', hex:'#DB7093'},
-  {name:'Papaya Whip', kr:'파파야휩', hex:'#FFEFD5'},
-  {name:'Peach Puff', kr:'피치퍼프', hex:'#FFDAB9'},
-  {name:'Sandy Brown', kr:'모래갈색', hex:'#F4A460'},
-  {name:'Sea Shell', kr:'조개껍데기', hex:'#FFF5EE'},
-  {name:'Snow', kr:'눈색', hex:'#FFFAFA'},
-  {name:'Thistle', kr:'엉겅퀴', hex:'#D8BFD8'},
-  {name:'White Smoke', kr:'화이트스모크', hex:'#F5F5F5'},
+  {name:'Red', kr:'', hex:'#FF0000'},
+  {name:'Green', kr:'', hex:'#008000'},
+  {name:'Blue', kr:'', hex:'#0000FF'},
+  {name:'White', kr:'', hex:'#FFFFFF'},
+  {name:'Black', kr:'', hex:'#000000'},
+  {name:'Yellow', kr:'', hex:'#FFFF00'},
+  {name:'Orange', kr:'', hex:'#FFA500'},
+  {name:'Purple', kr:'', hex:'#800080'},
+  {name:'Pink', kr:'', hex:'#FFC0CB'},
+  {name:'Brown', kr:'', hex:'#A52A2A'},
+  {name:'Gray', kr:'', hex:'#808080'},
+  {name:'Cyan', kr:'', hex:'#00FFFF'},
+  {name:'Magenta', kr:'', hex:'#FF00FF'},
+  {name:'Lime', kr:'', hex:'#00FF00'},
+  {name:'Indigo', kr:'', hex:'#4B0082'},
+  {name:'Violet', kr:'', hex:'#EE82EE'},
+  {name:'Gold', kr:'', hex:'#FFD700'},
+  {name:'Silver', kr:'', hex:'#C0C0C0'},
+  {name:'Coral', kr:'', hex:'#FF7F50'},
+  {name:'Salmon', kr:'', hex:'#FA8072'},
+  {name:'Tomato', kr:'', hex:'#FF6347'},
+  {name:'Crimson', kr:'', hex:'#DC143C'},
+  {name:'Navy', kr:'', hex:'#000080'},
+  {name:'Teal', kr:'', hex:'#008080'},
+  {name:'Olive', kr:'', hex:'#808000'},
+  {name:'Maroon', kr:'', hex:'#800000'},
+  {name:'Turquoise', kr:'', hex:'#40E0D0'},
+  {name:'Sky Blue', kr:'', hex:'#87CEEB'},
+  {name:'Royal Blue', kr:'', hex:'#4169E1'},
+  {name:'Hot Pink', kr:'', hex:'#FF69B4'},
+  {name:'Deep Pink', kr:'', hex:'#FF1493'},
+  {name:'Lavender', kr:'', hex:'#E6E6FA'},
+  {name:'Mint', kr:'', hex:'#98FF98'},
+  {name:'Beige', kr:'', hex:'#F5F5DC'},
+  {name:'Ivory', kr:'', hex:'#FFFFF0'},
+  {name:'Khaki', kr:'', hex:'#F0E68C'},
+  {name:'Peach', kr:'', hex:'#FFCBA4'},
+  {name:'Chocolate', kr:'', hex:'#D2691E'},
+  {name:'Tan', kr:'', hex:'#D2B48C'},
+  {name:'Sienna', kr:'', hex:'#A0522D'},
+  {name:'Peru', kr:'', hex:'#CD853F'},
+  {name:'Wheat', kr:'', hex:'#F5DEB3'},
+  {name:'Forest Green', kr:'', hex:'#228B22'},
+  {name:'Lime Green', kr:'', hex:'#32CD32'},
+  {name:'Spring Green', kr:'', hex:'#00FF7F'},
+  {name:'Sea Green', kr:'', hex:'#2E8B57'},
+  {name:'Dark Green', kr:'', hex:'#006400'},
+  {name:'Yellow Green', kr:'', hex:'#9ACD32'},
+  {name:'Chartreuse', kr:'', hex:'#7FFF00'},
+  {name:'Steel Blue', kr:'', hex:'#4682B4'},
+  {name:'Dodger Blue', kr:'', hex:'#1E90FF'},
+  {name:'Powder Blue', kr:'', hex:'#B0E0E6'},
+  {name:'Cadet Blue', kr:'', hex:'#5F9EA0'},
+  {name:'Slate Blue', kr:'', hex:'#6A5ACD'},
+  {name:'Medium Purple', kr:'', hex:'#9370DB'},
+  {name:'Dark Violet', kr:'', hex:'#9400D3'},
+  {name:'Plum', kr:'', hex:'#DDA0DD'},
+  {name:'Orchid', kr:'', hex:'#DA70D6'},
+  {name:'Rose', kr:'', hex:'#FF007F'},
+  {name:'Lemon', kr:'', hex:'#FFF44F'},
+  {name:'Amber', kr:'', hex:'#FFBF00'},
+  {name:'Apricot', kr:'', hex:'#FBCEB1'},
+  {name:'Burgundy', kr:'', hex:'#800020'},
+  {name:'Charcoal', kr:'', hex:'#36454F'},
+  {name:'Cream', kr:'', hex:'#FFFDD0'},
+  {name:'Emerald', kr:'', hex:'#50C878'},
+  {name:'Jade', kr:'', hex:'#00A86B'},
+  {name:'Mauve', kr:'', hex:'#E0B0FF'},
+  {name:'Mustard', kr:'', hex:'#FFDB58'},
+  {name:'Nude', kr:'', hex:'#E8C39E'},
+  {name:'Periwinkle', kr:'', hex:'#CCCCFF'},
+  {name:'Ruby', kr:'', hex:'#9B111E'},
+  {name:'Rust', kr:'', hex:'#B7410E'},
+  {name:'Sage', kr:'', hex:'#BCB88A'},
+  {name:'Scarlet', kr:'', hex:'#FF2400'},
+  {name:'Slate', kr:'', hex:'#708090'},
+  {name:'Taupe', kr:'', hex:'#483C32'},
+  {name:'Umber', kr:'', hex:'#635147'},
+  {name:'Alice Blue', kr:'', hex:'#F0F8FF'},
+  {name:'Antique White', kr:'', hex:'#FAEBD7'},
+  {name:'Aqua', kr:'', hex:'#00FFFF'},
+  {name:'Aquamarine', kr:'', hex:'#7FFFD4'},
+  {name:'Azure', kr:'', hex:'#F0FFFF'},
+  {name:'Bisque', kr:'', hex:'#FFE4C4'},
+  {name:'Blanched Almond', kr:'', hex:'#FFEBCD'},
+  {name:'Blue Violet', kr:'', hex:'#8A2BE2'},
+  {name:'Burlywood', kr:'', hex:'#DEB887'},
+  {name:'Cornflower Blue', kr:'', hex:'#6495ED'},
+  {name:'Cornsilk', kr:'', hex:'#FFF8DC'},
+  {name:'Dark Blue', kr:'', hex:'#00008B'},
+  {name:'Dark Cyan', kr:'', hex:'#008B8B'},
+  {name:'Dark Gray', kr:'', hex:'#A9A9A9'},
+  {name:'Dark Khaki', kr:'', hex:'#BDB76B'},
+  {name:'Dark Magenta', kr:'', hex:'#8B008B'},
+  {name:'Dark Olive Green', kr:'', hex:'#556B2F'},
+  {name:'Dark Orange', kr:'', hex:'#FF8C00'},
+  {name:'Dark Orchid', kr:'', hex:'#9932CC'},
+  {name:'Dark Red', kr:'', hex:'#8B0000'},
+  {name:'Dark Salmon', kr:'', hex:'#E9967A'},
+  {name:'Dark Sea Green', kr:'', hex:'#8FBC8F'},
+  {name:'Dark Slate Blue', kr:'', hex:'#483D8B'},
+  {name:'Dark Turquoise', kr:'', hex:'#00CED1'},
+  {name:'Deep Sky Blue', kr:'', hex:'#00BFFF'},
+  {name:'Fire Brick', kr:'', hex:'#B22222'},
+  {name:'Floral White', kr:'', hex:'#FFFAF0'},
+  {name:'Gainsboro', kr:'', hex:'#DCDCDC'},
+  {name:'Ghost White', kr:'', hex:'#F8F8FF'},
+  {name:'Green Yellow', kr:'', hex:'#ADFF2F'},
+  {name:'Honeydew', kr:'', hex:'#F0FFF0'},
+  {name:'Indian Red', kr:'', hex:'#CD5C5C'},
+  {name:'Lavender Blush', kr:'', hex:'#FFF0F5'},
+  {name:'Lawn Green', kr:'', hex:'#7CFC00'},
+  {name:'Lemon Chiffon', kr:'', hex:'#FFFACD'},
+  {name:'Light Blue', kr:'', hex:'#ADD8E6'},
+  {name:'Light Coral', kr:'', hex:'#F08080'},
+  {name:'Light Cyan', kr:'', hex:'#E0FFFF'},
+  {name:'Light Gray', kr:'', hex:'#D3D3D3'},
+  {name:'Light Green', kr:'', hex:'#90EE90'},
+  {name:'Light Pink', kr:'', hex:'#FFB6C1'},
+  {name:'Light Salmon', kr:'', hex:'#FFA07A'},
+  {name:'Light Sea Green', kr:'', hex:'#20B2AA'},
+  {name:'Light Sky Blue', kr:'', hex:'#87CEFA'},
+  {name:'Light Slate Gray', kr:'', hex:'#778899'},
+  {name:'Light Steel Blue', kr:'', hex:'#B0C4DE'},
+  {name:'Light Yellow', kr:'', hex:'#FFFFE0'},
+  {name:'Linen', kr:'', hex:'#FAF0E6'},
+  {name:'Medium Aquamarine', kr:'', hex:'#66CDAA'},
+  {name:'Medium Blue', kr:'', hex:'#0000CD'},
+  {name:'Medium Orchid', kr:'', hex:'#BA55D3'},
+  {name:'Medium Sea Green', kr:'', hex:'#3CB371'},
+  {name:'Medium Slate Blue', kr:'', hex:'#7B68EE'},
+  {name:'Medium Spring Green', kr:'', hex:'#00FA9A'},
+  {name:'Medium Turquoise', kr:'', hex:'#48D1CC'},
+  {name:'Medium Violet Red', kr:'', hex:'#C71585'},
+  {name:'Midnight Blue', kr:'', hex:'#191970'},
+  {name:'Mint Cream', kr:'', hex:'#F5FFFA'},
+  {name:'Misty Rose', kr:'', hex:'#FFE4E1'},
+  {name:'Moccasin', kr:'', hex:'#FFE4B5'},
+  {name:'Navajo White', kr:'', hex:'#FFDEAD'},
+  {name:'Old Lace', kr:'', hex:'#FDF5E6'},
+  {name:'Orange Red', kr:'', hex:'#FF4500'},
+  {name:'Pale Golden Rod', kr:'', hex:'#EEE8AA'},
+  {name:'Pale Green', kr:'', hex:'#98FB98'},
+  {name:'Pale Turquoise', kr:'', hex:'#AFEEEE'},
+  {name:'Pale Violet Red', kr:'', hex:'#DB7093'},
+  {name:'Papaya Whip', kr:'', hex:'#FFEFD5'},
+  {name:'Peach Puff', kr:'', hex:'#FFDAB9'},
+  {name:'Sandy Brown', kr:'', hex:'#F4A460'},
+  {name:'Sea Shell', kr:'', hex:'#FFF5EE'},
+  {name:'Snow', kr:'', hex:'#FFFAFA'},
+  {name:'Thistle', kr:'', hex:'#D8BFD8'},
+  {name:'White Smoke', kr:'', hex:'#F5F5F5'},
 ];
 
-/* ── 유틸리티 ── */
+/* ── */
 function hexToRgb(hex) {
   hex = hex.replace('#','');
   if(hex.length===3) hex = hex.split('').map(c=>c+c).join('');
@@ -596,7 +605,7 @@ function isValidHex(hex) {
   return /^#([0-9A-Fa-f]{6})$/.test(hex);
 }
 
-/* ── 토스트 ── */
+/* ── */
 let toastTimer;
 function showToast(msg) {
   const t = document.getElementById('toast');
@@ -608,7 +617,7 @@ function showToast(msg) {
 
 function copyHex(hex) {
   navigator.clipboard.writeText(hex)
-    .then(()=>showToast('✅ ' + hex + ' 복사됨!'))
+    .then(()=>showToast('✅ ' + hex + ' Copied!'))
     .catch(()=>{
       const ta = document.createElement('textarea');
       ta.value = hex;
@@ -616,11 +625,11 @@ function copyHex(hex) {
       ta.select();
       document.execCommand('copy');
       document.body.removeChild(ta);
-      showToast('✅ ' + hex + ' 복사됨!');
+      showToast('✅ ' + hex + ' Copied!');
     });
 }
 
-/* ── 검색 ── */
+/* ── */
 function findClosest(r,g,b) {
   const results = COLOR_DB.map(c => {
     const {r:cr,g:cg,b:cb} = hexToRgb(c.hex);
@@ -629,14 +638,14 @@ function findClosest(r,g,b) {
   return results;
 }
 
-/* ── 렌더 ── */
+/* ── */
 function render(r,g,b) {
   const inputHex = rgbToHex(r,g,b);
   const results = findClosest(r,g,b);
   const best = results[0];
   const similar = results.slice(0,5);
 
-  // 메인 결과
+  //
   const sim = similarity(best.dist);
   const mainEl = document.getElementById('mainResult');
   mainEl.innerHTML = `
@@ -646,14 +655,14 @@ function render(r,g,b) {
       <div class="cn-result-name-kr">${best.kr}</div>
       <div class="cn-result-hex">${best.hex}</div>
       <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
-        <div class="cn-similarity">유사도 ${sim}%</div>
-        ${best.dist===0?'<span style="font-size:0.78rem;color:#059669;font-weight:600;">정확히 일치</span>':''}
+        <div class="cn-similarity">Similarity ${sim}%</div>
+        ${best.dist===0?'<span style="font-size:0.78rem;color:#059669;font-weight:600;">Exact match</span>':''}
       </div>
     </div>
-    <button class="cn-copy-btn" onclick="copyHex('${best.hex}')">HEX 복사</button>
+    <button class="cn-copy-btn" onclick="copyHex('${best.hex}')">Copy HEX</button>
   `;
 
-  // 유사 목록
+  //
   const listEl = document.getElementById('similarList');
   listEl.innerHTML = '';
   similar.forEach((c,i) => {
@@ -667,14 +676,14 @@ function render(r,g,b) {
         <div class="cn-similar-kr">${c.kr}</div>
         <div class="cn-similar-hex">${c.hex}</div>
       </div>
-      <div class="cn-similar-badge">유사도 ${s}%</div>
+      <div class="cn-similar-badge">Similarity ${s}%</div>
       <button class="cn-similar-copy" onclick="copyHex('${c.hex}')">Copy</button>
     `;
     listEl.appendChild(item);
   });
 }
 
-/* ── 입력 연동 ── */
+/* ── */
 let currentR=139, currentG=92, currentB=246;
 
 function updateAll(r,g,b) {
@@ -733,7 +742,7 @@ function onRgbNumChange() {
   updateAll(r,g,b);
 }
 
-/* 초기 실행 */
+/* Initial run */
 updateAll(currentR, currentG, currentB);
 </script>
 </body>
