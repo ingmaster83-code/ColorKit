@@ -1804,7 +1804,12 @@ def build_page(filename, meta):
     if 'lang-switcher' not in html:
         html = html.replace('  </style>', LANG_SWITCHER_CSS + '  </style>', 1)
 
-    # ── 헤더에 언어 선택기 삽입 ──
+    # ── 헤더에 언어 선택기 삽입 (기존 header-right 먼저 제거) ──
+    html = re.sub(
+        r'\s*<div class="header-right">.*</div>(?=\s*\n?\s*</div>\s*\n?</header>)',
+        '',
+        html, count=1, flags=re.DOTALL
+    )
     html = re.sub(
         r'(\s*</div>\s*</header>)',
         f'\n    <div class="header-right">\n'
@@ -2055,7 +2060,12 @@ if __name__ == '__main__':
             # lang switcher CSS
             if 'lang-switcher' not in html:
                 html = html.replace('  </style>', LANG_SWITCHER_CSS + '  </style>', 1)
-            # lang switcher HTML
+            # lang switcher HTML: remove existing header-right then insert EN version
+            html = re.sub(
+                r'\s*<div class="header-right">.*</div>(?=\s*\n?\s*</div>\s*\n?</header>)',
+                '',
+                html, count=1, flags=re.DOTALL
+            )
             html = re.sub(
                 r'(\s*</div>\s*</header>)',
                 f'\n    <div class="header-right">\n'
@@ -2064,6 +2074,7 @@ if __name__ == '__main__':
                 f'        <span>|</span>\n'
                 f'        <a href="{f}" class="active">EN</a>\n'
                 f'      </div>\n'
+                f'      <a href="../about.html" style="color:rgba(255,255,255,0.85); font-size:0.85rem; text-decoration:none; margin-left:8px;">About</a>\n'
                 f'    </div>\n'
                 f'  </div>\n'
                 f'</header>',
