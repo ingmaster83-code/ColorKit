@@ -243,23 +243,8 @@
 
     <div class="wooa-orig-anchor"></div>
 
-  <section class="faq-section" style="max-width:800px;margin:3rem auto;padding:0 1rem;">
-    <h2 style="font-size:1.4rem;margin-bottom:1.5rem;">자주 묻는 질문</h2>
-    <div class="faq-list">
-      <div class="faq-item" style="margin-bottom:1.2rem;padding:1rem;background:#f8f9fa;border-radius:8px;">
-        <h3 style="font-size:1rem;font-weight:600;margin-bottom:0.5rem;">Q. CSS Custom Properties란 무엇인가요?</h3>
-        <p style="color:#555;margin:0;">CSS Custom Properties(사용자 지정 속성)는 --color-primary: #8B5CF6; 처럼 CSS 파일에서 변수를 정의하고 var(--color-primary)로 재사용하는 기능입니다. 디자인 시스템 구축에 필수적입니다.</p>
-      </div>
-      <div class="faq-item" style="margin-bottom:1.2rem;padding:1rem;background:#f8f9fa;border-radius:8px;">
-        <h3 style="font-size:1rem;font-weight:600;margin-bottom:0.5rem;">Q. Tailwind 코드는 어떻게 사용하나요?</h3>
-        <p style="color:#555;margin:0;">생성된 Tailwind 코드를 tailwind.config.js의 theme.extend.colors에 붙여넣으면 됩니다. 이후 text-primary, bg-primary 등의 클래스로 사용할 수 있습니다.</p>
-      </div>
-      <div class="faq-item" style="padding:1rem;background:#f8f9fa;border-radius:8px;">
-        <h3 style="font-size:1rem;font-weight:600;margin-bottom:0.5rem;">Q. RGBA 형식도 지원하나요?</h3>
-        <p style="color:#555;margin:0;">네, CSS 변수 탭에서 rgba 형식도 함께 생성됩니다. 투명도 적용 시 유용하게 활용할 수 있습니다.</p>
-      </div>
-    </div>
-  </section>
+  <div class="tips-panel"><h3>💡 Tips</h3><ul><li>CSS 변수(--primary, --bg 등)로 일관된 색상 시스템을 구축하세요.</li><li>:root에 색상 변수를 정의하면 전체 사이트 색상을 한 번에 바꿀 수 있습니다.</li><li>라이트·다크 모드 전환 시 CSS 변수를 활용하면 편리합니다.</li></ul></div>
+<div class="faq-section"><h2>자주 묻는 질문</h2><details><summary>CSS Custom Properties란 무엇인가요?</summary><p>CSS Custom Properties(사용자 지정 속성)는 --color-primary: #8B5CF6; 처럼 CSS 파일에서 변수를 정의하고 var(--color-primary)로 재사용하는 기능입니다. 디자인 시스템 구축에 필수적입니다.</p></details><details><summary>Tailwind 코드는 어떻게 사용하나요?</summary><p>생성된 Tailwind 코드를 tailwind.config.js의 theme.extend.colors에 붙여넣으면 됩니다. 이후 text-primary, bg-primary 등의 클래스로 사용할 수 있습니다.</p></details><details><summary>RGBA 형식도 지원하나요?</summary><p>네, CSS 변수 탭에서 rgba 형식도 함께 생성됩니다. 투명도 적용 시 유용하게 활용할 수 있습니다.</p></details><details><summary>파일이 서버에 저장되나요?</summary><p>아니요. 모든 처리는 브라우저 안에서만 이루어지며 파일은 서버로 전송되지 않습니다. 완전히 안전합니다.</p></details></div>
 </div>
 
 <aside class="tool-sidebar">
