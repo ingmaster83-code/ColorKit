@@ -351,7 +351,7 @@
 
   <!-- AdSense Mid -->
   <div style="text-align:center;margin:16px auto;max-width:728px;padding:0 8px">
-    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-6464921081676309" data-ad-slot="9432796175" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <div id="resultAd" style="text-align:center;margin:16px auto;max-width:728px;padding:0 8px"></div>
     <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
   </div>
 
@@ -715,6 +715,21 @@ function onRgbNumChange() {
 
 /* Initial run */
 updateAll(currentR, currentG, currentB);
+
+/* result panel ad dynamic load */
+const resultAd = document.getElementById('resultAd');
+if (resultAd && !resultAd.dataset.adLoaded) {
+  const ins = document.createElement('ins');
+  ins.className = 'adsbygoogle';
+  ins.style.cssText = 'display:block';
+  ins.setAttribute('data-ad-client', 'ca-pub-6464921081676309');
+  ins.setAttribute('data-ad-slot', '9432796175');
+  ins.setAttribute('data-ad-format', 'auto');
+  ins.setAttribute('data-full-width-responsive', 'true');
+  resultAd.appendChild(ins);
+  (window.adsbygoogle = window.adsbygoogle || []).push({});
+  resultAd.dataset.adLoaded = '1';
+}
 </script>
 <script src="../js/wooa-sidebar-en.js"></script>
 <script src="../js/wooa-footer-en.js"></script>
