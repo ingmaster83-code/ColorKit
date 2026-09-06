@@ -56,27 +56,7 @@
   }
   </script>
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "두 가지 색상만 혼합할 수 있나요?",
-        "acceptedAnswer": {"@type": "Answer","text": "두 색상을 선택하고 혼합 비율을 조절하여 결과색을 확인할 수 있습니다."}
-      },
-      {
-        "@type": "Question",
-        "name": "혼합 결과 색상의 코드를 복사할 수 있나요?",
-        "acceptedAnswer": {"@type": "Answer","text": "네, 혼합된 색상의 HEX, RGB, HSL 코드를 복사할 수 있습니다."}
-      },
-      {
-        "@type": "Question",
-        "name": "실시간으로 혼합 결과가 보이나요?",
-        "acceptedAnswer": {"@type": "Answer","text": "네, 슬라이더를 조절하는 즉시 혼합 결과가 실시간으로 업데이트됩니다."}
-      }
-    ]
-  }
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"두 가지 색상만 혼합할 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"네. 이 도구는 두 색의 혼합에 특화되어 있습니다. 여러 색의 전환은 그라디언트 생성기를 쓰세요."}},{"@type":"Question","name":"혼합 결과 코드를 복사할 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"네. 결과 색의 HEX·RGB를 복사할 수 있습니다."}},{"@type":"Question","name":"실시간으로 결과가 보이나요?","acceptedAnswer":{"@type":"Answer","text":"네. 비율 슬라이더를 움직이는 즉시 결과 색이 갱신됩니다."}},{"@type":"Question","name":"물감을 섞은 것과 결과가 다른 이유는?","acceptedAnswer":{"@type":"Answer","text":"화면은 빛을 더하는 방식(RGB), 물감은 빛을 빼는 방식이라 혼합 결과가 다릅니다. 화면 기준 중간색이 필요할 때 쓰세요."}},{"@type":"Question","name":"그라디언트 중간 색을 뽑는 데 써도 되나요?","acceptedAnswer":{"@type":"Answer","text":"네. 두 정지색을 넣고 비율을 조절하면 그라디언트의 특정 지점 색을 알 수 있습니다."}},{"@type":"Question","name":"파일이 서버에 저장되나요?","acceptedAnswer":{"@type":"Answer","text":"아니요. 모든 처리는 브라우저 안에서만 이루어지며 이미지·색상 데이터는 서버로 전송되지 않습니다. 개인정보와 작업물이 외부로 유출될 걱정 없이 사용할 수 있습니다."}}]}
   </script>
   <style>
     .mixer-colors-row {
@@ -321,10 +301,11 @@
     <a href="color-converter.html" class="related-card"><span class="related-icon">🔄</span><span>HEX ↔ RGB ↔ HSL</span></a>
   </div>
 </div>
+<section class="tool-guide"><h2>색상 혼합기 사용법</h2><ol><li>섞을 두 색을 컬러 피커나 코드로 지정합니다.</li><li>비율 슬라이더를 움직이면 두 색이 섞인 결과 색이 실시간으로 나옵니다. 결과 HEX·RGB를 복사합니다.</li></ol><h3>어떻게 섞이나요?</h3><p class="note">두 색의 RGB(또는 선형 색 공간) 값을 지정한 비율로 보간(interpolation)합니다. 50:50이면 두 색의 중간, 80:20이면 첫 색에 가깝습니다. 그라디언트의 중간 색을 미리 뽑아볼 때도 유용합니다.</p><h3>예시</h3><p class="note">#FF0000(빨강)과 #0000FF(파랑)를 50:50 → #800080(보라). 물감처럼 정확하진 않지만 화면 색 기준으로 자연스러운 중간색을 줍니다.</p></section>
 <div class="wooa-orig-anchor"></div>
 
   <div class="tips-panel"><h3>💡 Tips</h3><ul><li>두 색상을 혼합한 결과 색상을 미리보기 할 수 있습니다.</li><li>혼합 비율을 조정해 중간 색조를 만드세요.</li><li>페인트 혼합 시뮬레이션이나 그라디언트 중간 색상 찾기에 유용합니다.</li></ul></div>
-<div class="faq-section"><h2>자주 묻는 질문</h2><details><summary>두 가지 색상만 혼합할 수 있나요?</summary><p>두 색상을 선택하고 혼합 비율을 조절하여 결과색을 확인할 수 있습니다.</p></details><details><summary>혼합 결과 색상의 코드를 복사할 수 있나요?</summary><p>네, 혼합된 색상의 HEX, RGB, HSL 코드를 복사할 수 있습니다.</p></details><details><summary>실시간으로 혼합 결과가 보이나요?</summary><p>네, 슬라이더를 조절하는 즉시 혼합 결과가 실시간으로 업데이트됩니다.</p></details><details><summary>파일이 서버에 저장되나요?</summary><p>아니요. 모든 처리는 브라우저 안에서만 이루어지며 파일은 서버로 전송되지 않습니다. 개인정보와 민감한 데이터가 외부로 유출될 걱정이 없으며, 기업 보안 환경에서도 안심하고 사용할 수 있습니다.</p></details></div>
+<div class="faq-section"><h2>자주 묻는 질문</h2><details><summary>두 가지 색상만 혼합할 수 있나요?</summary><p>네. 이 도구는 두 색의 혼합에 특화되어 있습니다. 여러 색의 전환은 그라디언트 생성기를 쓰세요.</p></details><details><summary>혼합 결과 코드를 복사할 수 있나요?</summary><p>네. 결과 색의 HEX·RGB를 복사할 수 있습니다.</p></details><details><summary>실시간으로 결과가 보이나요?</summary><p>네. 비율 슬라이더를 움직이는 즉시 결과 색이 갱신됩니다.</p></details><details><summary>물감을 섞은 것과 결과가 다른 이유는?</summary><p>화면은 빛을 더하는 방식(RGB), 물감은 빛을 빼는 방식이라 혼합 결과가 다릅니다. 화면 기준 중간색이 필요할 때 쓰세요.</p></details><details><summary>그라디언트 중간 색을 뽑는 데 써도 되나요?</summary><p>네. 두 정지색을 넣고 비율을 조절하면 그라디언트의 특정 지점 색을 알 수 있습니다.</p></details><details><summary>파일이 서버에 저장되나요?</summary><p>아니요. 모든 처리는 브라우저 안에서만 이루어지며 이미지·색상 데이터는 서버로 전송되지 않습니다. 개인정보와 작업물이 외부로 유출될 걱정 없이 사용할 수 있습니다.</p></details></div>
 </div>
 
 <aside class="tool-sidebar"></aside>

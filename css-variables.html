@@ -174,44 +174,7 @@
     .lang-switcher span { color:rgba(255,255,255,0.3); font-size:0.75rem; }
   </style>
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "CSS Custom Properties란 무엇인가요?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "CSS Custom Properties(사용자 지정 속성)는 --color-primary: #8B5CF6; 처럼 CSS 파일에서 변수를 정의하고 var(--color-primary)로 재사용하는 기능입니다. 디자인 시스템 구축에 필수적입니다."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "Tailwind 코드는 어떻게 사용하나요?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "생성된 Tailwind 코드를 tailwind.config.js의 theme.extend.colors에 붙여넣으면 됩니다. 이후 text-primary, bg-primary 등의 클래스로 사용할 수 있습니다."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "RGBA 형식도 지원하나요?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "네, CSS 변수 탭에서 rgba 형식도 함께 생성됩니다. 투명도 적용 시 유용하게 활용할 수 있습니다."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "파일이 서버에 저장되나요?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "아니요. 모든 처리는 브라우저 안에서만 이루어지며 파일은 서버로 전송되지 않습니다. 개인정보와 민감한 데이터가 외부로 유출될 걱정이 없으며, 기업 보안 환경에서도 안심하고 사용할 수 있습니다."
-      }
-    }
-  ]
-}
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"CSS Custom Properties란 무엇인가요?","acceptedAnswer":{"@type":"Answer","text":"--이름: 값 으로 선언하고 var(--이름)으로 재사용하는 CSS 변수입니다. 색·간격·글꼴 등을 한 곳에서 관리할 수 있습니다."}},{"@type":"Question","name":"Tailwind 코드는 어떻게 사용하나요?","acceptedAnswer":{"@type":"Answer","text":"생성된 colors 객체를 tailwind.config.js의 theme.extend.colors에 붙여넣으면 bg-primary-500 같은 클래스를 쓸 수 있습니다."}},{"@type":"Question","name":"RGBA 형식도 지원하나요?","acceptedAnswer":{"@type":"Answer","text":"네. 변수 값으로 HEX·RGB·RGBA를 선택할 수 있습니다. 투명도가 필요한 색은 RGBA로 생성하세요."}},{"@type":"Question","name":"SCSS 변수와 CSS 변수 중 뭘 써야 하나요?","acceptedAnswer":{"@type":"Answer","text":"CSS 변수는 런타임에 바뀌어 다크모드·테마 전환에 유리합니다. SCSS 변수는 빌드 시 고정됩니다. 요즘은 CSS 변수를 권장합니다."}},{"@type":"Question","name":"변수 이름은 어떻게 짓는 게 좋나요?","acceptedAnswer":{"@type":"Answer","text":"--color-primary처럼 역할 기반, 또는 --blue-500처럼 값 기반이 있습니다. 역할 기반이 테마 대응에 유리합니다."}},{"@type":"Question","name":"파일이 서버에 저장되나요?","acceptedAnswer":{"@type":"Answer","text":"아니요. 모든 처리는 브라우저 안에서만 이루어지며 이미지·색상 데이터는 서버로 전송되지 않습니다. 개인정보와 작업물이 외부로 유출될 걱정 없이 사용할 수 있습니다."}}]}
 </script>
 </head>
 <body>
@@ -298,10 +261,11 @@
     <a href="color-converter.html" class="related-card"><span class="related-icon">🔄</span><span>HEX ↔ RGB ↔ HSL</span></a>
   </div>
 </div>
+<section class="tool-guide"><h2>CSS 색상 변수 생성기 사용법</h2><ol><li>사용할 색상 팔레트를 입력합니다.</li><li>CSS Custom Properties(:root 변수), SCSS 변수, Tailwind config 형식의 코드가 자동 생성됩니다. 필요한 형식을 복사합니다.</li></ol><h3>CSS 변수(Custom Properties)란?</h3><p class="note">:root { --color-primary: #3B82F6; } 처럼 선언하고 color: var(--color-primary) 로 재사용하는 기능입니다. 색을 한 곳에서 관리해 테마 변경·다크모드 대응이 쉬워집니다. 디자인 시스템의 색상 토큰이 바로 이것입니다.</p><h3>예시</h3><p class="note">--color-primary-500: #3B82F6; --color-primary-600: #2563EB; ... 형태로 나와 프로젝트 CSS 최상단에 붙여넣고 전역에서 var()로 참조합니다.</p></section>
 <div class="wooa-orig-anchor"></div>
 
   <div class="tips-panel"><h3>💡 Tips</h3><ul><li>CSS 변수(--primary, --bg 등)로 일관된 색상 시스템을 구축하세요.</li><li>:root에 색상 변수를 정의하면 전체 사이트 색상을 한 번에 바꿀 수 있습니다.</li><li>라이트·다크 모드 전환 시 CSS 변수를 활용하면 편리합니다.</li></ul></div>
-<div class="faq-section"><h2>자주 묻는 질문</h2><details><summary>CSS Custom Properties란 무엇인가요?</summary><p>CSS Custom Properties(사용자 지정 속성)는 --color-primary: #8B5CF6; 처럼 CSS 파일에서 변수를 정의하고 var(--color-primary)로 재사용하는 기능입니다. 디자인 시스템 구축에 필수적입니다.</p></details><details><summary>Tailwind 코드는 어떻게 사용하나요?</summary><p>생성된 Tailwind 코드를 tailwind.config.js의 theme.extend.colors에 붙여넣으면 됩니다. 이후 text-primary, bg-primary 등의 클래스로 사용할 수 있습니다.</p></details><details><summary>RGBA 형식도 지원하나요?</summary><p>네, CSS 변수 탭에서 rgba 형식도 함께 생성됩니다. 투명도 적용 시 유용하게 활용할 수 있습니다.</p></details><details><summary>파일이 서버에 저장되나요?</summary><p>아니요. 모든 처리는 브라우저 안에서만 이루어지며 파일은 서버로 전송되지 않습니다. 개인정보와 민감한 데이터가 외부로 유출될 걱정이 없으며, 기업 보안 환경에서도 안심하고 사용할 수 있습니다.</p></details></div>
+<div class="faq-section"><h2>자주 묻는 질문</h2><details><summary>CSS Custom Properties란 무엇인가요?</summary><p>--이름: 값 으로 선언하고 var(--이름)으로 재사용하는 CSS 변수입니다. 색·간격·글꼴 등을 한 곳에서 관리할 수 있습니다.</p></details><details><summary>Tailwind 코드는 어떻게 사용하나요?</summary><p>생성된 colors 객체를 tailwind.config.js의 theme.extend.colors에 붙여넣으면 bg-primary-500 같은 클래스를 쓸 수 있습니다.</p></details><details><summary>RGBA 형식도 지원하나요?</summary><p>네. 변수 값으로 HEX·RGB·RGBA를 선택할 수 있습니다. 투명도가 필요한 색은 RGBA로 생성하세요.</p></details><details><summary>SCSS 변수와 CSS 변수 중 뭘 써야 하나요?</summary><p>CSS 변수는 런타임에 바뀌어 다크모드·테마 전환에 유리합니다. SCSS 변수는 빌드 시 고정됩니다. 요즘은 CSS 변수를 권장합니다.</p></details><details><summary>변수 이름은 어떻게 짓는 게 좋나요?</summary><p>--color-primary처럼 역할 기반, 또는 --blue-500처럼 값 기반이 있습니다. 역할 기반이 테마 대응에 유리합니다.</p></details><details><summary>파일이 서버에 저장되나요?</summary><p>아니요. 모든 처리는 브라우저 안에서만 이루어지며 이미지·색상 데이터는 서버로 전송되지 않습니다. 개인정보와 작업물이 외부로 유출될 걱정 없이 사용할 수 있습니다.</p></details></div>
 </div>
 
 <aside class="tool-sidebar"></aside>

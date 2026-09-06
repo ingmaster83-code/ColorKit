@@ -56,27 +56,7 @@
   }
   </script>
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "WCAG가 뭔가요?",
-        "acceptedAnswer": {"@type": "Answer","text": "웹 콘텐츠 접근성 지침(Web Content Accessibility Guidelines)으로, 텍스트와 배경 색상의 대비율 기준을 제시합니다."}
-      },
-      {
-        "@type": "Question",
-        "name": "어떤 대비율을 목표로 해야 하나요?",
-        "acceptedAnswer": {"@type": "Answer","text": "일반 텍스트는 4.5:1, 큰 텍스트는 3:1 이상이면 WCAG AA 기준을 충족합니다."}
-      },
-      {
-        "@type": "Question",
-        "name": "텍스트 크기도 고려되나요?",
-        "acceptedAnswer": {"@type": "Answer","text": "네, 일반 텍스트와 큰 텍스트(18pt 이상 또는 굵은 14pt 이상)를 구분하여 기준을 적용합니다."}
-      }
-    ]
-  }
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"WCAG가 뭔가요?","acceptedAnswer":{"@type":"Answer","text":"웹 콘텐츠 접근성 지침(Web Content Accessibility Guidelines)입니다. 저시력·색약 사용자도 콘텐츠를 인식할 수 있도록 한 국제 표준으로, 국내 공공기관 웹은 준수 의무가 있습니다."}},{"@type":"Question","name":"어떤 대비율을 목표로 해야 하나요?","acceptedAnswer":{"@type":"Answer","text":"본문 텍스트는 최소 4.5:1(AA), 가능하면 7:1(AAA)입니다. 큰 제목·굵은 글씨는 3:1까지 허용됩니다."}},{"@type":"Question","name":"텍스트 크기도 고려되나요?","acceptedAnswer":{"@type":"Answer","text":"네. 18pt(약 24px) 이상 또는 14pt(약 18.66px) 굵은 글씨는 \"큰 텍스트\"로 분류되어 기준이 완화됩니다."}},{"@type":"Question","name":"아이콘·버튼 테두리도 검사 대상인가요?","acceptedAnswer":{"@type":"Answer","text":"WCAG 2.1부터 UI 컴포넌트와 그래픽 요소도 3:1 이상을 요구합니다. 입력창 테두리, 토글, 아이콘에 적용됩니다."}},{"@type":"Question","name":"여러 색 조합을 한 번에 보려면?","acceptedAnswer":{"@type":"Answer","text":"팔레트 대비 검사기에서 색을 여러 개 넣으면 모든 조합의 대비율을 매트릭스로 볼 수 있습니다."}},{"@type":"Question","name":"파일이 서버에 저장되나요?","acceptedAnswer":{"@type":"Answer","text":"아니요. 모든 처리는 브라우저 안에서만 이루어지며 이미지·색상 데이터는 서버로 전송되지 않습니다. 개인정보와 작업물이 외부로 유출될 걱정 없이 사용할 수 있습니다."}}]}
   </script>
   <style>
     .color-inputs-row {
@@ -315,10 +295,11 @@
     <a href="color-converter.html" class="related-card"><span class="related-icon">🔄</span><span>HEX ↔ RGB ↔ HSL</span></a>
   </div>
 </div>
+<section class="tool-guide"><h2>색상 대비 검사기 사용법</h2><ol><li>전경색(글자색)과 배경색을 입력합니다.</li><li>대비율과 WCAG AA·AAA 기준 합격 여부가 표시됩니다. 불합격이면 색을 조정해 다시 확인합니다.</li></ol><h3>WCAG 대비 기준</h3><p class="note">대비율은 1:1(동일)~21:1(검정/흰색) 범위입니다. WCAG 2.1 기준: 일반 텍스트 AA 4.5:1·AAA 7:1, 큰 텍스트(18pt 또는 굵은 14pt) AA 3:1·AAA 4.5:1, UI 요소·아이콘 3:1 이상.</p><h3>예시</h3><p class="note">#767676 글자 / #FFFFFF 배경 = 4.54:1 → 일반 텍스트 AA 통과(AAA 불통). #999999 / #FFFFFF = 2.85:1 → AA도 불통이라 본문에 쓰면 안 됩니다.</p></section>
 <div class="wooa-orig-anchor"></div>
 
   <div class="tips-panel"><h3>💡 Tips</h3><ul><li>WCAG 기준 AA 등급(4.5:1 이상)을 충족해야 웹 접근성을 만족합니다.</li><li>텍스트 크기가 18pt 이상이면 AA 기준이 3:1로 완화됩니다.</li><li>배경 밝기에 따라 흰색 또는 검은색 텍스트를 선택하세요.</li></ul></div>
-<div class="faq-section"><h2>자주 묻는 질문</h2><details><summary>WCAG가 뭔가요?</summary><p>웹 콘텐츠 접근성 지침(Web Content Accessibility Guidelines)으로, 텍스트와 배경 색상의 대비율 기준을 제시합니다.</p></details><details><summary>어떤 대비율을 목표로 해야 하나요?</summary><p>일반 텍스트는 4.5:1, 큰 텍스트는 3:1 이상이면 WCAG AA 기준을 충족합니다.</p></details><details><summary>텍스트 크기도 고려되나요?</summary><p>네, 일반 텍스트와 큰 텍스트(18pt 이상 또는 굵은 14pt 이상)를 구분하여 기준을 적용합니다.</p></details><details><summary>파일이 서버에 저장되나요?</summary><p>아니요. 모든 처리는 브라우저 안에서만 이루어지며 파일은 서버로 전송되지 않습니다. 개인정보와 민감한 데이터가 외부로 유출될 걱정이 없으며, 기업 보안 환경에서도 안심하고 사용할 수 있습니다.</p></details></div>
+<div class="faq-section"><h2>자주 묻는 질문</h2><details><summary>WCAG가 뭔가요?</summary><p>웹 콘텐츠 접근성 지침(Web Content Accessibility Guidelines)입니다. 저시력·색약 사용자도 콘텐츠를 인식할 수 있도록 한 국제 표준으로, 국내 공공기관 웹은 준수 의무가 있습니다.</p></details><details><summary>어떤 대비율을 목표로 해야 하나요?</summary><p>본문 텍스트는 최소 4.5:1(AA), 가능하면 7:1(AAA)입니다. 큰 제목·굵은 글씨는 3:1까지 허용됩니다.</p></details><details><summary>텍스트 크기도 고려되나요?</summary><p>네. 18pt(약 24px) 이상 또는 14pt(약 18.66px) 굵은 글씨는 "큰 텍스트"로 분류되어 기준이 완화됩니다.</p></details><details><summary>아이콘·버튼 테두리도 검사 대상인가요?</summary><p>WCAG 2.1부터 UI 컴포넌트와 그래픽 요소도 3:1 이상을 요구합니다. 입력창 테두리, 토글, 아이콘에 적용됩니다.</p></details><details><summary>여러 색 조합을 한 번에 보려면?</summary><p>팔레트 대비 검사기에서 색을 여러 개 넣으면 모든 조합의 대비율을 매트릭스로 볼 수 있습니다.</p></details><details><summary>파일이 서버에 저장되나요?</summary><p>아니요. 모든 처리는 브라우저 안에서만 이루어지며 이미지·색상 데이터는 서버로 전송되지 않습니다. 개인정보와 작업물이 외부로 유출될 걱정 없이 사용할 수 있습니다.</p></details></div>
 </div>
 
 <aside class="tool-sidebar"></aside>

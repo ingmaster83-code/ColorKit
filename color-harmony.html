@@ -186,44 +186,7 @@
     .lang-switcher span { color:rgba(255,255,255,0.3); font-size:0.75rem; }
   </style>
 <script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  "mainEntity": [
-    {
-      "@type": "Question",
-      "name": "색상 조화란 무엇인가요?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "색상 조화는 색상환에서 특정 각도 관계에 있는 색상들을 조합해 시각적으로 균형 잡힌 배색을 만드는 이론입니다."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "스와치를 클릭하면 무엇이 복사되나요?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "스와치(색상 블록)를 클릭하면 해당 색상의 HEX 코드(예: #FF5733)가 클립보드에 자동으로 복사됩니다."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "어떤 색상 조화를 사용하면 좋을까요?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "단순하고 강한 대비를 원할 때는 보색, 부드럽고 자연스러운 느낌엔 유사색, 다채로운 디자인엔 삼색이나 정사각형 배색을 추천합니다."
-      }
-    },
-    {
-      "@type": "Question",
-      "name": "파일이 서버에 저장되나요?",
-      "acceptedAnswer": {
-        "@type": "Answer",
-        "text": "아니요. 모든 처리는 브라우저 안에서만 이루어지며 파일은 서버로 전송되지 않습니다. 개인정보와 민감한 데이터가 외부로 유출될 걱정이 없으며, 기업 보안 환경에서도 안심하고 사용할 수 있습니다."
-      }
-    }
-  ]
-}
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"색상 조화란 무엇인가요?","acceptedAnswer":{"@type":"Answer","text":"색상환에서 일정한 각도 규칙으로 고른, 서로 잘 어울리는 색 조합입니다. 보색·유사색·삼색 등이 있습니다."}},{"@type":"Question","name":"스와치를 클릭하면 무엇이 복사되나요?","acceptedAnswer":{"@type":"Answer","text":"해당 색의 HEX 코드가 클립보드에 복사됩니다."}},{"@type":"Question","name":"어떤 색상 조화를 써야 하나요?","acceptedAnswer":{"@type":"Answer","text":"차분함이 필요하면 유사색, 강조가 필요하면 보색, 다채로움이 필요하면 삼색을 씁니다. 목적에 맞게 선택하세요."}},{"@type":"Question","name":"생성된 색이 촌스러워 보여요.","acceptedAnswer":{"@type":"Answer","text":"기준색의 채도·명도가 극단적이면 조화색도 튈 수 있습니다. 기준색을 중간 톤으로 잡으면 결과가 안정적입니다."}},{"@type":"Question","name":"팔레트로 저장하려면?","acceptedAnswer":{"@type":"Answer","text":"각 HEX를 복사해 CSS 변수 생성기나 팔레트 갤러리에 정리해 두면 재사용하기 좋습니다."}},{"@type":"Question","name":"파일이 서버에 저장되나요?","acceptedAnswer":{"@type":"Answer","text":"아니요. 모든 처리는 브라우저 안에서만 이루어지며 이미지·색상 데이터는 서버로 전송되지 않습니다. 개인정보와 작업물이 외부로 유출될 걱정 없이 사용할 수 있습니다."}}]}
 </script>
 </head>
 <body>
@@ -339,10 +302,11 @@
     <a href="tints-shades.html" class="related-card"><span class="related-icon">🎚️</span><span>틴트·셰이드 생성기</span></a>
   </div>
 </div>
+<section class="tool-guide"><h2>색상 조화 생성기 사용법</h2><ol><li>기준이 될 색 하나를 고릅니다.</li><li>보색·유사색·삼색(트라이어드)·분보색 팔레트가 자동으로 만들어집니다. 스와치를 클릭해 HEX를 복사합니다.</li></ol><h3>색상 조화란?</h3><p class="note">색상환(Hue 0~360°)에서 규칙적인 각도로 색을 골라 만드는 조화로운 배색입니다. 보색(180° 반대, 강한 대비), 유사색(±30°, 부드러움), 삼색(120° 간격, 균형+생동감), 분보색(보색의 양옆, 대비를 완화)이 대표적입니다.</p><h3>어떤 걸 쓰나요?</h3><p class="note">차분한 브랜드는 유사색, 눈에 띄는 CTA 버튼은 보색, 일러스트·인포그래픽은 삼색이 잘 어울립니다. 만든 팔레트는 대비 검사기로 접근성을 함께 확인하세요.</p></section>
 <div class="wooa-orig-anchor"></div>
 
   <div class="tips-panel"><h3>💡 Tips</h3><ul><li>보색은 강한 대비, 유사색은 조화로운 느낌을 줍니다.</li><li>3색 조화(트라이아드)는 활동적이고 역동적인 디자인에 적합합니다.</li><li>생성된 팔레트를 바로 복사해 디자인 도구에 붙여 넣으세요.</li></ul></div>
-<div class="faq-section"><h2>자주 묻는 질문</h2><details><summary>색상 조화란 무엇인가요?</summary><p>색상 조화는 색상환에서 특정 각도 관계에 있는 색상들을 조합해 시각적으로 균형 잡힌 배색을 만드는 이론입니다.</p></details><details><summary>스와치를 클릭하면 무엇이 복사되나요?</summary><p>스와치(색상 블록)를 클릭하면 해당 색상의 HEX 코드(예: #FF5733)가 클립보드에 자동으로 복사됩니다.</p></details><details><summary>어떤 색상 조화를 사용하면 좋을까요?</summary><p>단순하고 강한 대비를 원할 때는 보색, 부드럽고 자연스러운 느낌엔 유사색, 다채로운 디자인엔 삼색이나 정사각형 배색을 추천합니다.</p></details><details><summary>파일이 서버에 저장되나요?</summary><p>아니요. 모든 처리는 브라우저 안에서만 이루어지며 파일은 서버로 전송되지 않습니다. 개인정보와 민감한 데이터가 외부로 유출될 걱정이 없으며, 기업 보안 환경에서도 안심하고 사용할 수 있습니다.</p></details></div>
+<div class="faq-section"><h2>자주 묻는 질문</h2><details><summary>색상 조화란 무엇인가요?</summary><p>색상환에서 일정한 각도 규칙으로 고른, 서로 잘 어울리는 색 조합입니다. 보색·유사색·삼색 등이 있습니다.</p></details><details><summary>스와치를 클릭하면 무엇이 복사되나요?</summary><p>해당 색의 HEX 코드가 클립보드에 복사됩니다.</p></details><details><summary>어떤 색상 조화를 써야 하나요?</summary><p>차분함이 필요하면 유사색, 강조가 필요하면 보색, 다채로움이 필요하면 삼색을 씁니다. 목적에 맞게 선택하세요.</p></details><details><summary>생성된 색이 촌스러워 보여요.</summary><p>기준색의 채도·명도가 극단적이면 조화색도 튈 수 있습니다. 기준색을 중간 톤으로 잡으면 결과가 안정적입니다.</p></details><details><summary>팔레트로 저장하려면?</summary><p>각 HEX를 복사해 CSS 변수 생성기나 팔레트 갤러리에 정리해 두면 재사용하기 좋습니다.</p></details><details><summary>파일이 서버에 저장되나요?</summary><p>아니요. 모든 처리는 브라우저 안에서만 이루어지며 이미지·색상 데이터는 서버로 전송되지 않습니다. 개인정보와 작업물이 외부로 유출될 걱정 없이 사용할 수 있습니다.</p></details></div>
 </div>
 
 <aside class="tool-sidebar"></aside>

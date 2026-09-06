@@ -56,27 +56,7 @@
   }
   </script>
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "생성된 색상이 마음에 들지 않으면 다시 생성할 수 있나요?",
-        "acceptedAnswer": {"@type": "Answer","text": "네, 버튼을 클릭할 때마다 새로운 랜덤 색상이 생성됩니다."}
-      },
-      {
-        "@type": "Question",
-        "name": "특정 색상 계열에서만 랜덤 생성할 수 있나요?",
-        "acceptedAnswer": {"@type": "Answer","text": "색조 범위를 설정하여 원하는 계열의 랜덤 색상을 생성할 수 있습니다."}
-      },
-      {
-        "@type": "Question",
-        "name": "생성된 색상 코드를 복사할 수 있나요?",
-        "acceptedAnswer": {"@type": "Answer","text": "네, HEX, RGB, HSL 코드를 각각 복사할 수 있습니다."}
-      }
-    ]
-  }
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"마음에 안 들면 다시 생성할 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"네. 버튼을 누를 때마다 새로운 색이 나옵니다. 횟수 제한은 없습니다."}},{"@type":"Question","name":"특정 색 계열에서만 뽑을 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"파스텔·비비드·다크 등 톤을 지정하면 그 범위 안에서 무작위 생성됩니다."}},{"@type":"Question","name":"생성된 색상 코드를 복사할 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"HEX·RGB·HSL 세 형식 모두 복사 버튼을 제공합니다."}},{"@type":"Question","name":"완전히 무작위인가요?","acceptedAnswer":{"@type":"Answer","text":"브라우저 난수로 생성합니다. 톤을 지정하지 않으면 전체 색 공간에서 균등하게 뽑습니다."}},{"@type":"Question","name":"여러 색을 한 번에 뽑아 팔레트로 만들려면?","acceptedAnswer":{"@type":"Answer","text":"팔레트 생성기를 사용하면 서로 어울리는 여러 색을 한 번에 만들 수 있습니다."}},{"@type":"Question","name":"파일이 서버에 저장되나요?","acceptedAnswer":{"@type":"Answer","text":"아니요. 모든 처리는 브라우저 안에서만 이루어지며 이미지·색상 데이터는 서버로 전송되지 않습니다. 개인정보와 작업물이 외부로 유출될 걱정 없이 사용할 수 있습니다."}}]}
   </script>
   <style>
     .random-preview {
@@ -243,10 +223,11 @@
     <a href="color-harmony.html" class="related-card"><span class="related-icon">🎨</span><span>색상 조화 생성기</span></a>
   </div>
 </div>
+<section class="tool-guide"><h2>랜덤 색상 생성기 사용법</h2><ol><li>"생성" 버튼을 누르면 무작위 색상이 나오고 HEX·RGB·HSL 코드가 표시됩니다.</li><li>마음에 드는 색은 복사하고, 최근 생성한 10개는 히스토리에서 다시 볼 수 있습니다.</li></ol><h3>어디에 쓰나요?</h3><p class="note">디자인 시작점 잡기, 아이디어가 막혔을 때 우연한 색 조합 발견, 태그·아바타·차트 색을 임의로 배정할 때, 색맹 테스트용 임의 색 만들 때 등에 씁니다.</p></section>
 <div class="wooa-orig-anchor"></div>
 
   <div class="tips-panel"><h3>💡 Tips</h3><ul><li>버튼을 클릭할 때마다 완전히 무작위 색상이 생성됩니다.</li><li>생성된 색상의 HEX·RGB·HSL 값을 바로 복사하세요.</li><li>영감이 필요할 때 다양한 색상을 탐색하는 용도로 활용하세요.</li></ul></div>
-<div class="faq-section"><h2>자주 묻는 질문</h2><details><summary>생성된 색상이 마음에 들지 않으면 다시 생성할 수 있나요?</summary><p>네, 버튼을 클릭할 때마다 새로운 랜덤 색상이 생성됩니다.</p></details><details><summary>특정 색상 계열에서만 랜덤 생성할 수 있나요?</summary><p>색조 범위를 설정하여 원하는 계열의 랜덤 색상을 생성할 수 있습니다.</p></details><details><summary>생성된 색상 코드를 복사할 수 있나요?</summary><p>네, HEX, RGB, HSL 코드를 각각 복사할 수 있습니다.</p></details><details><summary>파일이 서버에 저장되나요?</summary><p>아니요. 모든 처리는 브라우저 안에서만 이루어지며 파일은 서버로 전송되지 않습니다. 개인정보와 민감한 데이터가 외부로 유출될 걱정이 없으며, 기업 보안 환경에서도 안심하고 사용할 수 있습니다.</p></details></div>
+<div class="faq-section"><h2>자주 묻는 질문</h2><details><summary>마음에 안 들면 다시 생성할 수 있나요?</summary><p>네. 버튼을 누를 때마다 새로운 색이 나옵니다. 횟수 제한은 없습니다.</p></details><details><summary>특정 색 계열에서만 뽑을 수 있나요?</summary><p>파스텔·비비드·다크 등 톤을 지정하면 그 범위 안에서 무작위 생성됩니다.</p></details><details><summary>생성된 색상 코드를 복사할 수 있나요?</summary><p>HEX·RGB·HSL 세 형식 모두 복사 버튼을 제공합니다.</p></details><details><summary>완전히 무작위인가요?</summary><p>브라우저 난수로 생성합니다. 톤을 지정하지 않으면 전체 색 공간에서 균등하게 뽑습니다.</p></details><details><summary>여러 색을 한 번에 뽑아 팔레트로 만들려면?</summary><p>팔레트 생성기를 사용하면 서로 어울리는 여러 색을 한 번에 만들 수 있습니다.</p></details><details><summary>파일이 서버에 저장되나요?</summary><p>아니요. 모든 처리는 브라우저 안에서만 이루어지며 이미지·색상 데이터는 서버로 전송되지 않습니다. 개인정보와 작업물이 외부로 유출될 걱정 없이 사용할 수 있습니다.</p></details></div>
 </div>
 
 <aside class="tool-sidebar"></aside>

@@ -56,27 +56,7 @@
   }
   </script>
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "불투명도와 투명도의 차이가 뭔가요?",
-        "acceptedAnswer": {"@type": "Answer","text": "불투명도(opacity) 100%는 완전히 불투명, 0%는 완전히 투명입니다. CSS rgba()의 알파값과 동일한 개념입니다."}
-      },
-      {
-        "@type": "Question",
-        "name": "HEX 색상에 투명도를 추가할 수 있나요?",
-        "acceptedAnswer": {"@type": "Answer","text": "네, HEX 색상 코드에 투명도를 적용한 8자리 HEX(#RRGGBBAA)로 변환할 수 있습니다."}
-      },
-      {
-        "@type": "Question",
-        "name": "rgba() 형식으로 바로 복사할 수 있나요?",
-        "acceptedAnswer": {"@type": "Answer","text": "네, rgba() CSS 코드를 클릭 한 번으로 복사할 수 있습니다."}
-      }
-    ]
-  }
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"불투명도와 투명도의 차이가 뭔가요?","acceptedAnswer":{"@type":"Answer","text":"불투명도(opacity)는 \"얼마나 불투명한가\"(100%=꽉 참), 투명도(transparency)는 그 반대입니다. 보통 CSS에서는 불투명도로 표현합니다."}},{"@type":"Question","name":"HEX 색상에 투명도를 추가할 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"네. #RRGGBB 뒤에 알파 2자리를 붙인 8자리 HEX(#RRGGBBAA)로 표현합니다. 현대 브라우저는 모두 지원합니다."}},{"@type":"Question","name":"rgba()로 바로 복사할 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"네. rgba()·8자리 HEX·hsla() 세 형식 모두 복사 버튼을 제공합니다."}},{"@type":"Question","name":"opacity 속성과 rgba의 차이는?","acceptedAnswer":{"@type":"Answer","text":"opacity는 요소 전체(자식·텍스트 포함)를 투명하게, rgba는 그 색만 투명하게 만듭니다. 배경만 반투명하게 하려면 rgba/알파 HEX를 쓰세요."}},{"@type":"Question","name":"알파 80은 왜 50%인가요?","acceptedAnswer":{"@type":"Answer","text":"16진수 80은 10진수로 128이고, 128/255 ≈ 0.5(50%)이기 때문입니다."}},{"@type":"Question","name":"파일이 서버에 저장되나요?","acceptedAnswer":{"@type":"Answer","text":"아니요. 모든 처리는 브라우저 안에서만 이루어지며 이미지·색상 데이터는 서버로 전송되지 않습니다. 개인정보와 작업물이 외부로 유출될 걱정 없이 사용할 수 있습니다."}}]}
   </script>
   <style>
     .opacity-preview {
@@ -255,10 +235,11 @@
     <a href="color-converter.html" class="related-card"><span class="related-icon">🔄</span><span>HEX ↔ RGB ↔ HSL</span></a>
   </div>
 </div>
+<section class="tool-guide"><h2>색상 불투명도 변환기 사용법</h2><ol><li>기준 HEX 색상과 원하는 불투명도(%)를 입력합니다.</li><li>rgba()·8자리 HEX(#RRGGBBAA)·hsla() 형식이 생성되고 미리보기로 확인합니다.</li></ol><h3>불투명도 표현 방식</h3><p class="note">불투명도 50%는 rgba(59,130,246,0.5), #3B82F680(뒤 2자리가 알파), hsla(217,91%,60%,0.5)로 모두 같습니다. 8자리 HEX의 알파는 00(투명)~FF(불투명) 16진수이며, 50%는 약 80입니다.</p><h3>예시</h3><p class="note">#000000 + 불투명도 60% → rgba(0, 0, 0, 0.6) = #00000099. 오버레이·그림자·유리 효과 배경에 자주 씁니다.</p></section>
 <div class="wooa-orig-anchor"></div>
 
   <div class="tips-panel"><h3>💡 Tips</h3><ul><li>HEX 투명도(00~FF)와 CSS opacity(0~1) 간 변환을 지원합니다.</li><li>RGBA의 alpha 값은 0(완전 투명)~1(완전 불투명) 범위입니다.</li><li>HEX 8자리 마지막 두 자리가 투명도 값입니다.</li></ul></div>
-<div class="faq-section"><h2>자주 묻는 질문</h2><details><summary>불투명도와 투명도의 차이가 뭔가요?</summary><p>불투명도(opacity) 100%는 완전히 불투명, 0%는 완전히 투명입니다. CSS rgba()의 알파값과 동일한 개념입니다.</p></details><details><summary>HEX 색상에 투명도를 추가할 수 있나요?</summary><p>네, HEX 색상 코드에 투명도를 적용한 8자리 HEX(#RRGGBBAA)로 변환할 수 있습니다.</p></details><details><summary>rgba() 형식으로 바로 복사할 수 있나요?</summary><p>네, rgba() CSS 코드를 클릭 한 번으로 복사할 수 있습니다.</p></details><details><summary>파일이 서버에 저장되나요?</summary><p>아니요. 모든 처리는 브라우저 안에서만 이루어지며 파일은 서버로 전송되지 않습니다. 개인정보와 민감한 데이터가 외부로 유출될 걱정이 없으며, 기업 보안 환경에서도 안심하고 사용할 수 있습니다.</p></details></div>
+<div class="faq-section"><h2>자주 묻는 질문</h2><details><summary>불투명도와 투명도의 차이가 뭔가요?</summary><p>불투명도(opacity)는 "얼마나 불투명한가"(100%=꽉 참), 투명도(transparency)는 그 반대입니다. 보통 CSS에서는 불투명도로 표현합니다.</p></details><details><summary>HEX 색상에 투명도를 추가할 수 있나요?</summary><p>네. #RRGGBB 뒤에 알파 2자리를 붙인 8자리 HEX(#RRGGBBAA)로 표현합니다. 현대 브라우저는 모두 지원합니다.</p></details><details><summary>rgba()로 바로 복사할 수 있나요?</summary><p>네. rgba()·8자리 HEX·hsla() 세 형식 모두 복사 버튼을 제공합니다.</p></details><details><summary>opacity 속성과 rgba의 차이는?</summary><p>opacity는 요소 전체(자식·텍스트 포함)를 투명하게, rgba는 그 색만 투명하게 만듭니다. 배경만 반투명하게 하려면 rgba/알파 HEX를 쓰세요.</p></details><details><summary>알파 80은 왜 50%인가요?</summary><p>16진수 80은 10진수로 128이고, 128/255 ≈ 0.5(50%)이기 때문입니다.</p></details><details><summary>파일이 서버에 저장되나요?</summary><p>아니요. 모든 처리는 브라우저 안에서만 이루어지며 이미지·색상 데이터는 서버로 전송되지 않습니다. 개인정보와 작업물이 외부로 유출될 걱정 없이 사용할 수 있습니다.</p></details></div>
 </div>
 <aside class="tool-sidebar"></aside>
 </div>

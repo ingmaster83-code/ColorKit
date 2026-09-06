@@ -56,27 +56,7 @@
   }
   </script>
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "이미지에서 색상을 추출할 수 있나요?",
-        "acceptedAnswer": {"@type": "Answer","text": "네, 이미지를 업로드하고 원하는 부분을 클릭하면 해당 픽셀의 색상 코드를 추출할 수 있습니다."}
-      },
-      {
-        "@type": "Question",
-        "name": "추출한 색상을 저장할 수 있나요?",
-        "acceptedAnswer": {"@type": "Answer","text": "추출한 색상을 클립보드에 복사하여 바로 사용할 수 있습니다."}
-      },
-      {
-        "@type": "Question",
-        "name": "어떤 색상 형식으로 표시되나요?",
-        "acceptedAnswer": {"@type": "Answer","text": "HEX, RGB, HSL 세 가지 형식을 동시에 표시합니다."}
-      }
-    ]
-  }
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"이미지에서 색상을 추출할 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"네. 업로드한 이미지의 원하는 픽셀을 클릭하면 그 지점의 색상 코드가 즉시 추출됩니다."}},{"@type":"Question","name":"추출한 색상을 저장할 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"클릭할 때마다 색상이 목록에 쌓이고, 각 색의 HEX·RGB를 복사할 수 있습니다."}},{"@type":"Question","name":"어떤 색상 형식으로 표시되나요?","acceptedAnswer":{"@type":"Answer","text":"HEX(#RRGGBB)와 RGB 두 가지로 보여줍니다. 다른 형식이 필요하면 색상 변환기에 붙여넣으세요."}},{"@type":"Question","name":"정확히 한 픽셀만 찍히나요, 주변 평균인가요?","acceptedAnswer":{"@type":"Answer","text":"클릭한 픽셀 한 점의 색입니다. 사진은 압축·노이즈로 인접 픽셀 색이 미세하게 다를 수 있으니 여러 번 찍어 비교하세요."}},{"@type":"Question","name":"여러 색을 한 번에 뽑으려면?","acceptedAnswer":{"@type":"Answer","text":"주요 색을 자동으로 뽑는 이미지 팔레트 추출 도구가 더 편합니다."}},{"@type":"Question","name":"파일이 서버에 저장되나요?","acceptedAnswer":{"@type":"Answer","text":"아니요. 모든 처리는 브라우저 안에서만 이루어지며 이미지·색상 데이터는 서버로 전송되지 않습니다. 개인정보와 작업물이 외부로 유출될 걱정 없이 사용할 수 있습니다."}}]}
   </script>
   <style>
     #canvas-wrap { position:relative; display:inline-block; max-width:100%; }
@@ -212,10 +192,11 @@
     <a href="gradient-generator.html" class="related-card"><span class="related-icon">🌈</span><span>그라디언트 생성기</span></a>
   </div>
 </div>
+<section class="tool-guide"><h2>이미지 색상 추출 사용법</h2><ol><li>이미지를 업로드하거나 화면에 끌어다 놓습니다.</li><li>색을 알고 싶은 픽셀을 클릭하면 그 지점의 HEX·RGB 코드가 표시됩니다. 복사 버튼으로 저장합니다.</li></ol><h3>어디에 쓰나요?</h3><p class="note">경쟁사·레퍼런스 사이트의 브랜드 색상을 확인하거나, 사진 속 특정 색(하늘·피부·제품)을 디자인에 그대로 가져올 때 씁니다. 스크린샷을 올려 UI 색상을 뽑는 용도로도 자주 쓰입니다.</p></section>
 <div class="wooa-orig-anchor"></div>
 
   <div class="tips-panel"><h3>💡 Tips</h3><ul><li>HEX 코드를 직접 입력해 원하는 색상으로 바로 이동할 수 있습니다.</li><li>선택한 색상의 HEX·RGB·HSL 값을 한 번에 복사하세요.</li><li>이미지에서 색상을 추출하려면 이미지 팔레트 도구를 사용하세요.</li></ul></div>
-<div class="faq-section"><h2>자주 묻는 질문</h2><details><summary>이미지에서 색상을 추출할 수 있나요?</summary><p>네, 이미지를 업로드하고 원하는 부분을 클릭하면 해당 픽셀의 색상 코드를 추출할 수 있습니다.</p></details><details><summary>추출한 색상을 저장할 수 있나요?</summary><p>추출한 색상을 클립보드에 복사하여 바로 사용할 수 있습니다.</p></details><details><summary>어떤 색상 형식으로 표시되나요?</summary><p>HEX, RGB, HSL 세 가지 형식을 동시에 표시합니다.</p></details><details><summary>파일이 서버에 저장되나요?</summary><p>아니요. 모든 처리는 브라우저 안에서만 이루어지며 파일은 서버로 전송되지 않습니다. 개인정보와 민감한 데이터가 외부로 유출될 걱정이 없으며, 기업 보안 환경에서도 안심하고 사용할 수 있습니다.</p></details></div>
+<div class="faq-section"><h2>자주 묻는 질문</h2><details><summary>이미지에서 색상을 추출할 수 있나요?</summary><p>네. 업로드한 이미지의 원하는 픽셀을 클릭하면 그 지점의 색상 코드가 즉시 추출됩니다.</p></details><details><summary>추출한 색상을 저장할 수 있나요?</summary><p>클릭할 때마다 색상이 목록에 쌓이고, 각 색의 HEX·RGB를 복사할 수 있습니다.</p></details><details><summary>어떤 색상 형식으로 표시되나요?</summary><p>HEX(#RRGGBB)와 RGB 두 가지로 보여줍니다. 다른 형식이 필요하면 색상 변환기에 붙여넣으세요.</p></details><details><summary>정확히 한 픽셀만 찍히나요, 주변 평균인가요?</summary><p>클릭한 픽셀 한 점의 색입니다. 사진은 압축·노이즈로 인접 픽셀 색이 미세하게 다를 수 있으니 여러 번 찍어 비교하세요.</p></details><details><summary>여러 색을 한 번에 뽑으려면?</summary><p>주요 색을 자동으로 뽑는 이미지 팔레트 추출 도구가 더 편합니다.</p></details><details><summary>파일이 서버에 저장되나요?</summary><p>아니요. 모든 처리는 브라우저 안에서만 이루어지며 이미지·색상 데이터는 서버로 전송되지 않습니다. 개인정보와 작업물이 외부로 유출될 걱정 없이 사용할 수 있습니다.</p></details></div>
 </div>
 
 <aside class="tool-sidebar"></aside>

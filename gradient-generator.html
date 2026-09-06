@@ -56,27 +56,7 @@
   }
   </script>
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "선형과 방사형 그라디언트 모두 생성할 수 있나요?",
-        "acceptedAnswer": {"@type": "Answer","text": "네, 선형(linear) 및 방사형(radial) 그라디언트를 모두 지원합니다."}
-      },
-      {
-        "@type": "Question",
-        "name": "생성한 그라디언트의 CSS 코드를 바로 복사할 수 있나요?",
-        "acceptedAnswer": {"@type": "Answer","text": "네, 생성된 CSS 코드를 복사 버튼으로 바로 복사할 수 있습니다."}
-      },
-      {
-        "@type": "Question",
-        "name": "색상을 몇 개까지 추가할 수 있나요?",
-        "acceptedAnswer": {"@type": "Answer","text": "여러 색상 정지점(color stop)을 자유롭게 추가하여 복잡한 그라디언트를 만들 수 있습니다."}
-      }
-    ]
-  }
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"선형과 방사형 그라디언트를 모두 만들 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"네. linear·radial·conic 세 종류를 모두 지원합니다."}},{"@type":"Question","name":"CSS 코드를 바로 복사할 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"네. background 속성에 그대로 붙여넣을 수 있는 완성된 코드로 복사됩니다."}},{"@type":"Question","name":"색상을 몇 개까지 추가할 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"정지점(color stop)을 여러 개 추가할 수 있습니다. 보통 2~4개면 충분하고 너무 많으면 지저분해집니다."}},{"@type":"Question","name":"그라디언트 각도는 어떻게 정하나요?","acceptedAnswer":{"@type":"Answer","text":"0deg는 아래→위, 90deg는 왼쪽→오른쪽, 135deg는 좌상→우하입니다. 미리보기를 보며 조절하세요."}},{"@type":"Question","name":"부드럽게 안 이어지고 띠가 보여요(밴딩).","acceptedAnswer":{"@type":"Answer","text":"비슷한 명도의 색을 넓게 전환하면 계단 현상이 보일 수 있습니다. 중간 정지점을 추가하거나 색 차이를 조금 키우면 완화됩니다."}},{"@type":"Question","name":"파일이 서버에 저장되나요?","acceptedAnswer":{"@type":"Answer","text":"아니요. 모든 처리는 브라우저 안에서만 이루어지며 이미지·색상 데이터는 서버로 전송되지 않습니다. 개인정보와 작업물이 외부로 유출될 걱정 없이 사용할 수 있습니다."}}]}
   </script>
   <style>
     .stop-row { display:flex; align-items:center; gap:10px; padding:10px 12px; background:#F9FAFB; border-radius:8px; margin-bottom:8px; }
@@ -205,10 +185,11 @@
     <a href="color-harmony.html" class="related-card"><span class="related-icon">🎨</span><span>색상 조화 생성기</span></a>
   </div>
 </div>
+<section class="tool-guide"><h2>CSS 그라디언트 생성기 사용법</h2><ol><li>그라디언트 종류(선형·방사형·원뿔형)를 고릅니다.</li><li>색상 정지점을 추가·이동하고 방향(각도)을 조절한 뒤 CSS 코드를 복사합니다.</li></ol><h3>linear·radial·conic 차이</h3><p class="note">linear-gradient는 직선 방향으로, radial-gradient는 중심에서 바깥으로 퍼지게, conic-gradient는 원을 돌며(파이 차트 모양) 색이 바뀝니다. 대부분의 배경은 linear, 조명 효과는 radial, 도넛 차트·색상환은 conic을 씁니다.</p><h3>예시</h3><p class="note">background: linear-gradient(135deg, #667EEA 0%, #764BA2 100%); — 두 색이 대각선으로 전환되는 흔한 히어로 배경입니다.</p></section>
 <div class="wooa-orig-anchor"></div>
 
   <div class="tips-panel"><h3>💡 Tips</h3><ul><li>CSS gradient 코드를 자동으로 생성해 바로 복사할 수 있습니다.</li><li>각도를 조정해 가로·세로·대각선 그라디언트를 만드세요.</li><li>여러 색상 포인트를 추가해 복잡한 그라디언트를 연출할 수 있습니다.</li></ul></div>
-<div class="faq-section"><h2>자주 묻는 질문</h2><details><summary>선형과 방사형 그라디언트 모두 생성할 수 있나요?</summary><p>네, 선형(linear) 및 방사형(radial) 그라디언트를 모두 지원합니다.</p></details><details><summary>생성한 그라디언트의 CSS 코드를 바로 복사할 수 있나요?</summary><p>네, 생성된 CSS 코드를 복사 버튼으로 바로 복사할 수 있습니다.</p></details><details><summary>색상을 몇 개까지 추가할 수 있나요?</summary><p>여러 색상 정지점(color stop)을 자유롭게 추가하여 복잡한 그라디언트를 만들 수 있습니다.</p></details><details><summary>파일이 서버에 저장되나요?</summary><p>아니요. 모든 처리는 브라우저 안에서만 이루어지며 파일은 서버로 전송되지 않습니다. 개인정보와 민감한 데이터가 외부로 유출될 걱정이 없으며, 기업 보안 환경에서도 안심하고 사용할 수 있습니다.</p></details></div>
+<div class="faq-section"><h2>자주 묻는 질문</h2><details><summary>선형과 방사형 그라디언트를 모두 만들 수 있나요?</summary><p>네. linear·radial·conic 세 종류를 모두 지원합니다.</p></details><details><summary>CSS 코드를 바로 복사할 수 있나요?</summary><p>네. background 속성에 그대로 붙여넣을 수 있는 완성된 코드로 복사됩니다.</p></details><details><summary>색상을 몇 개까지 추가할 수 있나요?</summary><p>정지점(color stop)을 여러 개 추가할 수 있습니다. 보통 2~4개면 충분하고 너무 많으면 지저분해집니다.</p></details><details><summary>그라디언트 각도는 어떻게 정하나요?</summary><p>0deg는 아래→위, 90deg는 왼쪽→오른쪽, 135deg는 좌상→우하입니다. 미리보기를 보며 조절하세요.</p></details><details><summary>부드럽게 안 이어지고 띠가 보여요(밴딩).</summary><p>비슷한 명도의 색을 넓게 전환하면 계단 현상이 보일 수 있습니다. 중간 정지점을 추가하거나 색 차이를 조금 키우면 완화됩니다.</p></details><details><summary>파일이 서버에 저장되나요?</summary><p>아니요. 모든 처리는 브라우저 안에서만 이루어지며 이미지·색상 데이터는 서버로 전송되지 않습니다. 개인정보와 작업물이 외부로 유출될 걱정 없이 사용할 수 있습니다.</p></details></div>
 </div>
 <aside class="tool-sidebar"></aside>
 </div>

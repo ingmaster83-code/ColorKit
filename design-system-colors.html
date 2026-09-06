@@ -55,15 +55,7 @@
   }
   </script>
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {"@type":"Question","name":"이 색상 코드들은 공식 출처인가요?","acceptedAnswer":{"@type":"Answer","text":"네. Tailwind CSS, Material Design, Bootstrap 각각의 공식 GitHub 저장소 소스 코드에서 직접 가져온 정확한 값입니다."}},
-      {"@type":"Question","name":"웹세이프 컬러란 무엇인가요?","acceptedAnswer":{"@type":"Answer","text":"과거 256색 디스플레이 환경에서도 안전하게 표시되도록 각 RGB 채널을 00, 33, 66, 99, CC, FF 6단계로 제한한 216가지 색상 조합입니다."}},
-      {"@type":"Question","name":"색상 코드를 어떻게 복사하나요?","acceptedAnswer":{"@type":"Answer","text":"원하는 색상 스와치를 클릭하면 HEX 코드가 자동으로 클립보드에 복사됩니다."}}
-    ]
-  }
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"이 색상 코드들은 공식 출처인가요?","acceptedAnswer":{"@type":"Answer","text":"각 프레임워크(Tailwind CSS, Material Design, Bootstrap 5)의 공식 문서에 명시된 색상 값을 정리한 것입니다."}},{"@type":"Question","name":"웹세이프 컬러란 무엇인가요?","acceptedAnswer":{"@type":"Answer","text":"256색만 표시하던 구형 디스플레이에서도 동일하게 보이도록 정한 216가지 색입니다. 지금은 호환성 의미가 거의 없지만 레퍼런스로 제공합니다."}},{"@type":"Question","name":"색상 코드를 어떻게 복사하나요?","acceptedAnswer":{"@type":"Answer","text":"스와치를 클릭하면 HEX 코드가 클립보드에 복사됩니다."}},{"@type":"Question","name":"Tailwind 색상을 그대로 써도 되나요?","acceptedAnswer":{"@type":"Answer","text":"프로토타입·내부 도구에는 편리합니다. 다만 브랜드가 있다면 tints·shades 도구로 브랜드색 기반 스케일을 만드는 것이 좋습니다."}},{"@type":"Question","name":"Material 3의 최신 색상 체계도 있나요?","acceptedAnswer":{"@type":"Answer","text":"이 표는 안정적으로 쓰이는 팔레트 위주입니다. Material은 버전에 따라 토큰 체계가 크게 바뀌니 공식 문서도 함께 확인하세요."}},{"@type":"Question","name":"파일이 서버에 저장되나요?","acceptedAnswer":{"@type":"Answer","text":"아니요. 모든 처리는 브라우저 안에서만 이루어지며 이미지·색상 데이터는 서버로 전송되지 않습니다. 개인정보와 작업물이 외부로 유출될 걱정 없이 사용할 수 있습니다."}}]}
   </script>
   <style>
     .ds-tabs { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:16px; }
@@ -152,7 +144,8 @@
 
   <div id="dsContent"></div>
 
-    <div class="wooa-orig-anchor"></div>
+    <section class="tool-guide"><h2>디자인 시스템 색상표 사용법</h2><ol><li>Tailwind·Material·Bootstrap 중 원하는 시스템을 고릅니다.</li><li>색 이름·단계별 스와치가 표시됩니다. 클릭하면 HEX가 복사되고, 웹세이프 216색도 함께 볼 수 있습니다.</li></ol><h3>어디에 쓰나요?</h3><p class="note">Tailwind blue-500 같은 코드가 실제로 어떤 색인지 빠르게 확인하거나, 프레임워크 기본 팔레트를 참고해 커스텀 색을 정할 때 씁니다. 세 시스템 모두 명도 단계(50~900)를 체계적으로 제공합니다.</p></section>
+<div class="wooa-orig-anchor"></div>
 
   <div class="tips-panel"><h3>💡 Tips</h3><ul><li>Tailwind는 50(가장 밝음)부터 950(가장 어두움)까지 11단계 명도로 구성됩니다.</li><li>Material Design은 50~900 기본 10단계에 A100~A700 강조색이 추가로 있습니다.</li><li>클릭하면 HEX 코드가 바로 클립보드에 복사됩니다.</li></ul></div>
 <div class="related-tools">
@@ -164,7 +157,7 @@
     <a href="gradient-gallery.html" class="related-card"><span class="related-icon">🌈</span><span>그라디언트 갤러리</span></a>
   </div>
 </div>
-<div class="faq-section"><h2>자주 묻는 질문</h2><details><summary>이 색상 코드들은 공식 출처인가요?</summary><p>네. Tailwind CSS, Material Design, Bootstrap 각각의 공식 GitHub 저장소 소스 코드에서 직접 가져온 정확한 값입니다.</p></details><details><summary>웹세이프 컬러란 무엇인가요?</summary><p>과거 256색 디스플레이 환경에서도 안전하게 표시되도록 각 RGB 채널을 00, 33, 66, 99, CC, FF 6단계로 제한한 216가지 색상 조합입니다.</p></details><details><summary>색상 코드를 어떻게 복사하나요?</summary><p>원하는 색상 스와치를 클릭하면 HEX 코드가 자동으로 클립보드에 복사됩니다.</p></details><details><summary>파일이 서버에 저장되나요?</summary><p>아니요. 모든 처리는 브라우저 안에서만 이루어지며 서버로 전송되지 않습니다.</p></details></div>
+<div class="faq-section"><h2>자주 묻는 질문</h2><details><summary>이 색상 코드들은 공식 출처인가요?</summary><p>각 프레임워크(Tailwind CSS, Material Design, Bootstrap 5)의 공식 문서에 명시된 색상 값을 정리한 것입니다.</p></details><details><summary>웹세이프 컬러란 무엇인가요?</summary><p>256색만 표시하던 구형 디스플레이에서도 동일하게 보이도록 정한 216가지 색입니다. 지금은 호환성 의미가 거의 없지만 레퍼런스로 제공합니다.</p></details><details><summary>색상 코드를 어떻게 복사하나요?</summary><p>스와치를 클릭하면 HEX 코드가 클립보드에 복사됩니다.</p></details><details><summary>Tailwind 색상을 그대로 써도 되나요?</summary><p>프로토타입·내부 도구에는 편리합니다. 다만 브랜드가 있다면 tints·shades 도구로 브랜드색 기반 스케일을 만드는 것이 좋습니다.</p></details><details><summary>Material 3의 최신 색상 체계도 있나요?</summary><p>이 표는 안정적으로 쓰이는 팔레트 위주입니다. Material은 버전에 따라 토큰 체계가 크게 바뀌니 공식 문서도 함께 확인하세요.</p></details><details><summary>파일이 서버에 저장되나요?</summary><p>아니요. 모든 처리는 브라우저 안에서만 이루어지며 이미지·색상 데이터는 서버로 전송되지 않습니다. 개인정보와 작업물이 외부로 유출될 걱정 없이 사용할 수 있습니다.</p></details></div>
 </div>
 <aside class="tool-sidebar"></aside>
 </div>

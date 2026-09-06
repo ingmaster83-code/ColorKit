@@ -56,32 +56,7 @@
   }
   </script>
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "색상 이름은 어떤 기준으로 찾나요?",
-        "acceptedAnswer": {"@type": "Answer","text": "입력한 색상과 색상 데이터베이스(140개+ CSS 표준 색상) 사이의 RGB 유클리드 거리를 계산해 가장 가까운 이름을 반환합니다."}
-      },
-      {
-        "@type": "Question",
-        "name": "유사도 퍼센트는 어떻게 계산되나요?",
-        "acceptedAnswer": {"@type": "Answer","text": "RGB 공간에서 최대 거리(흰색~검정, 약 441)를 기준으로 실제 거리를 뺀 값을 백분율로 환산합니다. 100%면 정확히 일치합니다."}
-      },
-      {
-        "@type": "Question",
-        "name": "HEX 말고 RGB도 입력할 수 있나요?",
-        "acceptedAnswer": {"@type": "Answer","text": "네, RGB 슬라이더로 직접 R, G, B 값을 조절하거나 HEX 코드를 입력해 색상을 지정할 수 있습니다."}
-      },
-      {
-        "@type": "Question",
-        "name": "몇 개의 색상 이름 데이터베이스를 사용하나요?",
-        "acceptedAnswer": {"@type": "Answer","text": "CSS 표준 Named Colors 140개와 주요 색상명 60개 이상을 합쳐 200개 이상의 색상 이름 데이터베이스를 내장하고 있습니다."}
-      }
-    ]
-  }
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"색상 이름은 어떤 기준으로 찾나요?","acceptedAnswer":{"@type":"Answer","text":"CSS 표준 색상명과 확장 색상 사전에서 입력색과 색 공간상 거리가 가장 가까운 이름을 찾습니다."}},{"@type":"Question","name":"유사도 퍼센트는 어떻게 계산되나요?","acceptedAnswer":{"@type":"Answer","text":"두 색의 RGB(또는 지각 색 공간) 거리를 0~100%로 환산한 값입니다. 100%는 완전히 같은 색입니다."}},{"@type":"Question","name":"HEX 말고 RGB도 입력할 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"네. HEX와 RGB 둘 다 입력할 수 있습니다."}},{"@type":"Question","name":"색상 이름 데이터베이스는 몇 개인가요?","acceptedAnswer":{"@type":"Answer","text":"CSS 기본 147색을 포함해 수백 개의 이름 있는 색을 비교 대상으로 씁니다."}},{"@type":"Question","name":"디자인 문서에 색 이름을 쓰면 좋은가요?","acceptedAnswer":{"@type":"Answer","text":"팀 커뮤니케이션에는 유용하지만, 실제 코드·스펙에는 항상 HEX/RGB 값을 함께 적어야 오해가 없습니다."}},{"@type":"Question","name":"파일이 서버에 저장되나요?","acceptedAnswer":{"@type":"Answer","text":"아니요. 모든 처리는 브라우저 안에서만 이루어지며 이미지·색상 데이터는 서버로 전송되지 않습니다. 개인정보와 작업물이 외부로 유출될 걱정 없이 사용할 수 있습니다."}}]}
   </script>
   <style>
     .cn-result-main {
@@ -361,10 +336,11 @@
     <a href="gradient-generator.html" class="related-card"><span class="related-icon">🌈</span><span>그라디언트 생성기</span></a>
   </div>
 </div>
+<section class="tool-guide"><h2>색상 이름 찾기 사용법</h2><ol><li>HEX 코드(#3B82F6)나 RGB 값을 입력합니다.</li><li>입력한 색과 가장 가까운 색상 이름(한국어·영어)과 유사도, 비슷한 색 5개가 표시됩니다.</li></ol><h3>이름을 어떻게 찾나요?</h3><p class="note">수백 개의 이름 있는 색(CSS 표준 색상 + 확장 색상 사전)과 입력색의 거리를 색 공간에서 계산해, 가장 가까운 이름을 고릅니다. 완전히 일치하는 이름이 없어도 "이 색은 대략 무슨 색인지" 알 수 있습니다.</p><h3>예시</h3><p class="note">#4169E1 → "royalblue(로열 블루)", 유사도 100%. #4A72D0 → "royalblue"에 약 92% 유사, 대안으로 "cornflowerblue" 제시.</p></section>
 <div class="wooa-orig-anchor"></div>
 
   <div class="tips-panel"><h3>💡 Tips</h3><ul><li>가장 가까운 색상 이름을 찾아줘 디자인 문서 작성에 활용하세요.</li><li>CSS 색상 이름으로도 확인할 수 있어 웹 개발에 유용합니다.</li><li>색상 이름으로 검색하거나 HEX 코드로 조회할 수 있습니다.</li></ul></div>
-<div class="faq-section"><h2>자주 묻는 질문</h2><details><summary>색상 이름은 어떤 기준으로 찾나요?</summary><p>입력한 색상과 내장 데이터베이스(200개+) 사이의 RGB 유클리드 거리를 계산해 가장 가까운 이름을 반환합니다.</p></details><details><summary>유사도 퍼센트는 어떻게 계산되나요?</summary><p>RGB 공간에서 최대 거리(약 441)를 기준으로 실제 거리를 환산합니다. 100%면 정확히 일치하는 색상입니다.</p></details><details><summary>HEX 말고 RGB도 입력할 수 있나요?</summary><p>네, R/G/B 슬라이더와 숫자 입력으로 직접 조절할 수 있습니다. 조절하면 HEX 코드도 자동 업데이트됩니다.</p></details><details><summary>색상 이름 데이터베이스는 몇 개인가요?</summary><p>CSS 표준 Named Colors 140개와 주요 색상명 60개 이상을 포함해 총 200개 이상의 색상 이름이 내장되어 있습니다.</p></details><details><summary>파일이 서버에 저장되나요?</summary><p>아니요. 모든 처리는 브라우저 안에서만 이루어지며 파일은 서버로 전송되지 않습니다. 개인정보와 민감한 데이터가 외부로 유출될 걱정이 없으며, 기업 보안 환경에서도 안심하고 사용할 수 있습니다.</p></details></div>
+<div class="faq-section"><h2>자주 묻는 질문</h2><details><summary>색상 이름은 어떤 기준으로 찾나요?</summary><p>CSS 표준 색상명과 확장 색상 사전에서 입력색과 색 공간상 거리가 가장 가까운 이름을 찾습니다.</p></details><details><summary>유사도 퍼센트는 어떻게 계산되나요?</summary><p>두 색의 RGB(또는 지각 색 공간) 거리를 0~100%로 환산한 값입니다. 100%는 완전히 같은 색입니다.</p></details><details><summary>HEX 말고 RGB도 입력할 수 있나요?</summary><p>네. HEX와 RGB 둘 다 입력할 수 있습니다.</p></details><details><summary>색상 이름 데이터베이스는 몇 개인가요?</summary><p>CSS 기본 147색을 포함해 수백 개의 이름 있는 색을 비교 대상으로 씁니다.</p></details><details><summary>디자인 문서에 색 이름을 쓰면 좋은가요?</summary><p>팀 커뮤니케이션에는 유용하지만, 실제 코드·스펙에는 항상 HEX/RGB 값을 함께 적어야 오해가 없습니다.</p></details><details><summary>파일이 서버에 저장되나요?</summary><p>아니요. 모든 처리는 브라우저 안에서만 이루어지며 이미지·색상 데이터는 서버로 전송되지 않습니다. 개인정보와 작업물이 외부로 유출될 걱정 없이 사용할 수 있습니다.</p></details></div>
 </div>
 
 <aside class="tool-sidebar"></aside>

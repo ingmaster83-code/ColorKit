@@ -50,27 +50,7 @@
   }
   </script>
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "어떤 이미지 형식을 지원하나요?",
-        "acceptedAnswer": {"@type": "Answer","text": "JPG, PNG, WebP 등 일반적인 이미지 형식을 지원합니다."}
-      },
-      {
-        "@type": "Question",
-        "name": "추출되는 색상 수는 몇 개인가요?",
-        "acceptedAnswer": {"@type": "Answer","text": "주요 색상과 팔레트 색상을 추출하며, 개수를 조절할 수 있습니다."}
-      },
-      {
-        "@type": "Question",
-        "name": "추출한 색상을 CSS에서 바로 사용할 수 있나요?",
-        "acceptedAnswer": {"@type": "Answer","text": "각 색상의 HEX 코드를 클릭하여 복사한 뒤 CSS에 바로 사용할 수 있습니다."}
-      }
-    ]
-  }
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"어떤 이미지 형식을 지원하나요?","acceptedAnswer":{"@type":"Answer","text":"JPG·PNG·WebP 등 브라우저가 표시할 수 있는 형식이면 됩니다."}},{"@type":"Question","name":"추출되는 색상 수는 몇 개인가요?","acceptedAnswer":{"@type":"Answer","text":"보통 5~8개의 대표색을 뽑습니다. 이미지가 단색에 가까우면 더 적게 나옵니다."}},{"@type":"Question","name":"추출한 색상을 CSS에서 바로 쓸 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"네. HEX 코드로 복사되어 background·color 등에 바로 붙여넣을 수 있습니다."}},{"@type":"Question","name":"색상 추출 도구와 뭐가 다른가요?","acceptedAnswer":{"@type":"Answer","text":"색상 추출(피커)은 클릭한 한 지점의 색, 팔레트 추출은 이미지 전체의 주요 색 묶음을 자동으로 뽑습니다."}},{"@type":"Question","name":"픽셀이 많은 큰 사진도 되나요?","acceptedAnswer":{"@type":"Answer","text":"내부적으로 축소해 분석하므로 큰 이미지도 빠르게 처리됩니다. 결과 색상은 원본 기준과 거의 같습니다."}},{"@type":"Question","name":"파일이 서버에 저장되나요?","acceptedAnswer":{"@type":"Answer","text":"아니요. 모든 처리는 브라우저 안에서만 이루어지며 이미지·색상 데이터는 서버로 전송되지 않습니다. 개인정보와 작업물이 외부로 유출될 걱정 없이 사용할 수 있습니다."}}]}
   </script>
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6464921081676309" crossorigin="anonymous"></script>
 <script src="js/ad-dev-placeholder.js"></script>
@@ -353,10 +333,11 @@
     </div>
   </div>
 
-    <div class="wooa-orig-anchor"></div>
+    <section class="tool-guide"><h2>이미지 팔레트 추출 사용법</h2><ol><li>사진이나 이미지를 업로드합니다.</li><li>이미지에서 가장 많이 쓰인 주요 색상이 자동으로 추출됩니다. 각 색의 HEX·RGB를 복사합니다.</li></ol><h3>어떻게 추출하나요?</h3><p class="note">이미지의 모든 픽셀 색을 분석해 비슷한 색끼리 묶은 뒤(색상 군집화), 가장 넓은 면적을 차지하는 대표색 몇 개를 뽑습니다. 무드보드 색 추출, 사진 기반 배색, 브랜드 컬러 정리에 활용합니다.</p></section>
+<div class="wooa-orig-anchor"></div>
 
   <div class="tips-panel"><h3>💡 Tips</h3><ul><li>업로드한 이미지에서 대표 색상을 자동 추출합니다.</li><li>추출된 HEX 코드를 디자인 도구에 바로 활용하세요.</li><li>브랜드 색상 정의나 웹사이트 테마 설정에 유용합니다.</li></ul></div>
-<div class="faq-section"><h2>자주 묻는 질문</h2><details><summary>어떤 이미지 형식을 지원하나요?</summary><p>JPG, PNG, WebP 등 일반적인 이미지 형식을 지원합니다.</p></details><details><summary>추출되는 색상 수는 몇 개인가요?</summary><p>주요 색상과 팔레트 색상을 추출하며, 개수를 조절할 수 있습니다.</p></details><details><summary>추출한 색상을 CSS에서 바로 사용할 수 있나요?</summary><p>각 색상의 HEX 코드를 클릭하여 복사한 뒤 CSS에 바로 사용할 수 있습니다.</p></details><details><summary>파일이 서버에 저장되나요?</summary><p>아니요. 모든 처리는 브라우저 안에서만 이루어지며 파일은 서버로 전송되지 않습니다. 개인정보와 민감한 데이터가 외부로 유출될 걱정이 없으며, 기업 보안 환경에서도 안심하고 사용할 수 있습니다.</p></details></div>
+<div class="faq-section"><h2>자주 묻는 질문</h2><details><summary>어떤 이미지 형식을 지원하나요?</summary><p>JPG·PNG·WebP 등 브라우저가 표시할 수 있는 형식이면 됩니다.</p></details><details><summary>추출되는 색상 수는 몇 개인가요?</summary><p>보통 5~8개의 대표색을 뽑습니다. 이미지가 단색에 가까우면 더 적게 나옵니다.</p></details><details><summary>추출한 색상을 CSS에서 바로 쓸 수 있나요?</summary><p>네. HEX 코드로 복사되어 background·color 등에 바로 붙여넣을 수 있습니다.</p></details><details><summary>색상 추출 도구와 뭐가 다른가요?</summary><p>색상 추출(피커)은 클릭한 한 지점의 색, 팔레트 추출은 이미지 전체의 주요 색 묶음을 자동으로 뽑습니다.</p></details><details><summary>픽셀이 많은 큰 사진도 되나요?</summary><p>내부적으로 축소해 분석하므로 큰 이미지도 빠르게 처리됩니다. 결과 색상은 원본 기준과 거의 같습니다.</p></details><details><summary>파일이 서버에 저장되나요?</summary><p>아니요. 모든 처리는 브라우저 안에서만 이루어지며 이미지·색상 데이터는 서버로 전송되지 않습니다. 개인정보와 작업물이 외부로 유출될 걱정 없이 사용할 수 있습니다.</p></details></div>
 </div>
 <aside class="tool-sidebar"></aside>
 </div>

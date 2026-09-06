@@ -56,27 +56,7 @@
   }
   </script>
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "HEX, RGB, HSL이 뭔가요?",
-        "acceptedAnswer": {"@type": "Answer","text": "모두 색상을 표현하는 방식입니다. HEX는 웹에서 가장 많이 쓰이는 16진수 형식, RGB는 빨강/초록/파랑 혼합값, HSL은 색조/채도/밝기 기반 표현입니다."}
-      },
-      {
-        "@type": "Question",
-        "name": "실시간으로 변환되나요?",
-        "acceptedAnswer": {"@type": "Answer","text": "네, 어떤 형식에 값을 입력하면 즉시 다른 형식으로 변환되어 표시됩니다."}
-      },
-      {
-        "@type": "Question",
-        "name": "CSS에서 바로 사용할 수 있는 형식으로 복사되나요?",
-        "acceptedAnswer": {"@type": "Answer","text": "네, 복사 버튼을 누르면 CSS에서 바로 사용할 수 있는 형식으로 복사됩니다."}
-      }
-    ]
-  }
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"HEX, RGB, HSL이 뭔가요?","acceptedAnswer":{"@type":"Answer","text":"HEX는 #RRGGBB 형태의 웹 표준 표기, RGB는 빨강·초록·파랑을 0~255로 나타낸 값, HSL은 색상·채도·명도로 조절하는 형식입니다. 모두 같은 색을 다른 방식으로 적은 것입니다."}},{"@type":"Question","name":"실시간으로 변환되나요?","acceptedAnswer":{"@type":"Answer","text":"네. 한 형식에 값을 넣으면 나머지 형식이 즉시 계산됩니다."}},{"@type":"Question","name":"CSS에서 바로 쓸 수 있는 형식으로 복사되나요?","acceptedAnswer":{"@type":"Answer","text":"네. color: #3B82F6; 처럼 그대로 붙여넣을 수 있는 형태로 복사됩니다."}},{"@type":"Question","name":"명도만 조금 낮추고 싶을 때는?","acceptedAnswer":{"@type":"Answer","text":"HSL 형식이 편합니다. L(명도) 값만 60% → 50%로 내리면 색상·채도는 유지한 채 어두워집니다."}},{"@type":"Question","name":"HSV(HSB)와 HSL은 다른가요?","acceptedAnswer":{"@type":"Answer","text":"둘 다 색상·채도를 쓰지만 세 번째 값이 다릅니다. HSL은 명도(Lightness), HSV는 명암(Value)이며 채도 계산 방식도 달라 같은 숫자라도 색이 다릅니다. 전체 변환기(HEX RGB HSL CMYK HSV)에서 함께 볼 수 있습니다."}},{"@type":"Question","name":"파일이 서버에 저장되나요?","acceptedAnswer":{"@type":"Answer","text":"아니요. 모든 처리는 브라우저 안에서만 이루어지며 이미지·색상 데이터는 서버로 전송되지 않습니다. 개인정보와 작업물이 외부로 유출될 걱정 없이 사용할 수 있습니다."}}]}
   </script>
   <style>
     .lang-switcher { display:flex; align-items:center; gap:4px; }
@@ -228,10 +208,11 @@
     <a href="gradient-generator.html" class="related-card"><span class="related-icon">🌈</span><span>그라디언트 생성기</span></a>
   </div>
 </div>
+<section class="tool-guide"><h2>색상 변환기 사용법</h2><ol><li>컬러 피커로 색을 고르거나 HEX·RGB·HSL 중 아무 칸에 코드를 입력합니다.</li><li>나머지 형식이 실시간으로 변환됩니다. 각 코드 옆 복사 버튼으로 CSS에 바로 붙여넣습니다.</li></ol><h3>HEX·RGB·HSL이란?</h3><p class="note">HEX는 #RRGGBB 16진수 표기(웹 표준), RGB는 빛의 삼원색(0~255) 값, HSL은 색상(Hue 0~360°)·채도(Saturation)·명도(Lightness)로 사람이 직관적으로 조절하기 쉬운 형식입니다. 세 형식은 같은 색을 다르게 적은 것뿐입니다.</p><h3>변환 예시</h3><p class="note">#3B82F6 = rgb(59, 130, 246) = hsl(217, 91%, 60%). CSS에서는 세 형식 모두 그대로 사용할 수 있고, 투명도가 필요하면 rgb(59 130 246 / 50%) 처럼 알파를 붙입니다.</p></section>
 <div class="wooa-orig-anchor"></div>
 
   <div class="tips-panel"><h3>💡 Tips</h3><ul><li>HEX, RGB, HSL, HSV, CMYK 간 변환을 지원합니다.</li><li>인쇄물에는 CMYK, 디지털 화면에는 RGB를 사용하세요.</li><li>투명도가 필요하면 HEX 8자리(#RRGGBBAA) 또는 rgba() 형식을 사용하세요.</li></ul></div>
-<div class="faq-section"><h2>자주 묻는 질문</h2><details><summary>HEX, RGB, HSL이 뭔가요?</summary><p>모두 색상을 표현하는 방식입니다. HEX는 웹에서 가장 많이 쓰이는 16진수 형식, RGB는 빨강/초록/파랑 혼합값, HSL은 색조/채도/밝기 기반 표현입니다.</p></details><details><summary>실시간으로 변환되나요?</summary><p>네, 어떤 형식에 값을 입력하면 즉시 다른 형식으로 변환되어 표시됩니다.</p></details><details><summary>CSS에서 바로 사용할 수 있는 형식으로 복사되나요?</summary><p>네, 복사 버튼을 누르면 CSS에서 바로 사용할 수 있는 형식으로 복사됩니다.</p></details><details><summary>파일이 서버에 저장되나요?</summary><p>아니요. 모든 처리는 브라우저 안에서만 이루어지며 파일은 서버로 전송되지 않습니다. 개인정보와 민감한 데이터가 외부로 유출될 걱정이 없으며, 기업 보안 환경에서도 안심하고 사용할 수 있습니다.</p></details></div>
+<div class="faq-section"><h2>자주 묻는 질문</h2><details><summary>HEX, RGB, HSL이 뭔가요?</summary><p>HEX는 #RRGGBB 형태의 웹 표준 표기, RGB는 빨강·초록·파랑을 0~255로 나타낸 값, HSL은 색상·채도·명도로 조절하는 형식입니다. 모두 같은 색을 다른 방식으로 적은 것입니다.</p></details><details><summary>실시간으로 변환되나요?</summary><p>네. 한 형식에 값을 넣으면 나머지 형식이 즉시 계산됩니다.</p></details><details><summary>CSS에서 바로 쓸 수 있는 형식으로 복사되나요?</summary><p>네. color: #3B82F6; 처럼 그대로 붙여넣을 수 있는 형태로 복사됩니다.</p></details><details><summary>명도만 조금 낮추고 싶을 때는?</summary><p>HSL 형식이 편합니다. L(명도) 값만 60% → 50%로 내리면 색상·채도는 유지한 채 어두워집니다.</p></details><details><summary>HSV(HSB)와 HSL은 다른가요?</summary><p>둘 다 색상·채도를 쓰지만 세 번째 값이 다릅니다. HSL은 명도(Lightness), HSV는 명암(Value)이며 채도 계산 방식도 달라 같은 숫자라도 색이 다릅니다. 전체 변환기(HEX RGB HSL CMYK HSV)에서 함께 볼 수 있습니다.</p></details><details><summary>파일이 서버에 저장되나요?</summary><p>아니요. 모든 처리는 브라우저 안에서만 이루어지며 이미지·색상 데이터는 서버로 전송되지 않습니다. 개인정보와 작업물이 외부로 유출될 걱정 없이 사용할 수 있습니다.</p></details></div>
 </div>
 
 <aside class="tool-sidebar"></aside>

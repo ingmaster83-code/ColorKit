@@ -56,27 +56,7 @@
   }
   </script>
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "텍스트 그림자 방향을 자유롭게 설정할 수 있나요?",
-        "acceptedAnswer": {"@type": "Answer","text": "X축, Y축 오프셋, 흐림 반경, 색상을 자유롭게 조절할 수 있습니다."}
-      },
-      {
-        "@type": "Question",
-        "name": "미리보기가 실시간으로 업데이트되나요?",
-        "acceptedAnswer": {"@type": "Answer","text": "네, 값을 변경할 때마다 미리보기가 즉시 업데이트됩니다."}
-      },
-      {
-        "@type": "Question",
-        "name": "생성된 CSS를 바로 사용할 수 있나요?",
-        "acceptedAnswer": {"@type": "Answer","text": "복사 버튼으로 text-shadow CSS 코드를 복사하여 바로 사용할 수 있습니다."}
-      }
-    ]
-  }
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"텍스트 그림자 방향을 자유롭게 설정할 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"네. 수평·수직 오프셋을 각각 조절해 원하는 방향으로 그림자를 놓을 수 있습니다."}},{"@type":"Question","name":"미리보기가 실시간으로 업데이트되나요?","acceptedAnswer":{"@type":"Answer","text":"네. 슬라이더를 움직이는 즉시 예시 텍스트에 반영됩니다."}},{"@type":"Question","name":"생성된 CSS를 바로 쓸 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"네. text-shadow 속성에 그대로 붙여넣으면 됩니다."}},{"@type":"Question","name":"그림자를 여러 개 겹칠 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"네. 콤마로 나열하면 겹칩니다. 네온 효과는 같은 색 그림자를 흐림 정도만 다르게 여러 개 겹쳐 만듭니다."}},{"@type":"Question","name":"작은 글씨에 그림자를 넣으면?","acceptedAnswer":{"@type":"Answer","text":"흐릿해져 오히려 읽기 어려워집니다. 본문에는 아주 옅게(투명도 낮게)만 쓰고, 큰 제목·오버레이 텍스트 위주로 사용하세요."}},{"@type":"Question","name":"파일이 서버에 저장되나요?","acceptedAnswer":{"@type":"Answer","text":"아니요. 모든 처리는 브라우저 안에서만 이루어지며 이미지·색상 데이터는 서버로 전송되지 않습니다. 개인정보와 작업물이 외부로 유출될 걱정 없이 사용할 수 있습니다."}}]}
   </script>
   <style>
     .slider-row {
@@ -295,10 +275,11 @@
     <a href="color-converter.html" class="related-card"><span class="related-icon">🔄</span><span>HEX ↔ RGB ↔ HSL</span></a>
   </div>
 </div>
+<section class="tool-guide"><h2>CSS 텍스트 그림자 생성기 사용법</h2><ol><li>수평·수직 오프셋, 흐림(Blur), 색상, 투명도를 슬라이더로 조절합니다.</li><li>실시간 미리보기를 확인하고 text-shadow 코드를 복사합니다.</li></ol><h3>text-shadow 값의 의미</h3><p class="note">text-shadow: X Y Blur Color. box-shadow와 달리 Spread(확산)가 없습니다. 이미지 위 흰 글씨의 가독성을 높이는 옅은 검정 그림자, 네온·엠보싱 효과 등에 씁니다.</p><h3>예시</h3><p class="note">text-shadow: 0 1px 3px rgba(0,0,0,0.5); — 배경 사진 위 텍스트가 또렷하게 보이도록 하는 기본값. 네온: 0 0 8px #0FF, 0 0 20px #0FF;</p></section>
 <div class="wooa-orig-anchor"></div>
 
   <div class="tips-panel"><h3>💡 Tips</h3><ul><li>텍스트 그림자로 가독성을 높이거나 네온 효과를 연출할 수 있습니다.</li><li>여러 겹의 그림자를 쌓아 3D 효과를 만들 수 있습니다.</li><li>CSS 코드를 바로 복사해 스타일시트에 붙여 넣으세요.</li></ul></div>
-<div class="faq-section"><h2>자주 묻는 질문</h2><details><summary>텍스트 그림자 방향을 자유롭게 설정할 수 있나요?</summary><p>X축, Y축 오프셋, 흐림 반경, 색상을 자유롭게 조절할 수 있습니다.</p></details><details><summary>미리보기가 실시간으로 업데이트되나요?</summary><p>네, 값을 변경할 때마다 미리보기가 즉시 업데이트됩니다.</p></details><details><summary>생성된 CSS를 바로 사용할 수 있나요?</summary><p>복사 버튼으로 text-shadow CSS 코드를 복사하여 바로 사용할 수 있습니다.</p></details><details><summary>파일이 서버에 저장되나요?</summary><p>아니요. 모든 처리는 브라우저 안에서만 이루어지며 파일은 서버로 전송되지 않습니다. 개인정보와 민감한 데이터가 외부로 유출될 걱정이 없으며, 기업 보안 환경에서도 안심하고 사용할 수 있습니다.</p></details></div>
+<div class="faq-section"><h2>자주 묻는 질문</h2><details><summary>텍스트 그림자 방향을 자유롭게 설정할 수 있나요?</summary><p>네. 수평·수직 오프셋을 각각 조절해 원하는 방향으로 그림자를 놓을 수 있습니다.</p></details><details><summary>미리보기가 실시간으로 업데이트되나요?</summary><p>네. 슬라이더를 움직이는 즉시 예시 텍스트에 반영됩니다.</p></details><details><summary>생성된 CSS를 바로 쓸 수 있나요?</summary><p>네. text-shadow 속성에 그대로 붙여넣으면 됩니다.</p></details><details><summary>그림자를 여러 개 겹칠 수 있나요?</summary><p>네. 콤마로 나열하면 겹칩니다. 네온 효과는 같은 색 그림자를 흐림 정도만 다르게 여러 개 겹쳐 만듭니다.</p></details><details><summary>작은 글씨에 그림자를 넣으면?</summary><p>흐릿해져 오히려 읽기 어려워집니다. 본문에는 아주 옅게(투명도 낮게)만 쓰고, 큰 제목·오버레이 텍스트 위주로 사용하세요.</p></details><details><summary>파일이 서버에 저장되나요?</summary><p>아니요. 모든 처리는 브라우저 안에서만 이루어지며 이미지·색상 데이터는 서버로 전송되지 않습니다. 개인정보와 작업물이 외부로 유출될 걱정 없이 사용할 수 있습니다.</p></details></div>
 </div>
 
 <aside class="tool-sidebar"></aside>

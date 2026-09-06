@@ -56,27 +56,7 @@
   }
   </script>
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "어떤 방식으로 팔레트가 생성되나요?",
-        "acceptedAnswer": {"@type": "Answer","text": "선택한 기본 색상을 기준으로 보색, 유사색, 삼색 배열 등 색상 이론 기반으로 조화로운 팔레트를 생성합니다."}
-      },
-      {
-        "@type": "Question",
-        "name": "생성한 팔레트의 색상 코드를 복사할 수 있나요?",
-        "acceptedAnswer": {"@type": "Answer","text": "각 색상의 HEX 코드를 클릭하면 바로 복사됩니다."}
-      },
-      {
-        "@type": "Question",
-        "name": "몇 가지 색상으로 팔레트가 구성되나요?",
-        "acceptedAnswer": {"@type": "Answer","text": "기본 5색 팔레트가 생성되며 추가 확장도 가능합니다."}
-      }
-    ]
-  }
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"어떤 방식으로 팔레트가 생성되나요?","acceptedAnswer":{"@type":"Answer","text":"기준색을 중심으로 색상환을 회전(보색·트라이어드)하거나 유사색·단색 규칙을 적용해 5색을 만듭니다."}},{"@type":"Question","name":"생성한 팔레트 코드를 복사할 수 있나요?","acceptedAnswer":{"@type":"Answer","text":"전체 팔레트를 한 번에, 또는 색 하나씩 복사할 수 있습니다."}},{"@type":"Question","name":"몇 가지 색으로 구성되나요?","acceptedAnswer":{"@type":"Answer","text":"기본 5색입니다. 주색·보조색·배경·강조·중립색으로 배분하면 실무에 바로 쓸 수 있습니다."}},{"@type":"Question","name":"색상 조화 생성기와 뭐가 다른가요?","acceptedAnswer":{"@type":"Answer","text":"조화 생성기는 이론별(보색·삼색 등) 색 세트를 각각 보여주고, 팔레트 생성기는 실무용 5색 세트 하나를 만들어 줍니다."}},{"@type":"Question","name":"생성된 색의 대비가 충분한가요?","acceptedAnswer":{"@type":"Answer","text":"자동 생성은 미적 조화 위주라 접근성 대비는 별도입니다. 팔레트 대비 검사기로 텍스트/배경 조합을 확인하세요."}},{"@type":"Question","name":"파일이 서버에 저장되나요?","acceptedAnswer":{"@type":"Answer","text":"아니요. 모든 처리는 브라우저 안에서만 이루어지며 이미지·색상 데이터는 서버로 전송되지 않습니다. 개인정보와 작업물이 외부로 유출될 걱정 없이 사용할 수 있습니다."}}]}
   </script>
   <style>
     .palette-section { margin-bottom:28px; }
@@ -175,10 +155,11 @@
     <a href="color-harmony.html" class="related-card"><span class="related-icon">🎨</span><span>색상 조화 생성기</span></a>
   </div>
 </div>
+<section class="tool-guide"><h2>색상 팔레트 생성기 사용법</h2><ol><li>기본 색상을 하나 선택합니다.</li><li>보색·유사색·트라이어드·단색 방식으로 5색 팔레트가 생성됩니다. HEX 코드를 한 번에 복사합니다.</li></ol><h3>생성 방식</h3><p class="note">기준색의 색상(Hue)을 규칙적으로 회전시키거나(보색·트라이어드), 근처 색을 모으거나(유사색), 명도만 단계별로 바꿔(단색) 5개의 색을 만듭니다. 웹·앱 디자인의 주색+보조색+강조색 세트를 빠르게 잡는 데 씁니다.</p></section>
 <div class="wooa-orig-anchor"></div>
 
   <div class="tips-panel"><h3>💡 Tips</h3><ul><li>이미지를 업로드하면 사용된 주요 색상을 자동으로 추출합니다.</li><li>팔레트 색상 수를 조정해 심플하거나 풍부한 팔레트를 만드세요.</li><li>생성된 팔레트의 HEX 값을 복사해 디자인 작업에 활용하세요.</li></ul></div>
-<div class="faq-section"><h2>자주 묻는 질문</h2><details><summary>어떤 방식으로 팔레트가 생성되나요?</summary><p>선택한 기본 색상을 기준으로 보색, 유사색, 삼색 배열 등 색상 이론 기반으로 조화로운 팔레트를 생성합니다.</p></details><details><summary>생성한 팔레트의 색상 코드를 복사할 수 있나요?</summary><p>각 색상의 HEX 코드를 클릭하면 바로 복사됩니다.</p></details><details><summary>몇 가지 색상으로 팔레트가 구성되나요?</summary><p>기본 5색 팔레트가 생성되며 추가 확장도 가능합니다.</p></details><details><summary>파일이 서버에 저장되나요?</summary><p>아니요. 모든 처리는 브라우저 안에서만 이루어지며 파일은 서버로 전송되지 않습니다. 개인정보와 민감한 데이터가 외부로 유출될 걱정이 없으며, 기업 보안 환경에서도 안심하고 사용할 수 있습니다.</p></details></div>
+<div class="faq-section"><h2>자주 묻는 질문</h2><details><summary>어떤 방식으로 팔레트가 생성되나요?</summary><p>기준색을 중심으로 색상환을 회전(보색·트라이어드)하거나 유사색·단색 규칙을 적용해 5색을 만듭니다.</p></details><details><summary>생성한 팔레트 코드를 복사할 수 있나요?</summary><p>전체 팔레트를 한 번에, 또는 색 하나씩 복사할 수 있습니다.</p></details><details><summary>몇 가지 색으로 구성되나요?</summary><p>기본 5색입니다. 주색·보조색·배경·강조·중립색으로 배분하면 실무에 바로 쓸 수 있습니다.</p></details><details><summary>색상 조화 생성기와 뭐가 다른가요?</summary><p>조화 생성기는 이론별(보색·삼색 등) 색 세트를 각각 보여주고, 팔레트 생성기는 실무용 5색 세트 하나를 만들어 줍니다.</p></details><details><summary>생성된 색의 대비가 충분한가요?</summary><p>자동 생성은 미적 조화 위주라 접근성 대비는 별도입니다. 팔레트 대비 검사기로 텍스트/배경 조합을 확인하세요.</p></details><details><summary>파일이 서버에 저장되나요?</summary><p>아니요. 모든 처리는 브라우저 안에서만 이루어지며 이미지·색상 데이터는 서버로 전송되지 않습니다. 개인정보와 작업물이 외부로 유출될 걱정 없이 사용할 수 있습니다.</p></details></div>
 </div>
 <aside class="tool-sidebar"></aside>
 </div>
